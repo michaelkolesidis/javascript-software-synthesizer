@@ -7,9 +7,3 @@
 <br><br><br><br>
 
 <h3 align="center">More info coming soon!</h3>
- 
-<br><br><br><br>
-
-<div align="center">
-<a href="https://endsoftwarepatents.org/innovating-without-patents"><img style="height: 120px;" src="https://static.fsf.org/nosvn/esp/logos/innovating-without-patents.svg"></a>
-</div>
