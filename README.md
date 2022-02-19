@@ -30,3 +30,7 @@ Feel free to submit issues and pull requests. It would be great to create a comm
 
 # License
 TBD
+
+# Special Thanks To
+* [Mohammed Amine Grid](https://github.com/mohammed-amine-grid), for his guidance and dedication throughout this journey.
+* All the students and the tutors at the [Social Hackers Academy](https://github.com/SocialHackersAcademy), for creating a nice little community, supporting each other and offering their best.
