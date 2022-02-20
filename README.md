@@ -1,7 +1,9 @@
-JavaScript Software Synthesizer | JSS-01 
-=========
+<p align="center">
+<img width="400px" src="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/src/assets/logo/jss-logo-bg-w.png">
+</p>
 
-<img align="center" src="">
+<h1 align="center">JavaScript Software Synthesizer | JSS-01</h1>
+
 
 The JSS-01 is a software synthesizer implementing a variety of JavaScript frameworks and libraries, such as React, Tone.js and NexusUI.
 
