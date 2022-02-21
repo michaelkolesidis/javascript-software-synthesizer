@@ -29,7 +29,7 @@ Feel free to submit issues and pull requests. It would be great to create a comm
 * [standardized-audio-context](https://github.com/chrisguttandin/standardized-audio-context)
 
 # License
-TBD
+[MIT License](https://opensource.org/licenses/MIT)
 
 # Special Thanks To
 * [Mohammed Amine Grid](https://github.com/mohammed-amine-grid), for his guidance and dedication throughout this journey.
