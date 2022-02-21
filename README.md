@@ -5,7 +5,7 @@
 <h1 align="center">JavaScript Software Synthesizer | JSS-01</h1>
 
 
-The JSS-01 is a software synthesizer implementing a variety of JavaScript frameworks and libraries, such as React, Tone.js and NexusUI.
+The JSS-01 is a software synthesizer implementing a variety of JavaScript frameworks and libraries, such as Tone.js and NexusUI.
 
 # Introduction
 
@@ -22,12 +22,10 @@ Feel free to submit issues and pull requests. It would be great to create a comm
 
 * [Tone.js](https://github.com/Tonejs/Tone.js/)
 * [NexusUI](https://github.com/nexus-js/ui)
-* [React](https://github.com/facebook/react)
-* [React NexusUI](https://github.com/nexus-js/ui)
+* [Webpack](https://github.com/webpack/webpack)
 
 # References and Inspiration
 * [Sound on Sound - Synth Secrets](http://www.soundonsound.com/sos/may99/articles/synthsec.htm)
-* [Miller Puckette - Theory and Techniques of Electronic Music](http://msp.ucsd.edu/techniques.htm)
 * [standardized-audio-context](https://github.com/chrisguttandin/standardized-audio-context)
 
 # License
