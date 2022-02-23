@@ -6,4 +6,4 @@ are many ways to contribute. You can write tutorials or blog posts, improve the 
 submit bug reports or feature requests and write actual source code. All of these are very 
 worthwhile contributions.
 
-More detailed guidelines will follow soon.
+More detailed guidelines regarding ways to contribute will follow soon.
