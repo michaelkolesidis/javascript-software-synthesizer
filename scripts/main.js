@@ -5,14 +5,16 @@
  *
  */
 
-// Nexus.colors.accent = "rgb(180, 180, 180)";
 import Header from "./header.js"
 import midiToNoteString from "./midiToNoteString.js"
 
 
 console.log(Header())
 
+// ------------------------
 // KEYBOARD
+// ------------------------
+
 let keyboard = new Nexus.Piano("#keyboard", {
   size: [1200, 100],
   mode: "button", // 'button', 'toggle', or 'impulse'
@@ -23,7 +25,9 @@ keyboard.colorize("accent", "rgb(180, 180, 180)");
 
 let intViewportWidth = window.innerWidth;
 
+// ------------------------
 // SYNTH
+// ------------------------
 
 // const Tone = require('Tone');
 // const gain = new Tone.Gain(0.5).toMaster();
@@ -56,7 +60,10 @@ keyboard.on('change', (note) => {
 
 })
 
+// ------------------------
 // ENVELOPES
+// ------------------------
+
 var envelope1 = new Nexus.Envelope('#envelope1',{
   'size': [300,150],
   'noNewPoints': false,
@@ -132,7 +139,10 @@ var envelope3 = new Nexus.Envelope('#envelope3',{
 envelope3.colorize("accent", "rgb(254,188,44)");
 envelope3.colorize("fill", "rgb(230, 230, 230)");
 
+// ------------------------
 //TOGGLES
+// ------------------------
+
 var toggle1 = new Nexus.Toggle("#toggle1", {
   size: [40, 20],
   state: false,
@@ -154,7 +164,10 @@ var toggle3 = new Nexus.Toggle("#toggle3", {
 toggle3.colorize("accent", "rgb(254,188,44)");
 toggle3.colorize("fill", "rgb(230, 230, 230)");
 
+// ------------------------
 // DIALS
+// ------------------------
+
 var dial1 = new Nexus.Dial("#dial1", {
     'size': [75,75],
   interaction: "vertical", // "radial", "vertical", or "horizontal"
@@ -212,7 +225,10 @@ number3.link(dial3);
 number3.colorize("accent", "rgb(254,188,44)");
 number3.colorize("fill", "rgb(230, 230, 230)");
 
+// ------------------------
 // SLIDERS
+// ------------------------
+
 let slider1 = Nexus.Add.Slider("#slider1", {
     'size': [20,120],   min: 0,
   max: 1,
@@ -267,7 +283,10 @@ let slider6 = Nexus.Add.Slider("#slider6", {
 slider6.colorize("accent", "rgb(254,188,44)");
 slider6.colorize("fill", "rgb(230, 230, 230)");
 
+// ------------------------
 // POSITIONS
+// ------------------------
+
 var position1 = new Nexus.Position('#position1',{
     'size': [200,200],
     'mode': 'absolute',  // "absolute" or "relative"
@@ -313,6 +332,13 @@ position1.colorize("fill", "rgb(230, 230, 230)");
   position3.colorize("accent", "rgb(254,188,44)");
   position3.colorize("fill", "rgb(230, 230, 230)");
 
+
+// ------------------------
+// OTHER IDEAS / ABORTED
+// ------------------------
+
+// Implement global color for NexusUI elements
+// Nexus.colors.accent = "rgb(180, 180, 180)";
 
 // RESIZE KEYBOARD
 
