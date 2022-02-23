@@ -3,7 +3,11 @@
 html,
 body {
   font-family: "Spartan", sans-serif;
-  background: #f8f8f8;
+  background: url("../assets/lizard/lizard.svg");
+  background-position: right bottom;
+  background-attachment: fixed;
+  background-size: 20%;
+  background-repeat: no-repeat;
 }
 
 #header {
