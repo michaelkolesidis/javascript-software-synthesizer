@@ -44,3 +44,7 @@ Feel free to submit issues and pull requests. It would be great to create a comm
 * [Mohammed Amine Grid](https://github.com/mohammed-amine-grid), for his guidance and dedication throughout this journey.
 * All the students and the tutors at the [Social Hackers Academy](https://github.com/SocialHackersAcademy), for creating a nice little community, supporting each other and offering their best.
 
+<p align="right">
+<img width="100px" src="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/assets/lizard/other/lizard-01-c.svg">
+</p>
+
