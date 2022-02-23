@@ -9,7 +9,8 @@
 import Header from "./header.js"
 import midiToNoteString from "./midiToNoteString.js"
 
-console.log(Header)
+
+console.log(Header())
 
 // KEYBOARD
 let keyboard = new Nexus.Piano("#keyboard", {
