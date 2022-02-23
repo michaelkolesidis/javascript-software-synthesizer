@@ -348,14 +348,24 @@ function onEnabled() {
     });
   }
 
-  const mySynth = WebMidi.inputs[1];
+  const mySynth = WebMidi.inputs[1]; 
+  // It uses input 1 by default - make it selectable by use
   // const mySynth = WebMidi.getInputByName("TYPE NAME HERE!")
 
+
   mySynth.channels[1].addListener("noteon", (e) => {
+
+    synth.triggerAttack(midiToNoteString(e.data[1]));
 
     midiDisplay.innerHTML = 
     `<p>MIDI note played: ${e.data[1]}<br>
     Note name: ${midiToNoteString(e.data[1])}</p>`;
+  });
+
+  mySynth.channels[1].addListener("noteoff", () => {
+
+    synth.triggerRelease();
+
   });
 }
 
