@@ -6,6 +6,10 @@
  */
 
 // Nexus.colors.accent = "rgb(180, 180, 180)";
+import Header from "./header.js"
+import midiToNoteString from "./midiToNoteString.js"
+
+console.log(Header)
 
 // KEYBOARD
 let keyboard = new Nexus.Piano("#keyboard", {

@@ -11,7 +11,7 @@
  *
  */
 
-function midiToNoteString(note) {
+export default function midiToNoteString(note) {
   // Octave 0
   switch (note) {
     case 21:

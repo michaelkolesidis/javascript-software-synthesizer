@@ -1,6 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* COLORS */
+$black: rgb(51,51,51);
+$gray:  rgb(230,230,230);
+$blue:  rgb(1,0,76);
+$cyan:  rgb(35,178,254);
+$green :rgb(3,214,146);
+$yellow:rgb(254,188,44);
+
+
 html,
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Spartan', sans-serif;
    background: rgb(248, 248, 248)
 }
 
@@ -19,7 +30,7 @@ body {
   margin-top: 0;
   font-size: 1.2rem;
   font-weight: 600;
-  font-style: italic; 
+
 }
 
 #synth{
