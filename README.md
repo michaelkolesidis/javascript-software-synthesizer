@@ -21,7 +21,7 @@ Keys, knobs, sliders and buttons to tweak your sound and generate immersive soun
 
 
 # Documentation
-Will be release with version 1.0.0.
+Will be released with version 1.0.0.
 
 
 
@@ -38,10 +38,11 @@ Feel free to submit issues and pull requests. It would be great to create a comm
 Please refer to the project's [Changelog](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/CHANGELOG.md) document.
 
 
+
 # Technologies Used
 * [Tone.js](https://github.com/Tonejs/Tone.js/)
 * [NexusUI](https://github.com/nexus-js/ui)
-* [Webpack](https://github.com/webpack/webpack)
+* [WEBMIDI.js](https://github.com/djipco/webmidi)
 
 <p align="left">
 <img width="100px" src="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/assets/lizard/other/lizard-04-c.svg">
@@ -66,7 +67,7 @@ Some of the ideas are full modular design, full compatibility with MIDI controll
 
 
 # Sponsors
-None, yet! We will to add way more features for that.
+None, yet! We will have to add way more features for that.
 
 
 
