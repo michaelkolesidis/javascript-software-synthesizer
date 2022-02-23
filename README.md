@@ -41,8 +41,11 @@ Please refer to the project's [Changelog](https://github.com/michaelkolesidis/ja
 
 # Technologies Used
 * [Tone.js](https://github.com/Tonejs/Tone.js/)
+<br>One  could say that Tone.js is the "soul" of our project. It provides us with the synthesizers we use to generate sounds, as well as their various properties that can be tweaked and adjusted.
 * [NexusUI](https://github.com/nexus-js/ui)
+<br>NexusUI provides us with the UI components that are connected to the synthesizers and make parameters adjusting easy and playful.
 * [WEBMIDI.js](https://github.com/djipco/webmidi)
+<br>WEBMIDI.js makes Web MIDI API easy to implement. It allows users to connect their MIDI keyboards and play the synthesizer the way it is meant to be played. Because, who likes playing music with a mouse?
 
 <p align="left">
 <img width="100px" src="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/assets/lizard/other/lizard-04-c.svg">
