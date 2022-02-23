@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JSS-01 | JavaScript Software Synthesizer</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.37/Tone.js"
+      integrity="sha512-gK8OnTXn8cTYkHqYX+bhzjQ1rClAPuG2eMy+oRuV26mSuE0EbZeULFKdyc/YGX1Z/JsC06FXxQttdX4aahjSMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/nexusui@latest/dist/NexusUI.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="header">
+      <h1>JSS-01</h1>
+      <p>JavaScript Software Synthesizer</p>
+    </div>
+
+    <div id="synth">
+      <div id="dials">
+        <div>
+          <span id="dial1"></span>
+          <br />
+          &nbsp; <span id="number1"></span>
+        </div>
+
+        <div>
+          <span id="dial2"></span>
+          <br />
+          &nbsp; <span id="number2"></span>
+        </div>
+
+        <div>
+          <span id="dial3"></span>
+          <br />
+          &nbsp; <span id="number3"></span>
+        </div>
+      </div>
+
+      <div id="envelopes">
+        <span id="envelope1"></span>
+        <span id="envelope2"></span>
+        <span id="envelope3"></span>
+      </div>
+
+      <div id="sliders">
+        <div id="slider1"></div>
+        <div id="slider2"></div>
+        <div id="slider3"></div>
+        <div id="slider4"></div>
+        <div id="slider5"></div>
+        <div id="slider6"></div>
+      </div>
+
+      <div id="positions">
+        <span id="position1"></span>
+        <span id="position2"></span>
+        <span id="position3"></span>
+      </div>
+
+      <div id="toggles">
+        <span id="toggle1"></span>
+        <span id="toggle2"></span>
+        <span id="toggle3"></span>
+      </div>
+
+      <!-- <div id="footer"> -->
+      <div id="keyboard"></div>
+      <!-- </div> -->
+    </div>
+
+    <!-- <button>Show Help</button> -->
+    <script src="./midiToNoteString.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
