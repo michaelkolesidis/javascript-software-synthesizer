@@ -30,6 +30,7 @@ Feel free to submit issues and pull requests. It would be great to create a comm
 
 
 # Changelog
+Please refer to the project's [Changelog](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/CHANGELOG.md) document.
 
 
 # Technologies Used
