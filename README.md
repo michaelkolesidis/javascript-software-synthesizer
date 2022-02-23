@@ -11,7 +11,7 @@ The JSS-01 is a software synthesizer implementing a variety of JavaScript framew
 
 # Introduction
 
-<p align="right">
+<p align="left">
 <img width="100px" src="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/assets/lizard/other/lizard-02-g.svg">
 </p>
 
@@ -38,7 +38,7 @@ Feel free to submit issues and pull requests. It would be great to create a comm
 * [NexusUI](https://github.com/nexus-js/ui)
 * [Webpack](https://github.com/webpack/webpack)
 
-<p align="right">
+<p align="left">
 <img width="100px" src="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/assets/lizard/other/lizard-04-c.svg">
 </p>
 
