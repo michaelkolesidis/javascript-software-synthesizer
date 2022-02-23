@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "JSS-01",
+  "name": "JavaScript Software Synthesizer",
   "icons": [
     {
       "src": "/assets/logo/favicon.ico",
