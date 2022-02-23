@@ -11,6 +11,9 @@ The JSS-01 is a software synthesizer implementing a variety of JavaScript framew
 
 # Introduction
 
+<p align="right">
+<img width="100px" src="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/assets/lizard/other/lizard-02-g.svg">
+</p>
 
 # Documentation
 
@@ -21,6 +24,10 @@ The JSS-01 is a software synthesizer implementing a variety of JavaScript framew
 # Contributing
 Feel free to submit issues and pull requests. It would be great to create a community around JSS-01, to contiue its development and evolution, making it more capable and easier to use, increasing its creative and artistic potential. 
 
+<p align="right">
+<img width="100px" src="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/assets/lizard/other/lizard-03-y.svg">
+</p>
+
 
 # Changelog
 
@@ -30,6 +37,10 @@ Feel free to submit issues and pull requests. It would be great to create a comm
 * [Tone.js](https://github.com/Tonejs/Tone.js/)
 * [NexusUI](https://github.com/nexus-js/ui)
 * [Webpack](https://github.com/webpack/webpack)
+
+<p align="right">
+<img width="100px" src="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/assets/lizard/other/lizard-04-c.svg">
+</p>
 
 # References and Inspiration
 * [Sound on Sound - Synth Secrets](http://www.soundonsound.com/sos/may99/articles/synthsec.htm)
@@ -45,6 +56,6 @@ Feel free to submit issues and pull requests. It would be great to create a comm
 * All the students and the tutors at the [Social Hackers Academy](https://github.com/SocialHackersAcademy), for creating a nice little community, supporting each other and offering their best.
 
 <p align="right">
-<img width="100px" src="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/assets/lizard/other/lizard-01-c.svg">
+<img width="100px" src="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/assets/lizard/other/lizard-01-g.svg">
 </p>
 
