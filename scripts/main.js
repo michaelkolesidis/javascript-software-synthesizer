@@ -5,11 +5,10 @@
  *
  */
 
-import Header from "./header.js"
-import midiToNoteString from "./midiToNoteString.js"
+import Header from "./header.js";
+import midiToNoteString from "./midiToNoteString.js";
 
-
-console.log(Header())
+console.log(Header());
 
 // ------------------------
 // KEYBOARD
@@ -41,101 +40,94 @@ const synth = new Tone.Synth().toDestination();
 //   synth.triggerAttackRelease(note, '8n')
 // }
 
-
-
-
-
-keyboard.on('change', (note) => {
+keyboard.on("change", (note) => {
   if (note.state) {
     synth.triggerAttack(midiToNoteString(note.note));
-    console.log(midiToNoteString(note.note))
+    console.log(midiToNoteString(note.note));
   } else {
     synth.triggerRelease();
   }
 
-
   // let note = event.note, on = event.state
-  // if(on && note === 72) triggerKeyPress('C5')  
-
-
-})
+  // if(on && note === 72) triggerKeyPress('C5')
+});
 
 // ------------------------
 // ENVELOPES
 // ------------------------
 
-var envelope1 = new Nexus.Envelope('#envelope1',{
-  'size': [300,150],
-  'noNewPoints': false,
-  'points': [
+var envelope1 = new Nexus.Envelope("#envelope1", {
+  size: [300, 150],
+  noNewPoints: false,
+  points: [
     {
       x: 0.1,
-      y: 0.4
+      y: 0.4,
     },
     {
       x: 0.35,
-      y: 0.6
+      y: 0.6,
     },
     {
       x: 0.65,
-      y: 0.2
+      y: 0.2,
     },
     {
       x: 0.9,
-      y: 0.4
+      y: 0.4,
     },
-  ]
-})
+  ],
+});
 envelope1.colorize("accent", "rgb(35,178,254)");
 envelope1.colorize("fill", "rgb(230, 230, 230)");
 
-var envelope2 = new Nexus.Envelope('#envelope2',{
-  'size': [300,150],
-  'noNewPoints': false,
-  'points': [
+var envelope2 = new Nexus.Envelope("#envelope2", {
+  size: [300, 150],
+  noNewPoints: false,
+  points: [
     {
       x: 0.1,
-      y: 0.4
+      y: 0.4,
     },
     {
       x: 0.35,
-      y: 0.6
+      y: 0.6,
     },
     {
       x: 0.65,
-      y: 0.2
+      y: 0.2,
     },
     {
       x: 0.9,
-      y: 0.4
+      y: 0.4,
     },
-  ]
-})
+  ],
+});
 envelope2.colorize("accent", "rgb(3,214,146)");
 envelope2.colorize("fill", "rgb(230, 230, 230)");
 
-var envelope3 = new Nexus.Envelope('#envelope3',{
-  'size': [300,150],
-  'noNewPoints': false,
-  'points': [
+var envelope3 = new Nexus.Envelope("#envelope3", {
+  size: [300, 150],
+  noNewPoints: false,
+  points: [
     {
       x: 0.1,
-      y: 0.4
+      y: 0.4,
     },
     {
       x: 0.35,
-      y: 0.6
+      y: 0.6,
     },
     {
       x: 0.65,
-      y: 0.2
+      y: 0.2,
     },
     {
       x: 0.9,
-      y: 0.4
+      y: 0.4,
     },
-  ]
-})
+  ],
+});
 envelope3.colorize("accent", "rgb(254,188,44)");
 envelope3.colorize("fill", "rgb(230, 230, 230)");
 
@@ -169,7 +161,7 @@ toggle3.colorize("fill", "rgb(230, 230, 230)");
 // ------------------------
 
 var dial1 = new Nexus.Dial("#dial1", {
-    'size': [75,75],
+  size: [75, 75],
   interaction: "vertical", // "radial", "vertical", or "horizontal"
   mode: "relative", // "absolute" or "relative"
   min: -40,
@@ -180,11 +172,9 @@ var dial1 = new Nexus.Dial("#dial1", {
 dial1.colorize("accent", "rgb(35,178,254)");
 dial1.colorize("fill", "rgb(230, 230, 230)");
 
-
-dial1.on('change',function(v) {
+dial1.on("change", function (v) {
   synth.volume.value = v;
 });
-
 
 var number1 = new Nexus.Number("#number1");
 number1.link(dial1);
@@ -192,7 +182,7 @@ number1.colorize("accent", "rgb(35,178,254)");
 number1.colorize("fill", "rgb(230, 230, 230)");
 
 var dial2 = new Nexus.Dial("#dial2", {
-    'size': [75,75],
+  size: [75, 75],
   interaction: "vertical", // "radial", "vertical", or "horizontal"
   mode: "relative", // "absolute" or "relative"
   min: 0,
@@ -209,7 +199,7 @@ number2.colorize("accent", "rgb(3,214,146)");
 number2.colorize("fill", "rgb(230, 230, 230)");
 
 var dial3 = new Nexus.Dial("#dial3", {
-    'size': [75,75],
+  size: [75, 75],
   interaction: "vertical", // "radial", "vertical", or "horizontal"
   mode: "relative", // "absolute" or "relative"
   min: 0,
@@ -230,7 +220,8 @@ number3.colorize("fill", "rgb(230, 230, 230)");
 // ------------------------
 
 let slider1 = Nexus.Add.Slider("#slider1", {
-    'size': [20,120],   min: 0,
+  size: [20, 120],
+  min: 0,
   max: 1,
   step: 0,
   value: 0.5,
@@ -239,7 +230,8 @@ slider1.colorize("accent", "rgb(35,178,254)");
 slider1.colorize("fill", "rgb(230, 230, 230)");
 
 let slider2 = Nexus.Add.Slider("#slider2", {
-    'size': [20,120],   min: 0,
+  size: [20, 120],
+  min: 0,
   max: 1,
   step: 0,
   value: 0.5,
@@ -248,7 +240,8 @@ slider2.colorize("accent", "rgb(35,178,254)");
 slider2.colorize("fill", "rgb(230, 230, 230)");
 
 let slider3 = Nexus.Add.Slider("#slider3", {
-    'size': [20,120],   min: 0,
+  size: [20, 120],
+  min: 0,
   max: 1,
   step: 0,
   value: 0.5,
@@ -257,7 +250,8 @@ slider3.colorize("accent", "rgb(3,214,146)");
 slider3.colorize("fill", "rgb(230, 230, 230)");
 
 let slider4 = Nexus.Add.Slider("#slider4", {
-    'size': [20,120],   min: 0,
+  size: [20, 120],
+  min: 0,
   max: 1,
   step: 0,
   value: 0.5,
@@ -266,7 +260,8 @@ slider4.colorize("accent", "rgb(3,214,146)");
 slider4.colorize("fill", "rgb(230, 230, 230)");
 
 let slider5 = Nexus.Add.Slider("#slider5", {
-    'size': [20,120],  min: 0,
+  size: [20, 120],
+  min: 0,
   max: 1,
   step: 0,
   value: 0.5,
@@ -275,7 +270,8 @@ slider5.colorize("accent", "rgb(254,188,44)");
 slider5.colorize("fill", "rgb(230, 230, 230)");
 
 let slider6 = Nexus.Add.Slider("#slider6", {
-    'size': [20,120],   min: 0,
+  size: [20, 120],
+  min: 0,
   max: 1,
   step: 0,
   value: 0.5,
@@ -287,51 +283,81 @@ slider6.colorize("fill", "rgb(230, 230, 230)");
 // POSITIONS
 // ------------------------
 
-var position1 = new Nexus.Position('#position1',{
-    'size': [200,200],
-    'mode': 'absolute',  // "absolute" or "relative"
-    'x': 0.5,  // initial x value
-    'minX': 0,
-    'maxX': 1,
-    'stepX': 0,
-    'y': 0.5,  // initial y value
-    'minY': 0,
-    'maxY': 1,
-    'stepY': 0
-  })
-  position1.colorize("accent", "rgb(35,178,254)");
+var position1 = new Nexus.Position("#position1", {
+  size: [200, 200],
+  mode: "absolute", // "absolute" or "relative"
+  x: 0.5, // initial x value
+  minX: 0,
+  maxX: 1,
+  stepX: 0,
+  y: 0.5, // initial y value
+  minY: 0,
+  maxY: 1,
+  stepY: 0,
+});
+position1.colorize("accent", "rgb(35,178,254)");
 position1.colorize("fill", "rgb(230, 230, 230)");
 
-  var position2 = new Nexus.Position('#position2',{
-    'size': [200,200],
-    'mode': 'absolute',  // "absolute" or "relative"
-    'x': 0.5,  // initial x value
-    'minX': 0,
-    'maxX': 1,
-    'stepX': 0,
-    'y': 0.5,  // initial y value
-    'minY': 0,
-    'maxY': 1,
-    'stepY': 0
-  })
-  position2.colorize("accent", "rgb(3,214,146)");
-  position2.colorize("fill", "rgb(230, 230, 230)");
+var position2 = new Nexus.Position("#position2", {
+  size: [200, 200],
+  mode: "absolute", // "absolute" or "relative"
+  x: 0.5, // initial x value
+  minX: 0,
+  maxX: 1,
+  stepX: 0,
+  y: 0.5, // initial y value
+  minY: 0,
+  maxY: 1,
+  stepY: 0,
+});
+position2.colorize("accent", "rgb(3,214,146)");
+position2.colorize("fill", "rgb(230, 230, 230)");
 
-  var position3 = new Nexus.Position('#position3',{
-    'size': [200,200],
-    'mode': 'absolute',  // "absolute" or "relative"
-    'x': 0.5,  // initial x value
-    'minX': 0,
-    'maxX': 1,
-    'stepX': 0,
-    'y': 0.5,  // initial y value
-    'minY': 0,
-    'maxY': 1,
-    'stepY': 0
-  })
-  position3.colorize("accent", "rgb(254,188,44)");
-  position3.colorize("fill", "rgb(230, 230, 230)");
+var position3 = new Nexus.Position("#position3", {
+  size: [200, 200],
+  mode: "absolute", // "absolute" or "relative"
+  x: 0.5, // initial x value
+  minX: 0,
+  maxX: 1,
+  stepX: 0,
+  y: 0.5, // initial y value
+  minY: 0,
+  maxY: 1,
+  stepY: 0,
+});
+position3.colorize("accent", "rgb(254,188,44)");
+position3.colorize("fill", "rgb(230, 230, 230)");
 
+// ------------------------
+// MIDI
+// ------------------------
+
+const midiDisplay = document.getElementById("midi-display");
+
+// Enable WebMidi.js and trigger the onEnabled() function when ready.
+WebMidi.enable()
+  .then(onEnabled)
+  .catch((err) => console.log(err));
+
+function onEnabled() {
+  if (WebMidi.inputs.length < 1) {
+    midiDisplay.innerHTML += "No device detected.";
+  } else {
+    WebMidi.inputs.forEach((device, index) => {
+      midiDisplay.innerHTML += `${index}: ${device.name} <br>`;
+    });
+  }
+
+  const mySynth = WebMidi.inputs[1];
+  // const mySynth = WebMidi.getInputByName("TYPE NAME HERE!")
+
+  mySynth.channels[1].addListener("noteon", (e) => {
+
+    midiDisplay.innerHTML = 
+    `<p>MIDI note played: ${e.data[1]}<br>
+    Note name: ${midiToNoteString(e.data[1])}</p>`;
+  });
+}
 
 // ------------------------
 // OTHER IDEAS / ABORTED
@@ -382,5 +408,3 @@ position1.colorize("fill", "rgb(230, 230, 230)");
 // then, to remove them tlater
 //   dial.destroy();
 //  slider.destroy();
-
-

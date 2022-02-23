@@ -69,6 +69,16 @@ body {
   margin-top: 2rem;
 }
 
+#midi-display {
+  width: 20rem;
+  height: 3.2rem;
+  padding: 0.5em;
+  margin: 1rem;
+  border: 1px solid #333333;
+  background: #e6e6e6;
+  color: #333333;
+}
+
 #keyboard {
   margin: 0 auto;
 }
