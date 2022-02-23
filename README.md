@@ -11,14 +11,19 @@ The JSS-01 is a software synthesizer implementing a variety of JavaScript framew
 
 # Introduction
 
+
 # Documentation
 
+
 # Development
+
 
 # Contributing
 Feel free to submit issues and pull requests. It would be great to create a community around JSS-01, to contiue its development and evolution, making it more capable and easier to use, increasing its creative and artistic potential. 
 
+
 # Changelog
+
 
 # Technologies Used
 
@@ -30,8 +35,10 @@ Feel free to submit issues and pull requests. It would be great to create a comm
 * [Sound on Sound - Synth Secrets](http://www.soundonsound.com/sos/may99/articles/synthsec.htm)
 * [standardized-audio-context](https://github.com/chrisguttandin/standardized-audio-context)
 
+
 # License
 [MIT License](https://opensource.org/licenses/MIT)
+
 
 # Special Thanks To
 * [Mohammed Amine Grid](https://github.com/mohammed-amine-grid), for his guidance and dedication throughout this journey.
