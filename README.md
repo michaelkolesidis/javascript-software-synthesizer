@@ -42,6 +42,8 @@ Feel free to submit issues and pull requests. It would be great to create a comm
 <img width="100px" src="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/assets/lizard/other/lizard-04-c.svg">
 </p>
 
+# Roadmap
+
 # References and Inspiration
 * [Sound on Sound - Synth Secrets](http://www.soundonsound.com/sos/may99/articles/synthsec.htm)
 * [standardized-audio-context](https://github.com/chrisguttandin/standardized-audio-context)
