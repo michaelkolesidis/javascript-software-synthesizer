@@ -53,6 +53,8 @@ Please refer to the project's [Changelog](https://github.com/michaelkolesidis/ja
 # License
 [MIT License](https://opensource.org/licenses/MIT)
 
+# Sponsors
+None, yet! We will to add way more features for that.
 
 # Special Thanks To
 * [Mohammed Amine Grid](https://github.com/mohammed-amine-grid), for his guidance and dedication throughout this journey.
