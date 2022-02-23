@@ -42,7 +42,7 @@ Please refer to the project's [Changelog](https://github.com/michaelkolesidis/ja
 * [Tone.js](https://github.com/Tonejs/Tone.js/)
 * [NexusUI](https://github.com/nexus-js/ui)
 * [Webpack](https://github.com/webpack/webpack)
-* 
+
 <p align="left">
 <img width="100px" src="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/assets/lizard/other/lizard-04-c.svg">
 </p>
