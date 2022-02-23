@@ -1,4 +1,4 @@
-# JavaScript Software Synthesizer | JSS-01
+# JSS-01 | JavaScript Software Synthesizer
 
 # dependencies
 /node_modules
@@ -23,5 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 
 .vscode
-
 
