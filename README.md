@@ -1,5 +1,5 @@
 <p align="center">
-<img width="400px" src="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/src/assets/logo/jss-logo-bg-w.png">
+<img width="400px" src="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/assets/logo/logo512.png">
 </p>
 
 <h1 align="center">JavaScript Software Synthesizer | JSS-01</h1>
