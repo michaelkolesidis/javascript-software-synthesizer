@@ -1,0 +1,83 @@
+html,
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8f8f8;
+}
+
+#header {
+  margin: auto;
+  text-align: center;
+  font-size: 2rem;
+  color: #333333;
+}
+
+#header h1 {
+  margin: 0;
+}
+
+#header p {
+  margin-top: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-style: italic;
+}
+
+#synth {
+  /* min-width: 60%; */
+  /* max-width: 70%; */
+  margin: auto;
+}
+
+#envelopes {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 2rem;
+}
+
+#toggles {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 2rem;
+}
+
+#dials {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 1rem;
+}
+
+#sliders {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#positions {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+
+#keyboard {
+  margin: 0 auto;
+}
+
+#keyboard div {
+  /* background: white; */
+  border-radius: 2rem;
+}
+
+#keyboard svg:first-of-type {
+  /* border-radius: 0 0 0.3rem 0.3rem; */
+  /* border: 0.01rem solid rgb(51, 51, 51); */
+  /* margin: 3px; */
+  /* background: white; */
+}
+
+/*# sourceMappingURL=style.css.map */
