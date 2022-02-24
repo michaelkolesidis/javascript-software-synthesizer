@@ -163,10 +163,10 @@ var toggle3 = new Nexus.Toggle("#toggle3", {
 toggle3.colorize("accent", "rgb(254,188,44)");
 toggle3.colorize("fill", "rgb(230, 230, 230)");
 
+
 // ------------------------
 // DIALS
 // ------------------------
-
 var dial1 = new Nexus.Dial("#dial1", {
   size: [75, 75],
   interaction: "vertical", // "radial", "vertical", or "horizontal"
