@@ -375,6 +375,14 @@ function onEnabled() {
   });
 }
 
+var oscilloscope = new Nexus.Oscilloscope('#oscilloscope',{
+  'size': [300,150]
+})
+oscilloscope.connect(synth)
+oscilloscope.colorize("accent", "rgb(35,178,254)");
+oscilloscope.colorize("fill", "rgb(230, 230, 230)");
+
+
 // ------------------------
 // OTHER IDEAS / ABORTED
 // ------------------------

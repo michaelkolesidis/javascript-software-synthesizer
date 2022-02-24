@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
 /* COLORS */
 /* SIZES */
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   margin: 0;
@@ -34,11 +38,14 @@ body {
 }
 
 #synth {
-  /* min-width: 60%; */
-  /* max-width: 70%; */
+  min-width: 60%;
   margin: auto;
 }
-
+#synth #displays {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 #envelopes {
   display: flex;
   align-items: center;
@@ -76,11 +83,10 @@ body {
 }
 
 #midi-display {
-  width: 20rem;
-  height: 3.2rem;
-  padding: 0.5em;
+  width: 300px;
+  height: 150px;
+  padding: 1rem;
   margin: 1rem;
-  border: 1px solid #333333;
   background: #e6e6e6;
   color: #333333;
 }

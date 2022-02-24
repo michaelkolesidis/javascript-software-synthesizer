@@ -12,6 +12,10 @@ $yellow: rgb(254, 188, 44);
 $header-size: 3rem;
 $header-font: $header-size / 3;
 
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   margin: 0;
@@ -48,9 +52,21 @@ body {
 }
 
 #synth {
-  /* min-width: 60%; */
-  /* max-width: 70%; */
+  min-width: 60%;
+  // max-width: 70%;
   margin: auto;
+
+  #displays{
+    display: flex;
+    align-items: center;
+    // margin: auto;
+    // justify-items: center;
+    justify-content:space-around;
+  }
+
+  #oscilloscope {
+    // margin-left: 4rem;
+  }
 }
 
 #envelopes {
@@ -90,11 +106,13 @@ body {
 }
 
 #midi-display {
-  width: 20rem;
-  height: 3.2rem;
-  padding: 0.5em;
+  // width: 20rem;
+  // height: 3.2rem;
+  width: 300px;
+  height: 150px;
+  padding: 1rem;
   margin: 1rem;
-  border: 1px solid $black;
+  // border: 1px solid $black;
   background: $gray;
   color: $black;
   // line-height: 0.05rem;
