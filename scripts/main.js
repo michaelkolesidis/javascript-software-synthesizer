@@ -10,6 +10,8 @@ import Footer from "./footer.js";
 
 import midiToNoteString from "./midiToNoteString.js";
 
+// const root = document.getElementById("root");
+
 
 // ------------------------
 // HEADER
