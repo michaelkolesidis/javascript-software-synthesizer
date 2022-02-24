@@ -42,9 +42,7 @@ keyboard.colorize("accent", "rgb(180, 180, 180)");
 // Synthesizer
 // ------------------------
 const synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
-console.log(synth.maxPolyphony);
 synth.maxPolyphony = 64;
-console.log(synth.maxPolyphony);
 
 
 // ------------------------
