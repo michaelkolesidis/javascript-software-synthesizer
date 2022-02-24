@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
-/* COLORS */
-/* SIZES */
+/* SCSS Color Variables */
+/* SCSS Size Variables */
+/* General Rules */
 * {
   box-sizing: border-box;
 }
@@ -25,6 +26,7 @@ body {
   background: #b4b4b4;
 }
 
+/* Header */
 #header {
   display: flex;
   flex-direction: row;
@@ -45,6 +47,7 @@ body {
   letter-spacing: -0.03rem;
 }
 
+/* Component Labels */
 .label p {
   font-weight: 600;
   margin: 0 0 0.3rem 0;
