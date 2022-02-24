@@ -6,7 +6,7 @@
  */
 
 export default function header() {
-  return `<img src="./assets/logo/logo.png"/>
+  return `<img src="./assets/logo/logo192.png"/>
     <div>JSS-01 — JavaScript Software Synthesizer</div>`;
 }
 

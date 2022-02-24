@@ -19,18 +19,17 @@ body {
   justify-content: baseline;
   color: #01004c;
   font-weight: 600;
-  font-size: 1.15rem;
-  width: 100%;
+  font-size: 1rem;
   align-items: center;
   margin: 1rem 1rem 2rem 1rem;
 }
 #header img {
-  max-height: 2.3rem;
+  max-height: 3rem;
   pointer-events: none;
-  margin-right: 1.2rem;
+  margin-right: 0.8rem;
 }
 #header div {
-  margin-top: 0.8rem;
+  margin-top: 0.65rem;
 }
 
 #synth {

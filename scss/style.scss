@@ -9,8 +9,8 @@ $green: rgb(3, 214, 146);
 $yellow: rgb(254, 188, 44);
 
 /* SIZES */
-$header-size: 2.3rem;
-$header-font: $header-size / 2;
+$header-size: 3rem;
+$header-font: $header-size / 3;
 
 html,
 body {
@@ -31,18 +31,18 @@ body {
   color: $blue;
   font-weight: 600;
   font-size: $header-font;
-  width: 100%;
+  // width: 100%;
   align-items: center;
   margin: 1rem 1rem 2rem 1rem;
 
   img {
     max-height: $header-size;
     pointer-events: none;
-    margin-right: 1.2rem;
+    margin-right: 0.8rem;
   }
 
   div {
-    margin-top: 0.8rem;
+    margin-top: 0.65rem;
   }
 }
 
