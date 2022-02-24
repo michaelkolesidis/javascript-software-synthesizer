@@ -286,10 +286,10 @@ let slider6 = Nexus.Add.Slider("#slider6", {
 slider6.colorize("accent", "rgb(254,188,44)");
 slider6.colorize("fill", "rgb(230, 230, 230)");
 
+
 // ------------------------
 // POSITIONS
 // ------------------------
-
 var position1 = new Nexus.Position("#position1", {
   size: [200, 200],
   mode: "absolute", // "absolute" or "relative"
