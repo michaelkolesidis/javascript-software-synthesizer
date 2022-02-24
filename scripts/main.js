@@ -8,7 +8,13 @@
 import Header from "./header.js";
 import midiToNoteString from "./midiToNoteString.js";
 
-console.log(Header());
+
+// ------------------------
+// HEADER
+// ------------------------
+const header = document.getElementById("header");
+header.innerHTML = Header();
+
 
 // ------------------------
 // KEYBOARD
