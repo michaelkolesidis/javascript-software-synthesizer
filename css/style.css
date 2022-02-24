@@ -30,6 +30,7 @@ body {
 }
 #header div {
   margin-top: 0.65rem;
+  letter-spacing: -0.03rem;
 }
 
 #synth {
