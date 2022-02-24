@@ -383,7 +383,7 @@ oscilloscope.colorize("accent", "rgb(1, 0, 76)");
 oscilloscope.colorize("fill", "rgb(230, 230, 230)");
 
 // ------------------------
-// SPECTROGRAM
+// Spectrogram
 // ------------------------
 var spectrogram = new Nexus.Spectrogram("#spectrogram", {
   size: [300, 150],
