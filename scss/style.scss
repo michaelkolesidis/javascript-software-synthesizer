@@ -61,12 +61,12 @@ body {
 
 #synth {
   margin: auto;
+}
 
-  #displays {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  }
+#displays {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 #envelopes {
