@@ -21,7 +21,6 @@ header.innerHTML = Header();
 // ------------------------
 // KEYBOARD
 // ------------------------
-
 let keyboard = new Nexus.Piano("#keyboard", {
   size: [1200, 100],
   mode: "button", // 'button', 'toggle', or 'impulse'
@@ -30,12 +29,12 @@ let keyboard = new Nexus.Piano("#keyboard", {
 });
 keyboard.colorize("accent", "rgb(180, 180, 180)");
 
-let intViewportWidth = window.innerWidth;
+// let intViewportWidth = window.innerWidth;
+
 
 // ------------------------
 // SYNTH
 // ------------------------
-
 // const Tone = require('Tone');
 // const gain = new Tone.Gain(0.5).toMaster();
 // let synth = new Tone.Synth().connect(gain);
@@ -59,10 +58,10 @@ keyboard.on("change", (note) => {
   // if(on && note === 72) triggerKeyPress('C5')
 });
 
+
 // ------------------------
 // ENVELOPES
 // ------------------------
-
 var envelope1 = new Nexus.Envelope("#envelope1", {
   size: [300, 150],
   noNewPoints: false,
@@ -138,10 +137,10 @@ var envelope3 = new Nexus.Envelope("#envelope3", {
 envelope3.colorize("accent", "rgb(254,188,44)");
 envelope3.colorize("fill", "rgb(230, 230, 230)");
 
+
 // ------------------------
 //TOGGLES
 // ------------------------
-
 var toggle1 = new Nexus.Toggle("#toggle1", {
   size: [40, 20],
   state: false,
