@@ -12,7 +12,6 @@ import midiToNoteString from "./midiToNoteString.js";
 
 // const root = document.getElementById("root");
 
-
 // ------------------------
 // HEADER
 // ------------------------
@@ -31,36 +30,27 @@ let keyboard = new Nexus.Piano("#keyboard", {
 });
 keyboard.colorize("accent", "rgb(180, 180, 180)");
 
-// let intViewportWidth = window.innerWidth;
-
 
 // ------------------------
 // SYNTH
 // ------------------------
-// const Tone = require('Tone');
-// const gain = new Tone.Gain(0.5).toMaster();
-// let synth = new Tone.Synth().connect(gain);
-// export default synth;
+const synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
+console.log(synth.maxPolyphony);
+synth.maxPolyphony = 64;
+console.log(synth.maxPolyphony);
 
-const synth = new Tone.FMSynth().toDestination();
-console.log(synth)
-// synth.triggerAttack('C4');
-
-// const triggerKeyPress = note => {
-//   synth.triggerAttackRelease(note, '8n')
-// }
+let notes = [];
 
 keyboard.on("change", (note) => {
   if (note.state) {
     synth.triggerAttack(midiToNoteString(note.note));
+    notes.push(midiToNoteString(note.note));
+    console.log(notes);
   } else {
-    synth.triggerRelease();
+    synth.triggerRelease(notes);
+    console.log("released");
   }
-
-  // let note = event.note, on = event.state
-  // if(on && note === 72) triggerKeyPress('C5')
 });
-
 
 // ------------------------
 // ENVELOPES
@@ -140,7 +130,6 @@ var envelope3 = new Nexus.Envelope("#envelope3", {
 envelope3.colorize("accent", "rgb(254,188,44)");
 envelope3.colorize("fill", "rgb(230, 230, 230)");
 
-
 // ------------------------
 //TOGGLES
 // ------------------------
@@ -164,7 +153,6 @@ var toggle3 = new Nexus.Toggle("#toggle3", {
 });
 toggle3.colorize("accent", "rgb(254,188,44)");
 toggle3.colorize("fill", "rgb(230, 230, 230)");
-
 
 // ------------------------
 // DIALS
@@ -223,7 +211,6 @@ var number3 = new Nexus.Number("#number3");
 number3.link(dial3);
 number3.colorize("accent", "rgb(254,188,44)");
 number3.colorize("fill", "rgb(230, 230, 230)");
-
 
 // ------------------------
 // SLIDERS
@@ -288,7 +275,6 @@ let slider6 = Nexus.Add.Slider("#slider6", {
 slider6.colorize("accent", "rgb(254,188,44)");
 slider6.colorize("fill", "rgb(230, 230, 230)");
 
-
 // ------------------------
 // POSITIONS
 // ------------------------
@@ -337,7 +323,6 @@ var position3 = new Nexus.Position("#position3", {
 position3.colorize("accent", "rgb(254,188,44)");
 position3.colorize("fill", "rgb(230, 230, 230)");
 
-
 // ------------------------
 // MIDI
 // ------------------------
@@ -357,58 +342,49 @@ function onEnabled() {
     });
   }
 
-  const mySynth = WebMidi.inputs[1]; 
+  const mySynth = WebMidi.inputs[1];
   // It uses input 1 by default - make it selectable by use
   // const mySynth = WebMidi.getInputByName("TYPE NAME HERE!")
 
-
   mySynth.channels[1].addListener("noteon", (e) => {
-
     synth.triggerAttack(midiToNoteString(e.data[1]));
 
-    midiDisplay.innerHTML = 
-    `<p style="font-size: 0.9rem; font-weight: 400;">MIDI note played: ${e.data[1]}<br>
+    midiDisplay.innerHTML = `<p style="font-size: 0.9rem; font-weight: 400;">MIDI note played: ${
+      e.data[1]
+    }<br>
     Note name: ${midiToNoteString(e.data[1])}</p>`;
   });
 
   mySynth.channels[1].addListener("noteoff", () => {
-
     synth.triggerRelease();
-
   });
 }
-
 
 // ------------------------
 // OSCILLOSCOPE
 // ------------------------
-var oscilloscope = new Nexus.Oscilloscope('#oscilloscope',{
-  'size': [300,150]
-})
-oscilloscope.connect(synth)
+var oscilloscope = new Nexus.Oscilloscope("#oscilloscope", {
+  size: [300, 150],
+});
+oscilloscope.connect(synth);
 oscilloscope.colorize("accent", "rgb(1, 0, 76)");
 oscilloscope.colorize("fill", "rgb(230, 230, 230)");
-
 
 // ------------------------
 // SPECTROGRAM
 // ------------------------
-var spectrogram = new Nexus.Spectrogram('#spectrogram',{
-  'size': [300,150]
-})
+var spectrogram = new Nexus.Spectrogram("#spectrogram", {
+  size: [300, 150],
+});
 spectrogram.connect(synth);
 spectrogram.colorize("accent", "rgb(1, 0, 76)");
 spectrogram.colorize("fill", "rgb(230, 230, 230)");
-
 
 // ------------------------
 // FOOTER
 // ------------------------
 const footer = document.getElementById("footer");
 footer.innerHTML = Footer();
-
-
-
 
 // ------------------------
 // OTHER IDEAS / ABORTED
@@ -459,4 +435,3 @@ footer.innerHTML = Footer();
 // then, to remove them tlater
 //   dial.destroy();
 //  slider.destroy();
-
