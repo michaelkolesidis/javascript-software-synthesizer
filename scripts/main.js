@@ -5,12 +5,18 @@
  *
  */
 
+
+
 import Header from "./header.js";
 import Footer from "./footer.js";
 
 import midiToNoteString from "./midiToNoteString.js";
 
-// const root = document.getElementById("root");
+
+// Welcome message in console
+console.log("%c * JSS-01 | JavaScript Software Synthesizer *", "background: rgb(230, 230, 230); color: rgb(1, 0, 76); font-weight: 600; font-size: 12px ")
+console.log("Since you are here you might want to check our project in GitHub, have a look at the source code, find bugs, submit issues, create pull requests and become part of out community!\nhttps://github.com/michaelkolesidis/javascript-software-synthesizer")
+
 
 // ------------------------
 // HEADER
@@ -39,8 +45,11 @@ console.log(synth.maxPolyphony);
 synth.maxPolyphony = 64;
 console.log(synth.maxPolyphony);
 
-let notes = [];
 
+// ------------------------
+// SYNTH KEYBOARD PLAYBILITY IMPLEMENTATION
+// ------------------------
+let notes = []; // For polyphonic synths
 keyboard.on("change", (note) => {
   if (note.state) {
     synth.triggerAttack(midiToNoteString(note.note));
@@ -48,9 +57,11 @@ keyboard.on("change", (note) => {
     console.log(notes);
   } else {
     synth.triggerRelease(notes);
+    notes = notes.filter(e => e !== midiToNoteString(note.note))
     console.log("released");
   }
 });
+
 
 // ------------------------
 // ENVELOPES
@@ -324,7 +335,7 @@ position3.colorize("accent", "rgb(254,188,44)");
 position3.colorize("fill", "rgb(230, 230, 230)");
 
 // ------------------------
-// MIDI
+// MIDI IMPLEMENTATION & MIDI DISPLAY
 // ------------------------
 const midiDisplay = document.getElementById("midi-display");
 
@@ -348,15 +359,15 @@ function onEnabled() {
 
   mySynth.channels[1].addListener("noteon", (e) => {
     synth.triggerAttack(midiToNoteString(e.data[1]));
-
+    // notes.push(midiToNoteString(e.data[1]));
     midiDisplay.innerHTML = `<p style="font-size: 0.9rem; font-weight: 400;">MIDI note played: ${
       e.data[1]
     }<br>
     Note name: ${midiToNoteString(e.data[1])}</p>`;
   });
 
-  mySynth.channels[1].addListener("noteoff", () => {
-    synth.triggerRelease();
+  mySynth.channels[1].addListener("noteoff", (e) => {
+    synth.triggerRelease(midiToNoteString(e.data[1]));
   });
 }
 
