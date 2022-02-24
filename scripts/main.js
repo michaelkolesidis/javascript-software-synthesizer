@@ -43,6 +43,7 @@ keyboard.colorize("accent", "rgb(180, 180, 180)");
 // export default synth;
 
 const synth = new Tone.Synth().toDestination();
+console.log(synth)
 // synth.triggerAttack('C4');
 
 // const triggerKeyPress = note => {
@@ -458,3 +459,4 @@ footer.innerHTML = Footer();
 // then, to remove them tlater
 //   dial.destroy();
 //  slider.destroy();
+
