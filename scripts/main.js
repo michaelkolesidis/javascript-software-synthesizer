@@ -335,10 +335,10 @@ var position3 = new Nexus.Position("#position3", {
 position3.colorize("accent", "rgb(254,188,44)");
 position3.colorize("fill", "rgb(230, 230, 230)");
 
+
 // ------------------------
 // MIDI
 // ------------------------
-
 const midiDisplay = document.getElementById("midi-display");
 
 // Enable WebMidi.js and trigger the onEnabled() function when ready.
@@ -376,6 +376,7 @@ function onEnabled() {
   });
 }
 
+
 // ------------------------
 // OSCILLOSCOPE
 // ------------------------
@@ -403,6 +404,8 @@ spectrogram.colorize("fill", "rgb(230, 230, 230)");
 // ------------------------
 const footer = document.getElementById("footer");
 footer.innerHTML = Footer();
+
+
 
 
 // ------------------------
