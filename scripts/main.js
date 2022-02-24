@@ -393,7 +393,7 @@ spectrogram.colorize("accent", "rgb(1, 0, 76)");
 spectrogram.colorize("fill", "rgb(230, 230, 230)");
 
 // ------------------------
-// FOOTER
+// Footer
 // ------------------------
 const footer = document.getElementById("footer");
 footer.innerHTML = Footer();
