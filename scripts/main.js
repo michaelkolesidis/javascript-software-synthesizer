@@ -376,12 +376,27 @@ function onEnabled() {
   });
 }
 
+// ------------------------
+// OSCILLOSCOPE
+// ------------------------
 var oscilloscope = new Nexus.Oscilloscope('#oscilloscope',{
   'size': [300,150]
 })
 oscilloscope.connect(synth)
 oscilloscope.colorize("accent", "rgb(1, 0, 76)");
 oscilloscope.colorize("fill", "rgb(230, 230, 230)");
+
+
+// ------------------------
+// SPECTROGRAM
+// ------------------------
+var spectrogram = new Nexus.Spectrogram('#spectrogram',{
+  'size': [300,150]
+})
+spectrogram.connect(synth);
+spectrogram.colorize("accent", "rgb(1, 0, 76)");
+spectrogram.colorize("fill", "rgb(230, 230, 230)");
+
 
 // ------------------------
 // FOOTER
