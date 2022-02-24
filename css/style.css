@@ -17,6 +17,14 @@ body {
   background-repeat: no-repeat;
 }
 
+::-moz-selection {
+  background: #b4b4b4;
+}
+
+::selection {
+  background: #b4b4b4;
+}
+
 #header {
   display: flex;
   flex-direction: row;

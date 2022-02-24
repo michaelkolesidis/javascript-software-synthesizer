@@ -2,6 +2,7 @@
 
 /* COLORS */
 $black: rgb(51, 51, 51);
+$dark-gray: rgb(180, 180, 180);
 $gray: rgb(230, 230, 230);
 $blue: rgb(1, 0, 76);
 $cyan: rgb(35, 178, 254);
@@ -10,7 +11,7 @@ $yellow: rgb(254, 188, 44);
 
 /* SIZES */
 $header-size: 3rem;
-$header-font: $header-size / 3;
+$header-font: calc($header-size / 3);
 
 * {
   box-sizing: border-box;
@@ -26,6 +27,14 @@ body {
   background-attachment: fixed;
   background-size: 20%;
   background-repeat: no-repeat;
+}
+
+::-moz-selection {
+  background: $dark-gray;
+}
+
+::selection {
+  background: $dark-gray;
 }
 
 #header {
