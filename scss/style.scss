@@ -18,6 +18,11 @@ $header-font: calc($header-size / 3);
   box-sizing: border-box;
 }
 
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
 html,
 body {
   margin: 0;
@@ -147,6 +152,9 @@ body {
   font-weight: 500;
   font-size: 0.8rem;
   margin: 3rem 0 0 1rem;
+  a:hover {
+    text-decoration: underline;
+  }
 }
 
 // Reorganization
