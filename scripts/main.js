@@ -49,7 +49,6 @@ const synth = new Tone.Synth().toDestination();
 keyboard.on("change", (note) => {
   if (note.state) {
     synth.triggerAttack(midiToNoteString(note.note));
-    console.log(midiToNoteString(note.note));
   } else {
     synth.triggerRelease();
   }
