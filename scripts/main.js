@@ -222,10 +222,10 @@ number3.link(dial3);
 number3.colorize("accent", "rgb(254,188,44)");
 number3.colorize("fill", "rgb(230, 230, 230)");
 
+
 // ------------------------
 // SLIDERS
 // ------------------------
-
 let slider1 = Nexus.Add.Slider("#slider1", {
   size: [20, 120],
   min: 0,
