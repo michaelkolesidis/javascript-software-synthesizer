@@ -37,6 +37,12 @@ body {
   letter-spacing: -0.03rem;
 }
 
+.label p {
+  font-weight: 600;
+  margin: 0 0 0.3rem 0;
+  font-size: 0.9rem;
+}
+
 #synth {
   min-width: 60%;
   margin: auto;
@@ -46,6 +52,7 @@ body {
   align-items: center;
   justify-content: space-around;
 }
+
 #envelopes {
   display: flex;
   align-items: center;
@@ -94,10 +101,11 @@ body {
   margin: 0 auto;
 }
 
-.label p {
-  font-weight: 600;
-  margin: 0 0 0.3rem 0;
-  font-size: 0.9rem;
+#footer {
+  color: #01004c;
+  font-weight: 500;
+  font-size: 0.8rem;
+  margin: 3rem 0 0 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

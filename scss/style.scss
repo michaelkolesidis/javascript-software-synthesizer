@@ -47,7 +47,15 @@ body {
 
   div {
     margin-top: 0.65rem;
-    letter-spacing: -0.03rem; 
+    letter-spacing: -0.03rem;
+  }
+}
+
+.label {
+  p {
+    font-weight: 600;
+    margin: 0 0 0.3rem 0;
+    font-size: 0.9rem;
   }
 }
 
@@ -56,16 +64,12 @@ body {
   // max-width: 70%;
   margin: auto;
 
-  #displays{
+  #displays {
     display: flex;
     align-items: center;
     // margin: auto;
     // justify-items: center;
-    justify-content:space-around;
-  }
-
-  #oscilloscope {
-    // margin-left: 4rem;
+    justify-content: space-around;
   }
 }
 
@@ -106,16 +110,11 @@ body {
 }
 
 #midi-display {
-  // width: 20rem;
-  // height: 3.2rem;
   width: 300px;
   height: 150px;
   padding: 1rem;
-  // margin: 1rem;
-  // border: 1px solid $black;
   background: $gray;
   color: $black;
-  // line-height: 0.05rem;
 }
 
 #keyboard {
@@ -123,17 +122,17 @@ body {
 }
 
 #keyboard svg:first-of-type {
-  // border-radius: 0 0 0.3rem 0.3rem; 
+  // border-radius: 0 0 0.3rem 0.3rem;
   // border: 0.01rem solid rgb(51, 51, 51);
   // margin: 3px;
-  // background: white;
+  // background: black;
 }
 
-
-.label {
-  p {
-    font-weight: 600;
-    margin: 0 0 0.3rem 0;
-    font-size: 0.9rem;
-  }
+#footer {
+  color: $blue;
+  font-weight: 500;
+  font-size: 0.8rem;
+  // position:absolute;
+  // bottom: 0;
+  margin: 3rem 0 0 1rem;
 }

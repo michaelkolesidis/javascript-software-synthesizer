@@ -6,6 +6,8 @@
  */
 
 import Header from "./header.js";
+import Footer from "./footer.js";
+
 import midiToNoteString from "./midiToNoteString.js";
 
 
@@ -380,6 +382,13 @@ var oscilloscope = new Nexus.Oscilloscope('#oscilloscope',{
 oscilloscope.connect(synth)
 oscilloscope.colorize("accent", "rgb(1, 0, 76)");
 oscilloscope.colorize("fill", "rgb(230, 230, 230)");
+
+// ------------------------
+// FOOTER
+// ------------------------
+const footer = document.getElementById("footer");
+footer.innerHTML = Footer();
+
 
 
 // ------------------------
