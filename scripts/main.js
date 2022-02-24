@@ -12,21 +12,22 @@ import Footer from "./footer.js";
 
 import midiToNoteString from "./midiToNoteString.js";
 
-
-// Welcome message in console
+// ------------------------
+// Welcome Message in Console
+// ------------------------
 console.log("%c * JSS-01 | JavaScript Software Synthesizer *", "background: rgb(230, 230, 230); color: rgb(1, 0, 76); font-weight: 600; font-size: 12px ")
 console.log("Since you are here you might want to check our project at GitHub, have a look at the source code, find bugs, submit issues, create pull requests and become part of out community!\nhttps://github.com/michaelkolesidis/javascript-software-synthesizer")
 
 
 // ------------------------
-// HEADER
+// Header
 // ------------------------
 const header = document.getElementById("header");
 header.innerHTML = Header();
 
 
 // ------------------------
-// KEYBOARD
+// Keyboard
 // ------------------------
 let keyboard = new Nexus.Piano("#keyboard", {
   size: [1200, 100],
@@ -38,7 +39,7 @@ keyboard.colorize("accent", "rgb(180, 180, 180)");
 
 
 // ------------------------
-// SYNTH
+// Synthesizer
 // ------------------------
 const synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
 console.log(synth.maxPolyphony);
@@ -47,7 +48,7 @@ console.log(synth.maxPolyphony);
 
 
 // ------------------------
-// SYNTH KEYBOARD PLAYBILITY IMPLEMENTATION
+// Synthesizer On-Screen Keyboard Playbility Implementation
 // ------------------------
 let notes = []; // For polyphonic synths
 keyboard.on("change", (note) => {
@@ -56,7 +57,7 @@ keyboard.on("change", (note) => {
     notes.push(midiToNoteString(note.note));
     console.log(notes);
   } else {
-    synth.triggerRelease(notes);
+    synth.triggerRelease(notes); // Polymphinic synths need a note or an array of notes
     notes = notes.filter(e => e !== midiToNoteString(note.note))
     console.log("released");
   }
@@ -335,7 +336,7 @@ position3.colorize("accent", "rgb(254,188,44)");
 position3.colorize("fill", "rgb(230, 230, 230)");
 
 // ------------------------
-// MIDI IMPLEMENTATION & MIDI DISPLAY
+// MIDI Implementation & MIDI Display
 // ------------------------
 const midiDisplay = document.getElementById("midi-display");
 
@@ -372,7 +373,7 @@ function onEnabled() {
 }
 
 // ------------------------
-// OSCILLOSCOPE
+// Oscilloscope
 // ------------------------
 var oscilloscope = new Nexus.Oscilloscope("#oscilloscope", {
   size: [300, 150],
