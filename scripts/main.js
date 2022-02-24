@@ -405,7 +405,6 @@ const footer = document.getElementById("footer");
 footer.innerHTML = Footer();
 
 
-
 // ------------------------
 // OTHER IDEAS / ABORTED
 // ------------------------
