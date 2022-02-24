@@ -86,13 +86,18 @@ body {
   width: 300px;
   height: 150px;
   padding: 1rem;
-  margin: 1rem;
   background: #e6e6e6;
   color: #333333;
 }
 
 #keyboard {
   margin: 0 auto;
+}
+
+.label p {
+  font-weight: 600;
+  margin: 0 0 0.3rem 0;
+  font-size: 0.9rem;
 }
 
 /*# sourceMappingURL=style.css.map */
