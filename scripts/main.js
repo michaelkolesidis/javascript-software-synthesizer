@@ -42,7 +42,7 @@ keyboard.colorize("accent", "rgb(180, 180, 180)");
 // let synth = new Tone.Synth().connect(gain);
 // export default synth;
 
-const synth = new Tone.Synth().toDestination();
+const synth = new Tone.FMSynth().toDestination();
 console.log(synth)
 // synth.triggerAttack('C4');
 
@@ -367,7 +367,7 @@ function onEnabled() {
     synth.triggerAttack(midiToNoteString(e.data[1]));
 
     midiDisplay.innerHTML = 
-    `<p>MIDI note played: ${e.data[1]}<br>
+    `<p style="font-size: 0.9rem; font-weight: 400;">MIDI note played: ${e.data[1]}<br>
     Note name: ${midiToNoteString(e.data[1])}</p>`;
   });
 

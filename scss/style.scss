@@ -13,7 +13,6 @@ $yellow: rgb(254, 188, 44);
 $header-size: 3rem;
 $header-font: calc($header-size / 3);
 
-
 /* General Rules */
 * {
   box-sizing: border-box;
@@ -125,6 +124,9 @@ body {
   padding: 1rem;
   background: $gray;
   color: $black;
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+
 }
 
 #keyboard {
