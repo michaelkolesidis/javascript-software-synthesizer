@@ -399,7 +399,7 @@ const footer = document.getElementById("footer");
 footer.innerHTML = Footer();
 
 // ------------------------
-// OTHER IDEAS / ABORTED
+// Other Ideas / Aborted
 // ------------------------
 
 // Implement global color for NexusUI elements
