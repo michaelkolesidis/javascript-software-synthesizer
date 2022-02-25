@@ -85,6 +85,7 @@ const shift = new Tone.FrequencyShifter(42).toDestination(); // The incoming sig
 // const delay = new Tone.FeedbackDelay(0.5);
 
 // MidSideEffect
+// https://tonejs.github.io/docs/14.7.77/MidSideEffect
 
 // Phaser .connect(phaser)
 const phaser = new Tone.Phaser({
@@ -97,16 +98,22 @@ const phaser = new Tone.Phaser({
 const pingPong = new Tone.PingPongDelay("4n", 0.2).toDestination();
 
 // PitchShift
+// https://tonejs.github.io/docs/14.7.77/PitchShift
 
 // Reverb .connect(reverb)
 const reverb = new Tone.Reverb(1).toDestination(); // seconds - Check implementation
+// https://tonejs.github.io/docs/14.7.77/Reverb - you have to wait until
 
 // StereoWidener
+// https://tonejs.github.io/docs/14.7.77/StereoWidener
+
+// Tremolo
+const tremolo = new Tone.Tremolo(9, 0.75).toDestination().start(); // frequency (rate), depth
 
 // .connect(autoFilter).connect(crusher).connect(cheby).connect(chorus).connect(dist).connect(feedbackDelay).connect(shift).connect(phaser).connect(PingPong)
 // .toDestination()
 
-const synth = new Tone.PolySynth(Tone.FMSynth).toDestination()
+const synth = new Tone.PolySynth(Tone.FMSynth).connect(tremolo);
 synth.maxPolyphony = 128;
 
 const lowpass = new Tone.Filter(800, "lowpass");
