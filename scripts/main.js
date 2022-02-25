@@ -10,6 +10,7 @@ import Footer from "./footer.js";
 
 import midiToNoteString from "./midiToNoteString.js";
 
+
 // ------------------------
 // Welcome Message in Console
 // ------------------------
@@ -21,15 +22,13 @@ console.log(
   "Since you are here you might want to check our project at GitHub, have a look at the source code, find bugs, submit issues, create pull requests and become part of out community!\nhttps://github.com/michaelkolesidis/javascript-software-synthesizer"
 );
 
-// ------------------------
-// TESTING
-// ------------------------
 
 // ------------------------
 // Header
 // ------------------------
 const header = document.getElementById("header");
 header.innerHTML = Header();
+
 
 // ------------------------
 // Keyboard
@@ -44,17 +43,10 @@ keyboard.colorize("accent", "rgb(180, 180, 180)");
 
 // https://tonejs.github.io/docs/14.7.77/type/Time
 
+
 // ------------------------
 // Effects
 // ------------------------
-
-
-
-
-// ------------------------
-// Synthesizer
-// ------------------------
-
 // AutoFilter .connect(autoFilter)
 const autoFilter = new Tone.AutoFilter("4n").toDestination().start();
 
@@ -119,12 +111,17 @@ const vibrato = new Tone.Vibrato(9, 0.9).toDestination(); // frequency, depth [0
 // .connect(autoFilter).connect(crusher).connect(cheby).connect(chorus).connect(dist).connect(feedbackDelay).connect(shift).connect(phaser).connect(PingPong)
 // .toDestination()
 
+
+// ------------------------
+// Synthesizer
+// ------------------------
 const synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
 synth.maxPolyphony = 128;
 
 const lowpass = new Tone.Filter(800, "lowpass");
 const compressor = new Tone.Compressor(-18);
 Tone.Destination.chain(lowpass, compressor);
+
 
 // ------------------------
 // Synthesizer On-Screen Keyboard Playbility Implementation
@@ -139,6 +136,7 @@ keyboard.on("change", (note) => {
     notes = notes.filter((e) => e !== midiToNoteString(note.note));
   }
 });
+
 
 // ------------------------
 // ENVELOPES
