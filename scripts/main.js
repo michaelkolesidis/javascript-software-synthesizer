@@ -69,7 +69,7 @@ const cheby = new Tone.Chebyshev(32).toDestination(); // range:1-100
 const chorus = new Tone.Chorus(4, 2.5, 0.5).toDestination().start(); // frequency delayTime depth
 
 // Distortion .connect(dist)
-const dist = new Tone.Distortion(0).toDestination(); // range:0-1
+const dist = new Tone.Distortion(0.9).toDestination(); // range:0-1
 
 // FeedbackDelay .connect(feedbackDelay)
 const feedbackDelay = new Tone.FeedbackDelay("8n", 0.5).toDestination();
@@ -78,12 +78,23 @@ const feedbackDelay = new Tone.FeedbackDelay("8n", 0.5).toDestination();
 // const freeverb = new Tone.Freeverb().toDestination();
 // freeverb.dampening = 1000;
 
-// .connect(autoFilter).connect(crusher).connect(cheby).connect(chorus).connect(dist).connect(feedbackDelay)
+// FrequencyShifter .connect(shift)
+const shift = new Tone.FrequencyShifter(42).toDestination(); // incoming signal is shifted by this frequency value
+
+// JCReverb .chain(delay, reverb)
+// const reverb = new Tone.JCReverb(0.4).toDestination();
+// const delay = new Tone.FeedbackDelay(0.5);
+
+
+// .connect(autoFilter).connect(crusher).connect(cheby).connect(chorus).connect(dist).connect(feedbackDelay).connect(shift)
 // .toDestination()
 
-const synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
+const synth = new Tone.PolySynth(Tone.FMSynth).chain(delay, reverb);
 synth.maxPolyphony = 128;
 
+const lowpass = new Tone.Filter(800, "lowpass");
+const compressor = new Tone.Compressor(-18);
+Tone.Destination.chain(lowpass, compressor);
 
 // ------------------------
 // Synthesizer On-Screen Keyboard Playbility Implementation
