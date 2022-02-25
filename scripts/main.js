@@ -43,24 +43,39 @@ let keyboard = new Nexus.Piano("#keyboard", {
 });
 keyboard.colorize("accent", "rgb(180, 180, 180)");
 
+// ------------------------
+// Effects
+// ------------------------
 
 // ------------------------
 // Synthesizer
 // ------------------------
+
 // AutoFilter
 const autoFilter = new Tone.AutoFilter("4n").toDestination().start();
 
+// AutoPanner
+// AutoWah
+
+// BitCrusher
+const crusher = new Tone.BitCrusher(4).toDestination(); // range:1-16, step:1
+
+// Chebyshev
+const cheby = new Tone.Chebyshev(32).toDestination(); // range:1-100
+
+// Chorus
+const chorus = new Tone.Chorus(4, 2.5, 0.5).toDestination().start(); // frequency delayTime depth
 
 // Distortion
-const dist = new Tone.Distortion(0).toDestination();
-// Chorus
-const chorus = new Tone.Chorus(4, 2.5, 0.5).toDestination().start();
+const dist = new Tone.Distortion(0).toDestination(); // range:0-1
 
-const crusher = new Tone.BitCrusher(4).toDestination();
+// FeedbackDelay
+const feedbackDelay = new Tone.FeedbackDelay("8n", 0.5).toDestination();
 
-// .connect(autoFilter).connect(chorus).connect(dist).connect(crusher)
+// .connect(autoFilter).connect(crusher).connect(cheby).connect(chorus).connect(dist)
+// .toDestination()
 
-const synth = new Tone.PolySynth(Tone.FMSynth).connect(crusher);
+const synth = new Tone.PolySynth(Tone.FMSynth).connect(feedbackDelay);
 synth.maxPolyphony = 64;
 
 
@@ -407,6 +422,16 @@ var spectrogram = new Nexus.Spectrogram("#spectrogram", {
 spectrogram.connect(Tone.getDestination());
 spectrogram.colorize("accent", "rgb(1, 0, 76)");
 spectrogram.colorize("fill", "rgb(230, 230, 230)");
+
+// ------------------------
+// Meter
+// ------------------------
+var meter = new Nexus.Meter('#meter', {
+  size: [40,150]
+})
+meter.connect(Tone.getDestination())
+meter.colorize("accent", "rgb(1, 0, 76)");
+meter.colorize("fill", "rgb(230, 230, 230)");
 
 // ------------------------
 // Footer
