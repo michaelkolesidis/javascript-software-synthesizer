@@ -53,11 +53,9 @@ keyboard.on("change", (note) => {
   if (note.state) {
     synth.triggerAttack(midiToNoteString(note.note));
     notes.push(midiToNoteString(note.note));
-    console.log(notes);
   } else {
     synth.triggerRelease(notes); // Polymphinic synths need a note or an array of notes
     notes = notes.filter(e => e !== midiToNoteString(note.note))
-    console.log("released");
   }
 });
 
