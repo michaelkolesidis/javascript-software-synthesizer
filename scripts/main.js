@@ -13,24 +13,23 @@ import midiToNoteString from "./midiToNoteString.js";
 // ------------------------
 // Welcome Message in Console
 // ------------------------
-console.log("%c * JSS-01 | JavaScript Software Synthesizer *", "background: rgb(230, 230, 230); color: rgb(1, 0, 76); font-weight: 600; font-size: 12px ")
-console.log("Since you are here you might want to check our project at GitHub, have a look at the source code, find bugs, submit issues, create pull requests and become part of out community!\nhttps://github.com/michaelkolesidis/javascript-software-synthesizer")
+console.log(
+  "%c * JSS-01 | JavaScript Software Synthesizer *",
+  "background: rgb(230, 230, 230); color: rgb(1, 0, 76); font-weight: 600; font-size: 12px "
+);
+console.log(
+  "Since you are here you might want to check our project at GitHub, have a look at the source code, find bugs, submit issues, create pull requests and become part of out community!\nhttps://github.com/michaelkolesidis/javascript-software-synthesizer"
+);
 
 // ------------------------
 // TESTING
 // ------------------------
-
-
-
-
-
 
 // ------------------------
 // Header
 // ------------------------
 const header = document.getElementById("header");
 header.innerHTML = Header();
-
 
 // ------------------------
 // Keyboard
@@ -79,17 +78,35 @@ const feedbackDelay = new Tone.FeedbackDelay("8n", 0.5).toDestination();
 // freeverb.dampening = 1000;
 
 // FrequencyShifter .connect(shift)
-const shift = new Tone.FrequencyShifter(42).toDestination(); // incoming signal is shifted by this frequency value
+const shift = new Tone.FrequencyShifter(42).toDestination(); // The incoming signal is shifted by this frequency value
 
 // JCReverb .chain(delay, reverb)
 // const reverb = new Tone.JCReverb(0.4).toDestination();
 // const delay = new Tone.FeedbackDelay(0.5);
 
+// MidSideEffect
 
-// .connect(autoFilter).connect(crusher).connect(cheby).connect(chorus).connect(dist).connect(feedbackDelay).connect(shift)
+// Phaser .connect(phaser)
+const phaser = new Tone.Phaser({
+  frequency: 15, // The speed of the phasing
+  octaves: 5, // The octaves of the effect
+  baseFrequency: 1000, // The base frequency of the filters
+}).toDestination();
+
+// PingPongDelay .connect(PingPong)
+const pingPong = new Tone.PingPongDelay("4n", 0.2).toDestination();
+
+// PitchShift
+
+// Reverb .connect(reverb)
+const reverb = new Tone.Reverb(1).toDestination(); // seconds - Check implementation
+
+// StereoWidener
+
+// .connect(autoFilter).connect(crusher).connect(cheby).connect(chorus).connect(dist).connect(feedbackDelay).connect(shift).connect(phaser).connect(PingPong)
 // .toDestination()
 
-const synth = new Tone.PolySynth(Tone.FMSynth).chain(delay, reverb);
+const synth = new Tone.PolySynth(Tone.FMSynth).toDestination()
 synth.maxPolyphony = 128;
 
 const lowpass = new Tone.Filter(800, "lowpass");
@@ -106,10 +123,9 @@ keyboard.on("change", (note) => {
     notes.push(midiToNoteString(note.note));
   } else {
     synth.triggerRelease(notes); // Polymphinic synths need a note or an array of notes
-    notes = notes.filter(e => e !== midiToNoteString(note.note))
+    notes = notes.filter((e) => e !== midiToNoteString(note.note));
   }
 });
-
 
 // ------------------------
 // ENVELOPES
@@ -403,7 +419,7 @@ function onEnabled() {
 
   const mySynth = WebMidi.inputs[1];
   // It uses input 1 by default - make it selectable by user
-  // In Linux input 0 is occupied bt Midi Through Port-0 
+  // In Linux input 0 is occupied bt Midi Through Port-0
   // const mySynth = WebMidi.getInputByName("TYPE NAME HERE!")
 
   mySynth.channels[1].addListener("noteon", (e) => {
@@ -443,10 +459,10 @@ spectrogram.colorize("fill", "rgb(230, 230, 230)");
 // ------------------------
 // Meter
 // ------------------------
-var meter = new Nexus.Meter('#meter', {
-  size: [40,150]
-})
-meter.connect(Tone.getDestination())
+var meter = new Nexus.Meter("#meter", {
+  size: [40, 150],
+});
+meter.connect(Tone.getDestination());
 meter.colorize("accent", "rgb(1, 0, 76)");
 meter.colorize("fill", "rgb(230, 230, 230)");
 
