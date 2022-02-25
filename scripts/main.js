@@ -48,6 +48,9 @@ keyboard.colorize("accent", "rgb(180, 180, 180)");
 // Effects
 // ------------------------
 
+
+
+
 // ------------------------
 // Synthesizer
 // ------------------------
@@ -107,13 +110,16 @@ const reverb = new Tone.Reverb(1).toDestination(); // seconds - Check implementa
 // StereoWidener
 // https://tonejs.github.io/docs/14.7.77/StereoWidener
 
-// Tremolo
-const tremolo = new Tone.Tremolo(9, 0.75).toDestination().start(); // frequency (rate), depth
+// Tremolo .connect(tremolo)
+// const tremolo = new Tone.Tremolo(9, 0.75).toDestination().start(); // frequency (rate), depth
+
+// Vibrato .connect(vibrato)
+const vibrato = new Tone.Vibrato(9, 0.9).toDestination(); // frequency, depth [0-1]
 
 // .connect(autoFilter).connect(crusher).connect(cheby).connect(chorus).connect(dist).connect(feedbackDelay).connect(shift).connect(phaser).connect(PingPong)
 // .toDestination()
 
-const synth = new Tone.PolySynth(Tone.FMSynth).connect(tremolo);
+const synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
 synth.maxPolyphony = 128;
 
 const lowpass = new Tone.Filter(800, "lowpass");
