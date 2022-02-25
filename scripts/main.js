@@ -74,11 +74,15 @@ const dist = new Tone.Distortion(0).toDestination(); // range:0-1
 // FeedbackDelay .connect(feedbackDelay)
 const feedbackDelay = new Tone.FeedbackDelay("8n", 0.5).toDestination();
 
+// Freeverb .connect(freeverb)
+// const freeverb = new Tone.Freeverb().toDestination();
+// freeverb.dampening = 1000;
+
 // .connect(autoFilter).connect(crusher).connect(cheby).connect(chorus).connect(dist).connect(feedbackDelay)
 // .toDestination()
 
-const synth = new Tone.PolySynth(Tone.FMSynth).connect(cheby).connect(feedbackDelay);
-synth.maxPolyphony = 64;
+const synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
+synth.maxPolyphony = 128;
 
 
 // ------------------------
