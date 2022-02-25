@@ -16,6 +16,14 @@ import midiToNoteString from "./midiToNoteString.js";
 console.log("%c * JSS-01 | JavaScript Software Synthesizer *", "background: rgb(230, 230, 230); color: rgb(1, 0, 76); font-weight: 600; font-size: 12px ")
 console.log("Since you are here you might want to check our project at GitHub, have a look at the source code, find bugs, submit issues, create pull requests and become part of out community!\nhttps://github.com/michaelkolesidis/javascript-software-synthesizer")
 
+// ------------------------
+// TESTING
+// ------------------------
+
+
+
+
+
 
 // ------------------------
 // Header
@@ -39,7 +47,20 @@ keyboard.colorize("accent", "rgb(180, 180, 180)");
 // ------------------------
 // Synthesizer
 // ------------------------
-const synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
+// AutoFilter
+const autoFilter = new Tone.AutoFilter("4n").toDestination().start();
+
+
+// Distortion
+const dist = new Tone.Distortion(0).toDestination();
+// Chorus
+const chorus = new Tone.Chorus(4, 2.5, 0.5).toDestination().start();
+
+const crusher = new Tone.BitCrusher(4).toDestination();
+
+// .connect(autoFilter).connect(chorus).connect(dist).connect(crusher)
+
+const synth = new Tone.PolySynth(Tone.FMSynth).connect(crusher);
 synth.maxPolyphony = 64;
 
 
@@ -373,7 +394,7 @@ function onEnabled() {
 var oscilloscope = new Nexus.Oscilloscope("#oscilloscope", {
   size: [300, 150],
 });
-oscilloscope.connect(synth);
+oscilloscope.connect(Tone.getDestination());
 oscilloscope.colorize("accent", "rgb(1, 0, 76)");
 oscilloscope.colorize("fill", "rgb(230, 230, 230)");
 
@@ -383,7 +404,7 @@ oscilloscope.colorize("fill", "rgb(230, 230, 230)");
 var spectrogram = new Nexus.Spectrogram("#spectrogram", {
   size: [300, 150],
 });
-spectrogram.connect(synth);
+spectrogram.connect(Tone.getDestination());
 spectrogram.colorize("accent", "rgb(1, 0, 76)");
 spectrogram.colorize("fill", "rgb(230, 230, 230)");
 
