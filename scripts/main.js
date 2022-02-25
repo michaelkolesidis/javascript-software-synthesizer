@@ -43,6 +43,8 @@ let keyboard = new Nexus.Piano("#keyboard", {
 });
 keyboard.colorize("accent", "rgb(180, 180, 180)");
 
+// https://tonejs.github.io/docs/14.7.77/type/Time
+
 // ------------------------
 // Effects
 // ------------------------
