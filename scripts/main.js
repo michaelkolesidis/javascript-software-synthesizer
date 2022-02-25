@@ -111,17 +111,19 @@ const vibrato = new Tone.Vibrato(9, 0.9).toDestination(); // frequency, depth [0
 // .connect(autoFilter).connect(crusher).connect(cheby).connect(chorus).connect(dist).connect(feedbackDelay).connect(shift).connect(phaser).connect(PingPong)
 // .toDestination()
 
+vibrato.wet.value = 0
 
 // ------------------------
 // Synthesizer
 // ------------------------
-const synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
+const synth = new Tone.PolySynth(Tone.FMSynth).connect(vibrato);
 synth.maxPolyphony = 128;
 
 const lowpass = new Tone.Filter(800, "lowpass");
 const compressor = new Tone.Compressor(-18);
 Tone.Destination.chain(lowpass, compressor);
 
+console.log(vibrato.wet.value)
 
 // ------------------------
 // Synthesizer On-Screen Keyboard Playbility Implementation
