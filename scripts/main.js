@@ -53,31 +53,31 @@ keyboard.colorize("accent", "rgb(180, 180, 180)");
 // Synthesizer
 // ------------------------
 
-// AutoFilter
+// AutoFilter .connect(autoFilter)
 const autoFilter = new Tone.AutoFilter("4n").toDestination().start();
 
 // AutoPanner
 // AutoWah
 
-// BitCrusher
+// BitCrusher .connect(crusher)
 const crusher = new Tone.BitCrusher(4).toDestination(); // range:1-16, step:1
 
-// Chebyshev
+// Chebyshev .connect(cheby)
 const cheby = new Tone.Chebyshev(32).toDestination(); // range:1-100
 
-// Chorus
+// Chorus .connect(chorus)
 const chorus = new Tone.Chorus(4, 2.5, 0.5).toDestination().start(); // frequency delayTime depth
 
-// Distortion
+// Distortion .connect(dist)
 const dist = new Tone.Distortion(0).toDestination(); // range:0-1
 
-// FeedbackDelay
+// FeedbackDelay .connect(feedbackDelay)
 const feedbackDelay = new Tone.FeedbackDelay("8n", 0.5).toDestination();
 
-// .connect(autoFilter).connect(crusher).connect(cheby).connect(chorus).connect(dist)
+// .connect(autoFilter).connect(crusher).connect(cheby).connect(chorus).connect(dist).connect(feedbackDelay)
 // .toDestination()
 
-const synth = new Tone.PolySynth(Tone.FMSynth).connect(feedbackDelay);
+const synth = new Tone.PolySynth(Tone.FMSynth).connect(cheby).connect(feedbackDelay);
 synth.maxPolyphony = 64;
 
 
