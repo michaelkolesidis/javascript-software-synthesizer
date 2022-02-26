@@ -181,7 +181,6 @@ synth.options.envelope.sustain = 1
 synth.options.envelope.release = 0.5
 synth.options.envelope.releaseCurve = "exponential"
 
-
 // const synth = new Tone.MonoSynth({
 //   oscillator: {
 //     type: "sine", //sine, triangle, square
