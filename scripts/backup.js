@@ -112,7 +112,6 @@ const vibrato = new Tone.Vibrato(9, 0.9).toDestination(); // frequency, depth [0
 // .toDestination()
 
 vibrato.wet.value = 0
-console.log(vibrato.wet.value)
 
 
 // ------------------------

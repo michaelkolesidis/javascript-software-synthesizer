@@ -112,7 +112,7 @@ const vibrato = new Tone.Vibrato(9, 0.9).toDestination(); // frequency, depth [0
 // .toDestination()
 
 vibrato.wet.value = 0
-console.log(vibrato.wet.value)
+// console.log(vibrato.wet.value)
 
 
 // ------------------------
@@ -133,10 +133,12 @@ synth.maxPolyphony = 128;
 // const compressor = new Tone.Compressor(-18);
 // Tone.Destination.chain(lowpass, compressor);
 
+// Detune
+// synth.options.detune = 200 // in cents - 100 cents = 8hz = 100 note - if detune 100, C4 becomes C4#, if detune 200 C4 becomes D4 and so on
 
 
 
-console.log(synth.oscillator)
+console.log(synth.options.detune)
 
 // const synth = new Tone.MonoSynth({
 //   oscillator: {
