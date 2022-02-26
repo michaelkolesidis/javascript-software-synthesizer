@@ -112,18 +112,43 @@ const vibrato = new Tone.Vibrato(9, 0.9).toDestination(); // frequency, depth [0
 // .toDestination()
 
 vibrato.wet.value = 0
+console.log(vibrato.wet.value)
+
+
+const ampEnv = new Tone.AmplitudeEnvelope({
+  attack: 0.1,
+  decay: 0.2,
+  sustain: 1.0,
+  release: 0.8
+}).toDestination();
 
 // ------------------------
 // Synthesizer
 // ------------------------
-const synth = new Tone.PolySynth(Tone.FMSynth).connect(vibrato);
+const synth = new Tone.PolySynth(Tone.FMSynth).connect(ampEnv);
 synth.maxPolyphony = 128;
 
-const lowpass = new Tone.Filter(800, "lowpass");
-const compressor = new Tone.Compressor(-18);
-Tone.Destination.chain(lowpass, compressor);
+// const lowpass = new Tone.Filter(800, "lowpass");
+// const compressor = new Tone.Compressor(-18);
+// Tone.Destination.chain(lowpass, compressor);
 
-console.log(vibrato.wet.value)
+
+
+
+console.log(synth.oscillator)
+
+// const synth = new Tone.MonoSynth({
+//   oscillator: {
+//     type: "sine", //sine, triangle, square
+//   },
+//   envelope: {
+//     attack: 2,
+//     decay: 2,
+//     sustain: 1,
+//     release: 1,
+//   },
+// }).toDestination();
+
 
 // ------------------------
 // Synthesizer On-Screen Keyboard Playbility Implementation
@@ -145,7 +170,7 @@ keyboard.on("change", (note) => {
 // ------------------------
 var envelope1 = new Nexus.Envelope("#envelope1", {
   size: [300, 150],
-  noNewPoints: false,
+  noNewPoints: true,
   points: [
     {
       x: 0.1,
