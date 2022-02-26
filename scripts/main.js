@@ -152,9 +152,34 @@ console.log(synth.options.envelope)
 // "bounce"
 // "ripple"
 // "step"
-
+synth.options.envelope.attack = 0.01
+synth.options.envelope.attackCurve = "linear" 
 
 // Decay
+// Range: 0+ to 2
+// The shape of the decay either "linear" or "exponential"
+synth.options.envelope.decay = 0.01
+synth.options.envelope.decayCurve = "linear"
+
+
+// Sustain
+// Range: 0 to 1
+// The percent of the maximum value that the envelope rests at untilthe release is triggered. ()
+synth.options.envelope.sustain = 1
+
+// Release
+// releaseCurce
+// The shape of the release. Can be any of these strings:
+// "linear"
+// "exponential"
+// "sine"
+// "cosine"
+// "bounce"
+// "ripple"
+// "step"
+// Range: 0+ to  * seconds
+synth.options.envelope.release = 0.5
+synth.options.envelope.releaseCurve = "exponential"
 
 
 // const synth = new Tone.MonoSynth({
