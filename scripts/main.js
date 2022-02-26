@@ -115,6 +115,10 @@ vibrato.wet.value = 0
 console.log(vibrato.wet.value)
 
 
+// ------------------------
+// Synthesizer
+// ------------------------
+
 const ampEnv = new Tone.AmplitudeEnvelope({
   attack: 0.1,
   decay: 0.2,
@@ -122,10 +126,7 @@ const ampEnv = new Tone.AmplitudeEnvelope({
   release: 0.8
 }).toDestination();
 
-// ------------------------
-// Synthesizer
-// ------------------------
-const synth = new Tone.PolySynth(Tone.FMSynth).connect(ampEnv);
+const synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
 synth.maxPolyphony = 128;
 
 // const lowpass = new Tone.Filter(800, "lowpass");
