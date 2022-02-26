@@ -129,17 +129,21 @@ vibrato.wet.value = 0
 const synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
 synth.maxPolyphony = 128;
 
-// console.log(synth.options)
 
 // const lowpass = new Tone.Filter(800, "lowpass");
 // const compressor = new Tone.Compressor(-18);
 // Tone.Destination.chain(lowpass, compressor);
 
+
+// ------------------------
 // Detune
+// ------------------------
 // synth.options.detune = 200 // in cents - 100 cents = 8hz = 100 note - if detune 100, C4 becomes C4#, if detune 200 C4 becomes D4 and so on
 
-// Envelope
-console.log(synth.options.envelope)
+
+// ------------------------
+// ADSR Envelope
+// ------------------------
 
 // Attack
 // Range: 0 to 2
@@ -192,6 +196,15 @@ synth.options.envelope.releaseCurve = "exponential"
 //     release: 1,
 //   },
 // }).toDestination();
+
+
+// ------------------------
+// Harmonicity
+// ------------------------
+//  Harmonicity is the ratio between the two voices. A harmonicity of 1 is no change. Harmonicity = 2 means a change of an octave.
+// Range: (defined by me) 1-10
+
+synth.options.harmonicity = 3
 
 
 // ------------------------
