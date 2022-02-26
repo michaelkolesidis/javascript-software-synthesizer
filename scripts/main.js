@@ -119,15 +119,17 @@ vibrato.wet.value = 0
 // Synthesizer
 // ------------------------
 
-const ampEnv = new Tone.AmplitudeEnvelope({
-  attack: 0.1,
-  decay: 0.2,
-  sustain: 1.0,
-  release: 0.8
-}).toDestination();
+// const ampEnv = new Tone.AmplitudeEnvelope({
+//   attack: 0.1,
+//   decay: 0.2,
+//   sustain: 1.0,
+//   release: 0.8
+// }).toDestination();
 
 const synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
 synth.maxPolyphony = 128;
+
+// console.log(synth.options)
 
 // const lowpass = new Tone.Filter(800, "lowpass");
 // const compressor = new Tone.Compressor(-18);
@@ -136,9 +138,24 @@ synth.maxPolyphony = 128;
 // Detune
 // synth.options.detune = 200 // in cents - 100 cents = 8hz = 100 note - if detune 100, C4 becomes C4#, if detune 200 C4 becomes D4 and so on
 
+// Envelope
+console.log(synth.options.envelope)
+
+// Attack
+// Range: 0 to 2
+// attackCurve
+// The shape of the attack. Can be any of these strings:
+// "linear"
+// "exponential"
+// "sine"
+// "cosine"
+// "bounce"
+// "ripple"
+// "step"
 
 
-console.log(synth.options.detune)
+// Decay
+
 
 // const synth = new Tone.MonoSynth({
 //   oscillator: {
