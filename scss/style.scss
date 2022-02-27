@@ -77,6 +77,13 @@ body {
   }
 }
 
+.label-center {
+  @extend .label;
+  p {
+    text-align: center;
+  }
+}
+
 /* Main */
 #synth {
   margin: auto;
