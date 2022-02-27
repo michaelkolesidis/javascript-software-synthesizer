@@ -41,8 +41,6 @@ let keyboard = new Nexus.Piano("#keyboard", {
 });
 keyboard.colorize("accent", "rgb(180, 180, 180)");
 
-// https://tonejs.github.io/docs/14.7.77/type/Time
-
 
 // ------------------------
 // Effects
@@ -51,6 +49,7 @@ keyboard.colorize("accent", "rgb(180, 180, 180)");
 const autoFilter = new Tone.AutoFilter("4n").toDestination().start();
 
 // AutoPanner
+
 // AutoWah
 
 // BitCrusher .connect(crusher)
@@ -118,14 +117,6 @@ vibrato.wet.value = 0
 // ------------------------
 // Synthesizer
 // ------------------------
-
-// const ampEnv = new Tone.AmplitudeEnvelope({
-//   attack: 0.1,
-//   decay: 0.2,
-//   sustain: 1.0,
-//   release: 0.8
-// }).toDestination();
-
 const synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
 synth.maxPolyphony = 128;
 
@@ -144,7 +135,6 @@ synth.maxPolyphony = 128;
 // ------------------------
 // ADSR Envelope
 // ------------------------
-
 // Attack
 // Range: 0 to 2
 // attackCurve
@@ -184,18 +174,6 @@ synth.options.envelope.sustain = 1
 // Range: 0+ to  * seconds
 synth.options.envelope.release = 0.5
 synth.options.envelope.releaseCurve = "exponential"
-
-// const synth = new Tone.MonoSynth({
-//   oscillator: {
-//     type: "sine", //sine, triangle, square
-//   },
-//   envelope: {
-//     attack: 2,
-//     decay: 2,
-//     sustain: 1,
-//     release: 1,
-//   },
-// }).toDestination();
 
 
 // ------------------------
