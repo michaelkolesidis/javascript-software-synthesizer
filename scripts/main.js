@@ -117,8 +117,11 @@ vibrato.wet.value = 0
 // ------------------------
 // Synthesizer
 // ------------------------
+
 const synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
 synth.maxPolyphony = 128;
+
+const lfo = new Tone.LFO("4n", 400, 4000).start().connect(synth);
 
 
 // const lowpass = new Tone.Filter(800, "lowpass");
@@ -185,24 +188,44 @@ synth.options.harmonicity = 3
 
 console.log(synth.options)
 
+
 // ------------------------
 // Modulation
 // ------------------------
+// partialCount
+// partials []
+// phase
+// type*
 
 
 // ------------------------
 // Modulation Envelope
 // ------------------------
+// attack
+// attackCurve
+// decay
+// decayCurve
+// release
+// releaseCurve
+// sustain
 
 
 // ------------------------
 // Modulation Index
 // ------------------------
+// The modulation index is essentially the amound of modulation occuring. It is the ratio of the frequency of the modulating signal (mf) to the amplitude of the modulating signal (ma) – as in ma/mf.
+// modulationIndex*
 
 
 // ------------------------
 // Oscillator
 // ------------------------
+// partialCount
+// partials
+// phase
+// type*
+
+synth.options.oscillator.type = "square"
 
 
 // ------------------------
