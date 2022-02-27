@@ -24,6 +24,17 @@ Keys, knobs, sliders and buttons to tweak your sound and generate immersive soun
 Will be released with version 1.0.0. In the meantime, you can refer to the [Tone.js documentation](https://tonejs.github.io/docs/).
 
 
+# Guides & Tutorials
+There aren't any guides and tutorials specifically for the JSS-01 yet, but there are plenty of excellent guides on the types of sound synthesis that the JSS-01 is using:
+
+(Currently JSS-01 only has an FM mode implementing the FMSynth of Tone.js)
+
+### FM Synthesis
+* [Synth Secrets: An Introduction To Frequency Modulation from Sound on Sound](https://web.archive.org/web/20160403123704/http://www.soundonsound.com/sos/apr00/articles/synthsecrets.htm)
+* [Synth Secrets: More On Frequency Modulation from Sound on Sound](https://web.archive.org/web/20160404062919/http://www.soundonsound.com/sos/may00/articles/synth.htm)
+* [FM Synthesis Collection by Yamaha](https://www.yamahasynth.com/learn/synth-programming/fm-synthesis-collection)
+
+
 
 # Contributing
 Feel free to submit issues and pull requests. It would be great to create a community around JSS-01, to contiue its development and evolution, making it more capable and easier to use, increasing its creative and artistic potential.
