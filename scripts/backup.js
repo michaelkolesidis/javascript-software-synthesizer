@@ -5,6 +5,7 @@
  *
  */
 
+import ConsoleIntro from "./consoleIntro.js";
 import Header from "./header.js";
 import Footer from "./footer.js";
 
@@ -14,13 +15,7 @@ import midiToNoteString from "./midiToNoteString.js";
 // ------------------------
 // Welcome Message in Console
 // ------------------------
-console.log(
-  "%c * JSS-01 | JavaScript Software Synthesizer *",
-  "background: rgb(230, 230, 230); color: rgb(1, 0, 76); font-weight: 600; font-size: 12px "
-);
-console.log(
-  "Since you are here you might want to check our project at GitHub, have a look at the source code, find bugs, submit issues, create pull requests and become part of out community!\nhttps://github.com/michaelkolesidis/javascript-software-synthesizer"
-);
+ConsoleIntro();
 
 
 // ------------------------
@@ -41,8 +36,6 @@ let keyboard = new Nexus.Piano("#keyboard", {
 });
 keyboard.colorize("accent", "rgb(180, 180, 180)");
 
-// https://tonejs.github.io/docs/14.7.77/type/Time
-
 
 // ------------------------
 // Effects
@@ -51,6 +44,7 @@ keyboard.colorize("accent", "rgb(180, 180, 180)");
 const autoFilter = new Tone.AutoFilter("4n").toDestination().start();
 
 // AutoPanner
+
 // AutoWah
 
 // BitCrusher .connect(crusher)
@@ -112,42 +106,126 @@ const vibrato = new Tone.Vibrato(9, 0.9).toDestination(); // frequency, depth [0
 // .toDestination()
 
 vibrato.wet.value = 0
+// console.log(vibrato.wet.value)
 
 
 // ------------------------
 // Synthesizer
 // ------------------------
 
-const ampEnv = new Tone.AmplitudeEnvelope({
-  attack: 0.1,
-  decay: 0.2,
-  sustain: 1.0,
-  release: 0.8
-}).toDestination();
-
 const synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
 synth.maxPolyphony = 128;
+
+// const lfo = new Tone.LFO("4n", 400, 4000).start().connect(synth);
+
 
 // const lowpass = new Tone.Filter(800, "lowpass");
 // const compressor = new Tone.Compressor(-18);
 // Tone.Destination.chain(lowpass, compressor);
 
 
+// ------------------------
+// Detune
+// ------------------------
+// synth.options.detune = 200 // in cents - 100 cents = 8hz = 100 note - if detune 100, C4 becomes C4#, if detune 200 C4 becomes D4 and so on
 
 
-console.log(synth.oscillator)
+// ------------------------
+// ADSR Envelope
+// ------------------------
+// Attack
+// Range: 0 to 2
+// attackCurve
+// The shape of the attack. Can be any of these strings:
+// "linear"
+// "exponential"
+// "sine"
+// "cosine"
+// "bounce"
+// "ripple"
+// "step"
+synth.options.envelope.attack = 0.01
+synth.options.envelope.attackCurve = "linear" 
 
-// const synth = new Tone.MonoSynth({
-//   oscillator: {
-//     type: "sine", //sine, triangle, square
-//   },
-//   envelope: {
-//     attack: 2,
-//     decay: 2,
-//     sustain: 1,
-//     release: 1,
-//   },
-// }).toDestination();
+// Decay
+// Range: 0+ to 2
+// The shape of the decay either "linear" or "exponential"
+synth.options.envelope.decay = 0.01
+synth.options.envelope.decayCurve = "linear"
+
+
+// Sustain
+// Range: 0 to 1
+// The percent of the maximum value that the envelope rests at untilthe release is triggered. ()
+synth.options.envelope.sustain = 1
+
+// Release
+// releaseCurce
+// The shape of the release. Can be any of these strings:
+// "linear"
+// "exponential"
+// "sine"
+// "cosine"
+// "bounce"
+// "ripple"
+// "step"
+// Range: 0+ to  * seconds
+synth.options.envelope.release = 0.5
+synth.options.envelope.releaseCurve = "exponential"
+
+
+// ------------------------
+// Harmonicity
+// ------------------------
+//  Harmonicity is the ratio between the two voices. A harmonicity of 1 is no change. Harmonicity = 2 means a change of an octave.
+// Range: (defined by me) 1-∞
+synth.options.harmonicity = 3
+
+console.log(synth.options)
+
+
+// ------------------------
+// Modulation
+// ------------------------
+// partialCount
+// partials []
+// phase
+// type*
+
+
+// ------------------------
+// Modulation Envelope
+// ------------------------
+// attack
+// attackCurve
+// decay
+// decayCurve
+// release
+// releaseCurve
+// sustain
+
+
+// ------------------------
+// Modulation Index
+// ------------------------
+// The modulation index is essentially the amound of modulation occuring. It is the ratio of the frequency of the modulating signal (mf) to the amplitude of the modulating signal (ma) – as in ma/mf.
+// modulationIndex*
+
+
+// ------------------------
+// Oscillator
+// ------------------------
+// partialCount
+// partials
+// phase
+// type*
+
+// synth.options.oscillator.type = "square"
+
+
+// ------------------------
+// Portamento
+// ------------------------
 
 
 // ------------------------
@@ -436,6 +514,7 @@ var position3 = new Nexus.Position("#position3", {
 position3.colorize("accent", "rgb(254,188,44)");
 position3.colorize("fill", "rgb(230, 230, 230)");
 
+
 // ------------------------
 // MIDI Implementation & MIDI Display
 // ------------------------
@@ -474,6 +553,7 @@ function onEnabled() {
   });
 }
 
+
 // ------------------------
 // Oscilloscope
 // ------------------------
@@ -483,6 +563,7 @@ var oscilloscope = new Nexus.Oscilloscope("#oscilloscope", {
 oscilloscope.connect(Tone.getDestination());
 oscilloscope.colorize("accent", "rgb(1, 0, 76)");
 oscilloscope.colorize("fill", "rgb(230, 230, 230)");
+
 
 // ------------------------
 // Spectrogram
@@ -494,6 +575,7 @@ spectrogram.connect(Tone.getDestination());
 spectrogram.colorize("accent", "rgb(1, 0, 76)");
 spectrogram.colorize("fill", "rgb(230, 230, 230)");
 
+
 // ------------------------
 // Meter
 // ------------------------
@@ -504,16 +586,17 @@ meter.connect(Tone.getDestination());
 meter.colorize("accent", "rgb(1, 0, 76)");
 meter.colorize("fill", "rgb(230, 230, 230)");
 
+
 // ------------------------
 // Footer
 // ------------------------
 const footer = document.getElementById("footer");
 footer.innerHTML = Footer();
 
+
 // ------------------------
 // Other Ideas / Aborted
 // ------------------------
-
 // Implement global color for NexusUI elements
 // Nexus.colors.accent = "rgb(180, 180, 180)";
 

@@ -18,8 +18,6 @@ import midiToNoteString from "./midiToNoteString.js";
 ConsoleIntro();
 
 
-
-
 // ------------------------
 // Header
 // ------------------------
