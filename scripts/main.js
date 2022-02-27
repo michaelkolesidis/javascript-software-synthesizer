@@ -203,8 +203,26 @@ synth.options.envelope.releaseCurve = "exponential"
 // ------------------------
 //  Harmonicity is the ratio between the two voices. A harmonicity of 1 is no change. Harmonicity = 2 means a change of an octave.
 // Range: (defined by me) 1-10
-
 synth.options.harmonicity = 3
+
+console.log(synth.options)
+
+// ------------------------
+// Modulation
+// ------------------------
+
+
+// ------------------------
+// Modulation Envelope
+// ------------------------
+
+
+// ------------------------
+// Oscillator
+// ------------------------
+
+synth.options.volume = 
+console.log(synth.options.portamento);
 
 
 // ------------------------
