@@ -5,11 +5,11 @@
  *
  */
 
-import ConsoleIntro from "./consoleIntro.js";
-import Header from "./header.js";
-import Footer from "./footer.js";
+import ConsoleIntro from "../scripts/consoleIntro.js";
+import Header from "../scripts/header.js";
+import Footer from "../scripts/footer.js";
 
-import midiToNoteString from "./midiToNoteString.js";
+import midiToNoteString from "../scripts/midiToNoteString.js";
 
 
 // ------------------------
