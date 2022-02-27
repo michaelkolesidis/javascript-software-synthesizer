@@ -82,7 +82,7 @@ None, yet! We will have to add way more features for that.
 
 # Special Thanks To
 * [Mohammed Amine Grid](https://github.com/mohammed-amine-grid), for his guidance and dedication throughout this journey.
-* All the students and the tutors at the [Social Hackers Academy](https://github.com/SocialHackersAcademy), for creating a nice little community, supporting each other and offering their best.
+* All the students and the tutors at the [Social Hackers Academy](https://github.com/SocialHackersAcademy), for creating a nice little community of passionate people offering their best for each other.
 
 <p align="right">
 <img width="100px" src="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/assets/lizard/other/lizard-01-g.svg">
