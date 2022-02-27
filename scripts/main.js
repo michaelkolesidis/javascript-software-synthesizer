@@ -196,11 +196,18 @@ console.log(synth.options)
 
 
 // ------------------------
+// Modulation Index
+// ------------------------
+
+
+// ------------------------
 // Oscillator
 // ------------------------
 
-synth.options.volume = 
-console.log(synth.options.portamento);
+
+// ------------------------
+// Portamento
+// ------------------------
 
 
 // ------------------------
@@ -489,6 +496,7 @@ var position3 = new Nexus.Position("#position3", {
 position3.colorize("accent", "rgb(254,188,44)");
 position3.colorize("fill", "rgb(230, 230, 230)");
 
+
 // ------------------------
 // MIDI Implementation & MIDI Display
 // ------------------------
@@ -527,6 +535,7 @@ function onEnabled() {
   });
 }
 
+
 // ------------------------
 // Oscilloscope
 // ------------------------
@@ -536,6 +545,7 @@ var oscilloscope = new Nexus.Oscilloscope("#oscilloscope", {
 oscilloscope.connect(Tone.getDestination());
 oscilloscope.colorize("accent", "rgb(1, 0, 76)");
 oscilloscope.colorize("fill", "rgb(230, 230, 230)");
+
 
 // ------------------------
 // Spectrogram
@@ -547,6 +557,7 @@ spectrogram.connect(Tone.getDestination());
 spectrogram.colorize("accent", "rgb(1, 0, 76)");
 spectrogram.colorize("fill", "rgb(230, 230, 230)");
 
+
 // ------------------------
 // Meter
 // ------------------------
@@ -557,16 +568,17 @@ meter.connect(Tone.getDestination());
 meter.colorize("accent", "rgb(1, 0, 76)");
 meter.colorize("fill", "rgb(230, 230, 230)");
 
+
 // ------------------------
 // Footer
 // ------------------------
 const footer = document.getElementById("footer");
 footer.innerHTML = Footer();
 
+
 // ------------------------
 // Other Ideas / Aborted
 // ------------------------
-
 // Implement global color for NexusUI elements
 // Nexus.colors.accent = "rgb(180, 180, 180)";
 
