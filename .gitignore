@@ -24,5 +24,4 @@ yarn-error.log*
 
 .vscode
 
-# backups
-/backups 
+/backups
