@@ -121,7 +121,7 @@ vibrato.wet.value = 0
 const synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
 synth.maxPolyphony = 128;
 
-const lfo = new Tone.LFO("4n", 400, 4000).start().connect(synth);
+// const lfo = new Tone.LFO("4n", 400, 4000).start().connect(synth);
 
 
 // const lowpass = new Tone.Filter(800, "lowpass");
