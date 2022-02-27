@@ -64,9 +64,10 @@ Some of the ideas are full modular design, full compatibility with MIDI controll
 
 
 # References and Inspiration
-* [Sound on Sound - Synth Secrets](http://www.soundonsound.com/sos/may99/articles/synthsec.htm)
-* [standardized-audio-context](https://github.com/chrisguttandin/standardized-audio-context)
-
+* [Synth Secrets from Sound on Sound](https://www.soundonsound.com/series/synth-secrets-sound-sound)
+* [Learning Synths by Ableton](https://learningsynths.ableton.com/en/playground)
+* [Syntorial](https://www.syntorial.com/)
+* [Helm](https://tytel.org/helm/)
 
 
 # License
