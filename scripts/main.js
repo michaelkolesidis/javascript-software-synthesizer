@@ -130,7 +130,6 @@ console.log(vibrato.frequency.value)
 // .toDestination()
 
 // vibrato.wet.value = 1
-// console.log(vibrato.wet.value)
 
 
 // ------------------------
@@ -140,13 +139,6 @@ const synth = new Tone.PolySynth(Tone.FMSynth).connect(vibrato);
 synth.maxPolyphony = 128;
 
 console.log(synth.options)
-
-// const lfo = new Tone.LFO("4n", 400, 4000).start().connect(synth);
-
-
-// const lowpass = new Tone.Filter(800, "lowpass");
-// const compressor = new Tone.Compressor(-18);
-// Tone.Destination.chain(lowpass, compressor);
 
 
 // ------------------------
