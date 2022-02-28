@@ -255,6 +255,34 @@ synth.options.oscillator.type = "sine" // sine, square, sawtooth,triangle, pulse
 // ------------------------
 // synth.options.portamento =10
 
+
+// ------------------------
+// Volume
+// ------------------------
+// Dial
+let volumeControl = new Nexus.Dial("#volume", {
+  size: [75, 75],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: -40,
+  max: 40,
+  step: 0,
+  value: -6,
+});
+volumeControl.colorize("accent", CYAN);
+volumeControl.colorize("fill", GRAY);
+
+volumeControl.on("change", function (v) {
+  synth.volume.value = v;
+});
+
+// Number
+let volumeNum = new Nexus.Number("#volume-num");
+volumeNum.link(volumeControl);
+volumeNum.colorize("accent", CYAN);
+volumeNum.colorize("fill", GRAY);
+
+
 // ------------------------
 // Synthesizer On-Screen Keyboard Playbility Implementation
 // ------------------------

@@ -89,11 +89,18 @@ div {
   }
 }
 
-.label-center {
+.component {
   @extend .label;
-  p {
-    text-align: center;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:fit-content;
+  text-align: center;
+}
+
+.component {
+  display: flex;
+  flex-direction: column;
 }
 
 /* Panel */
