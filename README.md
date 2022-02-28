@@ -2,7 +2,7 @@
 <img width="400px" src="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/assets/logo/logo512.png">
 </p>
 
-<h1 align="center">JavaScript Software Synthesizer | JSS-01</h1>
+<h1 align="center">JSS-01<br>JavaScript Software Synthesizer</h1>
 
 The JSS-01 | JavaScript Software Synthesizer is a web app enabling you to make and play music in the browser. It is a software synthesizer implementing a variety of JavaScript frameworks and libraries, such as Tone.js and NexusUI.
 
