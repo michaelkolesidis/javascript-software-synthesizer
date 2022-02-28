@@ -78,8 +78,9 @@ feedbackDelay.feedback.value = 0.5 // range:0-1
 
 // FrequencyShifter .connect(shift)
 const shift = new Tone.FrequencyShifter(42).toDestination(); // The incoming signal is shifted by this frequency value
+shift.frequency.value = -600 // range:-600-600
 
-// JCReverb .chain(delay, reverb)
+// JCReverb .chain(delay, reverb) {X}
 // const reverb = new Tone.JCReverb(0.4).toDestination();
 // const delay = new Tone.FeedbackDelay(0.5);
 
@@ -122,7 +123,7 @@ vibrato.wet.value = 0
 // ------------------------
 // Synthesizer
 // ------------------------
-const synth = new Tone.PolySynth(Tone.FMSynth).connect(shift);
+const synth = new Tone.PolySynth(Tone.FMSynth).connect(phaser);
 synth.maxPolyphony = 128;
 
 // const lfo = new Tone.LFO("4n", 400, 4000).start().connect(synth);
