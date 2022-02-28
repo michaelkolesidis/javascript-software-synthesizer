@@ -11,6 +11,17 @@ import Footer from "./footer.js";
 
 import midiToNoteString from "./midiToNoteString.js";
 
+// ------------------------
+// Colors
+// ------------------------
+const BLACK = "rgb(51, 51, 51)";
+const GRAY_DARK = "rgb(180, 180, 180)"
+const GRAY = "rgb(240,240,243)";
+const BLUE = "rgb(1, 0, 76)";
+const CYAN = "rgb(35, 178, 254)";
+const GREEN = "rgb(3, 214, 146)";
+const YELLOW = "rgb(254, 188, 44)";
+
 
 // ------------------------
 // Welcome Message in Console
@@ -34,7 +45,7 @@ let keyboard = new Nexus.Piano("#keyboard", {
   lowNote: 21,
   highNote: 108,
 });
-keyboard.colorize("accent", "rgb(180, 180, 180)");
+keyboard.colorize("accent", GRAY_DARK);
 
 
 // ------------------------
@@ -286,7 +297,7 @@ var envelope1 = new Nexus.Envelope("#envelope1", {
   ],
 });
 envelope1.colorize("accent", "rgb(35,178,254)");
-envelope1.colorize("fill", "rgb(230, 230, 230)");
+envelope1.colorize("fill", GRAY);
 
 var envelope2 = new Nexus.Envelope("#envelope2", {
   size: [300, 150],
@@ -311,7 +322,7 @@ var envelope2 = new Nexus.Envelope("#envelope2", {
   ],
 });
 envelope2.colorize("accent", "rgb(3,214,146)");
-envelope2.colorize("fill", "rgb(230, 230, 230)");
+envelope2.colorize("fill", GRAY);
 
 var envelope3 = new Nexus.Envelope("#envelope3", {
   size: [300, 150],
@@ -336,7 +347,7 @@ var envelope3 = new Nexus.Envelope("#envelope3", {
   ],
 });
 envelope3.colorize("accent", "rgb(254,188,44)");
-envelope3.colorize("fill", "rgb(230, 230, 230)");
+envelope3.colorize("fill", GRAY);
 
 // ------------------------
 //TOGGLES
@@ -346,21 +357,21 @@ var toggle1 = new Nexus.Toggle("#toggle1", {
   state: false,
 });
 toggle1.colorize("accent", "rgb(35,178,254)");
-toggle1.colorize("fill", "rgb(230, 230, 230)");
+toggle1.colorize("fill", GRAY);
 
 var toggle2 = new Nexus.Toggle("#toggle2", {
   size: [40, 20],
   state: false,
 });
 toggle2.colorize("accent", "rgb(3,214,146)");
-toggle2.colorize("fill", "rgb(230, 230, 230)");
+toggle2.colorize("fill", GRAY);
 
 var toggle3 = new Nexus.Toggle("#toggle3", {
   size: [40, 20],
   state: false,
 });
 toggle3.colorize("accent", "rgb(254,188,44)");
-toggle3.colorize("fill", "rgb(230, 230, 230)");
+toggle3.colorize("fill", GRAY);
 
 // ------------------------
 // DIALS
@@ -375,7 +386,7 @@ var dial1 = new Nexus.Dial("#dial1", {
   value: -6,
 });
 dial1.colorize("accent", "rgb(35,178,254)");
-dial1.colorize("fill", "rgb(230, 230, 230)");
+dial1.colorize("fill", GRAY);
 
 dial1.on("change", function (v) {
   synth.volume.value = v;
@@ -384,7 +395,7 @@ dial1.on("change", function (v) {
 var number1 = new Nexus.Number("#number1");
 number1.link(dial1);
 number1.colorize("accent", "rgb(35,178,254)");
-number1.colorize("fill", "rgb(230, 230, 230)");
+number1.colorize("fill", GRAY);
 
 var dial2 = new Nexus.Dial("#dial2", {
   size: [75, 75],
@@ -396,12 +407,12 @@ var dial2 = new Nexus.Dial("#dial2", {
   value: 0.5,
 });
 dial2.colorize("accent", "rgb(3,214,146)");
-dial2.colorize("fill", "rgb(230, 230, 230)");
+dial2.colorize("fill", GRAY);
 
 var number2 = new Nexus.Number("#number2");
 number2.link(dial2);
 number2.colorize("accent", "rgb(3,214,146)");
-number2.colorize("fill", "rgb(230, 230, 230)");
+number2.colorize("fill", GRAY);
 
 var dial3 = new Nexus.Dial("#dial3", {
   size: [75, 75],
@@ -413,12 +424,12 @@ var dial3 = new Nexus.Dial("#dial3", {
   value: 0.75,
 });
 dial3.colorize("accent", "rgb(254,188,44)");
-dial3.colorize("fill", "rgb(230, 230, 230)");
+dial3.colorize("fill", GRAY);
 
 var number3 = new Nexus.Number("#number3");
 number3.link(dial3);
 number3.colorize("accent", "rgb(254,188,44)");
-number3.colorize("fill", "rgb(230, 230, 230)");
+number3.colorize("fill", GRAY);
 
 // ------------------------
 // SLIDERS
@@ -431,7 +442,7 @@ let slider1 = Nexus.Add.Slider("#slider1", {
   value: 0.5,
 });
 slider1.colorize("accent", "rgb(35,178,254)");
-slider1.colorize("fill", "rgb(230, 230, 230)");
+slider1.colorize("fill", GRAY);
 
 let slider2 = Nexus.Add.Slider("#slider2", {
   size: [20, 120],
@@ -441,7 +452,7 @@ let slider2 = Nexus.Add.Slider("#slider2", {
   value: 0.5,
 });
 slider2.colorize("accent", "rgb(35,178,254)");
-slider2.colorize("fill", "rgb(230, 230, 230)");
+slider2.colorize("fill", GRAY);
 
 let slider3 = Nexus.Add.Slider("#slider3", {
   size: [20, 120],
@@ -451,7 +462,7 @@ let slider3 = Nexus.Add.Slider("#slider3", {
   value: 0.5,
 });
 slider3.colorize("accent", "rgb(3,214,146)");
-slider3.colorize("fill", "rgb(230, 230, 230)");
+slider3.colorize("fill", GRAY);
 
 let slider4 = Nexus.Add.Slider("#slider4", {
   size: [20, 120],
@@ -461,7 +472,7 @@ let slider4 = Nexus.Add.Slider("#slider4", {
   value: 0.5,
 });
 slider4.colorize("accent", "rgb(3,214,146)");
-slider4.colorize("fill", "rgb(230, 230, 230)");
+slider4.colorize("fill", GRAY);
 
 let slider5 = Nexus.Add.Slider("#slider5", {
   size: [20, 120],
@@ -471,7 +482,7 @@ let slider5 = Nexus.Add.Slider("#slider5", {
   value: 0.5,
 });
 slider5.colorize("accent", "rgb(254,188,44)");
-slider5.colorize("fill", "rgb(230, 230, 230)");
+slider5.colorize("fill", GRAY);
 
 let slider6 = Nexus.Add.Slider("#slider6", {
   size: [20, 120],
@@ -481,7 +492,7 @@ let slider6 = Nexus.Add.Slider("#slider6", {
   value: 0.5,
 });
 slider6.colorize("accent", "rgb(254,188,44)");
-slider6.colorize("fill", "rgb(230, 230, 230)");
+slider6.colorize("fill", GRAY);
 
 // ------------------------
 // POSITIONS
@@ -499,7 +510,7 @@ var position1 = new Nexus.Position("#position1", {
   stepY: 0,
 });
 position1.colorize("accent", "rgb(35,178,254)");
-position1.colorize("fill", "rgb(230, 230, 230)");
+position1.colorize("fill", GRAY);
 
 var position2 = new Nexus.Position("#position2", {
   size: [200, 200],
@@ -514,7 +525,7 @@ var position2 = new Nexus.Position("#position2", {
   stepY: 0,
 });
 position2.colorize("accent", "rgb(3,214,146)");
-position2.colorize("fill", "rgb(230, 230, 230)");
+position2.colorize("fill", GRAY);
 
 var position3 = new Nexus.Position("#position3", {
   size: [200, 200],
@@ -529,7 +540,7 @@ var position3 = new Nexus.Position("#position3", {
   stepY: 0,
 });
 position3.colorize("accent", "rgb(254,188,44)");
-position3.colorize("fill", "rgb(230, 230, 230)");
+position3.colorize("fill", GRAY);
 
 
 // ------------------------
@@ -579,7 +590,7 @@ var oscilloscope = new Nexus.Oscilloscope("#oscilloscope", {
 });
 oscilloscope.connect(Tone.getDestination());
 oscilloscope.colorize("accent", "rgb(1, 0, 76)");
-oscilloscope.colorize("fill", "rgb(230, 230, 230)");
+oscilloscope.colorize("fill", GRAY);
 
 
 // ------------------------
@@ -590,7 +601,7 @@ var spectrogram = new Nexus.Spectrogram("#spectrogram", {
 });
 spectrogram.connect(Tone.getDestination());
 spectrogram.colorize("accent", "rgb(1, 0, 76)");
-spectrogram.colorize("fill", "rgb(230, 230, 230)");
+spectrogram.colorize("fill", GRAY);
 
 
 // ------------------------
@@ -601,7 +612,7 @@ var meter = new Nexus.Meter("#meter", {
 });
 meter.connect(Tone.getDestination());
 meter.colorize("accent", "rgb(1, 0, 76)");
-meter.colorize("fill", "rgb(230, 230, 230)");
+meter.colorize("fill", GRAY);
 
 
 // ------------------------
