@@ -42,6 +42,9 @@ keyboard.colorize("accent", "rgb(180, 180, 180)");
 // ------------------------
 // AutoFilter .connect(autoFilter)
 const autoFilter = new Tone.AutoFilter("4n").toDestination().start();
+autoFilter.depth.value = 1 // range:0-1
+autoFilter.frequency.value = 10 // range:0-1000 or 2000
+autoFilter.octaves = 2.6 // range: -10-10
 
 // AutoPanner
 
@@ -49,20 +52,27 @@ const autoFilter = new Tone.AutoFilter("4n").toDestination().start();
 
 // BitCrusher .connect(crusher)
 const crusher = new Tone.BitCrusher(4).toDestination(); // range:1-16, step:1
+crusher.bits.value
 
 // Chebyshev .connect(cheby)
-const cheby = new Tone.Chebyshev(32).toDestination(); // range:1-100
+const cheby = new Tone.Chebyshev(50).toDestination(); // range:1-100
 
 // Chorus .connect(chorus)
 const chorus = new Tone.Chorus(4, 2.5, 0.5).toDestination().start(); // frequency delayTime depth
+chorus.frequency.value = 4 // range: 0-50
+chorus.delayTime = 2.5 // range:0-200
+chorus.depth = 0.5 // range: 0-1
 
 // Distortion .connect(dist)
 const dist = new Tone.Distortion(0.9).toDestination(); // range:0-1
+dist.distortion = 0.9
 
 // FeedbackDelay .connect(feedbackDelay)
 const feedbackDelay = new Tone.FeedbackDelay("8n", 0.5).toDestination();
+feedbackDelay.delayTime.value = 0.25 // range:0-1
+feedbackDelay.feedback.value = 0.5 // range:0-1
 
-// Freeverb .connect(freeverb)
+// Freeverb .connect(freeverb) {X}
 // const freeverb = new Tone.Freeverb().toDestination();
 // freeverb.dampening = 1000;
 
@@ -112,8 +122,7 @@ vibrato.wet.value = 0
 // ------------------------
 // Synthesizer
 // ------------------------
-
-const synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
+const synth = new Tone.PolySynth(Tone.FMSynth).connect(shift);
 synth.maxPolyphony = 128;
 
 // const lfo = new Tone.LFO("4n", 400, 4000).start().connect(synth);
@@ -200,16 +209,17 @@ console.log(synth.options)
 // attackCurve
 // decay
 // decayCurve
+// sustain
 // release
 // releaseCurve
-// sustain
 
 
 // ------------------------
 // Modulation Index
 // ------------------------
 // The modulation index is essentially the amound of modulation occuring. It is the ratio of the frequency of the modulating signal (mf) to the amplitude of the modulating signal (ma) – as in ma/mf.
-// modulationIndex*
+// modulationIndex* (0-300)
+synth.options.modulationIndex = 10
 
 
 // ------------------------
