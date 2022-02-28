@@ -135,9 +135,8 @@ tremolo.depth.value = 0.75 // range:0-1
 const vibrato = new Tone.Vibrato(9, 0.9).toDestination(); // frequency, depth
 vibrato.frequency.value = 9 // range:0-900 (choice)
 vibrato.depth.value // range:0-1
-console.log(vibrato.frequency.value)
 
-// .connect(autoFilter).connect(crusher).connect(cheby).connect(chorus).connect(dist).connect(feedbackDelay).connect(shift).connect(phaser).connect(PingPong)
+// .connect(autoFilter).connect(crusher).connect(cheby).connect(chorus).connect(dist).connect(feedbackDelay).connect(shift).connect(phaser).connect(PingPong).connect(reverb).connect(tremolo).connect(vibrato)
 // .toDestination()
 
 // vibrato.wet.value = 1
@@ -146,16 +145,16 @@ console.log(vibrato.frequency.value)
 // ------------------------
 // Synthesizer
 // ------------------------
-const synth = new Tone.PolySynth(Tone.FMSynth).connect(vibrato);
+const synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
 synth.maxPolyphony = 128;
 
-console.log(synth.options)
-
+// console.log(synth.options.frequency.value)
+const oscillator_types=['sine','square','sawtooth','triangle','pulse'];
 
 // ------------------------
 // Detune
 // ------------------------
-// synth.options.detune = 200 // in cents - 100 cents = 8hz = 100 note - if detune 100, C4 becomes C4#, if detune 200 C4 becomes D4 and so on
+synth.options.detune = 0 // in cents - 100 cents = 8hz = 1 note - if detune 100, C4 becomes C4#, if detune 200 C4 becomes D4 and so on
 
 
 // ------------------------
@@ -206,9 +205,8 @@ synth.options.envelope.releaseCurve = "exponential"
 // Harmonicity
 // ------------------------
 //  Harmonicity is the ratio between the two voices. A harmonicity of 1 is no change. Harmonicity = 2 means a change of an octave.
-// Range: (defined by me) 1-∞
+// range: 0-30 (choice)
 synth.options.harmonicity = 3
-
 
 
 // ------------------------
@@ -218,6 +216,7 @@ synth.options.harmonicity = 3
 // partials []
 // phase
 // type*
+synth.options.modulation.type // sine, square (default), sawtooth,triangle, pulse
 
 
 // ------------------------
@@ -238,7 +237,7 @@ synth.options.harmonicity = 3
 // The modulation index is essentially the amound of modulation occuring. It is the ratio of the frequency of the modulating signal (mf) to the amplitude of the modulating signal (ma) – as in ma/mf.
 // modulationIndex* (0-300)
 synth.options.modulationIndex = 10
-
+console.log(synth.options.modulationIndex)
 
 // ------------------------
 // Oscillator
@@ -248,7 +247,7 @@ synth.options.modulationIndex = 10
 // phase
 // type*
 
-// synth.options.oscillator.type = "square"
+synth.options.oscillator.type = "sine" // sine, square, sawtooth,triangle, pulse
 
 
 // ------------------------
@@ -274,7 +273,7 @@ keyboard.on("change", (note) => {
 // ------------------------
 // ENVELOPES
 // ------------------------
-var envelope1 = new Nexus.Envelope("#envelope1", {
+let envelope1 = new Nexus.Envelope("#envelope1", {
   size: [300, 150],
   noNewPoints: true,
   points: [
@@ -296,10 +295,10 @@ var envelope1 = new Nexus.Envelope("#envelope1", {
     },
   ],
 });
-envelope1.colorize("accent", "rgb(35,178,254)");
+envelope1.colorize("accent", CYAN);
 envelope1.colorize("fill", GRAY);
 
-var envelope2 = new Nexus.Envelope("#envelope2", {
+let envelope2 = new Nexus.Envelope("#envelope2", {
   size: [300, 150],
   noNewPoints: false,
   points: [
@@ -324,7 +323,7 @@ var envelope2 = new Nexus.Envelope("#envelope2", {
 envelope2.colorize("accent", "rgb(3,214,146)");
 envelope2.colorize("fill", GRAY);
 
-var envelope3 = new Nexus.Envelope("#envelope3", {
+let envelope3 = new Nexus.Envelope("#envelope3", {
   size: [300, 150],
   noNewPoints: false,
   points: [
@@ -352,21 +351,21 @@ envelope3.colorize("fill", GRAY);
 // ------------------------
 //TOGGLES
 // ------------------------
-var toggle1 = new Nexus.Toggle("#toggle1", {
+let toggle1 = new Nexus.Toggle("#toggle1", {
   size: [40, 20],
   state: false,
 });
-toggle1.colorize("accent", "rgb(35,178,254)");
+toggle1.colorize("accent", CYAN);
 toggle1.colorize("fill", GRAY);
 
-var toggle2 = new Nexus.Toggle("#toggle2", {
+let toggle2 = new Nexus.Toggle("#toggle2", {
   size: [40, 20],
   state: false,
 });
 toggle2.colorize("accent", "rgb(3,214,146)");
 toggle2.colorize("fill", GRAY);
 
-var toggle3 = new Nexus.Toggle("#toggle3", {
+let toggle3 = new Nexus.Toggle("#toggle3", {
   size: [40, 20],
   state: false,
 });
@@ -376,7 +375,7 @@ toggle3.colorize("fill", GRAY);
 // ------------------------
 // DIALS
 // ------------------------
-var dial1 = new Nexus.Dial("#dial1", {
+let dial1 = new Nexus.Dial("#dial1", {
   size: [75, 75],
   interaction: "vertical", // "radial", "vertical", or "horizontal"
   mode: "relative", // "absolute" or "relative"
@@ -385,19 +384,19 @@ var dial1 = new Nexus.Dial("#dial1", {
   step: 0,
   value: -6,
 });
-dial1.colorize("accent", "rgb(35,178,254)");
+dial1.colorize("accent", CYAN);
 dial1.colorize("fill", GRAY);
 
 dial1.on("change", function (v) {
   synth.volume.value = v;
 });
 
-var number1 = new Nexus.Number("#number1");
+let number1 = new Nexus.Number("#number1");
 number1.link(dial1);
-number1.colorize("accent", "rgb(35,178,254)");
+number1.colorize("accent", CYAN);
 number1.colorize("fill", GRAY);
 
-var dial2 = new Nexus.Dial("#dial2", {
+let dial2 = new Nexus.Dial("#dial2", {
   size: [75, 75],
   interaction: "vertical", // "radial", "vertical", or "horizontal"
   mode: "relative", // "absolute" or "relative"
@@ -409,12 +408,12 @@ var dial2 = new Nexus.Dial("#dial2", {
 dial2.colorize("accent", "rgb(3,214,146)");
 dial2.colorize("fill", GRAY);
 
-var number2 = new Nexus.Number("#number2");
+let number2 = new Nexus.Number("#number2");
 number2.link(dial2);
 number2.colorize("accent", "rgb(3,214,146)");
 number2.colorize("fill", GRAY);
 
-var dial3 = new Nexus.Dial("#dial3", {
+let dial3 = new Nexus.Dial("#dial3", {
   size: [75, 75],
   interaction: "vertical", // "radial", "vertical", or "horizontal"
   mode: "relative", // "absolute" or "relative"
@@ -426,7 +425,7 @@ var dial3 = new Nexus.Dial("#dial3", {
 dial3.colorize("accent", "rgb(254,188,44)");
 dial3.colorize("fill", GRAY);
 
-var number3 = new Nexus.Number("#number3");
+let number3 = new Nexus.Number("#number3");
 number3.link(dial3);
 number3.colorize("accent", "rgb(254,188,44)");
 number3.colorize("fill", GRAY);
@@ -497,7 +496,7 @@ slider6.colorize("fill", GRAY);
 // ------------------------
 // POSITIONS
 // ------------------------
-var position1 = new Nexus.Position("#position1", {
+let position1 = new Nexus.Position("#position1", {
   size: [200, 200],
   mode: "absolute", // "absolute" or "relative"
   x: 0.5, // initial x value
@@ -512,7 +511,7 @@ var position1 = new Nexus.Position("#position1", {
 position1.colorize("accent", "rgb(35,178,254)");
 position1.colorize("fill", GRAY);
 
-var position2 = new Nexus.Position("#position2", {
+let position2 = new Nexus.Position("#position2", {
   size: [200, 200],
   mode: "absolute", // "absolute" or "relative"
   x: 0.5, // initial x value
@@ -527,7 +526,7 @@ var position2 = new Nexus.Position("#position2", {
 position2.colorize("accent", "rgb(3,214,146)");
 position2.colorize("fill", GRAY);
 
-var position3 = new Nexus.Position("#position3", {
+let position3 = new Nexus.Position("#position3", {
   size: [200, 200],
   mode: "absolute", // "absolute" or "relative"
   x: 0.5, // initial x value
@@ -585,7 +584,7 @@ function onEnabled() {
 // ------------------------
 // Oscilloscope
 // ------------------------
-var oscilloscope = new Nexus.Oscilloscope("#oscilloscope", {
+let oscilloscope = new Nexus.Oscilloscope("#oscilloscope", {
   size: [300, 150],
 });
 oscilloscope.connect(Tone.getDestination());
@@ -596,7 +595,7 @@ oscilloscope.colorize("fill", GRAY);
 // ------------------------
 // Spectrogram
 // ------------------------
-var spectrogram = new Nexus.Spectrogram("#spectrogram", {
+let spectrogram = new Nexus.Spectrogram("#spectrogram", {
   size: [300, 150],
 });
 spectrogram.connect(Tone.getDestination());
@@ -607,7 +606,7 @@ spectrogram.colorize("fill", GRAY);
 // ------------------------
 // Meter
 // ------------------------
-var meter = new Nexus.Meter("#meter", {
+let meter = new Nexus.Meter("#meter", {
   size: [40, 150],
 });
 meter.connect(Tone.getDestination());
@@ -621,3 +620,10 @@ meter.colorize("fill", GRAY);
 const footer = document.getElementById("footer");
 footer.innerHTML = Footer();
 
+
+// ------------------------
+// Other
+// ------------------------
+// Tone.setContext(Nexus.context)
+// Nexus.context = Tone.context;
+// Simplify letiables
