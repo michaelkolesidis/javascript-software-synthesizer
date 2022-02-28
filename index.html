@@ -42,7 +42,6 @@
 
     <!-- Main Panel -->
     <div id="synth">
-
       <!-- Displays -->
       <div id="displays">
         <div class="label">
@@ -65,25 +64,111 @@
 
       <!-- Synth Section -->
       <div id="synthesizer">
-        <div class="title"><h2>Synth</h2></div>
+        <div class="title" id="synthesizer-title"><h2>Synth</h2></div>
+        <!-- Main -->
         <div id="main">
+          <!-- Volume -->
           <div class="component">
             <p>Volume</p>
             <div id="volume"></div>
             <br />
             <div id="volume-num"></div>
           </div>
+
+          <!-- Detune -->
+          <div class="component">
+            <p>Detune</p>
+            <div id="detune"></div>
+            <br />
+            <div id="detune-num"></div>
+          </div>
+
+          <!-- Modulation Index -->
+          <div class="component">
+            <p>Modulation Index</p>
+            <div id="modulation-index"></div>
+            <br />
+            <div id="modulation-index-num"></div>
+          </div>
+
+          <!-- Harmonicity -->
+          <div class="component">
+            <p>Harmonicity</p>
+            <div id="harmonicity"></div>
+            <br />
+            <div id="harmonicity-num"></div>
+          </div>
+
+         
         </div>
+        <div id="envelopes">
+          <div id="envelope1"></div>
+
+        </div>
+        
       </div>
+
+      
 
       <!-- Modulation  Section -->
       <div id="modulation">
         <div class="title"><h2>Modulation</h2></div>
+        <span id="position1"></span>
+        <div id="sliders">
+          <div id="slider1"></div>
+          <div id="slider2"></div>
+          <div id="slider3"></div>
+          <div id="slider4"></div>
+          <div id="slider5"></div>
+          <div id="slider6"></div>
+        </div>
+        
       </div>
 
       <!-- Effects  Section -->
       <div id="effects">
         <div class="title"><h2>Effects</h2></div>
+
+        <!-- Vibrato -->
+        
+         
+
+            <div class="component">
+              <p>Vibrato</p>
+              <!-- <div id="vibrato"></div> -->
+              <span id="toggle1"></span>
+            </div>
+
+            <div class="component">
+              <p>Tremolo</p>
+              <div id="tremolo"></div>
+            </div>
+
+            <div id="target"></div>
+         
+            
+            
+            
+          </div>
+        </div>
+
+        <!-- <div id="section">
+          <div class="subtitle"><h3>Vibrato</h3></div>
+          <div class="components">
+            <div class="component">
+              <p>Frequency</p>
+              <div id="vibrato-frequency"></div>
+              <br />
+              <div id="vibrato-frequenc-num"></div>
+            </div>
+            <div class="component">
+              <p>Depth</p>
+              <div id="vibrato-depth"></div>
+              <br />
+              <div id="vibrato-depth-num"></div>
+            </div>
+          </div>
+        </div> -->
       </div>
 
       <!-- Keyboard -->
@@ -94,6 +179,7 @@
     <div id="footer"></div>
   </body>
 </html>
+
 
 <!--
       <div id="dials">

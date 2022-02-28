@@ -89,6 +89,15 @@ div {
   }
 }
 
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  // justify-content: space-evenly;
+  width:fit-content;
+  
+}
+
 .component {
   @extend .label;
   display: flex;
@@ -96,12 +105,13 @@ div {
   align-items: center;
   width:fit-content;
   text-align: center;
+  padding:0.5rem;
 }
 
-.component {
-  display: flex;
-  flex-direction: column;
-}
+// .components {
+//   display: flex;
+//   flex-direction: column;
+// }
 
 /* Panel */
 #synth {
@@ -120,6 +130,7 @@ div {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin-bottom: 2rem;
 }
 
 
@@ -135,6 +146,11 @@ div {
   }
 }
 
+#main {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 // ------------------------
 // Modulation Section
 // ------------------------
@@ -142,22 +158,29 @@ div {
   grid-column: 2 /3;
   grid-row: 2;
   .title {
-    background: $green;
+    color: $green;
   }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #effects { //4
   grid-column: 3 /4;
   grid-row: 2;
   .title {
-    background: $yellow;
+    color: $yellow;
   }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #keyboard { //5
   grid-column: 1 / 4;
   grid-row: 3;
   margin: 0 auto;
+  margin-top: 2rem;
 }
 
 #midi-display {
@@ -196,12 +219,26 @@ div {
   }
 }
 
+#envelopes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2rem;
+}
 
-// #envelopes {
+#sliders {
+  display: flex;
+  flex-direction: row;
+  margin: 2rem;
+  * {
+    margin: 0.3rem;
+  }
+}
+// #envelope1 {
 //   display: flex;
 //   align-items: center;
 //   justify-content: space-around;
-//   margin: 2rem;
+//   // margin: 2rem;
 // }
 
 // #toggles {
@@ -232,3 +269,7 @@ div {
 //   justify-content: space-around;
 //   margin-top: 2rem;
 // }
+
+#target {
+  margin-top: 2rem;
+}

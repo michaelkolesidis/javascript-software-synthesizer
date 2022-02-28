@@ -148,13 +148,41 @@ vibrato.depth.value // range:0-1
 const synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
 synth.maxPolyphony = 128;
 
-// console.log(synth.options.frequency.value)
+
 const oscillator_types=['sine','square','sawtooth','triangle','pulse'];
 
 // ------------------------
 // Detune
 // ------------------------
 synth.options.detune = 0 // in cents - 100 cents = 8hz = 1 note - if detune 100, C4 becomes C4#, if detune 200 C4 becomes D4 and so on
+
+// synth.options.detune = 200
+
+
+let detuneControl = new Nexus.Dial("#detune", {
+  size: [75, 75],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: -1000,
+  max: 1000,
+  step: 1,
+  value: 0,
+});
+detuneControl.colorize("accent", CYAN);
+detuneControl.colorize("fill", GRAY);
+
+detuneControl.on("change", function (v) {
+  synth.options.detune = v;
+  console.log(synth.options)
+
+});
+
+// Number
+let detuneNum = new Nexus.Number("#detune-num");
+detuneNum.link(detuneControl);
+detuneNum.colorize("accent", CYAN);
+detuneNum.colorize("fill", GRAY);
+
 
 
 // ------------------------
@@ -208,6 +236,30 @@ synth.options.envelope.releaseCurve = "exponential"
 // range: 0-30 (choice)
 synth.options.harmonicity = 3
 
+let harmonicityControl = new Nexus.Dial("#harmonicity", {
+  size: [75, 75],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: 0,
+  max: 30,
+  step: 0,
+  value: 3,
+});
+harmonicityControl.colorize("accent", CYAN);
+harmonicityControl.colorize("fill", GRAY);
+
+harmonicityControl.on("change", function (v) {
+  synth.options.harmonicity = v;
+  console.log(synth.options)
+
+});
+
+// Number
+let harmonicityNum = new Nexus.Number("#harmonicity-num");
+harmonicityNum.link(harmonicityControl);
+harmonicityNum.colorize("accent", CYAN);
+harmonicityNum.colorize("fill", GRAY);
+
 
 // ------------------------
 // Modulation
@@ -237,7 +289,30 @@ synth.options.modulation.type // sine, square (default), sawtooth,triangle, puls
 // The modulation index is essentially the amound of modulation occuring. It is the ratio of the frequency of the modulating signal (mf) to the amplitude of the modulating signal (ma) – as in ma/mf.
 // modulationIndex* (0-300)
 synth.options.modulationIndex = 10
-console.log(synth.options.modulationIndex)
+
+let modulationIndexControl = new Nexus.Dial("#modulation-index", {
+  size: [75, 75],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: 0,
+  max: 300,
+  step: 0,
+  value: 10,
+});
+modulationIndexControl.colorize("accent", CYAN);
+modulationIndexControl.colorize("fill", GRAY);
+
+modulationIndexControl.on("change", function (v) {
+  console.log(v);
+  synth.options.modulationIndex = v;
+});
+
+// Number
+let modulationIndexNum = new Nexus.Number("#modulation-index-num");
+modulationIndexNum.link(modulationIndexControl);
+modulationIndexNum.colorize("accent", CYAN);
+modulationIndexNum.colorize("fill", GRAY);
+
 
 // ------------------------
 // Oscillator
@@ -649,9 +724,157 @@ const footer = document.getElementById("footer");
 footer.innerHTML = Footer();
 
 
+
+
 // ------------------------
 // Other
 // ------------------------
 // Tone.setContext(Nexus.context)
 // Nexus.context = Tone.context;
 // Simplify letiables
+
+let synthesizerTitle = document.getElementById("synthesizer-title");
+let main = document.getElementById("main");
+
+synthesizerTitle.addEventListener('click', showHide)
+
+
+function showHide() {
+  
+  if (main.style.display === "flex") {
+    main.style.display = "none";
+  } else {
+    main.style.display = "flex";
+  }
+}
+
+let envelope1 = new Nexus.Envelope("#envelope1", {
+  size: [300, 150],
+  noNewPoints: true,
+  points: [
+    {
+      x: 0.1,
+      y: 0.4,
+    },
+    {
+      x: 0.35,
+      y: 0.6,
+    },
+    {
+      x: 0.65,
+      y: 0.2,
+    },
+    {
+      x: 0.9,
+      y: 0.4,
+    },
+  ],
+});
+envelope1.colorize("accent", CYAN);
+envelope1.colorize("fill", GRAY);
+
+
+let position1 = new Nexus.Position("#position1", {
+  size: [200, 200],
+  mode: "absolute", // "absolute" or "relative"
+  x: 0.5, // initial x value
+  minX: 0,
+  maxX: 1,
+  stepX: 0,
+  y: 0.5, // initial y value
+  minY: 0,
+  maxY: 1,
+  stepY: 0,
+});
+position1.colorize("accent", GREEN);
+position1.colorize("fill", GRAY);
+
+let slider1 = Nexus.Add.Slider("#slider1", {
+  size: [20, 120],
+  min: 0,
+  max: 1,
+  step: 0,
+  value: 0.5,
+});
+slider1.colorize("accent", GREEN);
+slider1.colorize("fill", GRAY);
+
+let slider2 = Nexus.Add.Slider("#slider2", {
+  size: [20, 120],
+  min: 0,
+  max: 1,
+  step: 0,
+  value: 0.5,
+});
+slider2.colorize("accent", GREEN);
+slider2.colorize("fill", GRAY);
+
+let slider3 = Nexus.Add.Slider("#slider3", {
+  size: [20, 120],
+  min: 0,
+  max: 1,
+  step: 0,
+  value: 0.5,
+});
+slider3.colorize("accent", GREEN);
+slider3.colorize("fill", GRAY);
+
+let slider4 = Nexus.Add.Slider("#slider4", {
+  size: [20, 120],
+  min: 0,
+  max: 1,
+  step: 0,
+  value: 0.5,
+});
+slider4.colorize("accent", GREEN);
+slider4.colorize("fill", GRAY);
+
+let slider5 = Nexus.Add.Slider("#slider5", {
+  size: [20, 120],
+  min: 0,
+  max: 1,
+  step: 0,
+  value: 0.5,
+});
+slider5.colorize("accent", GREEN);
+slider5.colorize("fill", GRAY);
+
+let slider6 = Nexus.Add.Slider("#slider6", {
+  size: [20, 120],
+  min: 0,
+  max: 1,
+  step: 0,
+  value: 0.5,
+});
+slider6.colorize("accent", GREEN);
+slider6.colorize("fill", GRAY);
+
+
+let toggle1 = new Nexus.Toggle("#tremolo", {
+  size: [40, 20],
+  state: false,
+});
+toggle1.colorize("accent", YELLOW);
+toggle1.colorize("fill", GRAY);
+
+let toggle2 = new Nexus.Toggle("#toggle1", {
+  size: [40, 20],
+  state: false,
+});
+toggle2.colorize("accent", YELLOW);
+toggle2.colorize("fill", GRAY);
+
+var multislider = new Nexus.Multislider('#target',{
+  'size': [250,250],
+  'numberOfSliders': 10,
+  'min': 0,
+  'max': 1,
+  'step': 0,
+  'candycane': 3,
+  'values': [0.1,0.2,0.4,0.6,0.9,0.4,0.3,0.2,0.7, 0.1],
+  'smoothing': 0,
+  'mode': 'bar'  // 'bar' or 'line'
+ })
+
+ multislider.colorize("accent", YELLOW);
+ multislider.colorize("fill", GRAY);

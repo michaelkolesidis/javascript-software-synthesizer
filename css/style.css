@@ -67,17 +67,20 @@ div h2 {
   text-align: left;
 }
 
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: fit-content;
+}
+
 .component {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: fit-content;
   text-align: center;
-}
-
-.component {
-  display: flex;
-  flex-direction: column;
+  padding: 0.5rem;
 }
 
 /* Panel */
@@ -95,6 +98,7 @@ div h2 {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin-bottom: 2rem;
 }
 
 #synthesizer {
@@ -105,26 +109,38 @@ div h2 {
   color: #23b2fe;
 }
 
+#main {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 #modulation {
   grid-column: 2/3;
   grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 #modulation .title {
-  background: #03d692;
+  color: #03d692;
 }
 
 #effects {
   grid-column: 3/4;
   grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 #effects .title {
-  background: #febc2c;
+  color: #febc2c;
 }
 
 #keyboard {
   grid-column: 1/4;
   grid-row: 3;
   margin: 0 auto;
+  margin-top: 2rem;
 }
 
 #midi-display {
@@ -150,6 +166,26 @@ div h2 {
 }
 #footer a:hover {
   text-decoration: underline;
+}
+
+#envelopes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+#sliders {
+  display: flex;
+  flex-direction: row;
+  margin: 2rem;
+}
+#sliders * {
+  margin: 0.3rem;
+}
+
+#target {
+  margin-top: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */
