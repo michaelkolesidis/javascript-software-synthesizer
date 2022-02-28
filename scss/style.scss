@@ -68,6 +68,18 @@ body {
 }
 
 /* Component Labels */
+div {
+  h2 {
+    // color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    // padding-top: 0.3rem;
+    cursor: pointer;
+    // border-bottom: 1px solid $cyan;
+  }
+}
+
 .label {
   p {
     font-weight: 600;
@@ -84,14 +96,14 @@ body {
   }
 }
 
-/* Main */
+/* Panel */
 #synth {
   margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  // gap: 10px;
+  width: 99%;
+  gap: 10px;
   // grid-auto-rows: minmax(100px, auto);
-
 }
 
 #displays { //1
@@ -103,19 +115,36 @@ body {
   justify-content: space-around;
 }
 
-#synthsizer { //2
+
+// ------------------------
+// Synth Panel
+// ------------------------
+#synthesizer { //2
   grid-column: 1 / 2;
   grid-row: 2;
+  .title {
+    // background: $cyan;
+    color: $cyan;
+  }
 }
 
+// ------------------------
+// Modulation Section
+// ------------------------
 #modulation { //3
   grid-column: 2 /3;
   grid-row: 2;
+  .title {
+    background: $green;
+  }
 }
 
 #effects { //4
   grid-column: 3 /4;
   grid-row: 2;
+  .title {
+    background: $yellow;
+  }
 }
 
 #keyboard { //5
