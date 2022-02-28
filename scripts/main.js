@@ -94,8 +94,15 @@ const phaser = new Tone.Phaser({
   baseFrequency: 1000, // The base frequency of the filters
 }).toDestination();
 
+phaser.frequency.value // range:0-70 (choice)
+phaser.octaves = 5 // range:0-20 (choice)
+phaser.baseFrequency = 1000 // range:0-1000 (choice)
+
+
 // PingPongDelay .connect(PingPong)
 const pingPong = new Tone.PingPongDelay("4n", 0.2).toDestination();
+pingPong.delayTime.value = 2 // range:0-2 (choice)
+pingPong.feedback.value = 0.2 // range:0-1
 
 // PitchShift
 // https://tonejs.github.io/docs/14.7.77/PitchShift
@@ -103,28 +110,36 @@ const pingPong = new Tone.PingPongDelay("4n", 0.2).toDestination();
 // Reverb .connect(reverb)
 const reverb = new Tone.Reverb(1).toDestination(); // seconds - Check implementation
 // https://tonejs.github.io/docs/14.7.77/Reverb - you have to wait until
+reverb.decay = 1 // range:0-10 (choice)
 
 // StereoWidener
 // https://tonejs.github.io/docs/14.7.77/StereoWidener
 
 // Tremolo .connect(tremolo)
-// const tremolo = new Tone.Tremolo(9, 0.75).toDestination().start(); // frequency (rate), depth
+const tremolo = new Tone.Tremolo(9, 0.75).toDestination().start(); // frequency (rate), depth
+tremolo.frequency.value = 9 // range:0-100 (choice) 
+tremolo.depth.value = 0.75 // range:0-1
 
 // Vibrato .connect(vibrato)
-const vibrato = new Tone.Vibrato(9, 0.9).toDestination(); // frequency, depth [0-1]
+const vibrato = new Tone.Vibrato(9, 0.9).toDestination(); // frequency, depth
+vibrato.frequency.value = 9 // range:0-900 (choice)
+vibrato.depth.value // range:0-1
+console.log(vibrato.frequency.value)
 
 // .connect(autoFilter).connect(crusher).connect(cheby).connect(chorus).connect(dist).connect(feedbackDelay).connect(shift).connect(phaser).connect(PingPong)
 // .toDestination()
 
-vibrato.wet.value = 0
+// vibrato.wet.value = 1
 // console.log(vibrato.wet.value)
 
 
 // ------------------------
 // Synthesizer
 // ------------------------
-const synth = new Tone.PolySynth(Tone.FMSynth).connect(phaser);
+const synth = new Tone.PolySynth(Tone.FMSynth).connect(vibrato);
 synth.maxPolyphony = 128;
+
+console.log(synth.options)
 
 // const lfo = new Tone.LFO("4n", 400, 4000).start().connect(synth);
 
@@ -191,7 +206,6 @@ synth.options.envelope.releaseCurve = "exponential"
 // Range: (defined by me) 1-∞
 synth.options.harmonicity = 3
 
-console.log(synth.options)
 
 
 // ------------------------
