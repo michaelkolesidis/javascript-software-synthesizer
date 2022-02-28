@@ -253,7 +253,7 @@ synth.options.oscillator.type = "sine" // sine, square, sawtooth,triangle, pulse
 // ------------------------
 // Portamento
 // ------------------------
-
+// synth.options.portamento =10
 
 // ------------------------
 // Synthesizer On-Screen Keyboard Playbility Implementation
@@ -269,7 +269,7 @@ keyboard.on("change", (note) => {
   }
 });
 
-
+/*
 // ------------------------
 // ENVELOPES
 // ------------------------
@@ -540,8 +540,8 @@ let position3 = new Nexus.Position("#position3", {
 });
 position3.colorize("accent", "rgb(254,188,44)");
 position3.colorize("fill", GRAY);
-
-
+*/
+ 
 // ------------------------
 // MIDI Implementation & MIDI Display
 // ------------------------

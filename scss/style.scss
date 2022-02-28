@@ -87,48 +87,41 @@ body {
 /* Main */
 #synth {
   margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  // gap: 10px;
+  // grid-auto-rows: minmax(100px, auto);
+
 }
 
-#displays {
+#displays { //1
+  grid-column: 1 / 4;
+  grid-row: 1;
+
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 
-#envelopes {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin: 2rem;
+#synthsizer { //2
+  grid-column: 1 / 2;
+  grid-row: 2;
 }
 
-#toggles {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin: 2rem;
+#modulation { //3
+  grid-column: 2 /3;
+  grid-row: 2;
 }
 
-#dials {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  margin: 1rem;
+#effects { //4
+  grid-column: 3 /4;
+  grid-row: 2;
 }
 
-#sliders {
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-#positions {
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin-top: 2rem;
+#keyboard { //5
+  grid-column: 1 / 4;
+  grid-row: 3;
+  margin: 0 auto;
 }
 
 #midi-display {
@@ -146,9 +139,7 @@ body {
   cursor: default;
 }
 
-#keyboard {
-  margin: 0 auto;
-}
+
 
 // For keyboard manipulation
 // #keyboard svg:first-of-type {
@@ -169,4 +160,39 @@ body {
   }
 }
 
-// Reorganization
+
+// #envelopes {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-around;
+//   margin: 2rem;
+// }
+
+// #toggles {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-around;
+//   margin: 2rem;
+// }
+
+// #dials {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-evenly;
+//   margin: 1rem;
+// }
+
+// #sliders {
+//   margin: auto;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-around;
+// }
+
+// #positions {
+//   margin: auto;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-around;
+//   margin-top: 2rem;
+// }
