@@ -37,102 +37,94 @@
   </head>
 
   <body>
-    
-    <!-- Header -->
-    <div id="header"></div>
+    <div id="page-container">
+      <div id="content-wrap">
+        <!-- Header -->
+        <div id="header"></div>
 
-    <!-- Main Panel -->
-    <div id="synth">
-      <!-- Displays -->
-      <div id="displays">
-        <div class="label">
-          <p>MIDI</p>
-          <div id="midi-display"></div>
-        </div>
-        <div class="label">
-          <p>Oscilloscope</p>
-          <div id="oscilloscope"></div>
-        </div>
-        <div class="label">
-          <p>Spectrogram</p>
-          <div id="spectrogram"></div>
-        </div>
-        <div class="label">
-          <p>Meter</p>
-          <div id="meter"></div>
-        </div>
-      </div>
-
-      <!-- Synth Section -->
-      <div id="synthesizer">
-        <div class="title" id="synthesizer-title"><h2>Synth</h2></div>
-        <!-- Main -->
-        <div id="main">
-          <!-- Volume -->
-          <div class="component">
-            <p>Volume</p>
-            <div id="volume"></div>
-            <br />
-            <div id="volume-num"></div>
+        <!-- Main Panel -->
+        <div id="synth">
+          <!-- Displays -->
+          <div id="displays">
+            <div class="label">
+              <p>MIDI</p>
+              <div id="midi-display"></div>
+            </div>
+            <div class="label">
+              <p>Oscilloscope</p>
+              <div id="oscilloscope"></div>
+            </div>
+            <div class="label">
+              <p>Spectrogram</p>
+              <div id="spectrogram"></div>
+            </div>
+            <div class="label">
+              <p>Meter</p>
+              <div id="meter"></div>
+            </div>
           </div>
 
-          <!-- Detune -->
-          <div class="component">
-            <p>Detune</p>
-            <div id="detune"></div>
-            <br />
-            <div id="detune-num"></div>
+          <!-- Synth Section -->
+          <div id="synthesizer">
+            <div class="title" id="synthesizer-title"><h2>Synth</h2></div>
+            <!-- Main -->
+            <div id="main">
+              <!-- Volume -->
+              <div class="component">
+                <p>Volume</p>
+                <div id="volume"></div>
+                <br />
+                <div id="volume-num"></div>
+              </div>
+
+              <!-- Detune -->
+              <div class="component">
+                <p>Detune</p>
+                <div id="detune"></div>
+                <br />
+                <div id="detune-num"></div>
+              </div>
+
+              <!-- Modulation Index -->
+              <div class="component">
+                <p>Mod Index</p>
+                <div id="modulation-index"></div>
+                <br />
+                <div id="modulation-index-num"></div>
+              </div>
+
+              <!-- Harmonicity -->
+              <div class="component">
+                <p>Harmonicity</p>
+                <div id="harmonicity"></div>
+                <br />
+                <div id="harmonicity-num"></div>
+              </div>
+            </div>
+            <div id="envelopes">
+              <div id="envelope1"></div>
+            </div>
           </div>
 
-          <!-- Modulation Index -->
-          <div class="component">
-            <p>Mod Index</p>
-            <div id="modulation-index"></div>
-            <br />
-            <div id="modulation-index-num"></div>
+          <!-- Modulation  Section -->
+          <div id="modulation">
+            <div class="title"><h2>Modulation</h2></div>
+            <span id="position1"></span>
+            <div id="sliders">
+              <div id="slider1"></div>
+              <div id="slider2"></div>
+              <div id="slider3"></div>
+              <div id="slider4"></div>
+              <div id="slider5"></div>
+              <div id="slider6"></div>
+            </div>
           </div>
 
-          <!-- Harmonicity -->
-          <div class="component">
-            <p>Harmonicity</p>
-            <div id="harmonicity"></div>
-            <br />
-            <div id="harmonicity-num"></div>
-          </div>
+          <!-- Effects  Section -->
+          <div id="effects">
+            <div class="title"><h2>Effects</h2></div>
 
-         
-        </div>
-        <div id="envelopes">
-          <div id="envelope1"></div>
-
-        </div>
-        
-      </div>
-
-      
-
-      <!-- Modulation  Section -->
-      <div id="modulation">
-        <div class="title"><h2>Modulation</h2></div>
-        <span id="position1"></span>
-        <div id="sliders">
-          <div id="slider1"></div>
-          <div id="slider2"></div>
-          <div id="slider3"></div>
-          <div id="slider4"></div>
-          <div id="slider5"></div>
-          <div id="slider6"></div>
-        </div>
-        
-      </div>
-
-      <!-- Effects  Section -->
-      <div id="effects">
-        <div class="title"><h2>Effects</h2></div>
-
-        <!-- Vibrato -->
-        
-         
+            <!-- Vibrato -->
 
             <div class="component">
               <p>Vibrato</p>
@@ -146,10 +138,6 @@
             </div>
 
             <div id="target"></div>
-         
-            
-            
-            
           </div>
         </div>
 
@@ -170,17 +158,15 @@
             </div>
           </div>
         </div> -->
+
+        <!-- Keyboard -->
+        <div id="keyboard"></div>
       </div>
-
-      <!-- Keyboard -->
-      <div id="keyboard"></div>
+      <!-- Footer -->
+      <div id="footer"></div>
     </div>
-
-    <!-- Footer -->
-    <div id="footer"></div>
   </body>
 </html>
-
 
 <!--
       <div id="dials">

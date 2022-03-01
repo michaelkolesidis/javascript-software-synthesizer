@@ -215,11 +215,27 @@ div h2 {
   text-decoration: underline;
 }
 
+#page-container {
+  position: relative;
+  min-height: 97vh;
+}
+
+#content-wrap {
+  padding-bottom: 3rem;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  height: 2rem;
+}
+
+/****** TO BE REMOVED *******/
 #envelopes {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 2rem;
+  padding-top: 3rem;
 }
 
 #sliders {

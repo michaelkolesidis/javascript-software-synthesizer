@@ -5,9 +5,9 @@
  *
  */
 
- /* ------------------------ */
- /* Font Imports */
- /* ------------------------ */
+/* ------------------------ */
+/* Font Imports */
+/* ------------------------ */
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 /* ------------------------ */
@@ -261,11 +261,31 @@ div {
   }
 }
 
+// Footer at the bottom
+#page-container {
+  position: relative;
+  min-height: 97vh;
+}
+
+#content-wrap {
+  padding-bottom: 3rem; // Footer height
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  // width: 100%;
+  height: 2rem; // Footer height
+}
+
+
+
+/****** TO BE REMOVED *******/
 #envelopes {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 2rem;
+  padding-top: 3rem;
 }
 
 #sliders {
