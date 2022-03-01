@@ -81,24 +81,32 @@ body {
 #header {
   display: flex;
   flex-direction: row;
-  justify-content: baseline;
+  justify-content: space-between;
   color: $blue;
+  
   font-weight: 600;
   font-size: $header-font;
   // width: 100%;
   align-items: center;
   margin: 1rem 1rem 2rem 1rem;
 
-  img {
-    max-height: $header-size;
-    pointer-events: none;
-    margin-right: 0.8rem;
+  #logo-name {
+    display:flex;
+    flex-direction: row;
+    img {
+      max-height: $header-size;
+      pointer-events: none;
+      margin-right: 0.8rem;
+    }
+    div {
+      margin-top: 1.23rem;
+      letter-spacing: -0.03rem;
+    }
   }
 
-  div {
-    margin-top: 0.65rem;
-    letter-spacing: -0.03rem;
-  }
+  
+
+  
 }
 
 /* ------------------------ */
@@ -252,6 +260,9 @@ div {
 /* Footer */
 /* ------------------------ */
 #footer {
+  position: absolute;
+  bottom: 0;
+  height: 2rem; // Footer height
   color: $blue;
   font-weight: 500;
   font-size: 0.8rem;
@@ -271,12 +282,6 @@ div {
   padding-bottom: 3rem; // Footer height
 }
 
-#footer {
-  position: absolute;
-  bottom: 0;
-  // width: 100%;
-  height: 2rem; // Footer height
-}
 
 
 

@@ -68,20 +68,24 @@ body {
 #header {
   display: flex;
   flex-direction: row;
-  justify-content: baseline;
+  justify-content: space-between;
   color: #01004c;
   font-weight: 600;
   font-size: 1rem;
   align-items: center;
   margin: 1rem 1rem 2rem 1rem;
 }
-#header img {
+#header #logo-name {
+  display: flex;
+  flex-direction: row;
+}
+#header #logo-name img {
   max-height: 3rem;
   pointer-events: none;
   margin-right: 0.8rem;
 }
-#header div {
-  margin-top: 0.65rem;
+#header #logo-name div {
+  margin-top: 1.23rem;
   letter-spacing: -0.03rem;
 }
 
@@ -206,6 +210,9 @@ div h2 {
 /* Footer */
 /* ------------------------ */
 #footer {
+  position: absolute;
+  bottom: 0;
+  height: 2rem;
   color: #01004c;
   font-weight: 500;
   font-size: 0.8rem;
@@ -222,12 +229,6 @@ div h2 {
 
 #content-wrap {
   padding-bottom: 3rem;
-}
-
-#footer {
-  position: absolute;
-  bottom: 0;
-  height: 2rem;
 }
 
 /****** TO BE REMOVED *******/

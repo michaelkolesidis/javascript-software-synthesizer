@@ -68,7 +68,7 @@ let keyboard = new Nexus.Piano("#keyboard", {
 });
 keyboard.colorize("accent", GRAY_DARK); // light mode
 
-// Button resizing testing
+// Keyboard resizing testing
 // let keyboardResizeButton = document.createElement("button");
 // keyboardResizeButton.innerHTML = "Resize";
 // document.querySelector("#keyboard").appendChild(keyboardResizeButton);
