@@ -1,24 +1,43 @@
+/*
+ *  JSS-01 |JavaScript Software Synthesizer
+ *  Copyright (c) 2022 Michael Kolesidis
+ *  MIT License
+ *
+ */
+
+ /* ------------------------ */
+ /* Font Imports */
+ /* ------------------------ */
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+/* ------------------------ */
 /* SCSS Color Variables */
+/* ------------------------ */
 $black: rgb(51, 51, 51);
 $dark-gray: rgb(180, 180, 180);
-$gray: rgb(240,240,243);
+$gray: rgb(240, 240, 243);
 $blue: rgb(1, 0, 76);
 $cyan: rgb(35, 178, 254);
 $green: rgb(3, 214, 146);
 $yellow: rgb(254, 188, 44);
 
+/* ------------------------ */
 /* SCSS Size Variables */
+/* ------------------------ */
 $header-size: 3rem;
 $header-font: calc($header-size / 3);
 
+/* ------------------------ */
 /* General Rules */
+/* ------------------------ */
 * {
   box-sizing: border-box;
 }
 
-a, a:hover, a:focus, a:active {
+a,
+a:hover,
+a:focus,
+a:active {
   text-decoration: none;
   color: inherit;
 }
@@ -28,11 +47,24 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Spartan", sans-serif;
+}
+
+body {
   background: url("../assets/lizard/lizard.svg");
   background-position: right bottom;
   background-attachment: fixed;
-  background-size: 20%;
+  background-size: 200px; // or 20%
   background-repeat: no-repeat;
+}
+
+.dark-mode {
+  background: url("../assets/lizard/lizard_dark.svg");
+  background-color: $black;
+  background-position: right bottom;
+  background-attachment: fixed;
+  background-size: 200px; // or 20%
+  background-repeat: no-repeat;
+  color: white;
 }
 
 ::-moz-selection {
@@ -43,7 +75,9 @@ body {
   background: $dark-gray;
 }
 
+/* ------------------------ */
 /* Header */
+/* ------------------------ */
 #header {
   display: flex;
   flex-direction: row;
@@ -67,7 +101,9 @@ body {
   }
 }
 
+/* ------------------------ */
 /* Component Labels */
+/* ------------------------ */
 div {
   h2 {
     // color: white;
@@ -92,10 +128,9 @@ div {
 .section {
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
   // justify-content: space-evenly;
-  width:fit-content;
-  
+  width: fit-content;
 }
 
 .component {
@@ -103,9 +138,9 @@ div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width:fit-content;
+  width: fit-content;
   text-align: center;
-  padding:0.5rem;
+  padding: 0.5rem;
 }
 
 // .components {
@@ -113,7 +148,9 @@ div {
 //   flex-direction: column;
 // }
 
+/* ------------------------ */
 /* Panel */
+/* ------------------------ */
 #synth {
   margin: auto;
   display: grid;
@@ -123,7 +160,8 @@ div {
   // grid-auto-rows: minmax(100px, auto);
 }
 
-#displays { //1
+#displays {
+  //1
   grid-column: 1 / 4;
   grid-row: 1;
 
@@ -133,11 +171,11 @@ div {
   margin-bottom: 2rem;
 }
 
-
-// ------------------------
-// Synth Panel
-// ------------------------
-#synthesizer { //2
+/* ------------------------ */
+/* Synth Panel */
+/* ------------------------ */
+#synthesizer {
+  //2
   grid-column: 1 / 2;
   grid-row: 2;
   .title {
@@ -151,10 +189,11 @@ div {
   justify-content: space-evenly;
 }
 
-// ------------------------
-// Modulation Section
-// ------------------------
-#modulation { //3
+/* ------------------------ */
+/* Modulation Section */
+/* ------------------------ */
+#modulation {
+  //3
   grid-column: 2 /3;
   grid-row: 2;
   .title {
@@ -165,7 +204,8 @@ div {
   align-items: center;
 }
 
-#effects { //4
+#effects {
+  //4
   grid-column: 3 /4;
   grid-row: 2;
   .title {
@@ -176,13 +216,28 @@ div {
   align-items: center;
 }
 
-#keyboard { //5
+/* ------------------------ */
+/* Keyboard */
+/* ------------------------ */
+#keyboard {
+  //5
   grid-column: 1 / 4;
   grid-row: 3;
   margin: 0 auto;
   margin-top: 2rem;
 }
 
+// for keyboard manipulation
+// #keyboard svg:first-of-type {
+//   border-radius: 0 0 0.3rem 0.3rem;
+//   border: 0.01rem solid rgb(51, 51, 51);
+//   margin: 3px;
+//   background: red;
+// }
+
+/* ------------------------ */
+/* MIDI Display */
+/* ------------------------ */
 #midi-display {
   width: 300px;
   height: 150px;
@@ -191,24 +246,11 @@ div {
   color: $black;
   font-size: 0.9rem;
   line-height: 1.4rem;
-
 }
 
-#oscilloscope synth.options.envelope.decay{
-  cursor: default;
-}
-
-
-
-// For keyboard manipulation
-// #keyboard svg:first-of-type {
-//   border-radius: 0 0 0.3rem 0.3rem;
-//   border: 0.01rem solid rgb(51, 51, 51);
-//   margin: 3px;
-//   background: black;
-// }
-
+/* ------------------------ */
 /* Footer */
+/* ------------------------ */
 #footer {
   color: $blue;
   font-weight: 500;

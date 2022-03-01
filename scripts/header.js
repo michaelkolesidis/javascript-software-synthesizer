@@ -5,8 +5,11 @@
  *
  */
 
-export default function header() {
+export default function header(darkMode) {
+  if (darkMode) {
+    return `<img src="./assets/logo/logo192_dark.png"/>
+    <div>JSS-01 — JavaScript Software Synthesizer</div>`;
+  }
   return `<img src="./assets/logo/logo192.png"/>
     <div>JSS-01 — JavaScript Software Synthesizer</div>`;
 }
-
