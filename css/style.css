@@ -88,6 +88,34 @@ body {
   margin-top: 1.23rem;
   letter-spacing: -0.03rem;
 }
+#header #buttons {
+  display: flex;
+  flex-direction: row;
+}
+#header button {
+  border: 0;
+  background: #f0f0f3;
+  color: #01004c;
+  width: 3rem;
+  height: 3rem;
+  font-size: 2.1rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+#header button:hover {
+  background: #b4b4b4;
+  color: white;
+}
+#header #dark {
+  font-size: 1.9rem;
+  font-family: serif;
+}
+#header #menu {
+  width: 3rem;
+  font-size: rem;
+  padding: 0;
+  margin-right: 0;
+}
 
 /* ------------------------ */
 /* Component Labels */

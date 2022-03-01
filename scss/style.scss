@@ -83,15 +83,14 @@ body {
   flex-direction: row;
   justify-content: space-between;
   color: $blue;
-  
+
   font-weight: 600;
   font-size: $header-font;
-  // width: 100%;
   align-items: center;
   margin: 1rem 1rem 2rem 1rem;
 
   #logo-name {
-    display:flex;
+    display: flex;
     flex-direction: row;
     img {
       max-height: $header-size;
@@ -104,10 +103,44 @@ body {
     }
   }
 
-  
+  #buttons {
+    display: flex;
+    flex-direction: row;
+  }
+
+  button {
+    border: 0;
+    background: $gray;
+    color: $blue;
+    width: 3rem;
+    height: 3rem;
+    font-size: 2.1rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: $dark-gray;
+    color: white;
+  }
+
+  #dark {
+    font-size: 1.9rem;
+    font-family:  serif;
+  }
+
+  #menu {
+    width: 3rem;
+    font-size: rem;
+    padding: 0;
+    margin-right: 0;
+  }
 
   
+
 }
+
+
 
 /* ------------------------ */
 /* Component Labels */
@@ -281,9 +314,6 @@ div {
 #content-wrap {
   padding-bottom: 3rem; // Footer height
 }
-
-
-
 
 /****** TO BE REMOVED *******/
 #envelopes {
