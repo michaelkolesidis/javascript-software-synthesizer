@@ -68,14 +68,13 @@ let keyboard = new Nexus.Piano("#keyboard", {
 });
 keyboard.colorize("accent", GRAY_DARK); // light mode
 
-
-let keyboardResizeButton = document.createElement("button");
-keyboardResizeButton.innerHTML = "Resize";
-document.querySelector("#keyboard").appendChild(keyboardResizeButton);
-keyboardResizeButton.addEventListener("click", function() {
-  keyboard.resize(800, 50);
-});
-
+// Button resizing testing
+// let keyboardResizeButton = document.createElement("button");
+// keyboardResizeButton.innerHTML = "Resize";
+// document.querySelector("#keyboard").appendChild(keyboardResizeButton);
+// keyboardResizeButton.addEventListener("click", function() {
+//   keyboard.resize(800, 50);
+// });
 
 
 // ------------------------
