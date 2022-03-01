@@ -94,6 +94,11 @@ None, yet! We will have to add way more features for that.
 
 
 
+# Mascot
+Can there be a respectful project without a mascot? Of course not. Thus, we are to present you Jesse the Lizard, the official mascot of the JSS-01 project! Jesse goes by the pronouns "they/them" and can be found lying around in all sorts of places around the project. Look out for them!
+
+
+
 # Special Thanks To
 * [Mohammed Amine Grid](https://github.com/mohammed-amine-grid), for his guidance and dedication throughout this journey.
 * All the students and the tutors at the [Social Hackers Academy](https://github.com/SocialHackersAcademy), for creating a nice little community of passionate people offering their best for each other.
