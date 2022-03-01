@@ -10,5 +10,5 @@ Tha main third-party source of code for the project is the documentation of the 
 
 ## The References List
 
-* [Changing keyboard key colors](https://github.com/nexus-js/ui/issues/69)
+* [Changing keyboard key colors](https://github.com/nexus-js/ui/issues/69) (used for dark mode)
 * [Footer always at the bottom](https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/)
