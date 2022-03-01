@@ -7,6 +7,7 @@ This will be of tremendous help, both for contributors, that will be able to und
 Tha main third-party source of code for the project is the documentation of the Tone.js, NexusUI and WEBMIDI.js projects, and this is where anyone wishing to implement the project's core functionality should look first.
 
 <br>
+
 ## The References List
 
 * [Footer always at the bottom](https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/)
