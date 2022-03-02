@@ -49,6 +49,7 @@
      inkscape:current-layer="svg4" />
   <path
      d="M512 96C282.2 96 96 282.2 96 512s186.2 416 416 416 416-186.2 416-416S741.8 96 512 96z m254.6 670.6c-68 68-158.4 105.4-254.6 105.4V152c96.2 0 186.6 37.4 254.6 105.4S872 415.8 872 512s-37.4 186.6-105.4 254.6z" 
+     shape-rendering="geometricPrecision"
      id="path2"
      style="fill:#00014c;fill-opacity:1" />
 </svg>
