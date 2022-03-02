@@ -377,9 +377,9 @@ synth.options.modulation.type; // sine, square (default), sawtooth,triangle, pul
 
 // synth.options.modulationIndex = 200;
 
-var slider = document.getElementById("myRange");
+let modulationIndexSlider = document.getElementById("mod-index");
 
-slider.oninput = function() {
+modulationIndexSlider.oninput = function() {
   console.log(this.value);
   synth.options.modulationIndex = this.value
 }
