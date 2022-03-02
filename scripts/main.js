@@ -361,29 +361,40 @@ synth.options.modulation.type; // sine, square (default), sawtooth,triangle, pul
 // ------------------------
 // The modulation index is essentially the amound of modulation occuring. It is the ratio of the frequency of the modulating signal (mf) to the amplitude of the modulating signal (ma) – as in ma/mf.
 // modulationIndex* (0-300)
-synth.options.modulationIndex = 10;
+// synth.options.modulationIndex = 10;
 
-let modulationIndexControl = new Nexus.Dial("#modulation-index", {
-  size: [75, 75],
-  interaction: "vertical", // "radial", "vertical", or "horizontal"
-  mode: "relative", // "absolute" or "relative"
-  min: 0,
-  max: 300,
-  step: 0,
-  value: 10,
-});
-modulationIndexControl.colorize("accent", CYAN);
+// let modulationIndexControl = new Nexus.Dial("#modulation-index", {
+//   size: [75, 75],
+//   interaction: "vertical", // "radial", "vertical", or "horizontal"
+//   mode: "relative", // "absolute" or "relative"
+//   min: 0,
+//   max: 300,
+//   step: 0,
+//   value: 300,
+// });
+// modulationIndexControl.colorize("accent", CYAN);
 // modulationIndexControl.colorize("fill", GRAY);
 
-modulationIndexControl.on("change", function (v) {
-  // console.log(v);
-  synth.options.modulationIndex = v;
-});
+// synth.options.modulationIndex = 200;
+
+var slider = document.getElementById("myRange");
+
+slider.oninput = function() {
+  console.log(this.value);
+  synth.options.modulationIndex = this.value
+}
+
+
+
+// modulationIndexControl.on("change", function (v) {
+//   // console.log(v);
+//   synth.options.modulationIndex = v;
+// });
 
 // Number
-let modulationIndexNum = new Nexus.Number("#modulation-index-num");
-modulationIndexNum.link(modulationIndexControl);
-modulationIndexNum.colorize("accent", CYAN);
+// let modulationIndexNum = new Nexus.Number("#modulation-index-num");
+// modulationIndexNum.link(modulationIndexControl);
+// modulationIndexNum.colorize("accent", CYAN);
 // modulationIndexNum.colorize("fill", GRAY);
 
 // ------------------------
