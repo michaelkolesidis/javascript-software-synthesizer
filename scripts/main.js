@@ -11,12 +11,15 @@ import Footer from "./footer.js";
 
 import midiToNoteString from "./midiToNoteString.js";
 
+
+Tone.setContext(Nexus.context);
+
 // Send Tone audio to Nexus
 // Nexus.context = Tone.context;
-console.log("NEXUS CONTEXT:");
-console.log(Nexus.context);
-console.log("TONE CONTEXT:");
-console.log(Tone.context);
+// console.log("NEXUS CONTEXT:");
+// console.log(Nexus.context);
+// console.log("TONE CONTEXT:");
+// console.log(Tone.context);
 
 // ------------------------
 // Colors
@@ -199,8 +202,14 @@ vibrato.depth.value; // range:0-1
 // ------------------------
 // Synthesizer
 // ------------------------
+// const synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
 const synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
+
+// console.log(Tone.Signal)
+
 synth.maxPolyphony = 128;
+
+// console.log(synth.options);
 
 const oscillator_types = ["sine", "square", "sawtooth", "triangle", "pulse"];
 
@@ -253,6 +262,26 @@ detuneNum.colorize("accent", CYAN);
 synth.options.envelope.attack = 0.01;
 synth.options.envelope.attackCurve = "linear";
 
+let attackControl = new Nexus.Dial("#attack", {
+  size: [75, 75],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: 0,
+  max: 2,
+  step: 0,
+  value: 0.01,
+});
+attackControl.colorize("accent", CYAN);
+// detuneControl.colorize("fill", GRAY);
+
+attackControl.on("change", function (v) {
+  synth.options.envelope.attack = v;
+  // console.log(v);
+  // console.log(parseFloat(v));
+  // console.log(synth.options);
+});
+
+
 // Decay
 // Range: 0+ to 2
 // The shape of the decay either "linear" or "exponential"
@@ -299,7 +328,6 @@ harmonicityControl.colorize("accent", CYAN);
 
 harmonicityControl.on("change", function (v) {
   synth.options.harmonicity = v;
-  console.log(synth.options);
 });
 
 // Number
