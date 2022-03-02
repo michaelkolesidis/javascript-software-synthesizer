@@ -108,7 +108,7 @@ body {
 }
 #header #dark {
   font-size: 1.9rem;
-  font-family: "Segoe UI Symbol";
+  font-family: monospace;
 }
 #header #menu {
   width: 3rem;
