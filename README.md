@@ -95,7 +95,7 @@ None, yet! We will have to add way more features for that.
 
 
 # Mascot
-Can there be a respectful project without a mascot? Of course not. Thus, we are to present you Jesse the Lizard, the official mascot of the JSS-01 project! Jesse goes by the pronouns "they/them" and can be found lying around in all sorts of places around the project. Look out for them!
+Can there be a respectful project without a mascot? Of course not. Thus, we are glad to present you Jesse the Lizard, the official mascot of the JSS-01 project! Jesse goes by the pronouns "they/them" and can be found lying around in all sorts of places around the project. Look out for them!
 
 Trivia:
 * Jesse's favourite food is bugs (we do our best to feed them)
