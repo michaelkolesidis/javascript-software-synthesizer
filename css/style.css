@@ -109,6 +109,10 @@ body {
 #header #dark {
   font-size: 1.9rem;
 }
+#header #dark img {
+  padding-top: 0.4rem;
+  width: 91%;
+}
 #header #menu {
   width: 3rem;
   font-size: rem;
