@@ -63,7 +63,7 @@ Please refer to the project's [Changelog](https://github.com/michaelkolesidis/ja
 * [Sass](https://github.com/sass/sass)
 <br>The SCSS (Sassy CSS) syntax is utilized for the styling of our project.
 * [npm](https://github.com/npm/cli)
-<br>Everyone's beloved packet manager.
+<br>Everyone's beloved package manager.
 <br>
 <p align="left">
 <img width="100px" src="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/assets/lizard/other/lizard-04-c.svg">
