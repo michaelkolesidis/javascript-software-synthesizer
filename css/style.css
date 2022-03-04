@@ -398,33 +398,4 @@ div h2 {
   transform: none;
 }
 
-/* -------------------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------------- */
-/* TO BE REMOVED - TO BE REMOVED - TO BE REMOVED - TO BE REMOVED - TO BE REMOVED -  */
-/* -------------------------------------------------------------------------------- */
-#envelopes {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 3rem;
-}
-
-#sliders {
-  display: flex;
-  flex-direction: row;
-  margin: 2rem;
-}
-#sliders * {
-  margin: 0.3rem;
-}
-
-#target {
-  margin-top: 2rem;
-}
-
-/* -------------------------------------------------------------------------------- */
-/* END OF TO BE REMOVED - END OF TO BE REMOVED - END OF TO BE REMOVED -  */
-/* -------------------------------------------------------------------------------- */
-
 /*# sourceMappingURL=style.css.map */
