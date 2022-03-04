@@ -11,7 +11,6 @@ import Footer from "./footer.js";
 
 import midiToNoteString from "./midiToNoteString.js";
 
-
 Tone.setContext(Nexus.context);
 
 // Send Tone audio to Nexus
@@ -80,10 +79,14 @@ keyboard.colorize("accent", GRAY_DARK); // light mode
 // });
 
 let keyboardPlaceholder = document.getElementById("keyboard");
-keyboardPlaceholder.addEventListener('contextmenu', function(event) {
-  event.preventDefault();
-}, false)
-console.log(keyboardPlaceholder)
+keyboardPlaceholder.addEventListener(
+  "contextmenu",
+  function (event) {
+    event.preventDefault();
+  },
+  false
+);
+console.log(keyboardPlaceholder);
 // keyboardPlaceholder.style.zIndex = "-2"
 
 // ------------------------
@@ -287,7 +290,6 @@ attackControl.on("change", function (v) {
   // console.log(synth.options);
 });
 
-
 // Decay
 // Range: 0+ to 2
 // The shape of the decay either "linear" or "exponential"
@@ -366,42 +368,31 @@ synth.options.modulation.type; // sine, square (default), sawtooth,triangle, pul
 // Modulation Index
 // ------------------------
 // The modulation index is essentially the amound of modulation occuring. It is the ratio of the frequency of the modulating signal (mf) to the amplitude of the modulating signal (ma) – as in ma/mf.
-// modulationIndex* (0-300)
-// synth.options.modulationIndex = 10;
+// modulationIndex range: 0-300 
 
-// let modulationIndexControl = new Nexus.Dial("#modulation-index", {
-//   size: [75, 75],
-//   interaction: "vertical", // "radial", "vertical", or "horizontal"
-//   mode: "relative", // "absolute" or "relative"
-//   min: 0,
-//   max: 300,
-//   step: 0,
-//   value: 300,
-// });
-// modulationIndexControl.colorize("accent", CYAN);
-// modulationIndexControl.colorize("fill", GRAY);
+let modulationIndexControl = new Nexus.Dial("#modulation-index", {
+  size: [75, 75],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: 0,
+  max: 100,
+  step: 1,
+  value: 10,
+});
+modulationIndexControl.colorize("accent", CYAN);
+modulationIndexControl.colorize("fill", GRAY);
 
-// synth.options.modulationIndex = 200;
+modulationIndexControl.on("change", function (v) {
+  synth.set({
+    modulationIndex: v,
+  });
+});
 
-let modulationIndexSlider = document.getElementById("mod-index");
-
-modulationIndexSlider.oninput = function() {
-  console.log(this.value);
-  synth.options.modulationIndex = this.value
-}
-
-
-
-// modulationIndexControl.on("change", function (v) {
-//   // console.log(v);
-//   synth.options.modulationIndex = v;
-// });
-
-// Number
-// let modulationIndexNum = new Nexus.Number("#modulation-index-num");
-// modulationIndexNum.link(modulationIndexControl);
-// modulationIndexNum.colorize("accent", CYAN);
-// modulationIndexNum.colorize("fill", GRAY);
+// Number;
+let modulationIndexNum = new Nexus.Number("#modulation-index-num");
+modulationIndexNum.link(modulationIndexControl);
+modulationIndexNum.colorize("accent", CYAN);
+modulationIndexNum.colorize("fill", GRAY);
 
 // ------------------------
 // Oscillator
@@ -974,6 +965,5 @@ var multislider = new Nexus.Multislider("#target", {
 
 multislider.colorize("accent", YELLOW);
 // multislider.colorize("fill", GREEN);
-
 
 // 200th Commit! WOW!
