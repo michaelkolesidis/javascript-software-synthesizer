@@ -225,9 +225,7 @@ const oscillator_types = ["sine", "square", "sawtooth", "triangle", "pulse"];
 // ------------------------
 // Detune
 // ------------------------
-synth.options.detune = 0; // in cents - 100 cents = 8hz = 1 note - if detune 100, C4 becomes C4#, if detune 200 C4 becomes D4 and so on
-
-// synth.options.detune = 200
+// In cents - 100 cents = 8hz = 1 note - if detune 100, C4 becomes C4#, if detune 200 C4 becomes D4 and so on
 
 let detuneControl = new Nexus.Dial("#detune", {
   size: [75, 75],
@@ -242,10 +240,9 @@ detuneControl.colorize("accent", CYAN);
 // detuneControl.colorize("fill", GRAY);
 
 detuneControl.on("change", function (v) {
-  synth.options.detune = parseFloat(v);
-  // console.log(v);
-  // console.log(parseFloat(v));
-  // console.log(synth.options);
+  synth.set({
+    detune: v,
+  });
 });
 
 // Number
