@@ -226,6 +226,7 @@ const oscillator_types = ["sine", "square", "sawtooth", "triangle", "pulse"];
 // Detune
 // ------------------------
 // In cents - 100 cents = 8hz = 1 note - if detune 100, C4 becomes C4#, if detune 200 C4 becomes D4 and so on
+// detune range : -1000-1000 (choice)
 
 let detuneControl = new Nexus.Dial("#detune", {
   size: [75, 75],
@@ -316,15 +317,14 @@ synth.options.envelope.releaseCurve = "exponential";
 // Harmonicity
 // ------------------------
 //  Harmonicity is the ratio between the two voices. A harmonicity of 1 is no change. Harmonicity = 2 means a change of an octave.
-// range: 0-30 (choice)
-synth.options.harmonicity = 3;
+// range: 0-20 (choice)
 
 let harmonicityControl = new Nexus.Dial("#harmonicity", {
   size: [75, 75],
   interaction: "vertical", // "radial", "vertical", or "horizontal"
   mode: "relative", // "absolute" or "relative"
   min: 0,
-  max: 30,
+  max: 20,
   step: 0,
   value: 3,
 });
@@ -332,7 +332,9 @@ harmonicityControl.colorize("accent", CYAN);
 // harmonicityControl.colorize("fill", GRAY);
 
 harmonicityControl.on("change", function (v) {
-  synth.options.harmonicity = v;
+  synth.set({
+    harmonicity: v
+  })
 });
 
 // Number
@@ -365,7 +367,7 @@ synth.options.modulation.type; // sine, square (default), sawtooth,triangle, pul
 // Modulation Index
 // ------------------------
 // The modulation index is essentially the amound of modulation occuring. It is the ratio of the frequency of the modulating signal (mf) to the amplitude of the modulating signal (ma) – as in ma/mf.
-// modulationIndex range: 0-300 
+// modulationIndex range: 0-300 (choice)
 
 let modulationIndexControl = new Nexus.Dial("#modulation-index", {
   size: [75, 75],
