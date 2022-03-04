@@ -6,4 +6,4 @@
  */
 
 
-// The menu content will go here
+// The Floating UI implementation will go here
