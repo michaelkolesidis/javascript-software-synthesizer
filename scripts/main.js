@@ -352,24 +352,21 @@ harmonicityNum.colorize("accent", CYAN);
 synth.options.envelope.attack = 0.01;
 synth.options.envelope.attackCurve = "linear";
 
-let attackControl = new Nexus.Dial("#attack", {
-  size: [75, 75],
-  interaction: "vertical", // "radial", "vertical", or "horizontal"
-  mode: "relative", // "absolute" or "relative"
-  min: 0,
-  max: 2,
-  step: 0,
-  value: 0.01,
-});
-attackControl.colorize("accent", CYAN);
-// detuneControl.colorize("fill", GRAY);
+// let attackControl = new Nexus.Dial("#attack", {
+//   size: [75, 75],
+//   interaction: "vertical", // "radial", "vertical", or "horizontal"
+//   mode: "relative", // "absolute" or "relative"
+//   min: 0,
+//   max: 2,
+//   step: 0,
+//   value: 0.01,
+// });
+// attackControl.colorize("accent", CYAN);
 
-attackControl.on("change", function (v) {
-  synth.options.envelope.attack = v;
-  // console.log(v);
-  // console.log(parseFloat(v));
-  // console.log(synth.options);
-});
+// attackControl.on("change", function (v) {
+//   synth.options.envelope.attack = v;
+
+// });
 
 // Decay
 // Range: 0+ to 2
