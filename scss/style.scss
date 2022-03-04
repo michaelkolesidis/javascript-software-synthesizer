@@ -63,11 +63,11 @@ body {
   color: white;
 }
 
-::-moz-selection {
+::-moz-selection { // sets color of element (usually text) selection
   background: $dark-gray;
 }
 
-::selection {
+::selection { // sets color of element (usually text) selection
   background: $dark-gray;
 }
 
@@ -104,7 +104,6 @@ a:link {
     }
     div {
       margin-top: 1.23rem;
-      // letter-spacing: -0.03rem; // applied globally
     }
   }
 
@@ -138,13 +137,6 @@ a:link {
       width: 90.5%;
     }
   }
-
-  // #menu {
-  //   width: 3rem;
-  //   font-size: rem;
-  //   padding: 0;
-  //   margin-right: 0;
-  // }
 }
 
 /* --------------------------------------------------------------------- */
@@ -457,6 +449,7 @@ div {
   background: $blue;
   transition: 0.3s;
 }
+
 .icon-bar + .icon-bar {
   margin-top: 5px;
 }
