@@ -211,16 +211,39 @@ vibrato.depth.value; // range:0-1
 // ------------------------
 // Synthesizer
 // ------------------------
-// const synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
 const synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
 
-// console.log(Tone.Signal)
-
-synth.maxPolyphony = 128;
-
-// console.log(synth.options);
+synth.set({
+  maxPolyphony: 128,
+});
 
 const oscillator_types = ["sine", "square", "sawtooth", "triangle", "pulse"];
+
+// ------------------------
+// Volume
+// ------------------------
+// Dial
+let volumeControl = new Nexus.Dial("#volume", {
+  size: [75, 75],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: -40,
+  max: 40,
+  step: 0,
+  value: -6,
+});
+volumeControl.colorize("accent", CYAN);
+
+volumeControl.on("change", function (v) {
+  synth.set({
+    volume: v
+  })
+});
+
+// Number
+let volumeNum = new Nexus.Number("#volume-num");
+volumeNum.link(volumeControl);
+volumeNum.colorize("accent", CYAN);
 
 // ------------------------
 // Detune
@@ -228,6 +251,7 @@ const oscillator_types = ["sine", "square", "sawtooth", "triangle", "pulse"];
 // In cents - 100 cents = 8hz = 1 note - if detune 100, C4 becomes C4#, if detune 200 C4 becomes D4 and so on
 // detune range : -1000-1000 (choice)
 
+// Dial
 let detuneControl = new Nexus.Dial("#detune", {
   size: [75, 75],
   interaction: "vertical", // "radial", "vertical", or "horizontal"
@@ -238,7 +262,6 @@ let detuneControl = new Nexus.Dial("#detune", {
   value: 0,
 });
 detuneControl.colorize("accent", CYAN);
-// detuneControl.colorize("fill", GRAY);
 
 detuneControl.on("change", function (v) {
   synth.set({
@@ -333,8 +356,8 @@ harmonicityControl.colorize("accent", CYAN);
 
 harmonicityControl.on("change", function (v) {
   synth.set({
-    harmonicity: v
-  })
+    harmonicity: v,
+  });
 });
 
 // Number
@@ -409,33 +432,6 @@ synth.options.oscillator.type = "sine"; // sine, square, sawtooth,triangle, puls
 // synth.options.portamento =10
 
 // ------------------------
-// Volume
-// ------------------------
-// Dial
-let volumeControl = new Nexus.Dial("#volume", {
-  size: [75, 75],
-  interaction: "vertical", // "radial", "vertical", or "horizontal"
-  mode: "relative", // "absolute" or "relative"
-  min: -40,
-  max: 40,
-  step: 0,
-  value: -6,
-});
-volumeControl.colorize("accent", CYAN);
-// volumeControl.colorize("fill", GRAY);
-
-volumeControl.on("change", function (v) {
-  // console.log(v);
-  synth.volume.value = v;
-});
-
-// Number
-let volumeNum = new Nexus.Number("#volume-num");
-volumeNum.link(volumeControl);
-volumeNum.colorize("accent", CYAN);
-// volumeNum.colorize("fill", GRAY);
-
-// ------------------------
 // Synthesizer On-Screen Keyboard Playbility Implementation
 // ------------------------
 let notes = []; // For polyphonic synths
@@ -448,279 +444,6 @@ keyboard.on("change", (note) => {
     notes = notes.filter((e) => e !== midiToNoteString(note.note));
   }
 });
-
-/*
-// ------------------------
-// ENVELOPES
-// ------------------------
-let envelope1 = new Nexus.Envelope("#envelope1", {
-  size: [300, 150],
-  noNewPoints: true,
-  points: [
-    {
-      x: 0.1,
-      y: 0.4,
-    },
-    {
-      x: 0.35,
-      y: 0.6,
-    },
-    {
-      x: 0.65,
-      y: 0.2,
-    },
-    {
-      x: 0.9,
-      y: 0.4,
-    },
-  ],
-});
-envelope1.colorize("accent", CYAN);
-envelope1.colorize("fill", GRAY);
-
-let envelope2 = new Nexus.Envelope("#envelope2", {
-  size: [300, 150],
-  noNewPoints: false,
-  points: [
-    {
-      x: 0.1,
-      y: 0.4,
-    },
-    {
-      x: 0.35,
-      y: 0.6,
-    },
-    {
-      x: 0.65,
-      y: 0.2,
-    },
-    {
-      x: 0.9,
-      y: 0.4,
-    },
-  ],
-});
-envelope2.colorize("accent", "rgb(3,214,146)");
-envelope2.colorize("fill", GRAY);
-
-let envelope3 = new Nexus.Envelope("#envelope3", {
-  size: [300, 150],
-  noNewPoints: false,
-  points: [
-    {
-      x: 0.1,
-      y: 0.4,
-    },
-    {
-      x: 0.35,
-      y: 0.6,
-    },
-    {
-      x: 0.65,
-      y: 0.2,
-    },
-    {
-      x: 0.9,
-      y: 0.4,
-    },
-  ],
-});
-envelope3.colorize("accent", "rgb(254,188,44)");
-envelope3.colorize("fill", GRAY);
-
-// ------------------------
-//TOGGLES
-// ------------------------
-let toggle1 = new Nexus.Toggle("#toggle1", {
-  size: [40, 20],
-  state: false,
-});
-toggle1.colorize("accent", CYAN);
-toggle1.colorize("fill", GRAY);
-
-let toggle2 = new Nexus.Toggle("#toggle2", {
-  size: [40, 20],
-  state: false,
-});
-toggle2.colorize("accent", "rgb(3,214,146)");
-toggle2.colorize("fill", GRAY);
-
-let toggle3 = new Nexus.Toggle("#toggle3", {
-  size: [40, 20],
-  state: false,
-});
-toggle3.colorize("accent", "rgb(254,188,44)");
-toggle3.colorize("fill", GRAY);
-
-// ------------------------
-// DIALS
-// ------------------------
-let dial1 = new Nexus.Dial("#dial1", {
-  size: [75, 75],
-  interaction: "vertical", // "radial", "vertical", or "horizontal"
-  mode: "relative", // "absolute" or "relative"
-  min: -40,
-  max: 40,
-  step: 0,
-  value: -6,
-});
-dial1.colorize("accent", CYAN);
-dial1.colorize("fill", GRAY);
-
-dial1.on("change", function (v) {
-  synth.volume.value = v;
-});
-
-let number1 = new Nexus.Number("#number1");
-number1.link(dial1);
-number1.colorize("accent", CYAN);
-number1.colorize("fill", GRAY);
-
-let dial2 = new Nexus.Dial("#dial2", {
-  size: [75, 75],
-  interaction: "vertical", // "radial", "vertical", or "horizontal"
-  mode: "relative", // "absolute" or "relative"
-  min: 0,
-  max: 1,
-  step: 0,
-  value: 0.5,
-});
-dial2.colorize("accent", "rgb(3,214,146)");
-dial2.colorize("fill", GRAY);
-
-let number2 = new Nexus.Number("#number2");
-number2.link(dial2);
-number2.colorize("accent", "rgb(3,214,146)");
-number2.colorize("fill", GRAY);
-
-let dial3 = new Nexus.Dial("#dial3", {
-  size: [75, 75],
-  interaction: "vertical", // "radial", "vertical", or "horizontal"
-  mode: "relative", // "absolute" or "relative"
-  min: 0,
-  max: 1,
-  step: 0,
-  value: 0.75,
-});
-dial3.colorize("accent", "rgb(254,188,44)");
-dial3.colorize("fill", GRAY);
-
-let number3 = new Nexus.Number("#number3");
-number3.link(dial3);
-number3.colorize("accent", "rgb(254,188,44)");
-number3.colorize("fill", GRAY);
-
-// ------------------------
-// SLIDERS
-// ------------------------
-let slider1 = Nexus.Add.Slider("#slider1", {
-  size: [20, 120],
-  min: 0,
-  max: 1,
-  step: 0,
-  value: 0.5,
-});
-slider1.colorize("accent", "rgb(35,178,254)");
-slider1.colorize("fill", GRAY);
-
-let slider2 = Nexus.Add.Slider("#slider2", {
-  size: [20, 120],
-  min: 0,
-  max: 1,
-  step: 0,
-  value: 0.5,
-});
-slider2.colorize("accent", "rgb(35,178,254)");
-slider2.colorize("fill", GRAY);
-
-let slider3 = Nexus.Add.Slider("#slider3", {
-  size: [20, 120],
-  min: 0,
-  max: 1,
-  step: 0,
-  value: 0.5,
-});
-slider3.colorize("accent", "rgb(3,214,146)");
-slider3.colorize("fill", GRAY);
-
-let slider4 = Nexus.Add.Slider("#slider4", {
-  size: [20, 120],
-  min: 0,
-  max: 1,
-  step: 0,
-  value: 0.5,
-});
-slider4.colorize("accent", "rgb(3,214,146)");
-slider4.colorize("fill", GRAY);
-
-let slider5 = Nexus.Add.Slider("#slider5", {
-  size: [20, 120],
-  min: 0,
-  max: 1,
-  step: 0,
-  value: 0.5,
-});
-slider5.colorize("accent", "rgb(254,188,44)");
-slider5.colorize("fill", GRAY);
-
-let slider6 = Nexus.Add.Slider("#slider6", {
-  size: [20, 120],
-  min: 0,
-  max: 1,
-  step: 0,
-  value: 0.5,
-});
-slider6.colorize("accent", "rgb(254,188,44)");
-slider6.colorize("fill", GRAY);
-
-// ------------------------
-// POSITIONS
-// ------------------------
-let position1 = new Nexus.Position("#position1", {
-  size: [200, 200],
-  mode: "absolute", // "absolute" or "relative"
-  x: 0.5, // initial x value
-  minX: 0,
-  maxX: 1,
-  stepX: 0,
-  y: 0.5, // initial y value
-  minY: 0,
-  maxY: 1,
-  stepY: 0,
-});
-position1.colorize("accent", "rgb(35,178,254)");
-position1.colorize("fill", GRAY);
-
-let position2 = new Nexus.Position("#position2", {
-  size: [200, 200],
-  mode: "absolute", // "absolute" or "relative"
-  x: 0.5, // initial x value
-  minX: 0,
-  maxX: 1,
-  stepX: 0,
-  y: 0.5, // initial y value
-  minY: 0,
-  maxY: 1,
-  stepY: 0,
-});
-position2.colorize("accent", "rgb(3,214,146)");
-position2.colorize("fill", GRAY);
-
-let position3 = new Nexus.Position("#position3", {
-  size: [200, 200],
-  mode: "absolute", // "absolute" or "relative"
-  x: 0.5, // initial x value
-  minX: 0,
-  maxX: 1,
-  stepX: 0,
-  y: 0.5, // initial y value
-  minY: 0,
-  maxY: 1,
-  stepY: 0,
-});
-position3.colorize("accent", "rgb(254,188,44)");
-position3.colorize("fill", GRAY);
-*/
 
 // ------------------------
 // MIDI Implementation
@@ -770,7 +493,6 @@ oscilloscope.colorize("accent", "rgb(1, 0, 76)");
 if (darkMode) {
   oscilloscope.colorize("accent", GRAY);
 }
-// oscilloscope.colorize("fill", GRAY);
 
 // ------------------------
 // Spectrogram
@@ -783,7 +505,6 @@ spectrogram.colorize("accent", "rgb(1, 0, 76)");
 if (darkMode) {
   spectrogram.colorize("accent", GRAY);
 }
-// spectrogram.colorize("fill", GRAY);
 
 // ------------------------
 // Meter
@@ -796,7 +517,6 @@ meter.colorize("accent", "rgb(1, 0, 76)");
 if (darkMode) {
   meter.colorize("accent", GRAY);
 }
-// meter.colorize("fill", GRAY);
 
 // ------------------------
 // ------------------------
@@ -819,9 +539,6 @@ if (darkMode) {
 // ------------------------
 // Other
 // ------------------------
-// Tone.setContext(Nexus.context)
-// Nexus.context = Tone.context;
-// Simplify letiables
 
 let synthTitle = document.getElementById("synth-title");
 let main = document.getElementById("main");
@@ -835,134 +552,3 @@ function showHide() {
     main.style.display = "flex";
   }
 }
-
-let envelope1 = new Nexus.Envelope("#envelope1", {
-  size: [300, 150],
-  noNewPoints: true,
-  points: [
-    {
-      x: 0.1,
-      y: 0.4,
-    },
-    {
-      x: 0.35,
-      y: 0.6,
-    },
-    {
-      x: 0.65,
-      y: 0.2,
-    },
-    {
-      x: 0.9,
-      y: 0.4,
-    },
-  ],
-});
-envelope1.colorize("accent", CYAN);
-// envelope1.colorize("fill", GRAY);
-
-let position1 = new Nexus.Position("#position1", {
-  size: [200, 200],
-  mode: "absolute", // "absolute" or "relative"
-  x: 0.5, // initial x value
-  minX: 0,
-  maxX: 1,
-  stepX: 0,
-  y: 0.5, // initial y value
-  minY: 0,
-  maxY: 1,
-  stepY: 0,
-});
-position1.colorize("accent", GREEN);
-// position1.colorize("fill", GRAY);
-
-let slider1 = Nexus.Add.Slider("#slider1", {
-  size: [20, 120],
-  min: 0,
-  max: 1,
-  step: 0,
-  value: 0.5,
-});
-slider1.colorize("accent", GREEN);
-// slider1.colorize("fill", GRAY);
-
-let slider2 = Nexus.Add.Slider("#slider2", {
-  size: [20, 120],
-  min: 0,
-  max: 1,
-  step: 0,
-  value: 0.5,
-});
-slider2.colorize("accent", GREEN);
-// slider2.colorize("fill", GRAY);
-
-let slider3 = Nexus.Add.Slider("#slider3", {
-  size: [20, 120],
-  min: 0,
-  max: 1,
-  step: 0,
-  value: 0.5,
-});
-slider3.colorize("accent", GREEN);
-// slider3.colorize("fill", GRAY);
-
-let slider4 = Nexus.Add.Slider("#slider4", {
-  size: [20, 120],
-  min: 0,
-  max: 1,
-  step: 0,
-  value: 0.5,
-});
-slider4.colorize("accent", GREEN);
-// slider4.colorize("fill", GRAY);
-
-let slider5 = Nexus.Add.Slider("#slider5", {
-  size: [20, 120],
-  min: 0,
-  max: 1,
-  step: 0,
-  value: 0.5,
-});
-slider5.colorize("accent", GREEN);
-// slider5.colorize("fill", GRAY);
-
-let slider6 = Nexus.Add.Slider("#slider6", {
-  size: [20, 120],
-  min: 0,
-  max: 1,
-  step: 0,
-  value: 0.5,
-});
-slider6.colorize("accent", GREEN);
-// slider6.colorize("fill", GRAY);
-
-let toggle1 = new Nexus.Toggle("#tremolo", {
-  size: [40, 20],
-  state: false,
-});
-toggle1.colorize("accent", YELLOW);
-// toggle1.colorize("fill", GRAY);
-
-let toggle2 = new Nexus.Toggle("#toggle1", {
-  size: [40, 20],
-  state: false,
-});
-toggle2.colorize("accent", YELLOW);
-// toggle2.colorize("fill", YELLOW);
-
-var multislider = new Nexus.Multislider("#target", {
-  size: [250, 250],
-  numberOfSliders: 10,
-  min: 0,
-  max: 1,
-  step: 0,
-  candycane: 3,
-  values: [0.1, 0.2, 0.4, 0.6, 0.9, 0.4, 0.3, 0.2, 0.7, 0.1],
-  smoothing: 0,
-  mode: "bar", // 'bar' or 'line'
-});
-
-multislider.colorize("accent", YELLOW);
-// multislider.colorize("fill", GREEN);
-
-// 200th Commit! WOW!
