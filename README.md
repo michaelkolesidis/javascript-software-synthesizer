@@ -57,11 +57,13 @@ Please refer to the project's [Changelog](https://github.com/michaelkolesidis/ja
 * [NexusUI](https://github.com/nexus-js/ui)
 <br>NexusUI provides us with the UI components that are connected to the synthesizers and make parameters adjusting easy and playful.
 * [WEBMIDI.js](https://github.com/djipco/webmidi)
-<br>WEBMIDI.js makes Web MIDI API easy to implement. It allows users to connect their MIDI keyboards and play the synthesizer the way it is meant to be played. Because, who likes playing music with a mouse?
+<br>WEBMIDI.js makes Web MIDI API easy to implement. It allows users to connect their MIDI keyboards and play the synthesizer the way it is meant to be played. Because, who likes playing music with a [mouse](https://web.archive.org/web/20150928202135im_/https://kathytemean.files.wordpress.com/2014/11/46289.jpg?w=500&h=540)?
+* [Floating UI](https://github.com/floating-ui/floating-ui)
+<br>Floating UI allows us to provide help to our users, by position floating tooltips, while intelligently keeping them in view.
 * [Sass](https://github.com/sass/sass)
 <br>The SCSS (Sassy CSS) syntax is utilized for the styling of our project.
 * [npm](https://github.com/npm/cli)
-<br>Everyone's beloved packet manager.
+<br>Everyone's beloved package manager.
 <br>
 <p align="left">
 <img width="100px" src="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/assets/lizard/other/lizard-04-c.svg">
