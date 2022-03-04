@@ -276,15 +276,15 @@ div {
   margin: 0 auto;
   margin-top: 2rem;
   position: relative;
-  z-index: -1;
+  z-index: 0;
 }
 
 #keyboard svg {
-  z-index: -1;
+  // z-index: -1;
 }
 
 #keyboard svg:first-of-type {
-  z-index: -2;
+  // z-index: -2;
 }
 
 // For keyboard manipulation
@@ -400,6 +400,7 @@ div {
   pointer-events: none;
   left: 0;
   top: 0;
+  z-index: 1;
 }
 #nav-container .bg {
   position: absolute;
@@ -426,7 +427,6 @@ div {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  z-index: 1;
   -webkit-appearance: none;
   border: 0;
   background: transparent;
@@ -493,7 +493,7 @@ div {
   transition: transform 0.3s;
   will-change: transform;
   contain: paint;
-  z-index: 1;
+  z-index: 2;
 }
 
 #nav-content ul {
