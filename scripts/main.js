@@ -79,6 +79,12 @@ keyboard.colorize("accent", GRAY_DARK); // light mode
 //   keyboard.resize(800, 50);
 // });
 
+let keyboardPlaceholder = document.getElementById("keyboard");
+keyboardPlaceholder.addEventListener('contextmenu', function(event) {
+  event.preventDefault();
+}, false)
+console.log(keyboardPlaceholder)
+// keyboardPlaceholder.style.zIndex = "-2"
 
 // ------------------------
 // Dark Mode
@@ -827,10 +833,10 @@ if (darkMode) {
 // Nexus.context = Tone.context;
 // Simplify letiables
 
-let synthesizerTitle = document.getElementById("synthesizer-title");
+let synthTitle = document.getElementById("synth-title");
 let main = document.getElementById("main");
 
-synthesizerTitle.addEventListener("click", showHide);
+synthTitle.addEventListener("click", showHide);
 
 function showHide() {
   if (main.style.display === "flex") {

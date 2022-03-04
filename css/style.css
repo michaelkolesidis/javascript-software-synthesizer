@@ -4,29 +4,23 @@
  *  MIT License
  *
  */
-/* ------------------------ */
-/* Font Imports */
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
+/* Font Import */
+/* --------------------------------------------------------------------- */
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 /* SCSS Color Variables */
-/* ------------------------ */
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
+/* --------------------------------------------------------------------- */
 /* SCSS Size Variables */
-/* ------------------------ */
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
+/* --------------------------------------------------------------------- */
 /* General Rules */
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 * {
   box-sizing: border-box;
-}
-
-a,
-a:hover,
-a:focus,
-a:active {
-  text-decoration: none;
-  color: inherit;
+  outline: none;
+  letter-spacing: -0.03em;
 }
 
 html,
@@ -62,9 +56,18 @@ body {
   background: #b4b4b4;
 }
 
-/* ------------------------ */
+a,
+a:hover,
+a:focus,
+a:active,
+a:link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* --------------------------------------------------------------------- */
 /* Header */
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 #header {
   display: flex;
   flex-direction: row;
@@ -86,7 +89,6 @@ body {
 }
 #header #logo-name div {
   margin-top: 1.23rem;
-  letter-spacing: -0.03rem;
 }
 #header #buttons {
   display: flex;
@@ -102,9 +104,10 @@ body {
   margin: 0 0.5rem;
   cursor: pointer;
 }
-#header button:hover {
-  background: #b4b4b4;
-  color: white;
+#header #button-placeholder {
+  width: 0;
+  margin-left: 2.22rem;
+  background: white;
 }
 #header #dark {
   font-size: 1.9rem;
@@ -113,16 +116,10 @@ body {
   padding-top: 0.43rem;
   width: 90.5%;
 }
-#header #menu {
-  width: 3rem;
-  font-size: rem;
-  padding: 0;
-  margin-right: 0;
-}
 
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 /* Component Labels */
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 div h2 {
   text-align: center;
   font-size: 1.5rem;
@@ -153,10 +150,10 @@ div h2 {
   padding: 0.5rem;
 }
 
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 /* Panel */
-/* ------------------------ */
-#synth {
+/* --------------------------------------------------------------------- */
+#synthesizer {
   margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -173,14 +170,14 @@ div h2 {
   margin-bottom: 2rem;
 }
 
-/* ------------------------ */
-/* Synth Panel */
-/* ------------------------ */
-#synthesizer {
+/* --------------------------------------------------------------------- */
+/* Synth Section */
+/* --------------------------------------------------------------------- */
+#synth {
   grid-column: 1/2;
   grid-row: 2;
 }
-#synthesizer .title {
+#synth .title {
   color: #23b2fe;
 }
 
@@ -189,9 +186,9 @@ div h2 {
   justify-content: space-evenly;
 }
 
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 /* Modulation Section */
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 #modulation {
   grid-column: 2/3;
   grid-row: 2;
@@ -203,6 +200,9 @@ div h2 {
   color: #03d692;
 }
 
+/* --------------------------------------------------------------------- */
+/* Effects Section */
+/* --------------------------------------------------------------------- */
 #effects {
   grid-column: 3/4;
   grid-row: 2;
@@ -214,19 +214,29 @@ div h2 {
   color: #febc2c;
 }
 
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 /* Keyboard */
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 #keyboard {
   grid-column: 1/4;
   grid-row: 3;
   margin: 0 auto;
   margin-top: 2rem;
+  position: relative;
+  z-index: -1;
 }
 
-/* ------------------------ */
+#keyboard svg {
+  z-index: -1;
+}
+
+#keyboard svg:first-of-type {
+  z-index: -2;
+}
+
+/* --------------------------------------------------------------------- */
 /* MIDI Display */
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 #midi-display {
   width: 300px;
   height: 150px;
@@ -237,9 +247,9 @@ div h2 {
   line-height: 1.4rem;
 }
 
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 /* Footer */
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 #footer {
   position: absolute;
   bottom: 0;
@@ -262,7 +272,143 @@ div h2 {
   padding-bottom: 3rem;
 }
 
-/****** TO BE REMOVED *******/
+/* --------------------------------------------------------------------- */
+/* Menu */
+/* --------------------------------------------------------------------- */
+#nav-container {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+}
+
+#nav-container .bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+  background: #000;
+}
+
+#nav-container:focus-within .bg {
+  visibility: visible;
+  opacity: 0.6;
+}
+
+#nav-container * {
+  visibility: visible;
+}
+
+.button {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+  -webkit-appearance: none;
+  border: 0;
+  background: transparent;
+  color: #01004c;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  pointer-events: auto;
+  margin-left: 25px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: #333333;
+  border: 0;
+  background: #f0f0f3;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  padding: 0 0.7rem;
+}
+
+.icon-bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #01004c;
+  transition: 0.3s;
+}
+
+.icon-bar + .icon-bar {
+  margin-top: 5px;
+}
+
+#nav-container:focus-within .button {
+  pointer-events: none;
+}
+
+#nav-container:focus-within .icon-bar:nth-of-type(1) {
+  transform: translate3d(0, 8px, 0) rotate(45deg);
+}
+
+#nav-container:focus-within .icon-bar:nth-of-type(2) {
+  opacity: 0;
+}
+
+#nav-container:focus-within .icon-bar:nth-of-type(3) {
+  transform: translate3d(0, -8px, 0) rotate(-45deg);
+}
+
+#nav-content {
+  margin-top: 81px;
+  padding: 40px;
+  width: 90%;
+  max-width: 500px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: calc(100% - 70px);
+  background: #ffffff;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  transform: translateX(100%);
+  transition: transform 0.3s;
+  will-change: transform;
+  contain: paint;
+  z-index: 1;
+}
+
+#nav-content ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+#nav-content li a {
+  padding: 10px 5px;
+  display: block;
+  transition: color 0.1s;
+  color: #01004c;
+}
+
+#nav-content li a:hover {
+  color: #b4b4b4;
+}
+
+#nav-content li:not(.small) + .small {
+  margin-top: auto;
+}
+
+#nav-container:focus-within #nav-content {
+  transform: none;
+}
+
+/* -------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------- */
+/* TO BE REMOVED - TO BE REMOVED - TO BE REMOVED - TO BE REMOVED - TO BE REMOVED -  */
+/* -------------------------------------------------------------------------------- */
 #envelopes {
   display: flex;
   align-items: center;
@@ -282,5 +428,9 @@ div h2 {
 #target {
   margin-top: 2rem;
 }
+
+/* -------------------------------------------------------------------------------- */
+/* END OF TO BE REMOVED - END OF TO BE REMOVED - END OF TO BE REMOVED -  */
+/* -------------------------------------------------------------------------------- */
 
 /*# sourceMappingURL=style.css.map */

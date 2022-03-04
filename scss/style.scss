@@ -5,14 +5,14 @@
  *
  */
 
-/* ------------------------ */
-/* Font Imports */
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
+/* Font Import */
+/* --------------------------------------------------------------------- */
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 /* SCSS Color Variables */
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 $black: rgb(51, 51, 51);
 $dark-gray: rgb(180, 180, 180);
 $gray: rgb(240, 240, 243);
@@ -21,25 +21,21 @@ $cyan: rgb(35, 178, 254);
 $green: rgb(3, 214, 146);
 $yellow: rgb(254, 188, 44);
 
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 /* SCSS Size Variables */
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 $header-size: 3rem;
 $header-font: calc($header-size / 3);
 
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 /* General Rules */
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 * {
   box-sizing: border-box;
-}
-
-a,
-a:hover,
-a:focus,
-a:active {
-  text-decoration: none;
-  color: inherit;
+  outline: none;
+  // margin: 0;   // implement
+  // padding: 0;  // implement
+  letter-spacing: -0.03em;
 }
 
 html,
@@ -75,9 +71,18 @@ body {
   background: $dark-gray;
 }
 
-/* ------------------------ */
+a,
+a:hover,
+a:focus,
+a:active,
+a:link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* --------------------------------------------------------------------- */
 /* Header */
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 #header {
   display: flex;
   flex-direction: row;
@@ -99,7 +104,7 @@ body {
     }
     div {
       margin-top: 1.23rem;
-      letter-spacing: -0.03rem;
+      // letter-spacing: -0.03rem; // applied globally
     }
   }
 
@@ -119,9 +124,11 @@ body {
     cursor: pointer;
   }
 
-  button:hover {
-    background: $dark-gray;
-    color: white;
+  #button-placeholder {
+    // used for the menu button
+    width: 0;
+    margin-left: 2.22rem;
+    background: white;
   }
 
   #dark {
@@ -132,17 +139,17 @@ body {
     }
   }
 
-  #menu {
-    width: 3rem;
-    font-size: rem;
-    padding: 0;
-    margin-right: 0;
-  }
+  // #menu {
+  //   width: 3rem;
+  //   font-size: rem;
+  //   padding: 0;
+  //   margin-right: 0;
+  // }
 }
 
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 /* Component Labels */
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 div {
   h2 {
     // color: white;
@@ -180,7 +187,6 @@ div {
   width: fit-content;
   text-align: center;
   padding: 0.5rem;
-
 }
 
 // .components {
@@ -188,10 +194,10 @@ div {
 //   flex-direction: column;
 // }
 
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 /* Panel */
-/* ------------------------ */
-#synth {
+/* --------------------------------------------------------------------- */
+#synthesizer {
   margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -211,10 +217,10 @@ div {
   margin-bottom: 2rem;
 }
 
-/* ------------------------ */
-/* Synth Panel */
-/* ------------------------ */
-#synthesizer {
+/* --------------------------------------------------------------------- */
+/* Synth Section */
+/* --------------------------------------------------------------------- */
+#synth {
   //2
   grid-column: 1 / 2;
   grid-row: 2;
@@ -230,9 +236,9 @@ div {
   // border: 3px solid $cyan;
 }
 
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 /* Modulation Section */
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 #modulation {
   //3
   grid-column: 2 /3;
@@ -245,6 +251,9 @@ div {
   align-items: center;
 }
 
+/* --------------------------------------------------------------------- */
+/* Effects Section */
+/* --------------------------------------------------------------------- */
 #effects {
   //4
   grid-column: 3 /4;
@@ -257,15 +266,25 @@ div {
   align-items: center;
 }
 
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 /* Keyboard */
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 #keyboard {
   //5
   grid-column: 1 / 4;
   grid-row: 3;
   margin: 0 auto;
   margin-top: 2rem;
+  position: relative;
+  z-index: -1;
+}
+
+#keyboard svg {
+  z-index: -1;
+}
+
+#keyboard svg:first-of-type {
+  z-index: -2;
 }
 
 // For keyboard manipulation
@@ -282,9 +301,9 @@ div {
 //   background: red;
 // }
 
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 /* MIDI Display */
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 #midi-display {
   width: 300px;
   height: 150px;
@@ -295,9 +314,9 @@ div {
   line-height: 1.4rem;
 }
 
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 /* Footer */
-/* ------------------------ */
+/* --------------------------------------------------------------------- */
 #footer {
   position: absolute;
   bottom: 0;
@@ -321,7 +340,196 @@ div {
   padding-bottom: 3rem; // Footer height
 }
 
-/****** TO BE REMOVED *******/
+/* --------------------------------------------------------------------- */
+/* Menu */
+/* --------------------------------------------------------------------- */
+
+// .page {
+//   width: 100%;
+//   height: 100vh;
+//   background: #fdfdfd;
+
+//   font-weight: 600;
+//   letter-spacing: .03em;
+//   color: #212121;
+// }
+
+// header {
+//   display: flex;
+//   position: fixed;
+//   width: 100%;
+//   height: 70px;
+//   background: #212121;
+//   color: #fff;
+//   justify-content: center;
+//   align-items: center;
+//   -webkit-tap-highlight-color: rgba(0,0,0,0);
+// }
+
+// main {
+//   padding: 70px 20px 0;
+//   display: flex;
+//   flex-direction: column;
+//   height: 100%;
+// }
+
+// main > div {
+//   margin: auto;
+//   max-width: 600px;
+// }
+
+// main h2 span {
+//   color: #BF7497;
+// }
+
+// main p {
+//   line-height: 1.5;
+//   font-weight: 200;
+//   margin: 20px 0;
+// }
+
+// main small {
+//   font-weight: 300;
+//   color: #888;
+// }
+
+#nav-container {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+}
+#nav-container .bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: calc(100%);
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+  background: #000;
+}
+#nav-container:focus-within .bg {
+  visibility: visible;
+  opacity: 0.6;
+}
+#nav-container * {
+  visibility: visible;
+}
+
+.button {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+  -webkit-appearance: none;
+  border: 0;
+  background: transparent;
+  color: $blue;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+
+  pointer-events: auto;
+  margin-left: 25px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: $black;
+
+  border: 0;
+  background: $gray;
+
+  // font-size: 2.1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  padding: 0 0.7rem;
+}
+
+.icon-bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: $blue;
+  transition: 0.3s;
+}
+.icon-bar + .icon-bar {
+  margin-top: 5px;
+}
+
+// Menu button effect
+#nav-container:focus-within .button {
+  pointer-events: none;
+}
+#nav-container:focus-within .icon-bar:nth-of-type(1) {
+  transform: translate3d(0, 8px, 0) rotate(45deg);
+}
+#nav-container:focus-within .icon-bar:nth-of-type(2) {
+  opacity: 0;
+}
+#nav-container:focus-within .icon-bar:nth-of-type(3) {
+  transform: translate3d(0, -8px, 0) rotate(-45deg);
+}
+
+// Menu
+#nav-content {
+  margin-top: 81px;
+  // margin-bottom: 300px;
+  padding: 40px;
+  width: 90%;
+  max-width: 500px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: calc(100% - 70px);
+  background: #ffffff;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  transform: translateX(100%);
+  transition: transform 0.3s;
+  will-change: transform;
+  contain: paint;
+  z-index: 1;
+}
+
+#nav-content ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+#nav-content li a {
+  padding: 10px 5px;
+  display: block;
+  // text-transform: uppercase;
+  transition: color 0.1s;
+  color: $blue
+}
+
+#nav-content li a:hover {
+  color: $dark-gray;
+}
+
+#nav-content li:not(.small) + .small {
+  margin-top: auto;
+}
+
+#nav-container:focus-within #nav-content {
+  transform: none;
+}
+
+/* -------------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------------- */
+/* TO BE REMOVED - TO BE REMOVED - TO BE REMOVED - TO BE REMOVED - TO BE REMOVED -  */
+/* -------------------------------------------------------------------------------- */
 #envelopes {
   display: flex;
   align-items: center;
@@ -376,3 +584,6 @@ div {
 #target {
   margin-top: 2rem;
 }
+/* -------------------------------------------------------------------------------- */
+/* END OF TO BE REMOVED - END OF TO BE REMOVED - END OF TO BE REMOVED -  */
+/* -------------------------------------------------------------------------------- */
