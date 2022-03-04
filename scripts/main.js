@@ -20,9 +20,9 @@ Tone.setContext(Nexus.context);
 // console.log("TONE CONTEXT:");
 // console.log(Tone.context);
 
-// ------------------------
+// ---------------------------------------------------------------------
 // Colors
-// ------------------------
+// ---------------------------------------------------------------------
 const BLACK = "rgb(51, 51, 51)";
 const GRAY_DARK = "rgb(180, 180, 180)";
 const GRAY = "rgb(240,240,243)";
@@ -33,31 +33,31 @@ const YELLOW = "rgb(254, 188, 44)";
 
 Nexus.colors.fill = GRAY;
 
-// ------------------------
+// ---------------------------------------------------------------------
 // Welcome Message in Console
-// ------------------------
+// ---------------------------------------------------------------------
 ConsoleIntro();
 
-// ------------------------
+// ---------------------------------------------------------------------
 // Header
-// ------------------------
+// ---------------------------------------------------------------------
 const header = document.getElementById("header");
 header.innerHTML = Header();
 
-// ------------------------
+// ---------------------------------------------------------------------
 // Footer
-// ------------------------
+// ---------------------------------------------------------------------
 const footer = document.getElementById("footer");
 footer.innerHTML = Footer();
 
-// ------------------------
+// ---------------------------------------------------------------------
 // MIDI Display
-// ------------------------
+// ---------------------------------------------------------------------
 const midiDisplay = document.getElementById("midi-display");
 
-// ------------------------
+// ---------------------------------------------------------------------
 // Keyboard
-// ------------------------
+// ---------------------------------------------------------------------
 // Nexus.colors.accent = GRAY; // dark mode
 // Nexus.colors.dark = GRAY_DARK; // darl mode
 // Nexus.colors.light = BLACK; // dark mode
@@ -78,6 +78,7 @@ keyboard.colorize("accent", GRAY_DARK); // light mode
 //   keyboard.resize(800, 50);
 // });
 
+// Makes keyboard playble both with right and left click - prevents right click context menu
 let keyboardPlaceholder = document.getElementById("keyboard");
 keyboardPlaceholder.addEventListener(
   "contextmenu",
@@ -86,12 +87,12 @@ keyboardPlaceholder.addEventListener(
   },
   false
 );
-console.log(keyboardPlaceholder);
-// keyboardPlaceholder.style.zIndex = "-2"
 
-// ------------------------
+
+
+// ---------------------------------------------------------------------
 // Dark Mode
-// ------------------------
+// ---------------------------------------------------------------------
 let darkMode = false;
 
 // function toggleDark() {
@@ -116,9 +117,11 @@ let darkMode = false;
 
 // toggleDarkButton.addEventListener("click", toggleDark());
 
-// ------------------------
+// ---------------------------------------------------------------------
 // Effects
-// ------------------------
+// ---------------------------------------------------------------------
+// Note: Unimplemented effects are commented out
+
 // AutoFilter .connect(autoFilter)
 const autoFilter = new Tone.AutoFilter("4n").toDestination().start();
 autoFilter.depth.value = 1; // range:0-1
@@ -208,9 +211,9 @@ vibrato.depth.value; // range:0-1
 
 // vibrato.wet.value = 1
 
-// ------------------------
+// ---------------------------------------------------------------------
 // Synthesizer
-// ------------------------
+// ---------------------------------------------------------------------
 const synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
 
 synth.set({
@@ -219,9 +222,9 @@ synth.set({
 
 const oscillator_types = ["sine", "square", "sawtooth", "triangle", "pulse"];
 
-// ------------------------
+// ---------------------------------------------------------------------
 // Volume
-// ------------------------
+// ---------------------------------------------------------------------
 // Dial
 let volumeControl = new Nexus.Dial("#volume", {
   size: [75, 75],
@@ -245,9 +248,9 @@ let volumeNum = new Nexus.Number("#volume-num");
 volumeNum.link(volumeControl);
 volumeNum.colorize("accent", CYAN);
 
-// ------------------------
+// ---------------------------------------------------------------------
 // Detune
-// ------------------------
+// ---------------------------------------------------------------------
 // In cents - 100 cents = 8hz = 1 note - if detune 100, C4 becomes C4#, if detune 200 C4 becomes D4 and so on
 // detune range : -1000-1000 (choice)
 
@@ -273,11 +276,68 @@ detuneControl.on("change", function (v) {
 let detuneNum = new Nexus.Number("#detune-num");
 detuneNum.link(detuneControl);
 detuneNum.colorize("accent", CYAN);
-// detuneNum.colorize("fill", GRAY);
 
-// ------------------------
+// ---------------------------------------------------------------------
+// Modulation Index
+// ---------------------------------------------------------------------
+// The modulation index is essentially the amound of modulation occuring. It is the ratio of the frequency of the modulating signal (mf) to the amplitude of the modulating signal (ma) – as in ma/mf.
+// modulationIndex range: 0-300 (choice)
+
+let modulationIndexControl = new Nexus.Dial("#modulation-index", {
+  size: [75, 75],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: 0,
+  max: 100,
+  step: 1,
+  value: 10,
+});
+modulationIndexControl.colorize("accent", CYAN);
+modulationIndexControl.colorize("fill", GRAY);
+
+modulationIndexControl.on("change", function (v) {
+  synth.set({
+    modulationIndex: v,
+  });
+});
+
+// Number;
+let modulationIndexNum = new Nexus.Number("#modulation-index-num");
+modulationIndexNum.link(modulationIndexControl);
+modulationIndexNum.colorize("accent", CYAN);
+modulationIndexNum.colorize("fill", GRAY);
+
+// ---------------------------------------------------------------------
+// Harmonicity
+// ---------------------------------------------------------------------
+//  Harmonicity is the ratio between the two voices. A harmonicity of 1 is no change. Harmonicity = 2 means a change of an octave.
+// range: 0-20 (choice)
+
+let harmonicityControl = new Nexus.Dial("#harmonicity", {
+  size: [75, 75],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: 0,
+  max: 20,
+  step: 0,
+  value: 3,
+});
+harmonicityControl.colorize("accent", CYAN);
+
+harmonicityControl.on("change", function (v) {
+  synth.set({
+    harmonicity: v,
+  });
+});
+
+// Number
+let harmonicityNum = new Nexus.Number("#harmonicity-num");
+harmonicityNum.link(harmonicityControl);
+harmonicityNum.colorize("accent", CYAN);
+
+// ---------------------------------------------------------------------
 // ADSR Envelope
-// ------------------------
+// ---------------------------------------------------------------------
 // Attack
 // Range: 0 to 2
 // attackCurve
@@ -336,48 +396,18 @@ synth.options.envelope.sustain = 1;
 synth.options.envelope.release = 0.5;
 synth.options.envelope.releaseCurve = "exponential";
 
-// ------------------------
-// Harmonicity
-// ------------------------
-//  Harmonicity is the ratio between the two voices. A harmonicity of 1 is no change. Harmonicity = 2 means a change of an octave.
-// range: 0-20 (choice)
-
-let harmonicityControl = new Nexus.Dial("#harmonicity", {
-  size: [75, 75],
-  interaction: "vertical", // "radial", "vertical", or "horizontal"
-  mode: "relative", // "absolute" or "relative"
-  min: 0,
-  max: 20,
-  step: 0,
-  value: 3,
-});
-harmonicityControl.colorize("accent", CYAN);
-// harmonicityControl.colorize("fill", GRAY);
-
-harmonicityControl.on("change", function (v) {
-  synth.set({
-    harmonicity: v,
-  });
-});
-
-// Number
-let harmonicityNum = new Nexus.Number("#harmonicity-num");
-harmonicityNum.link(harmonicityControl);
-harmonicityNum.colorize("accent", CYAN);
-// harmonicityNum.colorize("fill", GRAY);
-
-// ------------------------
+// ---------------------------------------------------------------------
 // Modulation
-// ------------------------
+// ---------------------------------------------------------------------
 // partialCount
 // partials []
 // phase
 // type*
 synth.options.modulation.type; // sine, square (default), sawtooth,triangle, pulse
 
-// ------------------------
+// ---------------------------------------------------------------------
 // Modulation Envelope
-// ------------------------
+// ---------------------------------------------------------------------
 // attack
 // attackCurve
 // decay
@@ -386,39 +416,11 @@ synth.options.modulation.type; // sine, square (default), sawtooth,triangle, pul
 // release
 // releaseCurve
 
-// ------------------------
-// Modulation Index
-// ------------------------
-// The modulation index is essentially the amound of modulation occuring. It is the ratio of the frequency of the modulating signal (mf) to the amplitude of the modulating signal (ma) – as in ma/mf.
-// modulationIndex range: 0-300 (choice)
 
-let modulationIndexControl = new Nexus.Dial("#modulation-index", {
-  size: [75, 75],
-  interaction: "vertical", // "radial", "vertical", or "horizontal"
-  mode: "relative", // "absolute" or "relative"
-  min: 0,
-  max: 100,
-  step: 1,
-  value: 10,
-});
-modulationIndexControl.colorize("accent", CYAN);
-modulationIndexControl.colorize("fill", GRAY);
 
-modulationIndexControl.on("change", function (v) {
-  synth.set({
-    modulationIndex: v,
-  });
-});
-
-// Number;
-let modulationIndexNum = new Nexus.Number("#modulation-index-num");
-modulationIndexNum.link(modulationIndexControl);
-modulationIndexNum.colorize("accent", CYAN);
-modulationIndexNum.colorize("fill", GRAY);
-
-// ------------------------
+// ---------------------------------------------------------------------
 // Oscillator
-// ------------------------
+// ---------------------------------------------------------------------
 // partialCount
 // partials
 // phase
@@ -426,14 +428,14 @@ modulationIndexNum.colorize("fill", GRAY);
 
 synth.options.oscillator.type = "sine"; // sine, square, sawtooth,triangle, pulse
 
-// ------------------------
+// ---------------------------------------------------------------------
 // Portamento
-// ------------------------
+// ---------------------------------------------------------------------
 // synth.options.portamento =10
 
-// ------------------------
+// ---------------------------------------------------------------------
 // Synthesizer On-Screen Keyboard Playbility Implementation
-// ------------------------
+// ---------------------------------------------------------------------
 let notes = []; // For polyphonic synths
 keyboard.on("change", (note) => {
   if (note.state) {
@@ -445,9 +447,9 @@ keyboard.on("change", (note) => {
   }
 });
 
-// ------------------------
+// ---------------------------------------------------------------------
 // MIDI Implementation
-// ------------------------
+// ---------------------------------------------------------------------
 
 // Enable WebMidi.js and trigger the onEnabled() function when ready.
 WebMidi.enable()
@@ -482,9 +484,9 @@ function onEnabled() {
   });
 }
 
-// ------------------------
+// ---------------------------------------------------------------------
 // Oscilloscope
-// ------------------------
+// ---------------------------------------------------------------------
 let oscilloscope = new Nexus.Oscilloscope("#oscilloscope", {
   size: [300, 150],
 });
@@ -494,9 +496,9 @@ if (darkMode) {
   oscilloscope.colorize("accent", GRAY);
 }
 
-// ------------------------
+// ---------------------------------------------------------------------
 // Spectrogram
-// ------------------------
+// ---------------------------------------------------------------------
 let spectrogram = new Nexus.Spectrogram("#spectrogram", {
   size: [300, 150],
 });
@@ -506,9 +508,9 @@ if (darkMode) {
   spectrogram.colorize("accent", GRAY);
 }
 
-// ------------------------
+// ---------------------------------------------------------------------
 // Meter
-// ------------------------
+// ---------------------------------------------------------------------
 let meter = new Nexus.Meter("#meter", {
   size: [40, 150],
 });
@@ -518,28 +520,10 @@ if (darkMode) {
   meter.colorize("accent", GRAY);
 }
 
-// ------------------------
-// ------------------------
-// ------------------------
-// ------------------------
-// ------------------------
-// ------------------------
-// ------------------------
-// ------------------------
-// ------------------------
-// ------------------------
-// ------------------------
-// ------------------------
-// ------------------------
-// ------------------------
-// ------------------------
-// ------------------------
-// ------------------------
-// ------------------------
-// ------------------------
+// ---------------------------------------------------------------------
 // Other
-// ------------------------
-
+// ---------------------------------------------------------------------
+// Show/Hide section toggle
 let synthTitle = document.getElementById("synth-title");
 let main = document.getElementById("main");
 
