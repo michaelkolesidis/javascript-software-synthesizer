@@ -50,10 +50,12 @@ body {
 
 ::-moz-selection {
   background: #b4b4b4;
+  color: white;
 }
 
 ::selection {
   background: #b4b4b4;
+  color: white;
 }
 
 a,

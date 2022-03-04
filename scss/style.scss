@@ -65,10 +65,12 @@ body {
 
 ::-moz-selection { // sets color of element (usually text) selection
   background: $dark-gray;
+  color: white;
 }
 
 ::selection { // sets color of element (usually text) selection
   background: $dark-gray;
+  color: white;
 }
 
 a,
