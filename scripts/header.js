@@ -7,7 +7,7 @@
 
 export default function header(darkMode) {
   if (darkMode) {
-    return `
+    return /*html*/ `
     
   <div id="logo-name">
     <img src="./assets/logo/logo192_dark.png"/>
@@ -41,7 +41,7 @@ export default function header(darkMode) {
     
     `;
   }
-  return `
+  return /*html*/ `
   
   <div id="logo-name">
     <img src="./assets/logo/logo192.png"/>

@@ -6,6 +6,5 @@
  */
 
 export default function footer() {
-    return `<p>© 2022 | Made with ♥ by <a href="https://github.com/michaelkolesidis" target="_blank">Michael Kolesidis</a></p>`;
-  }
-  
+  return /*html*/ `<p>© 2022 | Made with ♥ by <a href="https://github.com/michaelkolesidis" target="_blank">Michael Kolesidis</a></p>`;
+}

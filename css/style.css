@@ -20,32 +20,26 @@
 * {
   box-sizing: border-box;
   outline: none;
+  margin: 0;
+  padding: 0;
   letter-spacing: -0.03em;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
 html,
 body {
-  margin: 0;
-  padding: 0;
   font-family: "Spartan", sans-serif;
-}
-
-body {
-  background: url("../assets/lizard/lizard.svg");
-  background-position: right bottom;
-  background-attachment: fixed;
-  background-size: 200px;
-  background-repeat: no-repeat;
-}
-
-.dark-mode {
-  background: url("../assets/lizard/lizard_dark.svg");
-  background-color: #333333;
-  background-position: right bottom;
-  background-attachment: fixed;
-  background-size: 200px;
-  background-repeat: no-repeat;
-  color: white;
 }
 
 ::-moz-selection {
@@ -68,6 +62,18 @@ a:link {
 }
 
 /* --------------------------------------------------------------------- */
+/* Dark Mode */
+/* --------------------------------------------------------------------- */
+.dark-mode {
+  background-color: #333333;
+  background-position: right bottom;
+  background-attachment: fixed;
+  background-size: 200px;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+/* --------------------------------------------------------------------- */
 /* Header */
 /* --------------------------------------------------------------------- */
 #header {
@@ -77,8 +83,7 @@ a:link {
   color: #01004c;
   font-weight: 600;
   font-size: 1rem;
-  align-items: center;
-  margin: 1rem 1rem 2rem 1rem;
+  margin: 1rem 1rem 1.5rem 1rem;
 }
 #header #logo-name {
   display: flex;
@@ -108,32 +113,33 @@ a:link {
 }
 #header #button-placeholder {
   width: 0;
-  margin-left: 2.22rem;
+  margin-left: 3rem;
   background: white;
 }
 #header #dark {
   font-size: 1.9rem;
+  padding-top: 0.5rem;
 }
 #header #dark img {
-  padding-top: 0.43rem;
-  width: 90.5%;
+  height: 82%;
+  pointer-events: none;
 }
 
 /* --------------------------------------------------------------------- */
-/* Component Labels */
+/* Titles & Labels */
 /* --------------------------------------------------------------------- */
-div h2 {
+.title {
   text-align: center;
   font-size: 1.5rem;
   font-weight: 600;
   cursor: pointer;
 }
 
-.label p, .component p {
+.label, .component {
   font-weight: 600;
-  margin: 0 0 0.3rem 0;
+  margin: 0 0 0.1rem 0;
   font-size: 0.9rem;
-  text-align: left;
+  min-width: fit-content;
 }
 
 .section {
@@ -148,7 +154,6 @@ div h2 {
   flex-direction: column;
   align-items: center;
   width: fit-content;
-  text-align: center;
   padding: 0.5rem;
 }
 
@@ -175,15 +180,15 @@ div h2 {
 /* --------------------------------------------------------------------- */
 /* Synth Section */
 /* --------------------------------------------------------------------- */
-#synth {
+#synth-section {
   grid-column: 1/2;
   grid-row: 2;
 }
-#synth .title {
+#synth-section .title {
   color: #23b2fe;
 }
 
-#main {
+#synth-section-main {
   display: flex;
   justify-content: space-evenly;
 }

@@ -9,6 +9,20 @@ import ConsoleIntro from "./consoleIntro.js";
 import Header from "./header.js";
 import Footer from "./footer.js";
 
+
+import Displays from "./panels/displays.js"
+const displays = document.getElementById("displays")
+displays.innerHTML = Displays();
+
+
+import SynthSectionMain from "./panels/synthSectionMain.js"
+const synthSectionMain = document.getElementById("synth-section-main")
+synthSectionMain.innerHTML = SynthSectionMain();
+
+
+
+
+
 import midiToNoteString from "./midiToNoteString.js";
 
 Tone.setContext(Nexus.context);
@@ -509,7 +523,7 @@ if (darkMode) {
 // Meter
 // ---------------------------------------------------------------------
 let meter = new Nexus.Meter("#meter", {
-  size: [40, 150],
+  size: [45, 150],
 });
 meter.connect(Tone.getDestination());
 meter.colorize("accent", "rgb(1, 0, 76)");

@@ -13,7 +13,7 @@
     />
     <meta
       name="keywords"
-      content="music, sound, synthesizer, sound-processing, synth, sampler, envelope, synthesizers, software-synthesizer, subtractive-synthesis, lizard, piano-keyboard, sound-synthesis, nexusui, tonejs, knobs, virtual-analog, sound-engineering"
+      content="music, midi, sound, synthesizer, sound-processing, synth, piano, synthesizers, software-synthesizer, subtractive-synthesis, midi-keyboard, fm-synthesizer, piano-keyboard, sound-synthesis, nexusui, frequency-modulation, tonejs, knobs, fm-synthesis, sound-engineering"
     />
     <meta name="author" content="Michael Kolesidis" />
 
@@ -51,85 +51,25 @@
         <!-- Header -->
         <!--------------------------------------------------------------------->
         <div id="header" tabindex="0"></div>
-
         <!--------------------------------------------------------------------->
-        <!-- Main Panel -->
+        <!-- Synthesizer Panel -->
         <!--------------------------------------------------------------------->
         <div id="synthesizer">
           <!--------------------------------------------------------------------->
           <!-- Displays -->
           <!--------------------------------------------------------------------->
-          <div id="displays">
-            <div class="label">
-              <p>MIDI</p>
-              <div id="midi-display"></div>
-            </div>
-            <div class="label">
-              <p>Oscilloscope</p>
-              <div id="oscilloscope"></div>
-            </div>
-            <div class="label">
-              <p>Spectrogram</p>
-              <div id="spectrogram"></div>
-            </div>
-            <div class="label">
-              <p>Meter</p>
-              <div id="meter"></div>
-            </div>
-          </div>
+          <div id="displays"></div>
 
           <!--------------------------------------------------------------------->
           <!-- Synth Section -->
           <!--------------------------------------------------------------------->
-          <div id="synth">
-            <div class="title" id="synth-title"><h2>Synth</h2></div>
+          <div id="synth-section">
+            <div class="title" id="synth-title"><p>Synth</p></div>
             <!--------------------------------------------------------------------->
             <!-- Main -->
             <!--------------------------------------------------------------------->
-            <div id="main">
-              <!--------------------------------------------------------------------->
-              <!-- Volume -->
-              <!--------------------------------------------------------------------->
-              <div class="component">
-                <p>Volume</p>
-                <div id="volume"></div>
-                <br />
-                <div id="volume-num"></div>
-              </div>
+            <div id="synth-section-main"></div>
 
-              <!--------------------------------------------------------------------->
-              <!-- Detune -->
-              <!--------------------------------------------------------------------->
-              <div class="component">
-                <p>Detune</p>
-                <div id="detune"></div>
-                <br />
-                <div id="detune-num"></div>
-              </div>
-
-              <!--------------------------------------------------------------------->
-              <!-- Modulation Index -->
-              <!--------------------------------------------------------------------->
-              <div class="component">
-                <p>Mod Index</p>
-                <div id="modulation-index"></div>
-                <br />
-                <div id="modulation-index-num"></div>
-              </div>
-
-              <!--------------------------------------------------------------------->
-              <!-- Harmonicity -->
-              <!--------------------------------------------------------------------->
-              <div class="component">
-                <p>Harmonicity</p>
-                <div id="harmonicity"></div>
-                <br />
-                <div id="harmonicity-num"></div>
-              </div>
-
-
-
-            </div>
             <div id="adsl-envelope">
               <!--------------------------------------------------------------------->
               <!-- Attack-->
@@ -150,24 +90,22 @@
           <!-- Modulation  Section -->
           <!--------------------------------------------------------------------->
           <div id="modulation">
-            <div class="title"><h2>Modulation</h2></div>
+            <div class="title"><p>Modulation</p></div>
           </div>
 
           <!--------------------------------------------------------------------->
           <!-- Effects  Section -->
           <!--------------------------------------------------------------------->
           <div id="effects">
-            <div class="title"><h2>Effects</h2></div>
+            <div class="title"><p>Effects</p></div>
           </div>
         </div>
 
         <!--------------------------------------------------------------------->
         <!-- Keyboard -->
         <!--------------------------------------------------------------------->
-
         <div id="keyboard"></div>
       </div>
-
       <!--------------------------------------------------------------------->
       <!-- Footer -->
       <!--------------------------------------------------------------------->
