@@ -8,31 +8,26 @@
 import ConsoleIntro from "./consoleIntro.js";
 import Header from "./header.js";
 import Footer from "./footer.js";
-
-
 import Displays from "./panels/displays.js"
-const displays = document.getElementById("displays")
-displays.innerHTML = Displays();
-
-
 import SynthSectionMain from "./panels/synthSectionMain.js"
-const synthSectionMain = document.getElementById("synth-section-main")
-synthSectionMain.innerHTML = SynthSectionMain();
 
+import SynthSectionAmplitudeEnvelope from "./panels/synthSectionAmplitudeEnvelope.js"
+
+
+
+
+import SynthSectionOscillator from "./panels/synthSectionOscillator.js"
+
+import ModulationSectionMain from "./panels/modulationSectionMain.js"
+
+import ModulationSectionModulationEnvelope from "./panels/modulationSectionModulationEnvelope.js"
 
 
 
 
 import midiToNoteString from "./midiToNoteString.js";
 
-Tone.setContext(Nexus.context);
 
-// Send Tone audio to Nexus
-// Nexus.context = Tone.context;
-// console.log("NEXUS CONTEXT:");
-// console.log(Nexus.context);
-// console.log("TONE CONTEXT:");
-// console.log(Tone.context);
 
 // ---------------------------------------------------------------------
 // Colors
@@ -46,6 +41,34 @@ const GREEN = "rgb(3, 214, 146)";
 const YELLOW = "rgb(254, 188, 44)";
 
 Nexus.colors.fill = GRAY;
+
+// ---------------------------------------------------------------------
+// Dark Mode
+// ---------------------------------------------------------------------
+let darkMode = false;
+
+// function toggleDark() {
+//   var element = document.body;
+//   element.classList.toggle("dark-mode");
+//   header.style.color = "white";
+//   footer.style.color = "white";
+//   midiDisplay.style.color = "white";
+//   midiDisplay.style.background = "rgb(100,100,100";
+//   Nexus.colors.fill = "rgb(100,100,100";
+//   darkMode = true;
+//   header.innerHTML = Header(darkMode);
+//   let toggleDarkButton = document.createElement("button"); // recreates button in dark header
+//   toggleDarkButton.innerHTML = "Dark Mode"; // recreates button in dark header
+//   document.querySelector("#header").appendChild(toggleDarkButton); // recreates button in dark header
+// }
+
+// let toggleDarkButton = document.createElement("button");
+// toggleDarkButton.innerHTML = "Dark Mode";
+// document.querySelector("#header").appendChild(toggleDarkButton);
+// // toggleDark()
+
+// toggleDarkButton.addEventListener("click", toggleDark());
+
 
 // ---------------------------------------------------------------------
 // Welcome Message in Console
@@ -64,10 +87,70 @@ header.innerHTML = Header();
 const footer = document.getElementById("footer");
 footer.innerHTML = Footer();
 
+
+// ---------------------------------------------------------------------
+// Panel Sections
+// ---------------------------------------------------------------------
+// Displays
+const displays = document.getElementById("displays")
+displays.innerHTML = Displays();
+
+// Synth Section: Main
+const synthSectionMain = document.getElementById("synth-section-main")
+synthSectionMain.innerHTML = SynthSectionMain();
+
+// Synth Section: Amplitude Envelope
+
+// Synth Section: Oscillator
+
+// Modulation Section: Main
+
+// Modulation Section: Modulation Envelope
+
+// Effects
+
+
 // ---------------------------------------------------------------------
 // MIDI Display
 // ---------------------------------------------------------------------
 const midiDisplay = document.getElementById("midi-display");
+
+// ---------------------------------------------------------------------
+// Oscilloscope
+// ---------------------------------------------------------------------
+let oscilloscope = new Nexus.Oscilloscope("#oscilloscope", {
+  size: [300, 150],
+});
+oscilloscope.connect(Tone.getDestination());
+oscilloscope.colorize("accent", "rgb(1, 0, 76)");
+if (darkMode) {
+  oscilloscope.colorize("accent", GRAY);
+}
+
+// ---------------------------------------------------------------------
+// Spectrogram
+// ---------------------------------------------------------------------
+let spectrogram = new Nexus.Spectrogram("#spectrogram", {
+  size: [300, 150],
+});
+spectrogram.connect(Tone.getDestination());
+spectrogram.colorize("accent", "rgb(1, 0, 76)");
+if (darkMode) {
+  spectrogram.colorize("accent", GRAY);
+}
+
+// ---------------------------------------------------------------------
+// Meter
+// ---------------------------------------------------------------------
+let meter = new Nexus.Meter("#meter", {
+  size: [45, 150],
+});
+meter.connect(Tone.getDestination());
+meter.colorize("accent", "rgb(1, 0, 76)");
+if (darkMode) {
+  meter.colorize("accent", GRAY);
+}
+
 
 // ---------------------------------------------------------------------
 // Keyboard
@@ -104,32 +187,7 @@ keyboardPlaceholder.addEventListener(
 
 
 
-// ---------------------------------------------------------------------
-// Dark Mode
-// ---------------------------------------------------------------------
-let darkMode = false;
 
-// function toggleDark() {
-//   var element = document.body;
-//   element.classList.toggle("dark-mode");
-//   header.style.color = "white";
-//   footer.style.color = "white";
-//   midiDisplay.style.color = "white";
-//   midiDisplay.style.background = "rgb(100,100,100";
-//   Nexus.colors.fill = "rgb(100,100,100";
-//   darkMode = true;
-//   header.innerHTML = Header(darkMode);
-//   let toggleDarkButton = document.createElement("button"); // recreates button in dark header
-//   toggleDarkButton.innerHTML = "Dark Mode"; // recreates button in dark header
-//   document.querySelector("#header").appendChild(toggleDarkButton); // recreates button in dark header
-// }
-
-// let toggleDarkButton = document.createElement("button");
-// toggleDarkButton.innerHTML = "Dark Mode";
-// document.querySelector("#header").appendChild(toggleDarkButton);
-// // toggleDark()
-
-// toggleDarkButton.addEventListener("click", toggleDark());
 
 // ---------------------------------------------------------------------
 // Effects
@@ -496,54 +554,26 @@ function onEnabled() {
 }
 
 // ---------------------------------------------------------------------
-// Oscilloscope
+// Displays
 // ---------------------------------------------------------------------
-let oscilloscope = new Nexus.Oscilloscope("#oscilloscope", {
-  size: [300, 150],
-});
-oscilloscope.connect(Tone.getDestination());
-oscilloscope.colorize("accent", "rgb(1, 0, 76)");
-if (darkMode) {
-  oscilloscope.colorize("accent", GRAY);
-}
 
-// ---------------------------------------------------------------------
-// Spectrogram
-// ---------------------------------------------------------------------
-let spectrogram = new Nexus.Spectrogram("#spectrogram", {
-  size: [300, 150],
-});
-spectrogram.connect(Tone.getDestination());
-spectrogram.colorize("accent", "rgb(1, 0, 76)");
-if (darkMode) {
-  spectrogram.colorize("accent", GRAY);
-}
 
-// ---------------------------------------------------------------------
-// Meter
-// ---------------------------------------------------------------------
-let meter = new Nexus.Meter("#meter", {
-  size: [45, 150],
-});
-meter.connect(Tone.getDestination());
-meter.colorize("accent", "rgb(1, 0, 76)");
-if (darkMode) {
-  meter.colorize("accent", GRAY);
-}
+
+
 
 // ---------------------------------------------------------------------
 // Other
 // ---------------------------------------------------------------------
 // Show/Hide section toggle
-let synthTitle = document.getElementById("synth-title");
-let main = document.getElementById("main");
+let synthSectionTitle = document.getElementById("synth-title");
+let synthSectionContent = document.getElementById("synth-section-content");
 
-synthTitle.addEventListener("click", showHide);
+synthSectionTitle.addEventListener("click", showHide);
 
 function showHide() {
-  if (main.style.display === "flex") {
-    main.style.display = "none";
+  if (synthSectionContent.style.display === "block") {
+    synthSectionContent.style.display = "none";
   } else {
-    main.style.display = "flex";
+    synthSectionContent.style.display = "block";
   }
 }

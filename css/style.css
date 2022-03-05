@@ -135,7 +135,7 @@ a:link {
   cursor: pointer;
 }
 
-.label, .component {
+.label {
   font-weight: 600;
   margin: 0 0 0.1rem 0;
   font-size: 0.9rem;
@@ -186,6 +186,10 @@ a:link {
 }
 #synth-section .title {
   color: #23b2fe;
+}
+
+#synth-section-content {
+  display: block;
 }
 
 #synth-section-main {

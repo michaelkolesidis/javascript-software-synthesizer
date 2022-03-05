@@ -49,14 +49,12 @@ body {
   font-family: "Spartan", sans-serif;
 }
 
-::-moz-selection {
-  // sets color of element (usually text) selection
+::-moz-selection { // sets color of element (usually text) selection
   background: $dark-gray;
   color: white;
 }
 
-::selection {
-  // sets color of element (usually text) selection
+::selection { // sets color of element (usually text) selection
   background: $dark-gray;
   color: white;
 }
@@ -90,10 +88,8 @@ a:link {
   flex-direction: row;
   justify-content: space-between;
   color: $blue;
-
   font-weight: 600;
   font-size: $header-font;
-  // align-items: center;
   margin: 1rem 1rem 1.5rem 1rem;
 
   #logo-name {
@@ -125,8 +121,7 @@ a:link {
     cursor: pointer;
   }
 
-  #button-placeholder {
-    // used for the menu button
+  #button-placeholder { // used for the menu button
     width: 0;
     margin-left: 3rem;
     background: white;
@@ -145,7 +140,6 @@ a:link {
 /* --------------------------------------------------------------------- */
 /* Titles & Labels */
 /* --------------------------------------------------------------------- */
-
 .title {
       text-align: center;
       font-size: 1.5rem;
@@ -169,7 +163,6 @@ a:link {
 }
 
 .component {
-  @extend .label;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -211,6 +204,10 @@ a:link {
     // background: $cyan;
     color: $cyan;
   }
+}
+
+#synth-section-content {
+  display: block;
 }
 
 #synth-section-main {
