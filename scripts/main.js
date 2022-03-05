@@ -26,6 +26,7 @@ import ModulationSectionModulationEnvelope from "./panels/modulationSectionModul
 
 
 import midiToNoteString from "./midiToNoteString.js";
+import computerKeyboard from "./computerKeyboard.js"
 
 
 
@@ -517,6 +518,12 @@ keyboard.on("change", (note) => {
 });
 
 // ---------------------------------------------------------------------
+// Computer Keyboard Playbility Implementation
+// ---------------------------------------------------------------------
+computerKeyboard(synth);
+
+
+// ---------------------------------------------------------------------
 // MIDI Implementation
 // ---------------------------------------------------------------------
 
@@ -552,14 +559,6 @@ function onEnabled() {
     synth.triggerRelease(midiToNoteString(e.data[1]));
   });
 }
-
-// ---------------------------------------------------------------------
-// Displays
-// ---------------------------------------------------------------------
-
-
-
-
 
 // ---------------------------------------------------------------------
 // Other
