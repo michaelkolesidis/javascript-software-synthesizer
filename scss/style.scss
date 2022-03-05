@@ -49,12 +49,14 @@ body {
   font-family: "Spartan", sans-serif;
 }
 
-::-moz-selection { // sets color of element (usually text) selection
+::-moz-selection {
+  // sets color of element (usually text) selection
   background: $dark-gray;
   color: white;
 }
 
-::selection { // sets color of element (usually text) selection
+::selection {
+  // sets color of element (usually text) selection
   background: $dark-gray;
   color: white;
 }
@@ -121,7 +123,8 @@ a:link {
     cursor: pointer;
   }
 
-  #button-placeholder { // used for the menu button
+  #button-placeholder {
+    // used for the menu button
     width: 0;
     margin-left: 3rem;
     background: white;
@@ -141,17 +144,17 @@ a:link {
 /* Titles & Labels */
 /* --------------------------------------------------------------------- */
 .title {
-      text-align: center;
-      font-size: 1.5rem;
-      font-weight: 600;
-      cursor: pointer;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .label {
   font-weight: 600;
   margin: 0 0 0.1rem 0;
   font-size: 0.9rem;
-  min-width: fit-content;
+  white-space: nowrap;
 }
 
 .section {
@@ -159,7 +162,7 @@ a:link {
   flex-direction: column;
   justify-content: center;
   // justify-content: space-evenly;
-  width: fit-content;
+  // width: fit-content;
 }
 
 .component {

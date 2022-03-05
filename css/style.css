@@ -139,14 +139,13 @@ a:link {
   font-weight: 600;
   margin: 0 0 0.1rem 0;
   font-size: 0.9rem;
-  min-width: fit-content;
+  white-space: nowrap;
 }
 
 .section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: fit-content;
 }
 
 .component {
