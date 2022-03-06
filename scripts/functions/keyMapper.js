@@ -1,3 +1,18 @@
+/*
+ * Key Mapper
+ * Part of the JSS-01 | JavaScript Software Synthesizer project
+ * Copyright (c) 2022 Michael Kolesidis
+ * MIT License
+ *
+ * The Key Mapper function takes computer key letters as input 
+ * and maps them to the on-screen keyboard keys by returning
+ * the index number of the respective on-screen keyboard. It
+ * works well with the octave switch function as it is build
+ * around a "base" variable to refer to the keys, which can 
+ * then be modified accordingly.
+ *
+ */
+
 export default function keyMapper(key, base) {
   switch (key) {
     // Lowercase
