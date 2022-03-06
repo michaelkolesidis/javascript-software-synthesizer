@@ -277,7 +277,7 @@ vibrato.depth.value; // range:0-1
 // ---------------------------------------------------------------------
 // Synthesizer
 // ---------------------------------------------------------------------
-const synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
+let synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
 
 synth.set({
   maxPolyphony: 128,
