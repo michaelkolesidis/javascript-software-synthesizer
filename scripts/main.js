@@ -5,30 +5,22 @@
  *
  */
 
-import ConsoleIntro from "./consoleIntro.js";
 import Header from "./header.js";
 import Footer from "./footer.js";
-import Displays from "./panels/displays.js"
-import SynthSectionMain from "./panels/synthSectionMain.js"
+import Displays from "./panels/displays.js";
+import SynthSectionMain from "./panels/synthSectionMain.js";
 
-import SynthSectionAmplitudeEnvelope from "./panels/synthSectionAmplitudeEnvelope.js"
+import SynthSectionAmplitudeEnvelope from "./panels/synthSectionAmplitudeEnvelope.js";
 
+import SynthSectionOscillator from "./panels/synthSectionOscillator.js";
 
+import ModulationSectionMain from "./panels/modulationSectionMain.js";
 
+import ModulationSectionModulationEnvelope from "./panels/modulationSectionModulationEnvelope.js";
 
-import SynthSectionOscillator from "./panels/synthSectionOscillator.js"
-
-import ModulationSectionMain from "./panels/modulationSectionMain.js"
-
-import ModulationSectionModulationEnvelope from "./panels/modulationSectionModulationEnvelope.js"
-
-
-
-
-import midiToNoteString from "./midiToNoteString.js";
-import computerKeyboard from "./computerKeyboard.js"
-
-
+import ConsoleIntro from "./functions/consoleIntro.js";
+import midiToNoteString from "./functions/midiToNoteString.js";
+import keyMapper from "./functions/keyMapper.js";
 
 // ---------------------------------------------------------------------
 // Colors
@@ -70,7 +62,6 @@ let darkMode = false;
 
 // toggleDarkButton.addEventListener("click", toggleDark());
 
-
 // ---------------------------------------------------------------------
 // Welcome Message in Console
 // ---------------------------------------------------------------------
@@ -88,16 +79,15 @@ header.innerHTML = Header();
 const footer = document.getElementById("footer");
 footer.innerHTML = Footer();
 
-
 // ---------------------------------------------------------------------
 // Panel Sections
 // ---------------------------------------------------------------------
 // Displays
-const displays = document.getElementById("displays")
+const displays = document.getElementById("displays");
 displays.innerHTML = Displays();
 
 // Synth Section: Main
-const synthSectionMain = document.getElementById("synth-section-main")
+const synthSectionMain = document.getElementById("synth-section-main");
 synthSectionMain.innerHTML = SynthSectionMain();
 
 // Synth Section: Amplitude Envelope
@@ -109,7 +99,6 @@ synthSectionMain.innerHTML = SynthSectionMain();
 // Modulation Section: Modulation Envelope
 
 // Effects
-
 
 // ---------------------------------------------------------------------
 // MIDI Display
@@ -152,7 +141,6 @@ if (darkMode) {
   meter.colorize("accent", GRAY);
 }
 
-
 // ---------------------------------------------------------------------
 // Keyboard
 // ---------------------------------------------------------------------
@@ -185,10 +173,6 @@ keyboardPlaceholder.addEventListener(
   },
   false
 );
-
-
-
-
 
 // ---------------------------------------------------------------------
 // Effects
@@ -312,8 +296,8 @@ volumeControl.colorize("accent", CYAN);
 
 volumeControl.on("change", function (v) {
   synth.set({
-    volume: v
-  })
+    volume: v,
+  });
 });
 
 // Number
@@ -486,8 +470,6 @@ synth.options.modulation.type; // sine, square (default), sawtooth,triangle, pul
 // release
 // releaseCurve
 
-
-
 // ---------------------------------------------------------------------
 // Oscillator
 // ---------------------------------------------------------------------
@@ -520,8 +502,35 @@ keyboard.on("change", (note) => {
 // ---------------------------------------------------------------------
 // Computer Keyboard Playbility Implementation
 // ---------------------------------------------------------------------
-computerKeyboard(synth);
+let base = 39; // Middle C / C4
 
+document.addEventListener("keydown", (event) => {
+  const keyIndex = keyMapper(event.key, base);
+  if (keyIndex >= 0 && keyIndex <= 87) {
+    keyIndex !== undefined && !keyboard.keys[keyIndex]._state.state
+      ? keyboard.toggleIndex(keyIndex, true)
+      : null;
+  }
+});
+
+document.addEventListener("keyup", (event) => {
+  const keyIndex = keyMapper(event.key, base);
+  if (keyIndex >= 0 && keyIndex <= 87) {
+    keyIndex !== undefined && keyboard.keys[keyIndex]._state.state
+      ? keyboard.toggleIndex(keyIndex, false)
+      : null;
+  }
+});
+
+document.addEventListener("keydown", octaveSwitch);
+
+function octaveSwitch(e) {
+  if (e.code == "KeyZ") {
+    base -= 12; // One octave down
+  } else if (e.code == "KeyX") {
+    base += 12; // One octave up
+  }
+}
 
 // ---------------------------------------------------------------------
 // MIDI Implementation
