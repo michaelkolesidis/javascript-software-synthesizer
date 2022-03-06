@@ -5,6 +5,9 @@
  *
  */
 
+// ---------------------------------------------------------------------
+// Import Elements
+// ---------------------------------------------------------------------
 import Header from "./elements/header.js";
 import Footer from "./elements/footer.js";
 import Displays from "./elements/panels/displays.js";
@@ -18,7 +21,10 @@ import ModulationSectionMain from "./elements/panels/modulationSectionMain.js";
 
 import ModulationSectionModulationEnvelope from "./elements/panels/modulationSectionModulationEnvelope.js";
 
-import ConsoleIntro from "./functions/consoleIntro.js";
+// ---------------------------------------------------------------------
+// Import Functions
+// ---------------------------------------------------------------------
+import consoleIntro from "./functions/consoleIntro.js";
 import midiToNoteString from "./functions/midiToNoteString.js";
 import keyMapper from "./functions/keyMapper.js";
 
@@ -33,7 +39,7 @@ const CYAN = "rgb(35, 178, 254)";
 const GREEN = "rgb(3, 214, 146)";
 const YELLOW = "rgb(254, 188, 44)";
 
-Nexus.colors.fill = GRAY;
+Nexus.colors.fill = GRAY; // For all NexusUI components
 
 // ---------------------------------------------------------------------
 // Dark Mode
@@ -65,7 +71,7 @@ let darkMode = false;
 // ---------------------------------------------------------------------
 // Welcome Message in Console
 // ---------------------------------------------------------------------
-ConsoleIntro();
+consoleIntro();
 
 // ---------------------------------------------------------------------
 // Header
@@ -350,7 +356,7 @@ let modulationIndexControl = new Nexus.Dial("#modulation-index", {
   value: 10,
 });
 modulationIndexControl.colorize("accent", CYAN);
-modulationIndexControl.colorize("fill", GRAY);
+// modulationIndexControl.colorize("fill", GRAY);
 
 modulationIndexControl.on("change", function (v) {
   synth.set({
