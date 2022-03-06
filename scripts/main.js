@@ -5,18 +5,18 @@
  *
  */
 
-import Header from "./header.js";
-import Footer from "./footer.js";
-import Displays from "./panels/displays.js";
-import SynthSectionMain from "./panels/synthSectionMain.js";
+import Header from "./elements/header.js";
+import Footer from "./elements/footer.js";
+import Displays from "./elements/panels/displays.js";
+import SynthSectionMain from "./elements/panels/synthSectionMain.js";
 
-import SynthSectionAmplitudeEnvelope from "./panels/synthSectionAmplitudeEnvelope.js";
+import SynthSectionAmplitudeEnvelope from "./elements/panels/synthSectionAmplitudeEnvelope.js";
 
-import SynthSectionOscillator from "./panels/synthSectionOscillator.js";
+import SynthSectionOscillator from "./elements/panels/synthSectionOscillator.js";
 
-import ModulationSectionMain from "./panels/modulationSectionMain.js";
+import ModulationSectionMain from "./elements/panels/modulationSectionMain.js";
 
-import ModulationSectionModulationEnvelope from "./panels/modulationSectionModulationEnvelope.js";
+import ModulationSectionModulationEnvelope from "./elements/panels/modulationSectionModulationEnvelope.js";
 
 import ConsoleIntro from "./functions/consoleIntro.js";
 import midiToNoteString from "./functions/midiToNoteString.js";
