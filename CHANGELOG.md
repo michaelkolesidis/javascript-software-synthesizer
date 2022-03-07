@@ -22,5 +22,5 @@ The first version!
 * 50 parameters implemented and analyzed with specified ranges in backend - not tweakable through the UI
 
 ### Known Issues
-* Only works on Chromium and WebKit based browsers (Chrome, Edge, Brave, Safari, Opera, GNOME Web)
+* Only works on Chromium and WebKit based browsers (Chrome, Edge, Brave, Safari, Opera, GNOME Web etc.)
 
