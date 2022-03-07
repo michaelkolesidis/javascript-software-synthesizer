@@ -203,7 +203,10 @@ a:link {
 
 #adsr-envelope {
   display: flex;
-  flex-direction: row;
+  justify-content: space-evenly;
+}
+#adsr-envelope .list {
+  margin-top: 0.4rem;
 }
 
 /* --------------------------------------------------------------------- */

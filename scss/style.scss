@@ -226,7 +226,11 @@ a:link {
 
 #adsr-envelope {
   display: flex;
-  flex-direction: row;
+  justify-content: space-evenly;
+  // align-items: center;
+  .list {
+    margin-top: 0.4rem;
+  }
 }
 
 /* --------------------------------------------------------------------- */
