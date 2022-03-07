@@ -148,11 +148,13 @@ a:link {
   font-size: 1.5rem;
   font-weight: 600;
   cursor: pointer;
+  margin-bottom: 0.2rem;
 }
 
 .subtitle {
   @extend .title;
   font-size: 1.2rem;
+  margin: 0.3rem 0 0.1rem;
 }
 
 .label {
