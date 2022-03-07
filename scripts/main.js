@@ -475,13 +475,13 @@ let attackCurveSelector = new Nexus.Select("#attack-curve", {
   options: attackReleaseOptions,
 });
 
-attackCurveSelector.on('change',function(v) {
+attackCurveSelector.on("change", function (v) {
   synth.set({
     envelope: {
       attackCurve: v.value,
     },
   });
-})
+});
 
 // Decay Curve
 let decayCurveSelector = new Nexus.Select("#decay-curve", {
@@ -489,13 +489,13 @@ let decayCurveSelector = new Nexus.Select("#decay-curve", {
   options: decayOptions,
 });
 
-decayCurveSelector.on('change',function(v) {
+decayCurveSelector.on("change", function (v) {
   synth.set({
     envelope: {
       decayCurve: v.value,
     },
   });
-})
+});
 
 // Release Curve
 let releaseCurveSelector = new Nexus.Select("#release-curve", {
@@ -503,13 +503,13 @@ let releaseCurveSelector = new Nexus.Select("#release-curve", {
   options: attackReleaseOptions,
 });
 
-releaseCurveSelector.on('change',function(v) {
+releaseCurveSelector.on("change", function (v) {
   synth.set({
     envelope: {
       releaseCurve: v.value,
     },
   });
-})
+});
 
 // ---------------------------------------------------------------------
 // Modulation
@@ -568,21 +568,43 @@ let base = 39; // Middle C / C4
 document.addEventListener("keydown", (event) => {
   const keyIndex = keyMapper(event.key, base);
   console.log("computer key pressed");
-  if (keyIndex >= 0 && keyIndex <= 87) {
-    keyIndex !== undefined && !keyboard.keys[keyIndex]._state.state
-      ? keyboard.toggleIndex(keyIndex, true)
-      : null;
+  if (
+    keyIndex >= 0 &&
+    keyIndex <= 87 &&
+    !keyboard.keys[keyIndex]._state.state
+  ) {
+    keyboard.toggleIndex(keyIndex, true);
+    console.log("note played");
   }
 });
 
 document.addEventListener("keyup", (event) => {
   const keyIndex = keyMapper(event.key, base);
-  if (keyIndex >= 0 && keyIndex <= 87) {
-    keyIndex !== undefined && keyboard.keys[keyIndex]._state.state
-      ? keyboard.toggleIndex(keyIndex, false)
-      : null;
+  if (keyIndex >= 0 && keyIndex <= 87 && keyboard.keys[keyIndex]._state.state) {
+    keyboard.toggleIndex(keyIndex, false);
   }
 });
+
+// Original
+
+// document.addEventListener("keydown", (event) => {
+//   const keyIndex = keyMapper(event.key, base);
+//   console.log("computer key pressed");
+//   if (keyIndex >= 0 && keyIndex <= 87) {
+//     keyIndex !== undefined && !keyboard.keys[keyIndex]._state.state
+//       ? keyboard.toggleIndex(keyIndex, true)
+//       : null;
+//   }
+// });
+
+// document.addEventListener("keyup", (event) => {
+//   const keyIndex = keyMapper(event.key, base);
+//   if (keyIndex >= 0 && keyIndex <= 87) {
+//     keyIndex !== undefined && keyboard.keys[keyIndex]._state.state
+//       ? keyboard.toggleIndex(keyIndex, false)
+//       : null;
+//   }
+// });
 
 document.addEventListener("keydown", octaveSwitch);
 
