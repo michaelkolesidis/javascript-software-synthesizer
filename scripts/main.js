@@ -401,22 +401,53 @@ harmonicityNum.colorize("accent", CYAN);
 // ---------------------------------------------------------------------
 // ADSR Envelope
 // ---------------------------------------------------------------------
+// https://tonejs.github.io/docs/Envelope.html
 
-var amplitudeADSR = new Nexus.Multislider('#amplitude-adsr',{
-  'size': [140,100],
-  'numberOfSliders': 4,
-  'min': 0,
-  'max': 1,
-  'step': 0,
-  'candycane': 3,
-  'values': [0.005,0.005,1,0.1],
-  'smoothing': 0,
-  'mode': 'bar'  // 'bar' or 'line'
- })
- amplitudeADSR.colorize("accent", CYAN);
+//          /\
+//         /  \
+//        /    \
+//       /      \
+//      /        \___________
+//     /                     \
+//    /                       \
+//   /                         \
+//  /                           \
 
- amplitudeADSR.on('change',function(v) {
-  console.log(v[3]);
+// Attack
+// Range: 0 to 2
+// attackCurve
+// defaults: 0.01 linear
+
+// Decay
+// Range: 0+ to 2
+// decayCurve
+// defaults: 0.01 linear
+
+// Sustain
+// Range: 0 to 1
+// The percent of the maximum value that the envelope rests at untilthe release is triggered. ()
+// default: 1
+
+// Release
+// Range: 0+ to  * seconds
+// releaseCurve
+// defaults: 0.5 linear
+// synth.options.envelope.release = 0.5;
+
+let amplitudeADSR = new Nexus.Multislider("#amplitude-adsr", {
+  size: [140, 100],
+  numberOfSliders: 4,
+  min: 0,
+  max: 1,
+  step: 0,
+  candycane: 3,
+  values: [0.005, 0.005, 1, 0.1],
+  smoothing: 0,
+  mode: "bar",
+});
+amplitudeADSR.colorize("accent", CYAN);
+
+amplitudeADSR.on("change", function (v) {
   synth.set({
     envelope: {
       attack: Nexus.scale(v[0], 0, 1, 0, 2),
@@ -425,75 +456,60 @@ var amplitudeADSR = new Nexus.Multislider('#amplitude-adsr',{
       release: Nexus.scale(v[3], 0, 1, 0, 5),
     },
   });
-  console.log(synth.options.envelope.release)
+});
+
+let attackReleaseOptions = [
+  "linear",
+  "exponential",
+  "sine",
+  "cosine",
+  "bounce",
+  "ripple",
+  "step",
+];
+let decayOptions = ["linear", "exponential"];
+
+// Attack Curve
+let attackCurveSelector = new Nexus.Select("#attack-curve", {
+  size: [100, 30],
+  options: attackReleaseOptions,
+});
+
+attackCurveSelector.on('change',function(v) {
+  synth.set({
+    envelope: {
+      attackCurve: v.value,
+    },
+  });
 })
 
+// Decay Curve
+let decayCurveSelector = new Nexus.Select("#decay-curve", {
+  size: [100, 30],
+  options: decayOptions,
+});
 
+decayCurveSelector.on('change',function(v) {
+  synth.set({
+    envelope: {
+      decayCurve: v.value,
+    },
+  });
+})
 
+// Release Curve
+let releaseCurveSelector = new Nexus.Select("#release-curve", {
+  size: [100, 30],
+  options: attackReleaseOptions,
+});
 
-// synth.set({
-  
-//   envelope: {
-//     attack: 2,
-//   },
-// });
-
-
-// Attack
-// Range: 0 to 2
-// attackCurve
-// The shape of the attack. Can be any of these strings:
-// "linear"
-// "exponential"
-// "sine"
-// "cosine"
-// "bounce"
-// "ripple"
-// "step"
-// default: 0.01 linear
-// synth.options.envelope.attack = 0.01;
-// synth.options.envelope.attackCurve = "linear";
-
-// let attackControl = new Nexus.Dial("#attack", {
-//   size: [75, 75],
-//   interaction: "vertical", // "radial", "vertical", or "horizontal"
-//   mode: "relative", // "absolute" or "relative"
-//   min: 0,
-//   max: 2,
-//   step: 0,
-//   value: 0.01,
-// });
-// attackControl.colorize("accent", CYAN);
-
-// attackControl.on("change", function (v) {
-//   synth.options.envelope.attack = v;
-
-// });
-
-// Decay
-// Range: 0+ to 2
-// The shape of the decay either "linear" or "exponential"
-// synth.options.envelope.decay = 0.01;
-// synth.options.envelope.decayCurve = "linear";
-
-// Sustain
-// Range: 0 to 1
-// The percent of the maximum value that the envelope rests at untilthe release is triggered. ()
-synth.options.envelope.sustain = 1;
-
-// Release
-// releaseCurce
-// The shape of the release. Can be any of these strings:
-// "linear"
-// "exponential"
-// "sine"
-// "cosine"
-// "bounce"
-// "ripple"
-// "step"
-// Range: 0+ to  * seconds
-synth.options.envelope.release = 0.5;
-synth.options.envelope.releaseCurve = "exponential";
+releaseCurveSelector.on('change',function(v) {
+  synth.set({
+    envelope: {
+      releaseCurve: v.value,
+    },
+  });
+})
 
 // ---------------------------------------------------------------------
 // Modulation
@@ -621,10 +637,11 @@ function onEnabled() {
 let synthSectionTitle = document.getElementById("synth-title");
 let synthSectionContent = document.getElementById("synth-section-content");
 
-let amplitudeEnvelopeTitle = document.getElementById("adsr-envelope-title")
+let amplitudeEnvelopeTitle = document.getElementById("adsr-envelope-title");
 let amplitudeEnvelope = document.getElementById("adsr-envelope");
- 
-function showHide(title, section, display) { // (title, section)
+
+function showHide(title, section, display) {
+  // (title, section)
   title.addEventListener("click", function () {
     if (section.style.display === display) {
       section.style.display = "none";
