@@ -118,7 +118,7 @@ let oscilloscope = new Nexus.Oscilloscope("#oscilloscope", {
   size: [300, 150],
 });
 oscilloscope.connect(Tone.getDestination());
-oscilloscope.colorize("accent", "rgb(1, 0, 76)");
+oscilloscope.colorize("accent", BLUE);
 if (darkMode) {
   oscilloscope.colorize("accent", GRAY);
 }
@@ -130,7 +130,7 @@ let spectrogram = new Nexus.Spectrogram("#spectrogram", {
   size: [300, 150],
 });
 spectrogram.connect(Tone.getDestination());
-spectrogram.colorize("accent", "rgb(1, 0, 76)");
+spectrogram.colorize("accent", BLUE);
 if (darkMode) {
   spectrogram.colorize("accent", GRAY);
 }
@@ -142,7 +142,7 @@ let meter = new Nexus.Meter("#meter", {
   size: [45, 150],
 });
 meter.connect(Tone.getDestination());
-meter.colorize("accent", "rgb(1, 0, 76)");
+meter.colorize("accent", BLUE);
 if (darkMode) {
   meter.colorize("accent", GRAY);
 }
@@ -401,6 +401,44 @@ harmonicityNum.colorize("accent", CYAN);
 // ---------------------------------------------------------------------
 // ADSR Envelope
 // ---------------------------------------------------------------------
+
+var amplitudeADSR = new Nexus.Multislider('#amplitude-adsr',{
+  'size': [140,100],
+  'numberOfSliders': 4,
+  'min': 0,
+  'max': 1,
+  'step': 0,
+  'candycane': 3,
+  'values': [0.005,0.005,1,0.1],
+  'smoothing': 0,
+  'mode': 'bar'  // 'bar' or 'line'
+ })
+ amplitudeADSR.colorize("accent", CYAN);
+
+ amplitudeADSR.on('change',function(v) {
+  console.log(v[3]);
+  synth.set({
+    envelope: {
+      attack: Nexus.scale(v[0], 0, 1, 0, 2),
+      decay: Nexus.scale(v[1], 0, 1, 0, 2),
+      sustain: v[2],
+      release: Nexus.scale(v[3], 0, 1, 0, 5),
+    },
+  });
+  console.log(synth.options.envelope.release)
+})
+
+
+
+
+// synth.set({
+  
+//   envelope: {
+//     attack: 2,
+//   },
+// });
+
+
 // Attack
 // Range: 0 to 2
 // attackCurve
@@ -412,8 +450,9 @@ harmonicityNum.colorize("accent", CYAN);
 // "bounce"
 // "ripple"
 // "step"
-synth.options.envelope.attack = 0.01;
-synth.options.envelope.attackCurve = "linear";
+// default: 0.01 linear
+// synth.options.envelope.attack = 0.01;
+// synth.options.envelope.attackCurve = "linear";
 
 // let attackControl = new Nexus.Dial("#attack", {
 //   size: [75, 75],
@@ -434,8 +473,8 @@ synth.options.envelope.attackCurve = "linear";
 // Decay
 // Range: 0+ to 2
 // The shape of the decay either "linear" or "exponential"
-synth.options.envelope.decay = 0.01;
-synth.options.envelope.decayCurve = "linear";
+// synth.options.envelope.decay = 0.01;
+// synth.options.envelope.decayCurve = "linear";
 
 // Sustain
 // Range: 0 to 1
@@ -489,7 +528,7 @@ synth.options.oscillator.type = "sine"; // sine, square, sawtooth,triangle, puls
 // ---------------------------------------------------------------------
 // Portamento
 // ---------------------------------------------------------------------
-// synth.options.portamento =10
+// Only available for monophonic synths
 
 // ---------------------------------------------------------------------
 // Synthesizer On-Screen Keyboard Playbility Implementation
@@ -512,6 +551,7 @@ let base = 39; // Middle C / C4
 
 document.addEventListener("keydown", (event) => {
   const keyIndex = keyMapper(event.key, base);
+  console.log("computer key pressed");
   if (keyIndex >= 0 && keyIndex <= 87) {
     keyIndex !== undefined && !keyboard.keys[keyIndex]._state.state
       ? keyboard.toggleIndex(keyIndex, true)
@@ -576,18 +616,23 @@ function onEnabled() {
 }
 
 // ---------------------------------------------------------------------
-// Other
+// Show/Hide Section Toggle
 // ---------------------------------------------------------------------
-// Show/Hide section toggle
 let synthSectionTitle = document.getElementById("synth-title");
 let synthSectionContent = document.getElementById("synth-section-content");
 
-synthSectionTitle.addEventListener("click", showHide);
-
-function showHide() {
-  if (synthSectionContent.style.display === "block") {
-    synthSectionContent.style.display = "none";
-  } else {
-    synthSectionContent.style.display = "block";
-  }
+let amplitudeEnvelopeTitle = document.getElementById("adsr-envelope-title")
+let amplitudeEnvelope = document.getElementById("adsr-envelope");
+ 
+function showHide(title, section, display) { // (title, section)
+  title.addEventListener("click", function () {
+    if (section.style.display === display) {
+      section.style.display = "none";
+    } else {
+      section.style.display = display;
+    }
+  });
 }
+
+showHide(synthSectionTitle, synthSectionContent, "block");
+showHide(amplitudeEnvelopeTitle, amplitudeEnvelope, "flex");

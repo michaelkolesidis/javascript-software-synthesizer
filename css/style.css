@@ -128,11 +128,15 @@ a:link {
 /* --------------------------------------------------------------------- */
 /* Titles & Labels */
 /* --------------------------------------------------------------------- */
-.title {
+.title, .subtitle {
   text-align: center;
   font-size: 1.5rem;
   font-weight: 600;
   cursor: pointer;
+}
+
+.subtitle {
+  font-size: 1.2rem;
 }
 
 .label {
@@ -153,6 +157,7 @@ a:link {
   flex-direction: column;
   align-items: center;
   width: fit-content;
+  text-align: center;
   padding: 0.5rem;
 }
 
@@ -183,7 +188,7 @@ a:link {
   grid-column: 1/2;
   grid-row: 2;
 }
-#synth-section .title {
+#synth-section .title, #synth-section .subtitle {
   color: #23b2fe;
 }
 
@@ -196,6 +201,11 @@ a:link {
   justify-content: space-evenly;
 }
 
+#adsr-envelope {
+  display: flex;
+  flex-direction: row;
+}
+
 /* --------------------------------------------------------------------- */
 /* Modulation Section */
 /* --------------------------------------------------------------------- */
@@ -206,7 +216,7 @@ a:link {
   flex-direction: column;
   align-items: center;
 }
-#modulation .title {
+#modulation .title, #modulation .subtitle {
   color: #03d692;
 }
 
@@ -220,7 +230,7 @@ a:link {
   flex-direction: column;
   align-items: center;
 }
-#effects .title {
+#effects .title, #effects .subtitle {
   color: #febc2c;
 }
 

@@ -150,6 +150,11 @@ a:link {
   cursor: pointer;
 }
 
+.subtitle {
+  @extend .title;
+  font-size: 1.2rem;
+}
+
 .label {
   font-weight: 600;
   margin: 0 0 0.1rem 0;
@@ -170,9 +175,11 @@ a:link {
   flex-direction: column;
   align-items: center;
   width: fit-content;
-  // text-align: center;
+  text-align: center;
   padding: 0.5rem;
 }
+
+
 
 /* --------------------------------------------------------------------- */
 /* Panel */
@@ -200,7 +207,6 @@ a:link {
 /* Synth Section */
 /* --------------------------------------------------------------------- */
 #synth-section {
-  //2
   grid-column: 1 / 2;
   grid-row: 2;
   .title {
@@ -216,14 +222,17 @@ a:link {
 #synth-section-main {
   display: flex;
   justify-content: space-evenly;
-  // border: 3px solid $cyan;
+}
+
+#adsr-envelope {
+  display: flex;
+  flex-direction: row;
 }
 
 /* --------------------------------------------------------------------- */
 /* Modulation Section */
 /* --------------------------------------------------------------------- */
 #modulation {
-  //3
   grid-column: 2 /3;
   grid-row: 2;
   .title {
