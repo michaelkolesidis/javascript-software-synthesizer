@@ -13,4 +13,5 @@ Tha main third-party source of code for the project is the documentation of the 
 * [Sliding menu](https://codepen.io/dannievinther/pen/NvZjvz?editors=1100) by [Dannie Vinther](https://github.com/dannievinther)
 * [Changing keyboard key colors](https://github.com/nexus-js/ui/issues/69) (used for dark mode) by [Ben Taylor](https://github.com/taylorbf)
 * [Footer always at the bottom](https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/) by [Dominic Fraser](https://github.com/dominicfraser)
+* [Computer keyboard keyup and keydown event listeners](https://dev.to/je_we/building-a-simple-piano-with-tone-js-and-nexusui-part-1-415c) by Je We
 
