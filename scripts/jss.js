@@ -444,7 +444,7 @@ harmonicityNum.colorize("accent", CYAN);
 // synth.options.envelope.release = 0.5;
 
 let amplitudeADSR = new Nexus.Multislider("#amplitude-adsr", {
-  size: [250, 140],
+  size: [250, 149],
   numberOfSliders: 4,
   min: 0,
   max: 1,
@@ -480,7 +480,7 @@ let decayOptions = ["linear", "exponential"];
 
 // Attack Curve
 let attackCurveSelector = new Nexus.Select("#attack-curve", {
-  size: [100, 30],
+  size: [130, 30],
   options: attackReleaseOptions,
 });
 
@@ -494,7 +494,7 @@ attackCurveSelector.on("change", function (v) {
 
 // Decay Curve
 let decayCurveSelector = new Nexus.Select("#decay-curve", {
-  size: [100, 30],
+  size: [130, 30],
   options: decayOptions,
 });
 
@@ -508,7 +508,7 @@ decayCurveSelector.on("change", function (v) {
 
 // Release Curve
 let releaseCurveSelector = new Nexus.Select("#release-curve", {
-  size: [100, 30],
+  size: [130, 30],
   options: attackReleaseOptions,
 });
 

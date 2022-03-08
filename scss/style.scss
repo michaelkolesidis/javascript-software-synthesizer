@@ -47,6 +47,7 @@ $header-font: calc($header-size / 3);
 html,
 body {
   font-family: "Spartan", sans-serif;
+  overflow: hidden; /* Hide scrollbars */
 }
 
 ::-moz-selection {
@@ -154,7 +155,7 @@ a:link {
 .subtitle {
   @extend .title;
   font-size: 1.2rem;
-  margin: 0.3rem 0 0.1rem;
+  margin: 0.4rem 0 0.2rem;
 }
 
 .label {
@@ -162,6 +163,10 @@ a:link {
   margin: 0 0 0.1rem 0;
   font-size: 0.9rem;
   white-space: nowrap;
+}
+
+.list {
+  margin-top: 0.7rem;
 }
 
 .section {
@@ -230,9 +235,7 @@ a:link {
   display: flex;
   justify-content: space-evenly;
   // align-items: center;
-  .list {
-    margin-top: 0.4rem;
-  }
+  
 }
 
 /* --------------------------------------------------------------------- */
