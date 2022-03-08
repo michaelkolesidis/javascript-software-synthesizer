@@ -8,5 +8,3 @@
 export default function footer() {
   return /*html*/ `<div><p>© 2022 | Made with ♥ by <a href="https://github.com/michaelkolesidis" target="_blank">Michael Kolesidis</a></p></div><div id="version"><a href="https://github.com/michaelkolesidis/javascript-software-synthesizer/releases" target="_blank">v.0.2.0</a></div>`;
 }
-
-

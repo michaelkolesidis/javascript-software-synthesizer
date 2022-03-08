@@ -97,6 +97,8 @@ const synthSectionMain = document.getElementById("synth-section-main");
 synthSectionMain.innerHTML = SynthSectionMain();
 
 // Synth Section: Amplitude Envelope
+const amplitudeEnvelopeSection = document.getElementById("adsr-envelope")
+amplitudeEnvelopeSection.innerHTML = SynthSectionAmplitudeEnvelope();
 
 // Synth Section: Oscillator
 
@@ -567,14 +569,12 @@ let base = 39; // Middle C / C4
 
 document.addEventListener("keydown", (event) => {
   const keyIndex = keyMapper(event.key, base);
-  console.log("computer key pressed");
   if (
     keyIndex >= 0 &&
     keyIndex <= 87 &&
     !keyboard.keys[keyIndex]._state.state
   ) {
     keyboard.toggleIndex(keyIndex, true);
-    console.log("note played");
   }
 });
 
@@ -584,27 +584,6 @@ document.addEventListener("keyup", (event) => {
     keyboard.toggleIndex(keyIndex, false);
   }
 });
-
-// Original
-
-// document.addEventListener("keydown", (event) => {
-//   const keyIndex = keyMapper(event.key, base);
-//   console.log("computer key pressed");
-//   if (keyIndex >= 0 && keyIndex <= 87) {
-//     keyIndex !== undefined && !keyboard.keys[keyIndex]._state.state
-//       ? keyboard.toggleIndex(keyIndex, true)
-//       : null;
-//   }
-// });
-
-// document.addEventListener("keyup", (event) => {
-//   const keyIndex = keyMapper(event.key, base);
-//   if (keyIndex >= 0 && keyIndex <= 87) {
-//     keyIndex !== undefined && keyboard.keys[keyIndex]._state.state
-//       ? keyboard.toggleIndex(keyIndex, false)
-//       : null;
-//   }
-// });
 
 document.addEventListener("keydown", octaveSwitch);
 

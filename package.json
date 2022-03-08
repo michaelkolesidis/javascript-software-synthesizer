@@ -1,6 +1,6 @@
 {
   "name": "javascript-software-synthesizer",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "description": "The JSS-01 is a software synthesizer implementing a variety of JavaScript frameworks and libraries.",
   "main": "./scripts/main.js",
   "scripts": {
@@ -16,18 +16,18 @@
     "synthesizer",
     "sound-processing",
     "synth",
-    "sampler",
-    "envelope",
+    "fm-synthesizer",
+    "fm-synthesis",
+    "frequency-modulation",
     "synthesizers",
     "software-synthesizer",
-    "subtractive-synthesis",
-    "lizard",
+    "midi",
+    "midi-keyboard",
     "piano-keyboard",
     "sound-synthesis",
     "nexusui",
     "tonejs",
     "knobs",
-    "virtual-analog",
     "sound-engineering"
   ],
   "author": "Michael Kolesidis",
@@ -35,9 +35,8 @@
   "bugs": {
     "url": "https://github.com/michaelkolesidis/javascript-software-synthesizer/issues"
   },
-  "homepage": "https://github.com/michaelkolesidis/javascript-software-synthesizer#readme",
+  "homepage": "https://github.com/michaelkolesidis/javascript-software-synthesizer",
   "dependencies": {
     "node-sass": "^7.0.1"
   }
 }
-
