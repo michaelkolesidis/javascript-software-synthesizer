@@ -317,6 +317,10 @@ a:link {
 /* --------------------------------------------------------------------- */
 #footer {
   position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 97%;
   bottom: 0;
   height: 2rem; // Footer height
   color: $blue;
@@ -336,6 +340,12 @@ a:link {
 
 #content-wrap {
   padding-bottom: 3rem; // Footer height
+}
+
+#version {
+  color: $dark-gray;
+  font-weight: 400;
+  font-size: 0.7rem;
 }
 
 /* --------------------------------------------------------------------- */
