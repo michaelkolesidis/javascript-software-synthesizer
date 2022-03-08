@@ -9,7 +9,7 @@ Tha main third-party source of code for the project is the documentation of the 
 <br>
 
 ## The References List
-<strong>Note</strong>: Many of the following chunks of code were heavily modified and sometimes completely changed in our implementation. You should refer to our project's codebase first.
+<strong>Note</strong>: Many of the following chunks of code were heavily modified and sometimes completely changed in our implementation, merely serving as a source of inspiration. You should always refer to our project's codebase first.
 
 * [Sliding menu](https://codepen.io/dannievinther/pen/NvZjvz?editors=1100) by [Dannie Vinther](https://github.com/dannievinther)
 * [Changing keyboard key colors](https://github.com/nexus-js/ui/issues/69) (used for dark mode) by [Ben Taylor](https://github.com/taylorbf)
