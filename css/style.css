@@ -126,11 +126,18 @@ a:link {
   font-size: 1.2rem;
   margin: 0.4rem 0 0.2rem; }
 
-.label {
+.label, .selection {
   font-weight: 600;
-  margin: 0 0 0.1rem 0;
+  margin: 0 0 0.2rem 0;
   font-size: 0.9rem;
   white-space: nowrap; }
+
+.selection {
+  font-weight: 500;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 100%;
+  margin-top: -0.6rem; }
 
 .list {
   margin-top: 0.7rem; }
@@ -185,6 +192,10 @@ a:link {
 #adsr-envelope {
   display: flex;
   justify-content: space-evenly; }
+
+#oscillator {
+  display: flex;
+  justify-content: center; }
 
 /* --------------------------------------------------------------------- */
 /* Modulation Section */

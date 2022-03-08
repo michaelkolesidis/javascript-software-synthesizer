@@ -160,9 +160,18 @@ a:link {
 
 .label {
   font-weight: 600;
-  margin: 0 0 0.1rem 0;
+  margin: 0 0 0.2rem 0;
   font-size: 0.9rem;
   white-space: nowrap;
+}
+
+.selection {
+  @extend .label;
+  font-weight: 500;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 100%;
+  margin-top: -0.6rem;
 }
 
 .list {
@@ -234,8 +243,11 @@ a:link {
 #adsr-envelope {
   display: flex;
   justify-content: space-evenly;
-  // align-items: center;
-  
+}
+
+#oscillator {
+  display: flex;
+  justify-content: center;
 }
 
 /* --------------------------------------------------------------------- */

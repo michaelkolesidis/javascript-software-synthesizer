@@ -104,7 +104,7 @@ const synthSectionMain = document.getElementById("synth-section-main");
 synthSectionMain.innerHTML = SynthSectionMain();
 
 // Synth Section: Amplitude Envelope
-const amplitudeEnvelopeSection = document.getElementById("adsr-envelope")
+const amplitudeEnvelopeSection = document.getElementById("adsr-envelope");
 amplitudeEnvelopeSection.innerHTML = SynthSectionAmplitudeEnvelope();
 
 // Synth Section: Oscillator
@@ -180,29 +180,23 @@ keyboard.colorize("accent", GRAY_DARK); // light mode
 // });
 
 // Makes keyboard playble both with right and left click - prevents right click context menu
-// let keyboardPlaceholder = document.getElementById("keyboard");
-// keyboardPlaceholder.addEventListener(
-//   "contextmenu",
-//   function (event) {
-//     event.preventDefault();
-//   },
-//   false
-// );
+let keyboardPlaceholder = document.getElementById("keyboard");
+keyboardPlaceholder.addEventListener(
+  "contextmenu",
+  function (event) {
+    event.preventDefault();
+  },
+  false
+);
 
 // ---------------------------------------------------------------------
 // Effects
 // ---------------------------------------------------------------------
-// Note: Unimplemented effects are commented out
-
 // AutoFilter .connect(autoFilter)
 const autoFilter = new Tone.AutoFilter("4n").toDestination().start();
 autoFilter.depth.value = 1; // range:0-1
 autoFilter.frequency.value = 10; // range:0-1000 or 2000
 autoFilter.octaves = 2.6; // range: -10-10
-
-// AutoPanner
-
-// AutoWah
 
 // BitCrusher .connect(crusher)
 const crusher = new Tone.BitCrusher(4).toDestination(); // range:1-16, step:1
@@ -226,20 +220,9 @@ const feedbackDelay = new Tone.FeedbackDelay("8n", 0.5).toDestination();
 feedbackDelay.delayTime.value = 0.25; // range:0-1
 feedbackDelay.feedback.value = 0.5; // range:0-1
 
-// Freeverb .connect(freeverb) {X}
-// const freeverb = new Tone.Freeverb().toDestination();
-// freeverb.dampening = 1000;
-
 // FrequencyShifter .connect(shift)
 const shift = new Tone.FrequencyShifter(42).toDestination(); // The incoming signal is shifted by this frequency value
 shift.frequency.value = -600; // range:-600-600
-
-// JCReverb .chain(delay, reverb) {X}
-// const reverb = new Tone.JCReverb(0.4).toDestination();
-// const delay = new Tone.FeedbackDelay(0.5);
-
-// MidSideEffect
-// https://tonejs.github.io/docs/14.7.77/MidSideEffect
 
 // Phaser .connect(phaser)
 const phaser = new Tone.Phaser({
@@ -257,16 +240,10 @@ const pingPong = new Tone.PingPongDelay("4n", 0.2).toDestination();
 pingPong.delayTime.value = 2; // range:0-2 (choice)
 pingPong.feedback.value = 0.2; // range:0-1
 
-// PitchShift
-// https://tonejs.github.io/docs/14.7.77/PitchShift
-
 // Reverb .connect(reverb)
 const reverb = new Tone.Reverb(1).toDestination(); // seconds - Check implementation
 // https://tonejs.github.io/docs/14.7.77/Reverb - you have to wait until
 reverb.decay = 1; // range:0-10 (choice)
-
-// StereoWidener
-// https://tonejs.github.io/docs/14.7.77/StereoWidener
 
 // Tremolo .connect(tremolo)
 const tremolo = new Tone.Tremolo(9, 0.75).toDestination().start(); // frequency (rate), depth
@@ -292,7 +269,21 @@ synth.set({
   maxPolyphony: 128,
 });
 
-const oscillator_types = ["sine", "square", "sawtooth", "triangle", "pulse"];
+// synth.set({
+//   oscillator: {
+//     phase: 77
+//   }
+// })
+
+synth.set({
+  oscillator: {
+    // partialCount: 4,
+    partials: [0.9, 0, 0, 0.9], // 0 - 1
+  },
+});
+
+// synth.options.oscillator.type = "square"
+console.log(synth.options);
 
 // ---------------------------------------------------------------------
 // Volume
@@ -521,6 +512,36 @@ releaseCurveSelector.on("change", function (v) {
 });
 
 // ---------------------------------------------------------------------
+// Oscillator
+// ---------------------------------------------------------------------
+// Type
+const oscillatorTypes = ["sine", "square", "sawtooth", "triangle", "pulse"];
+
+let oscillatorTypeSelector = new Nexus.RadioButton("#oscillator-type", {
+  size: [400, 25],
+  numberOfButtons: 5,
+  active: 0,
+});
+oscillatorTypeSelector.colorize("accent", CYAN);
+
+oscillatorTypeSelector.on("change", function (v) {
+  synth.set({
+    oscillator: {
+      type: oscillatorTypes[v],
+    },
+  });
+});
+
+// Phase
+
+
+// partialCount
+
+
+// partials
+
+
+// ---------------------------------------------------------------------
 // Modulation
 // ---------------------------------------------------------------------
 // partialCount
@@ -528,6 +549,12 @@ releaseCurveSelector.on("change", function (v) {
 // phase
 // type*
 synth.options.modulation.type; // sine, square (default), sawtooth,triangle, pulse
+
+// synth.set({
+//   modulation: {
+//     type: "square"
+//   }
+// })
 
 // ---------------------------------------------------------------------
 // Modulation Envelope
@@ -539,21 +566,6 @@ synth.options.modulation.type; // sine, square (default), sawtooth,triangle, pul
 // sustain
 // release
 // releaseCurve
-
-// ---------------------------------------------------------------------
-// Oscillator
-// ---------------------------------------------------------------------
-// partialCount
-// partials
-// phase
-// type*
-
-synth.options.oscillator.type = "sine"; // sine, square, sawtooth,triangle, pulse
-
-// ---------------------------------------------------------------------
-// Portamento
-// ---------------------------------------------------------------------
-// Only available for monophonic synths
 
 // ---------------------------------------------------------------------
 // Synthesizer On-Screen Keyboard Playbility Implementation
@@ -648,6 +660,9 @@ let synthSectionContent = document.getElementById("synth-section-content");
 let amplitudeEnvelopeTitle = document.getElementById("adsr-envelope-title");
 let amplitudeEnvelope = document.getElementById("adsr-envelope");
 
+let oscillatorTitle = document.getElementById("oscillator-title");
+let oscillatorSection = document.getElementById("oscillator");
+
 function showHide(title, section, display) {
   // (title, section)
   title.addEventListener("click", function () {
@@ -661,3 +676,28 @@ function showHide(title, section, display) {
 
 showHide(synthSectionTitle, synthSectionContent, "block");
 showHide(amplitudeEnvelopeTitle, amplitudeEnvelope, "flex");
+showHide(oscillatorTitle, oscillatorSection, "grid");
+
+// ---------------------------------------------------------------------
+// Recorder
+// ---------------------------------------------------------------------
+// https://tonejs.github.io/docs/14.7.77/Recorder
+
+// const recorder = new Tone.Recorder();
+// // start recording
+// recorder.start();
+// // generate a few notes
+// synth.triggerAttackRelease("C3", 0.5);
+// synth.triggerAttackRelease("C4", 0.5, "+1");
+// synth.triggerAttackRelease("C5", 0.5, "+2");
+// // wait for the notes to end and stop the recording
+// setTimeout(async () => {
+// 	// the recorded audio is returned as a blob
+// 	const recording = await recorder.stop();
+// 	// download the recording by creating an anchor element and blob url
+// 	const url = URL.createObjectURL(recording);
+// 	const anchor = document.createElement("a");
+// 	anchor.download = "recording.webm";
+// 	anchor.href = url;
+// 	anchor.click();
+// }, 4000);
