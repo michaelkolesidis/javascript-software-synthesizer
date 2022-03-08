@@ -171,14 +171,14 @@ keyboard.colorize("accent", GRAY_DARK); // light mode
 // });
 
 // Makes keyboard playble both with right and left click - prevents right click context menu
-let keyboardPlaceholder = document.getElementById("keyboard");
-keyboardPlaceholder.addEventListener(
-  "contextmenu",
-  function (event) {
-    event.preventDefault();
-  },
-  false
-);
+// let keyboardPlaceholder = document.getElementById("keyboard");
+// keyboardPlaceholder.addEventListener(
+//   "contextmenu",
+//   function (event) {
+//     event.preventDefault();
+//   },
+//   false
+// );
 
 // ---------------------------------------------------------------------
 // Effects
