@@ -74,6 +74,13 @@ let darkMode = false;
 consoleIntro();
 
 // ---------------------------------------------------------------------
+// Index.HTML
+// ---------------------------------------------------------------------
+// import index from "./elements/index.js";
+// const body = document.body; or root div
+// root.innerHTML = index();
+
+// ---------------------------------------------------------------------
 // Header
 // ---------------------------------------------------------------------
 const header = document.getElementById("header");
