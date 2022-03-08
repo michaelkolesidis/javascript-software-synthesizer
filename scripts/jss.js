@@ -663,6 +663,13 @@ let amplitudeEnvelope = document.getElementById("adsr-envelope");
 let oscillatorTitle = document.getElementById("oscillator-title");
 let oscillatorSection = document.getElementById("oscillator");
 
+let modulationTitle = document.getElementById("modulation-title");
+let modulationContent = document.getElementById("modulation-content");
+
+let effectsTitle = document.getElementById("effects-title");
+let effectsContent = document.getElementById("effects-content");
+
+
 function showHide(title, section, display) {
   // (title, section)
   title.addEventListener("click", function () {
@@ -677,6 +684,12 @@ function showHide(title, section, display) {
 showHide(synthSectionTitle, synthSectionContent, "block");
 showHide(amplitudeEnvelopeTitle, amplitudeEnvelope, "flex");
 showHide(oscillatorTitle, oscillatorSection, "grid");
+
+showHide(modulationTitle, modulationContent, "block");
+
+showHide(effectsTitle, effectsContent, "block");
+
+
 
 // ---------------------------------------------------------------------
 // Recorder
