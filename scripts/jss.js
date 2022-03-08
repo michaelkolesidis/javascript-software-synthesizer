@@ -444,7 +444,7 @@ harmonicityNum.colorize("accent", CYAN);
 // synth.options.envelope.release = 0.5;
 
 let amplitudeADSR = new Nexus.Multislider("#amplitude-adsr", {
-  size: [250, 149],
+  size: [245, 149],
   numberOfSliders: 4,
   min: 0,
   max: 1,
