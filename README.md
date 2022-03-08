@@ -7,7 +7,7 @@
 
 [![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-01004c.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![MIT license](https://img.shields.io/badge/License-MIT-01004c.svg)](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/LICENSE.md)
-[![Version](https://img.shields.io/badge/version-0.1.0-01004c.svg)](https://shields.io/)
+[![Version](https://img.shields.io/badge/version-0.2.1-01004c.svg)](https://shields.io/)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/93c42090-6fc9-4c3d-a462-42b535ea9d15/deploy-status)](https://app.netlify.com/sites/javascript-software-synthesizer/deploys)
 
 
