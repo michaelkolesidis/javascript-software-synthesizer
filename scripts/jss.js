@@ -561,13 +561,9 @@ modulationTypeSelector.on("change", function (v) {
 
 // phase
 
-
 // partialCount
 
-
 // partials []
-
-
 
 // synth.set({
 //   modulation: {
@@ -610,12 +606,14 @@ modulationADSR.on("change", function (v) {
   });
 });
 
-
 // Modulation Attack Curve
-let modulationAttackCurveSelector = new Nexus.Select("#modulation-attack-curve", {
-  size: [130, 30],
-  options: attackReleaseOptions,
-});
+let modulationAttackCurveSelector = new Nexus.Select(
+  "#modulation-attack-curve",
+  {
+    size: [130, 30],
+    options: attackReleaseOptions,
+  }
+);
 
 modulationAttackCurveSelector.on("change", function (v) {
   synth.set({
@@ -640,10 +638,13 @@ modulationDecayCurveSelector.on("change", function (v) {
 });
 
 // Modulation Release Curve
-let modulationReleaseCurveSelector = new Nexus.Select("#modulation-release-curve", {
-  size: [130, 30],
-  options: attackReleaseOptions,
-});
+let modulationReleaseCurveSelector = new Nexus.Select(
+  "#modulation-release-curve",
+  {
+    size: [130, 30],
+    options: attackReleaseOptions,
+  }
+);
 
 modulationReleaseCurveSelector.on("change", function (v) {
   synth.set({
@@ -652,7 +653,6 @@ modulationReleaseCurveSelector.on("change", function (v) {
     },
   });
 });
-
 
 // ---------------------------------------------------------------------
 // Synthesizer On-Screen Keyboard Playbility Implementation
@@ -753,6 +753,11 @@ let oscillatorSection = document.getElementById("oscillator");
 let modulationTitle = document.getElementById("modulation-title");
 let modulationContent = document.getElementById("modulation-content");
 
+let modulationEnvelopeTitle = document.getElementById(
+  "modulation-envelope-title"
+);
+let modulationEnvelope = document.getElementById("modulation-envelope");
+
 let effectsTitle = document.getElementById("effects-title");
 let effectsContent = document.getElementById("effects-content");
 
@@ -772,6 +777,7 @@ showHide(amplitudeEnvelopeTitle, amplitudeEnvelope, "flex");
 showHide(oscillatorTitle, oscillatorSection, "grid");
 
 showHide(modulationTitle, modulationContent, "block");
+showHide(modulationEnvelopeTitle, modulationEnvelope, "flex");
 
 showHide(effectsTitle, effectsContent, "block");
 
