@@ -89,6 +89,7 @@ Some of the ideas are full modular design, full compatibility with MIDI controll
 * [Learning Synths by Ableton](https://learningsynths.ableton.com/en/playground)
 * [Syntorial](https://www.syntorial.com/)
 * [Dexed - FM Plugin Synth](https://github.com/asb2m10/dexed)
+* [Teenage Engineering OP-1](https://teenage.engineering/products/op-1)
 * [Helm](https://tytel.org/helm/)
 
 A full(-ish) list of references can be found in the [References](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/REFERENCES.md) document.
