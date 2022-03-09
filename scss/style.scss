@@ -264,6 +264,11 @@ a:link {
   align-items: center;
 }
 
+#modulation-envelope {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 /* --------------------------------------------------------------------- */
 /* Effects Section */
 /* --------------------------------------------------------------------- */

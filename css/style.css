@@ -209,6 +209,10 @@ a:link {
   #modulation .title, #modulation .subtitle {
     color: #03d692; }
 
+#modulation-envelope {
+  display: flex;
+  justify-content: space-evenly; }
+
 /* --------------------------------------------------------------------- */
 /* Effects Section */
 /* --------------------------------------------------------------------- */

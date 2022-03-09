@@ -534,21 +534,40 @@ oscillatorTypeSelector.on("change", function (v) {
 
 // Phase
 
-
 // partialCount
 
-
 // partials
-
 
 // ---------------------------------------------------------------------
 // Modulation
 // ---------------------------------------------------------------------
-// partialCount
-// partials []
-// phase
-// type*
+// Type
 synth.options.modulation.type; // sine, square (default), sawtooth,triangle, pulse
+
+let modulationTypeSelector = new Nexus.RadioButton("#modulation-type", {
+  size: [400, 25],
+  numberOfButtons: 5,
+  active: 1,
+});
+modulationTypeSelector.colorize("accent", GREEN);
+
+modulationTypeSelector.on("change", function (v) {
+  synth.set({
+    modulation: {
+      type: oscillatorTypes[v],
+    },
+  });
+});
+
+// phase
+
+
+// partialCount
+
+
+// partials []
+
+
 
 // synth.set({
 //   modulation: {
@@ -566,6 +585,74 @@ synth.options.modulation.type; // sine, square (default), sawtooth,triangle, pul
 // sustain
 // release
 // releaseCurve
+
+let modulationADSR = new Nexus.Multislider("#modulation-adsr", {
+  size: [245, 149],
+  numberOfSliders: 4,
+  min: 0,
+  max: 1,
+  step: 0,
+  candycane: 3,
+  values: [0.005, 0.005, 1, 0.1],
+  smoothing: 0,
+  mode: "bar",
+});
+modulationADSR.colorize("accent", GREEN);
+
+modulationADSR.on("change", function (v) {
+  synth.set({
+    modulationEnvelope: {
+      attack: Nexus.scale(v[0], 0, 1, 0, 2),
+      decay: Nexus.scale(v[1], 0, 1, 0, 2),
+      sustain: v[2],
+      release: Nexus.scale(v[3], 0, 1, 0, 5),
+    },
+  });
+});
+
+
+// Modulation Attack Curve
+let modulationAttackCurveSelector = new Nexus.Select("#modulation-attack-curve", {
+  size: [130, 30],
+  options: attackReleaseOptions,
+});
+
+modulationAttackCurveSelector.on("change", function (v) {
+  synth.set({
+    modulationEnvelope: {
+      attackCurve: v.value,
+    },
+  });
+});
+
+// Modulation Decay Curve
+let modulationDecayCurveSelector = new Nexus.Select("#modulation-decay-curve", {
+  size: [130, 30],
+  options: decayOptions,
+});
+
+modulationDecayCurveSelector.on("change", function (v) {
+  synth.set({
+    modulationEnvelope: {
+      decayCurve: v.value,
+    },
+  });
+});
+
+// Modulation Release Curve
+let modulationReleaseCurveSelector = new Nexus.Select("#modulation-release-curve", {
+  size: [130, 30],
+  options: attackReleaseOptions,
+});
+
+modulationReleaseCurveSelector.on("change", function (v) {
+  synth.set({
+    modulationEnvelope: {
+      releaseCurve: v.value,
+    },
+  });
+});
+
 
 // ---------------------------------------------------------------------
 // Synthesizer On-Screen Keyboard Playbility Implementation
@@ -669,7 +756,6 @@ let modulationContent = document.getElementById("modulation-content");
 let effectsTitle = document.getElementById("effects-title");
 let effectsContent = document.getElementById("effects-content");
 
-
 function showHide(title, section, display) {
   // (title, section)
   title.addEventListener("click", function () {
@@ -688,8 +774,6 @@ showHide(oscillatorTitle, oscillatorSection, "grid");
 showHide(modulationTitle, modulationContent, "block");
 
 showHide(effectsTitle, effectsContent, "block");
-
-
 
 // ---------------------------------------------------------------------
 // Recorder

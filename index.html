@@ -106,7 +106,40 @@
           <div id="modulation">
             <div class="title" id="modulation-title"><p>Modulation</p></div>
             <div id="modulation-content">
-              <p>TEST</p>
+              <!-- Modulation Main -->
+              <div class="component">
+                <p class="label">Type</p>
+                <div id="modulation-type"></div>
+                <br />
+                <div class="selection">
+                  <div>sine</div>
+                  <div>square</div>
+                  <div>sawtooth</div>
+                  <div>triangle</div>
+                  <div>pulse</div>
+                </div>
+              </div>
+              <!-- Modulation Envelope -->
+              <p id="modulation-envelope-title" class="subtitle">
+                Modulation Envelope
+              </p>
+              <div id="modulation-envelope">
+                <div class="component">
+                  <p class="label">
+                    Attack &nbsp;&nbsp; Decay &nbsp;&nbsp; Sustain &nbsp;&nbsp;
+                    Release
+                  </p>
+                  <div id="modulation-adsr"></div>
+                </div>
+                <div class="component">
+                  <p class="label">Attack Curve</p>
+                  <div id="modulation-attack-curve"></div>
+                  <p class="label list">Decay Curve</p>
+                  <div id="modulation-decay-curve"></div>
+                  <p class="label list">Release Curve</p>
+                  <div id="modulation-release-curve"></div>
+                </div>
+              </div>
             </div>
           </div>
 
