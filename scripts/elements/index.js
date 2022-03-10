@@ -7,6 +7,6 @@
 
 export default function page() {
     return /*html*/`
-        It will return the HTML code of the homepage
-    `
+It will return the HTML code of the homepage
+`
 }

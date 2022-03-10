@@ -11,14 +11,12 @@
 import Header from "./elements/header.js";
 import Footer from "./elements/footer.js";
 import Displays from "./elements/panels/displays.js";
+
 import SynthSectionMain from "./elements/panels/synthSectionMain.js";
-
 import SynthSectionAmplitudeEnvelope from "./elements/panels/synthSectionAmplitudeEnvelope.js";
-
 import SynthSectionOscillator from "./elements/panels/synthSectionOscillator.js";
 
 import ModulationSectionMain from "./elements/panels/modulationSectionMain.js";
-
 import ModulationSectionModulationEnvelope from "./elements/panels/modulationSectionModulationEnvelope.js";
 
 // ---------------------------------------------------------------------
@@ -108,12 +106,19 @@ const amplitudeEnvelopeSection = document.getElementById("adsr-envelope");
 amplitudeEnvelopeSection.innerHTML = SynthSectionAmplitudeEnvelope();
 
 // Synth Section: Oscillator
+const synthSectionOscillator = document.getElementById("oscillator");
+synthSectionOscillator.innerHTML = SynthSectionOscillator();
 
 // Modulation Section: Main
+const modulationSectionMain = document.getElementById("modulation-section-main");
+modulationSectionMain.innerHTML = ModulationSectionMain();
 
 // Modulation Section: Modulation Envelope
+const modulationSectionEnvelope = document.getElementById("modulation-envelope");
+modulationSectionEnvelope.innerHTML = ModulationSectionModulationEnvelope();
 
 // Effects
+
 
 // ---------------------------------------------------------------------
 // MIDI Display
@@ -267,6 +272,10 @@ let synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
 synth.set({
   maxPolyphony: 128,
 });
+
+// const lfo = new Tone.LFO("4n", 8000, 4000000).start().toDestination();
+// const autoFilter = new Tone.AutoFilter("4n").toDestination().start();
+// const oscillator = new Tone.Oscillator().toDestination().start();
 
 // ---------------------------------------------------------------------
 // Volume
@@ -524,12 +533,6 @@ oscillatorTypeSelector.on("change", function (v) {
   });
   oscillatorType = oscillatorTypes[v];
 });
-
-
-// const lfo = new Tone.LFO("4n", 8000, 4000000).start().toDestination();
-
-// const autoFilter = new Tone.AutoFilter("4n").toDestination().start();
-// const oscillator = new Tone.Oscillator().toDestination().start();
 
 // partialCount
 let partialCountSelector = new Nexus.Slider("#partial-count", {
