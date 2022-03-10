@@ -181,7 +181,9 @@ a:link {
     color: #23b2fe; }
 
 #synth-section-content {
-  display: block; }
+  display: block;
+  display: flex;
+  flex-direction: column; }
 
 #synth-section-main {
   display: flex;
@@ -194,14 +196,18 @@ a:link {
 #oscillator {
   display: flex;
   justify-content: center;
-  flex-direction: column; }
+  flex-direction: column;
+  width: 100%; }
 
-#partial-count-section {
+#type-selection {
+  width: 100%; }
+
+#partial-count-section, #modulation-partial-count-section {
   display: flex;
   justify-content: center;
   width: 100%; }
 
-#partials-section {
+#partials-section, #modulation-partials-section {
   display: flex;
   justify-content: center;
   width: 100%; }

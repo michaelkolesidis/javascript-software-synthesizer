@@ -517,18 +517,14 @@ let oscillatorTypeSelector = new Nexus.RadioButton("#oscillator-type", {
 oscillatorTypeSelector.colorize("accent", CYAN);
 
 oscillatorTypeSelector.on("change", function (v) {
- 
-
-    synth.set({
-      oscillator: {
-        type: oscillatorTypes[v],
-      },
-    });
-    oscillatorType = oscillatorTypes[v];
-  
+  synth.set({
+    oscillator: {
+      type: oscillatorTypes[v],
+    },
+  });
+  oscillatorType = oscillatorTypes[v];
 });
 
-// Phase
 
 // const lfo = new Tone.LFO("4n", 8000, 4000000).start().toDestination();
 
@@ -546,10 +542,8 @@ let partialCountSelector = new Nexus.Slider("#partial-count", {
 });
 partialCountSelector.colorize("accent", CYAN);
 
-
 partialCountSelector.on("change", function (v) {
   if (oscillatorType !== "pulse") {
-    
     if (v >= 1) {
       synth.set({
         oscillator: {
@@ -557,39 +551,30 @@ partialCountSelector.on("change", function (v) {
           type: oscillatorType + `${v}`,
         },
       });
-  
-    }
-    else {
-  
+    } else {
       synth.set({
         oscillator: {
           // partialCount: v,
-          type: oscillatorType
+          type: oscillatorType,
         },
       });
-  
     }
-
   }
 
-  console.log(v);
   partialsSelector.destroy();
-  partialsSelector = new Nexus.Multislider('#partials-selector',{
-    'size': [400,100],
-    'numberOfSliders': v,
-    'min': 0,
-    'max': 1,
-    'step': 0.05,
-    'candycane': 3,
-    'values': [0.9,0.8,0.7,0.6,0.5,0.4,0.3,0.2,0.1],
-    'smoothing': 0,
-    'mode': 'bar'  // 'bar' or 'line'
-   })
-   partialsSelector.colorize("accent", CYAN);
-   partialsSelector.on('change',function(v) {
-    console.log(v);
-  })
-  console.log(synth.options.oscillator.type);
+  partialsSelector = new Nexus.Multislider("#partials-selector", {
+    size: [400, 100],
+    numberOfSliders: v,
+    min: 0,
+    max: 1,
+    step: 0.05,
+    candycane: 3,
+    values: [0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1],
+    smoothing: 0,
+    mode: "bar", // 'bar' or 'line'
+  });
+  partialsSelector.colorize("accent", CYAN);
+  partialsSelector.on("change", function (v) {});
 });
 
 // partials
@@ -611,16 +596,22 @@ partialsSelector.on("change", function (v) {
       partials: [v],
     },
   });
-  console.log(synth.options.oscillator.partials)
 });
-
-
 
 // ---------------------------------------------------------------------
 // Modulation
 // ---------------------------------------------------------------------
 // Type
-synth.options.modulation.type; // sine, square (default), sawtooth,triangle, pulse
+const modulationTypes = [
+  "sine",
+  "square",
+  "sawtooth",
+  "triangle",
+  "pulse",
+  "custom",
+];
+
+let modulationType = modulationTypes[1];
 
 let modulationTypeSelector = new Nexus.RadioButton("#modulation-type", {
   size: [400, 25],
@@ -632,22 +623,79 @@ modulationTypeSelector.colorize("accent", GREEN);
 modulationTypeSelector.on("change", function (v) {
   synth.set({
     modulation: {
-      type: oscillatorTypes[v],
+      type: modulationTypes[v],
+    },
+  });
+  modulationType = modulationTypes[v];
+});
+
+// partialCount
+let modulationPartialCountSelector = new Nexus.Slider("#modulation-partial-count", {
+  size: [400, 35],
+  mode: "relative", // "absolute" or "relative"
+  min: 0,
+  max: 10,
+  step: 1,
+  value: 0,
+});
+modulationPartialCountSelector.colorize("accent", GREEN);
+
+modulationPartialCountSelector.on("change", function (v) {
+  if (modulationType !== "pulse") {
+    if (v >= 1) {
+      synth.set({
+        modulation: {
+          // partialCount: v,
+          type: modulationType + `${v}`,
+        },
+      });
+    } else {
+      synth.set({
+        modulation: {
+          // partialCount: v,
+          type: modulationType,
+        },
+      });
+    }
+  }
+
+  modulationPartialsSelector.destroy();
+  modulationPartialsSelector = new Nexus.Multislider("#modulation-partials-selector", {
+    size: [400, 100],
+    numberOfSliders: v,
+    min: 0,
+    max: 1,
+    step: 0.05,
+    candycane: 3,
+    values: [0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1],
+    smoothing: 0,
+    mode: "bar", // 'bar' or 'line'
+  });
+  modulationPartialsSelector.colorize("accent", GREEN);
+  modulationPartialsSelector.on("change", function (v) {});
+});
+
+// partials
+let modulationPartialsSelector = new Nexus.Multislider("#modulation-partials-selector", {
+  size: [400, 100],
+  numberOfSliders: 0,
+  min: 0,
+  max: 1,
+  step: 0.05,
+  candycane: 3,
+  values: [0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1],
+  smoothing: 0,
+  mode: "bar", // 'bar' or 'line'
+});
+
+modulationPartialsSelector.on("change", function (v) {
+  synth.set({
+    modulation: {
+      partials: [v],
     },
   });
 });
 
-// phase
-
-// partialCount
-
-// partials []
-
-// synth.set({
-//   modulation: {
-//     type: "square"
-//   }
-// })
 
 // ---------------------------------------------------------------------
 // Modulation Envelope
@@ -850,9 +898,9 @@ function showHide(title, section, display) {
   });
 }
 
-showHide(synthSectionTitle, synthSectionContent, "block");
+showHide(synthSectionTitle, synthSectionContent, "flex");
 showHide(amplitudeEnvelopeTitle, amplitudeEnvelope, "flex");
-showHide(oscillatorTitle, oscillatorSection, "grid");
+showHide(oscillatorTitle, oscillatorSection, "flex");
 
 showHide(modulationTitle, modulationContent, "block");
 showHide(modulationEnvelopeTitle, modulationEnvelope, "flex");

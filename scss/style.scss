@@ -231,6 +231,8 @@ a:link {
 
 #synth-section-content {
   display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 #synth-section-main {
@@ -247,6 +249,11 @@ a:link {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  width: 100%;
+}
+
+#type-selection {
+  width: 100%;
 }
 
 #partial-count-section {
@@ -273,6 +280,14 @@ a:link {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#modulation-partial-count-section {
+  @extend #partial-count-section;
+}
+
+#modulation-partials-section {
+  @extend #partials-section;
 }
 
 #modulation-envelope {
