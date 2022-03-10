@@ -536,15 +536,16 @@ oscillatorTypeSelector.on("change", function (v) {
 // const oscillator = new Tone.Oscillator().toDestination().start();
 
 // partialCount
-let partialCountSelector = new Nexus.Dial("#partial-count", {
-  size: [75, 75],
-  interaction: "vertical", // "radial", "vertical", or "horizontal"
+let partialCountSelector = new Nexus.Slider("#partial-count", {
+  size: [400, 35],
   mode: "relative", // "absolute" or "relative"
   min: 0,
   max: 10,
   step: 1,
   value: 0,
 });
+partialCountSelector.colorize("accent", CYAN);
+
 
 partialCountSelector.on("change", function (v) {
   if (oscillatorType !== "pulse") {
@@ -572,28 +573,29 @@ partialCountSelector.on("change", function (v) {
   }
 
   console.log(v);
-  // partialsSelector.destroy();
-  // partialsSelector = new Nexus.Multislider('#partials-selector',{
-  //   'size': [400,100],
-  //   'numberOfSliders': v,
-  //   'min': 0,
-  //   'max': 1,
-  //   'step': 0.05,
-  //   'candycane': 3,
-  //   'values': [0.9,0.8,0.7,0.6,0.5,0.4,0.3,0.2,0.1],
-  //   'smoothing': 0,
-  //   'mode': 'bar'  // 'bar' or 'line'
-  //  })
-  //  partialsSelector.on('change',function(v) {
-  //   console.log(v);
-  // })
+  partialsSelector.destroy();
+  partialsSelector = new Nexus.Multislider('#partials-selector',{
+    'size': [400,100],
+    'numberOfSliders': v,
+    'min': 0,
+    'max': 1,
+    'step': 0.05,
+    'candycane': 3,
+    'values': [0.9,0.8,0.7,0.6,0.5,0.4,0.3,0.2,0.1],
+    'smoothing': 0,
+    'mode': 'bar'  // 'bar' or 'line'
+   })
+   partialsSelector.colorize("accent", CYAN);
+   partialsSelector.on('change',function(v) {
+    console.log(v);
+  })
   console.log(synth.options.oscillator.type);
 });
 
 // partials
 let partialsSelector = new Nexus.Multislider("#partials-selector", {
   size: [400, 100],
-  numberOfSliders: 10,
+  numberOfSliders: 0,
   min: 0,
   max: 1,
   step: 0.05,
@@ -609,7 +611,10 @@ partialsSelector.on("change", function (v) {
       partials: [v],
     },
   });
+  console.log(synth.options.oscillator.partials)
 });
+
+
 
 // ---------------------------------------------------------------------
 // Modulation

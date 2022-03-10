@@ -195,8 +195,6 @@ a:link {
   padding: 0.5rem;
 }
 
-
-
 /* --------------------------------------------------------------------- */
 /* Panel */
 /* --------------------------------------------------------------------- */
@@ -252,6 +250,12 @@ a:link {
 }
 
 #partial-count-section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#partials-section {
   display: flex;
   justify-content: center;
   width: 100%;
