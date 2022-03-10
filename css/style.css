@@ -38,9 +38,7 @@
 
 html,
 body {
-  font-family: "Spartan", sans-serif;
-  overflow: hidden;
-  /* Hide scrollbars */ }
+  font-family: "Spartan", sans-serif; }
 
 ::-moz-selection {
   background: #b4b4b4;
@@ -195,7 +193,13 @@ a:link {
 
 #oscillator {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  flex-direction: column; }
+
+#partial-count-section {
+  display: flex;
+  justify-content: center;
+  width: 100%; }
 
 /* --------------------------------------------------------------------- */
 /* Modulation Section */

@@ -47,7 +47,7 @@ $header-font: calc($header-size / 3);
 html,
 body {
   font-family: "Spartan", sans-serif;
-  overflow: hidden; /* Hide scrollbars */
+  // overflow: hidden; /* Hide scrollbars */
 }
 
 ::-moz-selection {
@@ -248,6 +248,13 @@ a:link {
 #oscillator {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+}
+
+#partial-count-section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 /* --------------------------------------------------------------------- */

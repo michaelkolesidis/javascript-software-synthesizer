@@ -515,10 +515,10 @@ releaseCurveSelector.on("change", function (v) {
 // Oscillator
 // ---------------------------------------------------------------------
 // Type
-const oscillatorTypes = ["sine", "square", "sawtooth", "triangle", "pulse"];
+const oscillatorTypes = ["sine", "square", "sawtooth", "triangle", "pulse", "custom"];
 
 let oscillatorTypeSelector = new Nexus.RadioButton("#oscillator-type", {
-  size: [400, 25],
+  size: [420, 25],
   numberOfButtons: 5,
   active: 0,
 });
@@ -530,13 +530,67 @@ oscillatorTypeSelector.on("change", function (v) {
       type: oscillatorTypes[v],
     },
   });
+  console.log(synth.options.oscillator.type)
 });
 
 // Phase
 
 // partialCount
+let partialCountSelector = new Nexus.Dial('#partial-count',{
+  'size': [75,75],
+  'interaction': 'vertical', // "radial", "vertical", or "horizontal"
+  'mode': 'relative', // "absolute" or "relative"
+  'min': 0,
+  'max': 20,
+  'step': 1,
+  'value': 0
+})
+
+partialCountSelector.on('change',function(v) {
+  synth.set({
+    oscillator: {
+      partialCount: v,
+      // type: oscillatorTypes[5],
+    },
+  });
+  partialsSelector.destroy();
+  partialsSelector = new Nexus.Multislider('#partials-selector',{
+    'size': [400,100],
+    'numberOfSliders': v,
+    'min': 0,
+    'max': 1,
+    'step': 0.05,
+    'candycane': 3,
+    'values': [0.9,0.8,0.7,0.6,0.5,0.4,0.3,0.2,0.1],
+    'smoothing': 0,
+    'mode': 'bar'  // 'bar' or 'line'
+   })
+   partialsSelector.on('change',function(v) {
+    console.log(v);
+  })
+  // console.log(synth.options.oscillator.type)
+})
 
 // partials
+let partialsSelector = new Nexus.Multislider('#partials-selector',{
+  'size': [400,100],
+  'numberOfSliders': 0,
+  'min': 0,
+  'max': 1,
+  'step': 0.05,
+  'candycane': 3,
+  'values': [0.9,0.8,0.7,0.6,0.5,0.4,0.3,0.2,0.1],
+  'smoothing': 0,
+  'mode': 'bar'  // 'bar' or 'line'
+ })
+
+ partialsSelector.on('change',function(v) {
+  synth.set({
+    oscillator: {
+      partials: [v],
+    },
+  });
+})
 
 // ---------------------------------------------------------------------
 // Modulation
