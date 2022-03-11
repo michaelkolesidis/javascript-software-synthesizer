@@ -4,32 +4,25 @@
 
 <h1 align="center">JSS-01<br>JavaScript Software Synthesizer</h1>
 
-
 [![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-01004c.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![MIT license](https://img.shields.io/badge/License-MIT-01004c.svg)](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/LICENSE.md)
 [![Version](https://img.shields.io/badge/version-0.2.4-01004c.svg)](https://shields.io/)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/93c42090-6fc9-4c3d-a462-42b535ea9d15/deploy-status)](https://app.netlify.com/sites/javascript-software-synthesizer/deploys)
 
-
-  
 The JSS-01 | JavaScript Software Synthesizer is a web app enabling you to make and play music in the browser. It is a software synthesizer implementing a variety of JavaScript frameworks and libraries, such as Tone.js and NexusUI.
-
-
-
-
-
 
 # Introduction
 Keys, knobs, sliders and buttons to tweak your sound and generate immersive soundscapes. You can also connect your MIDI keyboard and play with it!
+
 
 <p align="left">
 <img width="100px" src="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/assets/lizard/other/lizard-02-g.svg">
 </p>
 
 
-
 # Documentation
 Will be released with version 1.0.0. In the meantime, you can refer to the [Tone.js documentation](https://tonejs.github.io/docs/).
+
 
 
 # Guides & Tutorials
@@ -48,10 +41,10 @@ There aren't any guides and tutorials specifically for the JSS-01 yet, but there
 Feel free to submit issues and pull requests. It would be great to create a community around JSS-01, to contiue its development and evolution, making it more capable and easier to use, increasing its creative and artistic potential.
 If you are interested in becoming part of out community it would be useful to have a look to our dedicated document regarding [Contributing](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/CONTRIBUTING.md), as well as, out [Code of Conduct](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/CODE_OF_CONDUCT.md). It a nutshell, we want our community to be a safe space for everyone, so that we can all have a pleasant and joyful experience!
 
+
 <p align="right">
 <img width="100px" src="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/assets/lizard/other/lizard-03-y.svg">
 </p>
-
 
 
 # Changelog
@@ -71,7 +64,7 @@ Please refer to the project's [Changelog](https://github.com/michaelkolesidis/ja
 * [Sass](https://github.com/sass/sass)
 <br>The SCSS (Sassy CSS) syntax is utilized for the styling of our project.
 * [npm](https://github.com/npm/cli)
-<br>Everyone's beloved package manager.
+<br>Our beloved package manager.
 <br>
 <p align="left">
 <img width="100px" src="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/assets/lizard/other/lizard-04-c.svg">
@@ -93,6 +86,7 @@ Some of the ideas are full modular design, full compatibility with MIDI controll
 * [Helm](https://tytel.org/helm/)
 
 A full(-ish) list of references can be found in the [References](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/REFERENCES.md) document.
+
 
 
 # License
@@ -127,4 +121,3 @@ You name could be here and it would be great to have you aboard!
 <p align="right">
 <img width="100px" src="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/assets/lizard/other/lizard-01-g.svg">
 </p>
-
