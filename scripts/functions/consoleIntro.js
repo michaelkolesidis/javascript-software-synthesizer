@@ -17,6 +17,3 @@ export default function consoleIntro() {
         "Since you are here you might want to check our project at GitHub, have a look at the source code, find bugs, submit issues, create pull requests and become part of out community!\nhttps://github.com/michaelkolesidis/javascript-software-synthesizer"
       );
 }
-
-// rgb(1, 0, 76)
-// rgb(230, 230, 230)

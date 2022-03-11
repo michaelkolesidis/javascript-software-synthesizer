@@ -218,6 +218,19 @@ a:link {
 }
 
 /* --------------------------------------------------------------------- */
+/* MIDI Display */
+/* --------------------------------------------------------------------- */
+#midi-display {
+  width: 300px;
+  height: 150px;
+  padding: 1rem;
+  background: $gray;
+  color: $black;
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+}
+
+/* --------------------------------------------------------------------- */
 /* Synth Section */
 /* --------------------------------------------------------------------- */
 #synth-section {
@@ -295,8 +308,6 @@ a:link {
   justify-content: space-evenly;
 }
 
-
-
 /* --------------------------------------------------------------------- */
 /* Effects Section */
 /* --------------------------------------------------------------------- */
@@ -313,14 +324,45 @@ a:link {
 }
 
 /* --------------------------------------------------------------------- */
+/* Extra Controls (Presets, Sequencer etc.) */
+/* --------------------------------------------------------------------- */
+#extras {
+  grid-column: 1 / 4;
+  grid-row: 3;
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+
+  button {
+    border: 0;
+    background: $gray;
+    // border: 2px solid $dark-gray;
+    color: $dark-gray;
+    width: 3rem;
+    height: 3rem;
+
+    font-size: 1.9rem;
+    margin: 0 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+  }
+
+ 
+
+
+}
+
+/* --------------------------------------------------------------------- */
 /* Keyboard */
 /* --------------------------------------------------------------------- */
 #keyboard {
   //5
   grid-column: 1 / 4;
-  grid-row: 3;
+  grid-row: 4;
   margin: 0 auto;
-  margin-top: 2rem;
+  margin-top: 1rem;
   position: relative;
   z-index: 0;
 }
@@ -346,19 +388,6 @@ a:link {
 //   margin: 3px;
 //   background: red;
 // }
-
-/* --------------------------------------------------------------------- */
-/* MIDI Display */
-/* --------------------------------------------------------------------- */
-#midi-display {
-  width: 300px;
-  height: 150px;
-  padding: 1rem;
-  background: $gray;
-  color: $black;
-  font-size: 0.9rem;
-  line-height: 1.4rem;
-}
 
 /* --------------------------------------------------------------------- */
 /* Footer */

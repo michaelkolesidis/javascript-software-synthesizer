@@ -110,15 +110,18 @@ const synthSectionOscillator = document.getElementById("oscillator");
 synthSectionOscillator.innerHTML = SynthSectionOscillator();
 
 // Modulation Section: Main
-const modulationSectionMain = document.getElementById("modulation-section-main");
+const modulationSectionMain = document.getElementById(
+  "modulation-section-main"
+);
 modulationSectionMain.innerHTML = ModulationSectionMain();
 
 // Modulation Section: Modulation Envelope
-const modulationSectionEnvelope = document.getElementById("modulation-envelope");
+const modulationSectionEnvelope = document.getElementById(
+  "modulation-envelope"
+);
 modulationSectionEnvelope.innerHTML = ModulationSectionModulationEnvelope();
 
 // Effects
-
 
 // ---------------------------------------------------------------------
 // MIDI Display
@@ -633,14 +636,17 @@ modulationTypeSelector.on("change", function (v) {
 });
 
 // partialCount
-let modulationPartialCountSelector = new Nexus.Slider("#modulation-partial-count", {
-  size: [400, 35],
-  mode: "relative", // "absolute" or "relative"
-  min: 0,
-  max: 10,
-  step: 1,
-  value: 0,
-});
+let modulationPartialCountSelector = new Nexus.Slider(
+  "#modulation-partial-count",
+  {
+    size: [400, 35],
+    mode: "relative", // "absolute" or "relative"
+    min: 0,
+    max: 10,
+    step: 1,
+    value: 0,
+  }
+);
 modulationPartialCountSelector.colorize("accent", GREEN);
 
 modulationPartialCountSelector.on("change", function (v) {
@@ -663,9 +669,30 @@ modulationPartialCountSelector.on("change", function (v) {
   }
 
   modulationPartialsSelector.destroy();
-  modulationPartialsSelector = new Nexus.Multislider("#modulation-partials-selector", {
+  modulationPartialsSelector = new Nexus.Multislider(
+    "#modulation-partials-selector",
+    {
+      size: [400, 80],
+      numberOfSliders: v,
+      min: 0,
+      max: 1,
+      step: 0.05,
+      candycane: 3,
+      values: [0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1],
+      smoothing: 0,
+      mode: "bar", // 'bar' or 'line'
+    }
+  );
+  modulationPartialsSelector.colorize("accent", GREEN);
+  modulationPartialsSelector.on("change", function (v) {});
+});
+
+// partials
+let modulationPartialsSelector = new Nexus.Multislider(
+  "#modulation-partials-selector",
+  {
     size: [400, 80],
-    numberOfSliders: v,
+    numberOfSliders: 0,
     min: 0,
     max: 1,
     step: 0.05,
@@ -673,23 +700,8 @@ modulationPartialCountSelector.on("change", function (v) {
     values: [0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1],
     smoothing: 0,
     mode: "bar", // 'bar' or 'line'
-  });
-  modulationPartialsSelector.colorize("accent", GREEN);
-  modulationPartialsSelector.on("change", function (v) {});
-});
-
-// partials
-let modulationPartialsSelector = new Nexus.Multislider("#modulation-partials-selector", {
-  size: [400, 80],
-  numberOfSliders: 0,
-  min: 0,
-  max: 1,
-  step: 0.05,
-  candycane: 3,
-  values: [0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1],
-  smoothing: 0,
-  mode: "bar", // 'bar' or 'line'
-});
+  }
+);
 
 modulationPartialsSelector.on("change", function (v) {
   synth.set({
@@ -910,40 +922,73 @@ showHide(modulationEnvelopeTitle, modulationEnvelope, "flex");
 showHide(effectsTitle, effectsContent, "block");
 
 // ---------------------------------------------------------------------
+// Sequencer
+// ---------------------------------------------------------------------
+let playButton = document.getElementById("seq-play");
+let stopButton = document.getElementById("seq-stop");
+
+const seq = new Tone.Sequence(
+  (time, note) => {
+    synth.triggerAttackRelease(note, 0.15, time);
+    // subdivisions are given as subarrays
+  },
+  ["C4", ["E4", "D4", "E4"], "G4", ["A4", "G4"]]
+).start(0);
+
+playButton.addEventListener("click", () => Tone.Transport.start());
+stopButton.addEventListener("click", () => Tone.Transport.stop());
+
+// setTimeout(function(){
+//   Tone.Transport.stop();
+// }, 3000);//wait 2 seconds
+
+// ---------------------------------------------------------------------
 // Recorder
 // ---------------------------------------------------------------------
 // https://tonejs.github.io/docs/14.7.77/Recorder
 
+let recButton = document.getElementById("rec");
+let stopRecButton = document.getElementById("rec-stop");
+
 // const recorder = new Tone.Recorder();
-// // start recording
-// recorder.start();
-// // generate a few notes
-// synth.triggerAttackRelease("C3", 0.5);
-// synth.triggerAttackRelease("C4", 0.5, "+1");
-// synth.triggerAttackRelease("C5", 0.5, "+2");
-// // wait for the notes to end and stop the recording
+
+// recButton.addEventListener("click", function () {
+//   // start recording
+//   recorder.start();
+//   setTimeout(async () => {
+//     // the recorded audio is returned as a blob
+//     const recording = await recorder.stop();
+//     // download the recording by creating an anchor element and blob url
+//     const url = URL.createObjectURL(recording);
+//     const anchor = document.createElement("a");
+//     anchor.download = "recording.webm";
+//     anchor.href = url;
+//     anchor.click();
+//   }, 4000);
+// });
+
+// stopRecButton.addEventListener("click", function () {
+//   const recording = recorder.stop();
+//   // download the recording by creating an anchor element and blob url
+//   const url = URL.createObjectURL(recording);
+//   const anchor = document.createElement("a");
+//   anchor.download = "recording.webm";
+//   anchor.href = url;
+//   anchor.click();
+// });
+
+// wait for the notes to end and stop the recording
+
+
+
+// wait for the notes to end and stop the recording
 // setTimeout(async () => {
-// 	// the recorded audio is returned as a blob
-// 	const recording = await recorder.stop();
-// 	// download the recording by creating an anchor element and blob url
-// 	const url = URL.createObjectURL(recording);
-// 	const anchor = document.createElement("a");
-// 	anchor.download = "recording.webm";
-// 	anchor.href = url;
-// 	anchor.click();
+//   // the recorded audio is returned as a blob
+//   const recording = await recorder.stop();
+//   // download the recording by creating an anchor element and blob url
+//   const url = URL.createObjectURL(recording);
+//   const anchor = document.createElement("a");
+//   anchor.download = "recording.webm";
+//   anchor.href = url;
+//   anchor.click();
 // }, 4000);
-
-
-// ---------------------------------------------------------------------
-// Sequencer
-// ---------------------------------------------------------------------
-const seq = new Tone.Sequence((time, note) => {
-	synth.triggerAttackRelease(note, 0.1, time);
-	// subdivisions are given as subarrays
-}, ["C4", ["E4", "D4", "E4"], "G4", ["A4", "G4"]]).start(0);
-Tone.Transport.start();
-
-
-setTimeout(function(){
-  Tone.Transport.stop();
-}, 3000);//wait 2 seconds
