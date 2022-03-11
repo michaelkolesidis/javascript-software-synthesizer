@@ -566,7 +566,7 @@ partialCountSelector.on("change", function (v) {
 
   partialsSelector.destroy();
   partialsSelector = new Nexus.Multislider("#partials-selector", {
-    size: [400, 100],
+    size: [400, 80],
     numberOfSliders: v,
     min: 0,
     max: 1,
@@ -582,7 +582,7 @@ partialCountSelector.on("change", function (v) {
 
 // partials
 let partialsSelector = new Nexus.Multislider("#partials-selector", {
-  size: [400, 100],
+  size: [400, 80],
   numberOfSliders: 0,
   min: 0,
   max: 1,
@@ -664,7 +664,7 @@ modulationPartialCountSelector.on("change", function (v) {
 
   modulationPartialsSelector.destroy();
   modulationPartialsSelector = new Nexus.Multislider("#modulation-partials-selector", {
-    size: [400, 100],
+    size: [400, 80],
     numberOfSliders: v,
     min: 0,
     max: 1,
@@ -680,7 +680,7 @@ modulationPartialCountSelector.on("change", function (v) {
 
 // partials
 let modulationPartialsSelector = new Nexus.Multislider("#modulation-partials-selector", {
-  size: [400, 100],
+  size: [400, 80],
   numberOfSliders: 0,
   min: 0,
   max: 1,
@@ -932,3 +932,13 @@ showHide(effectsTitle, effectsContent, "block");
 // 	anchor.href = url;
 // 	anchor.click();
 // }, 4000);
+
+
+// ---------------------------------------------------------------------
+// Sequencer
+// ---------------------------------------------------------------------
+const seq = new Tone.Sequence((time, note) => {
+	synth.triggerAttackRelease(note, 0.1, time);
+	// subdivisions are given as subarrays
+}, ["C4", ["E4", "D4", "E4"], "G4", ["A4", "G4"]]).start(0);
+// Tone.Transport.start();
