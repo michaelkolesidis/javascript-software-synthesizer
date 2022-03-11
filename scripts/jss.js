@@ -941,4 +941,9 @@ const seq = new Tone.Sequence((time, note) => {
 	synth.triggerAttackRelease(note, 0.1, time);
 	// subdivisions are given as subarrays
 }, ["C4", ["E4", "D4", "E4"], "G4", ["A4", "G4"]]).start(0);
-// Tone.Transport.start();
+Tone.Transport.start();
+
+
+setTimeout(function(){
+  Tone.Transport.stop();
+}, 3000);//wait 2 seconds
