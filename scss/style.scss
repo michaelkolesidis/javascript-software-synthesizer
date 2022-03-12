@@ -349,9 +349,41 @@ a:link {
     text-align: center;
   }
 
- 
+  input {
+    @extend button;
+    //  font-size: 1rem;
+    width: 55rem;
+    font-weight: 400;
+    font-size: 1.1rem;
+    padding-top: 0.15rem;
+  }
 
+  #seq-rate {
+    width: 3rem;
+  }
 
+  #note-value {
+    width: 3rem;
+  }
+
+  ::placeholder {
+    color: $dark-gray;
+  }
+
+  ::-webkit-input-placeholder { // Chrome/Opera/Safari/Edge
+    color: $dark-gray;
+  }
+  
+  ::-moz-placeholder {// Firefox 19+
+    color: $dark-gray;
+  }
+  
+}
+
+#sequencer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 /* --------------------------------------------------------------------- */
@@ -362,7 +394,7 @@ a:link {
   grid-column: 1 / 4;
   grid-row: 4;
   margin: 0 auto;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   position: relative;
   z-index: 0;
 }

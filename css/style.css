@@ -90,7 +90,7 @@ a:link {
   #header #buttons {
     display: flex;
     flex-direction: row; }
-  #header button {
+  #header button, #header #extras input, #extras #header input {
     border: 0;
     background: #f0f0f3;
     color: #01004c;
@@ -262,7 +262,7 @@ a:link {
   width: 100%;
   display: flex;
   justify-content: space-evenly; }
-  #extras button {
+  #extras button, #extras input {
     border: 0;
     background: #f0f0f3;
     color: #b4b4b4;
@@ -273,6 +273,26 @@ a:link {
     font-weight: 500;
     cursor: pointer;
     text-align: center; }
+  #extras input {
+    width: 55rem;
+    font-weight: 400;
+    font-size: 1.1rem;
+    padding-top: 0.15rem; }
+  #extras #seq-rate {
+    width: 3rem; }
+  #extras #note-value {
+    width: 3rem; }
+  #extras ::placeholder {
+    color: #b4b4b4; }
+  #extras ::-webkit-input-placeholder {
+    color: #b4b4b4; }
+  #extras ::-moz-placeholder {
+    color: #b4b4b4; }
+
+#sequencer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center; }
 
 /* --------------------------------------------------------------------- */
 /* Keyboard */
@@ -281,7 +301,7 @@ a:link {
   grid-column: 1 / 4;
   grid-row: 4;
   margin: 0 auto;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   position: relative;
   z-index: 0; }
 

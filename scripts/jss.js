@@ -273,7 +273,7 @@ vibrato.depth.value; // range:0-1
 let synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
 
 synth.set({
-  maxPolyphony: 128,
+  maxPolyphony: 256,
 });
 
 // const lfo = new Tone.LFO("4n", 8000, 4000000).start().toDestination();
@@ -814,6 +814,9 @@ keyboard.on("change", (note) => {
 let base = 39; // Middle C / C4
 
 document.addEventListener("keydown", (event) => {
+  if (event.target === seqInput) {
+    return;
+  }
   const keyIndex = keyMapper(event.key, base);
   if (
     keyIndex >= 0 &&
@@ -924,16 +927,39 @@ showHide(effectsTitle, effectsContent, "block");
 // ---------------------------------------------------------------------
 // Sequencer
 // ---------------------------------------------------------------------
+let seqRateInput = document.getElementById("seq-rate");
+let noteValueInput = document.getElementById("note-value");
+let seqInput = document.getElementById("seq-input");
+let setButton = document.getElementById("seq-set");
 let playButton = document.getElementById("seq-play");
 let stopButton = document.getElementById("seq-stop");
 
-const seq = new Tone.Sequence(
-  (time, note) => {
-    synth.triggerAttackRelease(note, 0.15, time);
-    // subdivisions are given as subarrays
-  },
-  ["C4", ["E4", "D4", "E4"], "G4", ["A4", "G4"]]
-).start(0);
+seqRateInput.addEventListener("change", () => {
+  if (seqRateInput.value > 2) seqRateInput.value = 2;
+  if (seqRateInput.value <= 0) seqRateInput.value = 1;
+  let rate = seqRateInput.value;
+
+  seq.set({
+    playbackRate: parseFloat(rate),
+  });
+});
+
+setButton.addEventListener("click", () => {
+  let seqNotesInput = JSON.parse("[" + seqInput.value + "]");
+  console.log(seqNotesInput);
+  seq.set({
+    events: seqNotesInput,
+  });
+});
+
+let seqNotes = ["C4", ["E4", "D4", "E4"], "G4", ["A4", "G4"]];
+
+let duration = "16n";
+
+const seq = new Tone.Sequence((time, note) => {
+  synth.triggerAttackRelease(note, duration, time);
+  // subdivisions are given as subarrays
+}, seqNotes).start(0);
 
 playButton.addEventListener("click", () => Tone.Transport.start());
 stopButton.addEventListener("click", () => Tone.Transport.stop());
@@ -941,6 +967,11 @@ stopButton.addEventListener("click", () => Tone.Transport.stop());
 // setTimeout(function(){
 //   Tone.Transport.stop();
 // }, 3000);//wait 2 seconds
+
+// ---------------------------------------------------------------------
+// Presets
+// --------------------------------------------------------------------
+// Presets functionality will be implemented here
 
 // ---------------------------------------------------------------------
 // Recorder
@@ -978,8 +1009,6 @@ let stopRecButton = document.getElementById("rec-stop");
 // });
 
 // wait for the notes to end and stop the recording
-
-
 
 // wait for the notes to end and stop the recording
 // setTimeout(async () => {
