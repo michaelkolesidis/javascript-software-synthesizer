@@ -1,3 +1,23 @@
+# 0.2.5
+
+### Changes
+
+* Sequencer
+    * Note sequence input
+    * Tempo
+    * Note value
+    * Set sequence button
+    * Play button
+    * Stop button
+    * 2 sequence examples (funky town)
+* Styling 
+* Code cleanup
+
+### Known Issues
+* Only works on Chromium and WebKit based browsers (Chrome, Edge, Brave, Safari, Opera, GNOME Web etc.)
+* When using the on-screen and/or the computer keyboard, if playing multiple notes, the synthesizer stops playing all notes if at least one note is released 
+
+
 # 0.2.4
 
 ### Changes
