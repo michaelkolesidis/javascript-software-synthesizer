@@ -57,14 +57,6 @@ Please refer to the project's [Changelog](https://github.com/michaelkolesidis/ja
 <br>The SCSS (Sassy CSS) syntax is utilized for the styling of our project.
 * [npm](https://github.com/npm/cli)
 <br>Our beloved package manager.
-<br>
-
-
-
-
-<p align="center">
-<img width="400px" src="">
-</p>
 
 
 
@@ -103,3 +95,8 @@ You name could be here and it would be great to have you aboard!
 # Special Thanks To
 * [Mohammed Amine Grid](https://github.com/mohammed-amine-grid), for his guidance and dedication throughout this journey.
 * All the students and the tutors at the [Social Hackers Academy](https://github.com/SocialHackersAcademy), for creating a nice little community of passionate people offering their best for each other.
+<br>
+<br>
+<p align="center">
+<img width="400px" src="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/assets/visual.png">
+</p>
