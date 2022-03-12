@@ -944,20 +944,32 @@ seqRateInput.addEventListener("change", () => {
   });
 });
 
+noteValueInput.addEventListener("change", () => {
+  if (noteValueInput.value <= 0) noteValueInput.value = "16n";
+  noteValue = noteValueInput.value;
+});
+
 setButton.addEventListener("click", () => {
-  let seqNotesInput = JSON.parse("[" + seqInput.value + "]");
-  console.log(seqNotesInput);
+  let seqNotesInput;
+  if (seqInput.value === "funky town") {
+    seqNotesInput = funkyTown;
+  } else {
+    seqNotesInput = JSON.parse("[" + seqInput.value + "]");
+  }
+
   seq.set({
     events: seqNotesInput,
   });
 });
 
+// Sequence demos
 let seqNotes = ["C4", ["E4", "D4", "E4"], "G4", ["A4", "G4"]];
+let funkyTown = ["C4", "C4", "Bb3", "C4", "G3", "G3", "C4", "F4", "E4", "C4"];
 
-let duration = "16n";
+let noteValue = "16n";
 
 const seq = new Tone.Sequence((time, note) => {
-  synth.triggerAttackRelease(note, duration, time);
+  synth.triggerAttackRelease(note, noteValue, time);
   // subdivisions are given as subarrays
 }, seqNotes).start(0);
 
