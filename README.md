@@ -15,10 +15,6 @@ The JSS-01 | JavaScript Software Synthesizer is a web app enabling you to make a
 Keys, knobs, sliders and buttons to tweak your sound and generate immersive soundscapes. You can also connect your MIDI keyboard and play with it!
 
 
-<p align="left">
-<img width="100px" src="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/assets/lizard/other/lizard-02-g.svg">
-</p>
-
 
 # Documentation
 Will be released with version 1.0.0. In the meantime, you can refer to the [Tone.js documentation](https://tonejs.github.io/docs/).
@@ -42,10 +38,6 @@ Feel free to submit issues and pull requests. It would be great to create a comm
 If you are interested in becoming part of out community it would be useful to have a look to our dedicated document regarding [Contributing](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/CONTRIBUTING.md), as well as, out [Code of Conduct](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/CODE_OF_CONDUCT.md). It a nutshell, we want our community to be a safe space for everyone, so that we can all have a pleasant and joyful experience!
 
 
-<p align="right">
-<img width="100px" src="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/assets/lizard/other/lizard-03-y.svg">
-</p>
-
 
 # Changelog
 Please refer to the project's [Changelog](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/CHANGELOG.md) document.
@@ -66,8 +58,12 @@ Please refer to the project's [Changelog](https://github.com/michaelkolesidis/ja
 * [npm](https://github.com/npm/cli)
 <br>Our beloved package manager.
 <br>
-<p align="left">
-<img width="100px" src="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/assets/lizard/other/lizard-04-c.svg">
+
+
+
+
+<p align="center">
+<img width="400px" src="">
 </p>
 
 
@@ -99,16 +95,6 @@ None, yet! We will have to add way more features for that.
 
 
 
-# Mascot
-Can there be a respectful project without a mascot? Of course not. Thus, we are glad to present you Jesse the Lizard, the official mascot of the JSS-01 project! Jesse goes by the pronouns "they/them" and can be found lying around in all sorts of places around the project. Look out for them!
-
-Trivia:
-* Jesse's favourite food is bugs (we do our best to feed them)
-* Jesse has the ability has the ability to change theis skin coloration
-* Jesse is a distand relative of [Mozilla](http://home.snafu.de/tilman/mozilla/), the mascot of Netscape and later of Mozilla Foundation.
-
-
-
 # Contributors
 You name could be here and it would be great to have you aboard!
 
@@ -117,7 +103,3 @@ You name could be here and it would be great to have you aboard!
 # Special Thanks To
 * [Mohammed Amine Grid](https://github.com/mohammed-amine-grid), for his guidance and dedication throughout this journey.
 * All the students and the tutors at the [Social Hackers Academy](https://github.com/SocialHackersAcademy), for creating a nice little community of passionate people offering their best for each other.
-
-<p align="right">
-<img width="100px" src="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/assets/lizard/other/lizard-01-g.svg">
-</p>
