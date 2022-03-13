@@ -367,6 +367,12 @@ a:link {
     width: 3rem;
   }
 
+  #seq-stop {
+    img {
+      width: 40%;
+    }
+
+  }
   ::placeholder {
     color: $dark-gray;
   }

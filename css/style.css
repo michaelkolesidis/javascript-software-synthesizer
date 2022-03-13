@@ -284,6 +284,8 @@ a:link {
     width: 3rem; }
   #extras #note-value {
     width: 3rem; }
+  #extras #seq-stop img {
+    width: 40%; }
   #extras ::placeholder {
     color: #b4b4b4; }
   #extras ::-webkit-input-placeholder {
