@@ -268,12 +268,14 @@ a:link {
     color: #b4b4b4;
     width: 3rem;
     height: 3rem;
-    font-size: 1.9rem;
     margin: 0 0.5rem;
-    font-weight: 500;
-    cursor: pointer;
-    text-align: center; }
+    cursor: pointer; }
+    #extras button img, #extras input img {
+      width: 50%;
+      vertical-align: middle;
+      display: inline-block; }
   #extras input {
+    text-align: center;
     width: 55rem;
     font-weight: 400;
     font-size: 1.1rem;

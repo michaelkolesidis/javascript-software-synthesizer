@@ -341,17 +341,18 @@ a:link {
     color: $dark-gray;
     width: 3rem;
     height: 3rem;
-
-    font-size: 1.9rem;
     margin: 0 0.5rem;
-    font-weight: 500;
     cursor: pointer;
-    text-align: center;
+    img {
+      width: 50%;
+      vertical-align: middle;
+      display: inline-block;
+    }
   }
 
   input {
     @extend button;
-    //  font-size: 1rem;
+    text-align: center;
     width: 55rem;
     font-weight: 400;
     font-size: 1.1rem;
