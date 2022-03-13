@@ -959,6 +959,8 @@ setButton.addEventListener("click", () => {
   let seqNotesInput;
   if (seqInput.value === "funky town") {
     seqNotesInput = funkyTown;
+  } else if (seqInput.value === "i feel love") {
+    seqNotesInput = feelLove;
   } else if (seqInput.value === "default") {
     seqNotesInput = seqNotes;
   } else {
@@ -973,6 +975,7 @@ setButton.addEventListener("click", () => {
 // Sequence demos
 let seqNotes = ["C4", ["E4", "D4", "E4"], "G4", ["A4", "G4"]];
 let funkyTown = ["C4", "C4", "Bb3", "C4", "G3", "G3", "C4", "F4", "E4", "C4"];
+let feelLove = ["G3", "G3", "D3", "F3"];
 
 // Sequence
 const seq = new Tone.Sequence((time, note) => {
