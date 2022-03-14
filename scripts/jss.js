@@ -200,6 +200,9 @@ keyboardPlaceholder.addEventListener(
 // ---------------------------------------------------------------------
 // Effects
 // ---------------------------------------------------------------------
+
+
+
 // AutoFilter .connect(autoFilter)
 const autoFilter = new Tone.AutoFilter("4n").toDestination().start();
 autoFilter.depth.value = 1; // range:0-1
