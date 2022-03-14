@@ -79,4 +79,3 @@ The first version!
 
 ### Known Issues
 * Only works on Chromium and WebKit based browsers (Chrome, Edge, Brave, Safari, Opera, GNOME Web etc.)
-
