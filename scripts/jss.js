@@ -968,7 +968,6 @@ let modulationTitle = document.getElementById("modulation-title");
 let modulationContent = document.getElementById("modulation-content");
 
 let modulationEnvelopeTitle = document.getElementById("modulation-envelope-title");
-
 let modulationEnvelope = document.getElementById("modulation-envelope");
 
 let effectsTitle = document.getElementById("effects-title");
@@ -1053,11 +1052,21 @@ showHide(modulationTitle, modulationContent, "block");
 showHide(modulationEnvelopeTitle, modulationEnvelope, "flex");
 
 showHide(effectsTitle, effectsContent, "block");
-
-
-
-
-
+showHide(filtersTitle, filtersContent, );
+showHide(filter1Title, filter1Content, );
+showHide(filter2Title, filter2Content, );
+showHide(autoFilterTitle, autoFilterContent, );
+showHide(delayTitle, delayContent, );
+showHide(feedbackDelayTitle, feedbackDelayContent, );
+showHide(pingPongDelayTitle, pingPongDelayContent, );
+showHide(chorusTitle, chorusContent, );
+showHide(reverbTitle, reverbContent, );
+showHide(tremoloTitle, tremoloContent, );
+showHide(vibratoTitle, vibratoContent, );
+showHide(distortionTitle, distortionContent, );
+showHide(freqShifterTitle, freqShifterContent, );
+showHide(bitCrusherTitle, bitCrusherContent, );
+showHide(chebyshevTitle, chebyshevContent, );
 
 // ---------------------------------------------------------------------
 // Recorder
