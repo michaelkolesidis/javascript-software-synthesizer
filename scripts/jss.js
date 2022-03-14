@@ -977,7 +977,7 @@ let effectsContent = document.getElementById("effects-content");
 let filtersTitle = document.getElementById("filters-title");
 
 
-let filter1Title = document.getElementById("filter
+let filter1Title = document.getElementById("filter-1-title");
 
 
 let filter2Title = document.getElementById("filter-2-title");
