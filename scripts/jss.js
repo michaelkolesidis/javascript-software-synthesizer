@@ -886,49 +886,6 @@ function onEnabled() {
 }
 
 // ---------------------------------------------------------------------
-// Show/Hide Section Toggle
-// ---------------------------------------------------------------------
-let synthSectionTitle = document.getElementById("synth-title");
-let synthSectionContent = document.getElementById("synth-section-content");
-
-let amplitudeEnvelopeTitle = document.getElementById("adsr-envelope-title");
-let amplitudeEnvelope = document.getElementById("adsr-envelope");
-
-let oscillatorTitle = document.getElementById("oscillator-title");
-let oscillatorSection = document.getElementById("oscillator");
-
-let modulationTitle = document.getElementById("modulation-title");
-let modulationContent = document.getElementById("modulation-content");
-
-let modulationEnvelopeTitle = document.getElementById(
-  "modulation-envelope-title"
-);
-let modulationEnvelope = document.getElementById("modulation-envelope");
-
-let effectsTitle = document.getElementById("effects-title");
-let effectsContent = document.getElementById("effects-content");
-
-function showHide(title, section, display) {
-  // (title, section)
-  title.addEventListener("click", function () {
-    if (section.style.display === display) {
-      section.style.display = "none";
-    } else {
-      section.style.display = display;
-    }
-  });
-}
-
-showHide(synthSectionTitle, synthSectionContent, "flex");
-showHide(amplitudeEnvelopeTitle, amplitudeEnvelope, "flex");
-showHide(oscillatorTitle, oscillatorSection, "flex");
-
-showHide(modulationTitle, modulationContent, "block");
-showHide(modulationEnvelopeTitle, modulationEnvelope, "flex");
-
-showHide(effectsTitle, effectsContent, "block");
-
-// ---------------------------------------------------------------------
 // Sequencer
 // ---------------------------------------------------------------------
 // Inputs and Buttons
@@ -994,6 +951,93 @@ const seq = new Tone.Sequence((time, note) => {
 // Sequence play / stop
 playButton.addEventListener("click", () => Tone.Transport.start());
 stopButton.addEventListener("click", () => Tone.Transport.stop());
+
+// ---------------------------------------------------------------------
+// Show/Hide Section Toggle
+// ---------------------------------------------------------------------
+let synthSectionTitle = document.getElementById("synth-title");
+let synthSectionContent = document.getElementById("synth-section-content");
+
+let amplitudeEnvelopeTitle = document.getElementById("adsr-envelope-title");
+let amplitudeEnvelope = document.getElementById("adsr-envelope");
+
+let oscillatorTitle = document.getElementById("oscillator-title");
+let oscillatorSection = document.getElementById("oscillator");
+
+let modulationTitle = document.getElementById("modulation-title");
+let modulationContent = document.getElementById("modulation-content");
+
+let modulationEnvelopeTitle = document.getElementById("modulation-envelope-title");
+
+let modulationEnvelope = document.getElementById("modulation-envelope");
+
+let effectsTitle = document.getElementById("effects-title");
+let effectsContent = document.getElementById("effects-content");
+
+let filtersTitle = document.getElementById("filters-title");
+
+
+let filter1Title = document.getElementById("filter
+
+
+let filter2Title = document.getElementById("filter-2-title");
+
+
+let autoFilterTitle = document.getElementById("auto-filter-title");
+
+
+let delayTitle = document.getElementById("delay-title");
+
+
+let chorusTitle = document.getElementById("chorus-title");
+
+
+let reverbTitle = document.getElementById("reverb-title");
+
+
+let tremoloTitle = document.getElementById("tremolo-title");
+
+
+let vibratoTitle = document.getElementById("vibrato-title");
+
+
+let distortionTitle = document.getElementById("distortion-title");
+
+
+let freqShifterTitle = document.getElementById("freq-shifter-title");
+
+
+let bitCrusherTitle = document.getElementById("bit-crusher-title");
+
+
+let chebyshevTitle = document.getElementById("chebyshev-title");
+
+
+
+function showHide(title, section, display) {
+  // (title, section)
+  title.addEventListener("click", function () {
+    if (section.style.display === display) {
+      section.style.display = "none";
+    } else {
+      section.style.display = display;
+    }
+  });
+}
+
+showHide(synthSectionTitle, synthSectionContent, "flex");
+showHide(amplitudeEnvelopeTitle, amplitudeEnvelope, "flex");
+showHide(oscillatorTitle, oscillatorSection, "flex");
+
+showHide(modulationTitle, modulationContent, "block");
+showHide(modulationEnvelopeTitle, modulationEnvelope, "flex");
+
+showHide(effectsTitle, effectsContent, "block");
+
+
+
+
+
 
 // ---------------------------------------------------------------------
 // Recorder
