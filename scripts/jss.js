@@ -957,9 +957,12 @@ noteValueInput.addEventListener("change", () => {
 // Sequence notes input
 setButton.addEventListener("click", () => {
   let seqNotesInput;
-  if (seqInput.value === "funky town") {
+  if (seqInput.value === "funky town" || seqInput.value === "Funky Town") {
     seqNotesInput = funkyTown;
-  } else if (seqInput.value === "i feel love") {
+  } else if (
+    seqInput.value === "i feel love" ||
+    seqInput.value === "I Feel Love"
+  ) {
     seqNotesInput = feelLove;
   } else if (seqInput.value === "default") {
     seqNotesInput = seqNotes;

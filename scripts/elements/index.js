@@ -5,7 +5,7 @@
  *
  */
 
-export default function page() {
+export default function index() {
     return /*html*/`
 It will return the HTML code of the homepage
 `
