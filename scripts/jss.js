@@ -200,7 +200,8 @@ keyboardPlaceholder.addEventListener(
 // ---------------------------------------------------------------------
 // Effects
 // ---------------------------------------------------------------------
-
+// Fi;ter
+// frequency, typr
 
 
 // AutoFilter .connect(autoFilter)
