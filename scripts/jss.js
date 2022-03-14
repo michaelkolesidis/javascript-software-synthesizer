@@ -204,7 +204,6 @@ keyboardPlaceholder.addEventListener(
 // Fi;ter
 // frequency, typr
 
-
 // AutoFilter .connect(autoFilter)
 const autoFilter = new Tone.AutoFilter("4n").toDestination().start();
 autoFilter.depth.value = 1; // range:0-1
@@ -968,7 +967,9 @@ let oscillatorSection = document.getElementById("oscillator");
 let modulationTitle = document.getElementById("modulation-title");
 let modulationContent = document.getElementById("modulation-content");
 
-let modulationEnvelopeTitle = document.getElementById("modulation-envelope-title");
+let modulationEnvelopeTitle = document.getElementById(
+  "modulation-envelope-title"
+);
 let modulationEnvelope = document.getElementById("modulation-envelope");
 
 let effectsTitle = document.getElementById("effects-title");
@@ -980,54 +981,41 @@ let filtersContent = document.getElementById("filters-content");
 let filter1Title = document.getElementById("filter-1-title");
 let filter1Content = document.getElementById("filter-1-content");
 
-
 let filter2Title = document.getElementById("filter-2-title");
 let filter2Content = document.getElementById("filter-2-content");
-
 
 let autoFilterTitle = document.getElementById("auto-filter-title");
 let autoFilterContent = document.getElementById("auto-filter-content");
 
-
 let delayTitle = document.getElementById("delay-title");
 let delayContent = document.getElementById("delay-content");
-
 
 let feedbackDelayTitle = document.getElementById("feedback-delay-title");
 let feedbackDelayContent = document.getElementById("feedback-delay-content");
 
-
 let pingPongDelayTitle = document.getElementById("ping-pong-delay-title");
 let pingPongDelayContent = document.getElementById("ping-pong-delay-content");
-
 
 let chorusTitle = document.getElementById("chorus-title");
 let chorusContent = document.getElementById("chorus-content");
 
-
 let reverbTitle = document.getElementById("reverb-title");
 let reverbContent = document.getElementById("reverb-content");
-
 
 let tremoloTitle = document.getElementById("tremolo-title");
 let tremoloContent = document.getElementById("tremolo-content");
 
-
 let vibratoTitle = document.getElementById("vibrato-title");
 let vibratoContent = document.getElementById("vibrato-content");
-
 
 let distortionTitle = document.getElementById("distortion-title");
 let distortionContent = document.getElementById("distortion-content");
 
-
 let freqShifterTitle = document.getElementById("freq-shifter-title");
 let freqShifterContent = document.getElementById("freq-shifter-content");
 
-
 let bitCrusherTitle = document.getElementById("bit-crusher-title");
 let bitCrusherContent = document.getElementById("bit-crusher-content");
-
 
 let chebyshevTitle = document.getElementById("chebyshev-title");
 let chebyshevContent = document.getElementById("chebyshev-content");
@@ -1043,21 +1031,21 @@ showHide(modulationEnvelopeTitle, modulationEnvelope, "flex");
 
 // Effects Section
 showHide(effectsTitle, effectsContent, "block");
-showHide(filtersTitle, filtersContent, );
-showHide(filter1Title, filter1Content, );
-showHide(filter2Title, filter2Content, );
-showHide(autoFilterTitle, autoFilterContent, );
-showHide(delayTitle, delayContent, );
-showHide(feedbackDelayTitle, feedbackDelayContent, );
-showHide(pingPongDelayTitle, pingPongDelayContent, );
-showHide(chorusTitle, chorusContent, );
-showHide(reverbTitle, reverbContent, );
-showHide(tremoloTitle, tremoloContent, );
-showHide(vibratoTitle, vibratoContent, );
-showHide(distortionTitle, distortionContent, );
-showHide(freqShifterTitle, freqShifterContent, );
-showHide(bitCrusherTitle, bitCrusherContent, );
-showHide(chebyshevTitle, chebyshevContent, );
+showHide(filtersTitle, filtersContent);
+showHide(filter1Title, filter1Content);
+showHide(filter2Title, filter2Content);
+showHide(autoFilterTitle, autoFilterContent);
+showHide(delayTitle, delayContent);
+showHide(feedbackDelayTitle, feedbackDelayContent);
+showHide(pingPongDelayTitle, pingPongDelayContent);
+showHide(chorusTitle, chorusContent);
+showHide(reverbTitle, reverbContent);
+showHide(tremoloTitle, tremoloContent);
+showHide(vibratoTitle, vibratoContent);
+showHide(distortionTitle, distortionContent);
+showHide(freqShifterTitle, freqShifterContent);
+showHide(bitCrusherTitle, bitCrusherContent);
+showHide(chebyshevTitle, chebyshevContent);
 
 // ---------------------------------------------------------------------
 // Recorder
