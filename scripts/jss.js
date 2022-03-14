@@ -975,48 +975,62 @@ let effectsTitle = document.getElementById("effects-title");
 let effectsContent = document.getElementById("effects-content");
 
 let filtersTitle = document.getElementById("filters-title");
-
+let filtersContent = document.getElementById("filters-content");
 
 let filter1Title = document.getElementById("filter-1-title");
+let filter1Content = document.getElementById("filter-1-content");
 
 
 let filter2Title = document.getElementById("filter-2-title");
+let filter2Content = document.getElementById("filter-2-content");
 
 
 let autoFilterTitle = document.getElementById("auto-filter-title");
+let autoFilterContent = document.getElementById("auto-filter-content");
 
 
 let delayTitle = document.getElementById("delay-title");
+let delayContent = document.getElementById("delay-content");
 
 
 let feedbackDelayTitle = document.getElementById("feedback-delay-title");
+let feedbackDelayContent = document.getElementById("feedback-delay-content");
 
 
 let pingPongDelayTitle = document.getElementById("ping-pong-delay-title");
+let pingPongDelayContent = document.getElementById("ping-pong-delay-content");
 
 
 let chorusTitle = document.getElementById("chorus-title");
+let chorusContent = document.getElementById("chorus-content");
 
 
 let reverbTitle = document.getElementById("reverb-title");
+let reverbContent = document.getElementById("reverb-content");
 
 
 let tremoloTitle = document.getElementById("tremolo-title");
+let tremoloContent = document.getElementById("tremolo-content");
 
 
 let vibratoTitle = document.getElementById("vibrato-title");
+let vibratoContent = document.getElementById("vibrato-content");
 
 
 let distortionTitle = document.getElementById("distortion-title");
+let distortionContent = document.getElementById("distortion-content");
 
 
 let freqShifterTitle = document.getElementById("freq-shifter-title");
+let freqShifterContent = document.getElementById("freq-shifter-content");
 
 
 let bitCrusherTitle = document.getElementById("bit-crusher-title");
+let bitCrusherContent = document.getElementById("bit-crusher-content");
 
 
 let chebyshevTitle = document.getElementById("chebyshev-title");
+let chebyshevContent = document.getElementById("chebyshev-content");
 
 
 
