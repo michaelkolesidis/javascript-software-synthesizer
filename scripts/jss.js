@@ -25,6 +25,7 @@ import ModulationSectionModulationEnvelope from "./elements/panels/modulationSec
 import consoleIntro from "./functions/consoleIntro.js";
 import midiToNoteString from "./functions/midiToNoteString.js";
 import keyMapper from "./functions/keyMapper.js";
+import showHide from "./functions/showHide.js";
 
 // ---------------------------------------------------------------------
 // Colors
@@ -1031,26 +1032,16 @@ let bitCrusherContent = document.getElementById("bit-crusher-content");
 let chebyshevTitle = document.getElementById("chebyshev-title");
 let chebyshevContent = document.getElementById("chebyshev-content");
 
-
-
-function showHide(title, section, display) {
-  // (title, section)
-  title.addEventListener("click", function () {
-    if (section.style.display === display) {
-      section.style.display = "none";
-    } else {
-      section.style.display = display;
-    }
-  });
-}
-
+// Synth Section
 showHide(synthSectionTitle, synthSectionContent, "flex");
 showHide(amplitudeEnvelopeTitle, amplitudeEnvelope, "flex");
 showHide(oscillatorTitle, oscillatorSection, "flex");
 
+// Modulation Section
 showHide(modulationTitle, modulationContent, "block");
 showHide(modulationEnvelopeTitle, modulationEnvelope, "flex");
 
+// Effects Section
 showHide(effectsTitle, effectsContent, "block");
 showHide(filtersTitle, filtersContent, );
 showHide(filter1Title, filter1Content, );
