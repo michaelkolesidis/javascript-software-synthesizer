@@ -9,11 +9,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="JavaScript Software Synthesizer is a web app enabling you to make and play music in the browser. It is a software synthesizer implementing a variety of JavaScript frameworks and libraries, such as Tone.js and NexusUI."
+      content="JavaScript Software Synthesizer is a web app enabling you to make 
+      and play music in the browser. It is a software synthesizer implementing a 
+      variety of JavaScript frameworks and libraries, such as Tone.js and NexusUI."
     />
     <meta
       name="keywords"
-      content="music, midi, sound, synthesizer, sound-processing, synth, piano, synthesizers, software-synthesizer, subtractive-synthesis, midi-keyboard, fm-synthesizer, piano-keyboard, sound-synthesis, nexusui, frequency-modulation, tonejs, knobs, fm-synthesis, sound-engineering"
+      content="music, midi, sound, synthesizer, sound-processing, synth, piano, 
+      synthesizers, software-synthesizer, subtractive-synthesis, midi-keyboard, 
+      fm-synthesizer, piano-keyboard, sound-synthesis, nexusui, frequency-modulation, 
+      tonejs, knobs, fm-synthesis, sound-engineering"
     />
     <meta name="author" content="Michael Kolesidis" />
 
@@ -31,9 +36,15 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/nexusui@latest/dist/NexusUI.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/webmidi@next/dist/iife/webmidi.iife.js"></script>
-    <script type="module" src="./scripts/jss.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/nexusui@latest/dist/NexusUI.js"
+      defer
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/webmidi@next/dist/iife/webmidi.iife.js"
+      defer
+    ></script>
+    <script type="module" src="./scripts/jss.js" defer></script>
 
     <!--------------------------------------------------------------------->
     <!-- Icons and Styling -->
@@ -121,12 +132,18 @@
         <!--------------------------------------------------------------------->
         <div id="extras">
           <div id="sequencer">
-            <input id="seq-rate" placeholder="Rate" value="1">
-            <input id="note-value" placeholder="Value" value="16n">
+            <input id="seq-rate" placeholder="Rate" value="1" />
+            <input id="note-value" placeholder="Value" value="16n" />
             <input type="text" id="seq-input" placeholder="Enter sequence" />
-            <button type="button" id="seq-set"><img src="./assets/icons/add.svg" alt=""></button>
-            <button type="button" id="seq-play"><img src="./assets/icons/play.svg" alt="""></button>
-            <button type="button" id="seq-stop"><img src="./assets/icons/stop.svg" alt=""></button>
+            <button type="button" id="seq-set">
+              <img src="./assets/icons/add.svg" alt="" />
+            </button>
+            <button type="button" id="seq-play">
+              <img src="./assets/icons/play.svg" alt=""">
+            </button>
+            <button type="button" id="seq-stop">
+              <img src="./assets/icons/stop.svg" alt="" />
+            </button>
           </div>
 
           <!-- <div id="recorder">
