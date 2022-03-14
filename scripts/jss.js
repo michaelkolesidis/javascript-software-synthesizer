@@ -989,6 +989,12 @@ let autoFilterTitle = document.getElementById("auto-filter-title");
 let delayTitle = document.getElementById("delay-title");
 
 
+let feedbackDelayTitle = document.getElementById("feedback-delay-title");
+
+
+let pingPongDelayTitle = document.getElementById("ping-pong-delay-title");
+
+
 let chorusTitle = document.getElementById("chorus-title");
 
 
