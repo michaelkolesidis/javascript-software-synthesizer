@@ -9,7 +9,7 @@
     * Set sequence button
     * Play button
     * Stop button
-    * 2 sequence examples (funky town)
+    * 2 sequence examples (default and Funky Town)
 * Styling 
 * Code cleanup
 
