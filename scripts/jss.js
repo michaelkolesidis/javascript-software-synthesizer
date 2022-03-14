@@ -975,7 +975,8 @@ setButton.addEventListener("click", () => {
 // Sequence demos
 let seqNotes = ["C4", ["E4", "D4", "E4"], "G4", ["A4", "G4"]];
 let funkyTown = ["C4", "C4", "Bb3", "C4", "G3", "G3", "C4", "F4", "E4", "C4"];
-let feelLove = ["G3", "G3", "D3", "F3"];
+let feelLove = ["C2", "C3", "C2", "C3", "G1", "G2", "Bb1", "Bb2"];
+// let feelLove2 = ["G3", "G3", "D3", "F3"];
 
 // Sequence
 const seq = new Tone.Sequence((time, note) => {
