@@ -113,16 +113,19 @@ a:link {
 /* --------------------------------------------------------------------- */
 /* Titles & Labels */
 /* --------------------------------------------------------------------- */
-.title, .subtitle {
+.title, .subtitle, .subtitle-s {
   text-align: center;
   font-size: 1.5rem;
   font-weight: 600;
   cursor: pointer;
   margin-bottom: 0.2rem; }
 
-.subtitle {
+.subtitle, .subtitle-s {
   font-size: 1.2rem;
   margin: 0.4rem 0 0.2rem; }
+
+.subtitle-s {
+  font-size: 1.05rem; }
 
 .label, .selection {
   font-weight: 600;
@@ -189,7 +192,7 @@ a:link {
 #synth-section {
   grid-column: 1 / 2;
   grid-row: 2; }
-  #synth-section .title, #synth-section .subtitle {
+  #synth-section .title, #synth-section .subtitle, #synth-section .subtitle-s {
     color: #23b2fe; }
 
 #synth-section-content {
@@ -233,7 +236,7 @@ a:link {
   display: flex;
   flex-direction: column;
   align-items: center; }
-  #modulation .title, #modulation .subtitle {
+  #modulation .title, #modulation .subtitle, #modulation .subtitle-s {
     color: #03d692; }
 
 #modulation-envelope {
@@ -244,13 +247,46 @@ a:link {
 /* Effects Section */
 /* --------------------------------------------------------------------- */
 #effects {
-  grid-column: 3 /4;
+  grid-column: 3 / 4;
   grid-row: 2;
   display: flex;
   flex-direction: column;
   align-items: center; }
-  #effects .title, #effects .subtitle {
+  #effects .title, #effects .subtitle, #effects .subtitle-s {
     color: #febc2c; }
+
+#filters-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center; }
+
+#high-low-pass-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+#low-pass-freq-label {
+  transform: rotate(90deg) translateX(-109px) translateY(-115px); }
+
+#auto-filter-content {
+  grid-column: 1 / 3;
+  grid-row: 2;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center; }
+
+#auto-filter-toggle {
+  grid-column: 1 / 4;
+  grid-row: 1; }
+
+#delay-content {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column; }
 
 /* --------------------------------------------------------------------- */
 /* Extra Controls (Presets, Sequencer etc.) */

@@ -201,14 +201,136 @@ keyboardPlaceholder.addEventListener(
 // ---------------------------------------------------------------------
 // Effects
 // ---------------------------------------------------------------------
-// Fi;ter
-// frequency, typr
+// High-Pass Filter
+const highPassFilter = new Tone.Filter(20000, "highpass").toDestination();
+
+// Low-Pass Filter
+const lowPassFilter = new Tone.Filter(3000, "lowpass").toDestination();
+
+let highLowPassFrequency = new Nexus.Position("#high-low-pass-frequency", {
+  size: [200, 200],
+  mode: "absolute", // "absolute" or "relative"
+  x: 0.5, // initial x value
+  minX: 0,
+  maxX: 20000,
+  stepX: 0,
+  y: 0.5, // initial y value
+  minY: 0,
+  maxY: 20000,
+  stepY: 0,
+});
+highLowPassFrequency.colorize("accent", YELLOW);
+
+highLowPassFrequency.on("change", function (v) {
+  lowPassFilter.set({
+    frequency: parseInt(v.x),
+  });
+  highPassFilter.set({
+    frequency: parseInt(v.y),
+  });
+});
 
 // AutoFilter .connect(autoFilter)
 const autoFilter = new Tone.AutoFilter("4n").toDestination().start();
-autoFilter.depth.value = 1; // range:0-1
-autoFilter.frequency.value = 10; // range:0-1000 or 2000
-autoFilter.octaves = 2.6; // range: -10-10
+// autoFilter.depth.value = 1; // range:0-1
+// autoFilter.frequency.value = 10; // range:0-1000 or 2000
+// autoFilter.octaves = 2.6; // range: -10-10
+
+autoFilter.set({
+  depth: 1,
+  frequency: 10,
+  octaves: 2.6,
+  wet: 0,
+});
+
+var autoFilterToggle = new Nexus.Toggle("#auto-filter-toggle", {
+  size: [40, 20],
+  state: false,
+});
+autoFilterToggle.colorize("accent", YELLOW);
+
+autoFilterToggle.on("change", function (v) {
+  if (v) {
+    autoFilter.set({
+      wet: 1,
+    });
+  } else {
+    autoFilter.set({
+      wet: 0,
+    });
+  }
+});
+
+// Auto Filter Depth
+let  autoFilterDepth= new Nexus.Dial("#auto-filter-depth", {
+  size: [75, 75],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: 0,
+  max: 1,
+  step: 0,
+  value: 1,
+});
+autoFilterDepth.colorize("accent", YELLOW);
+
+autoFilterDepth.on("change", function (v) {
+  autoFilter.set({
+    depth: v,
+  });
+});
+
+// Auto Filter Depth Number
+let  autoFilterDepthNum= new Nexus.Number("#auto-filter-depth-num");
+autoFilterDepthNum.link(autoFilterDepth);
+autoFilterDepthNum.colorize("accent", YELLOW);
+
+
+// Auto Filter Frequency
+let autoFilterFrequency = new Nexus.Dial("#auto-filter-frequency", {
+  size: [75, 75],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: 0,
+  max: 1000,
+  step: 0,
+  value: 10,
+});
+autoFilterFrequency.colorize("accent", YELLOW);
+
+autoFilterFrequency.on("change", function (v) {
+  autoFilter.set({
+    frequency: v,
+  });
+});
+
+// Auto Filter Frequency Number
+let autoFilterFrequencyNum = new Nexus.Number("#auto-filter-frequency-num");
+autoFilterFrequencyNum.link(autoFilterFrequency);
+autoFilterFrequencyNum.colorize("accent", YELLOW);
+
+// Auto Filter Octaves
+let autoFilterOctaves = new Nexus.Dial("#auto-filter-octaves", {
+  size: [75, 75],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: -10,
+  max: 10,
+  step: 0,
+  value: 2.6,
+});
+autoFilterOctaves.colorize("accent", YELLOW);
+
+autoFilterOctaves.on("change", function (v) {
+  autoFilter.set({
+    octaves: v,
+  });
+});
+
+// Auto Filter Octaves Number
+let autoFilterOctavesNum = new Nexus.Number("#auto-filter-octaves-num");
+autoFilterOctavesNum.link(autoFilterOctaves);
+autoFilterOctavesNum.colorize("accent", YELLOW);
+
 
 // BitCrusher .connect(crusher)
 const crusher = new Tone.BitCrusher(4).toDestination(); // range:1-16, step:1
@@ -274,11 +396,23 @@ vibrato.depth.value; // range:0-1
 // ---------------------------------------------------------------------
 // Synthesizer
 // ---------------------------------------------------------------------
-let synth = new Tone.PolySynth(Tone.FMSynth).toDestination();
+let synth = new Tone.PolySynth(Tone.FMSynth);
 
 synth.set({
   maxPolyphony: 256,
 });
+
+// synth.toDestination();
+synth.chain(highPassFilter, lowPassFilter, Tone.Destination);
+// synth.chain(lowPassFilter, Tone.Destination);
+// synth.chain(highPassFilter, Tone.Destination);
+
+synth.connect(autoFilter);
+
+// synth.chain(highPassFilter, Tone.Destination);
+
+// const comp = new Tone.Compressor(-30, 3).toDestination();
+// synth.chain(comp, Tone.Destination);
 
 // const lfo = new Tone.LFO("4n", 8000, 4000000).start().toDestination();
 // const autoFilter = new Tone.AutoFilter("4n").toDestination().start();
@@ -978,11 +1112,8 @@ let effectsContent = document.getElementById("effects-content");
 let filtersTitle = document.getElementById("filters-title");
 let filtersContent = document.getElementById("filters-content");
 
-let filter1Title = document.getElementById("filter-1-title");
-let filter1Content = document.getElementById("filter-1-content");
-
-let filter2Title = document.getElementById("filter-2-title");
-let filter2Content = document.getElementById("filter-2-content");
+let highLowPassTitle = document.getElementById("high-low-pass-title");
+let highLowPassContent = document.getElementById("high-low-pass-content");
 
 let autoFilterTitle = document.getElementById("auto-filter-title");
 let autoFilterContent = document.getElementById("auto-filter-content");
@@ -1031,11 +1162,10 @@ showHide(modulationEnvelopeTitle, modulationEnvelope, "flex");
 
 // Effects Section
 showHide(effectsTitle, effectsContent, "block");
-showHide(filtersTitle, filtersContent);
-showHide(filter1Title, filter1Content);
-showHide(filter2Title, filter2Content);
-showHide(autoFilterTitle, autoFilterContent);
-showHide(delayTitle, delayContent);
+showHide(filtersTitle, filtersContent, "grid");
+showHide(highLowPassTitle, highLowPassContent, "flex");
+showHide(autoFilterTitle, autoFilterContent, "grid");
+showHide(delayTitle, delayContent, "flex");
 showHide(feedbackDelayTitle, feedbackDelayContent);
 showHide(pingPongDelayTitle, pingPongDelayContent);
 showHide(chorusTitle, chorusContent);

@@ -158,6 +158,11 @@ a:link {
   margin: 0.4rem 0 0.2rem;
 }
 
+.subtitle-s {
+  @extend .subtitle;
+  font-size: 1.05rem;
+}
+
 .label {
   font-weight: 600;
   margin: 0 0 0.2rem 0;
@@ -313,15 +318,55 @@ a:link {
 /* --------------------------------------------------------------------- */
 #effects {
   //4
-  grid-column: 3 /4;
+  grid-column: 3 / 4;
   grid-row: 2;
   .title {
     color: $yellow;
   }
   display: flex;
   flex-direction: column;
+  align-items: center; 
+}
+
+#filters-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+#high-low-pass-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
+
+#low-pass-freq-label {
+  transform: rotate(90deg) translateX(-109px) translateY(-115px);
+}
+
+#auto-filter-content {
+  grid-column: 1 / 3;
+  grid-row: 2;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+}
+
+#auto-filter-toggle {
+  grid-column: 1 / 4;
+  grid-row: 1;
+}
+
+#delay-content {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 
 /* --------------------------------------------------------------------- */
 /* Extra Controls (Presets, Sequencer etc.) */
