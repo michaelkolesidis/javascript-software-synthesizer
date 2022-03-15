@@ -1152,20 +1152,20 @@ let chebyshevTitle = document.getElementById("chebyshev-title");
 let chebyshevContent = document.getElementById("chebyshev-content");
 
 // Synth Section
-showHide(synthSectionTitle, synthSectionContent, "flex");
-showHide(amplitudeEnvelopeTitle, amplitudeEnvelope, "flex");
-showHide(oscillatorTitle, oscillatorSection, "flex");
+showHide(synthSectionTitle, synthSectionContent, "flex", "none");
+showHide(amplitudeEnvelopeTitle, amplitudeEnvelope, "flex", "none");
+showHide(oscillatorTitle, oscillatorSection, "flex", "none");
 
 // Modulation Section
-showHide(modulationTitle, modulationContent, "block");
-showHide(modulationEnvelopeTitle, modulationEnvelope, "flex");
+showHide(modulationTitle, modulationContent, "block", "none");
+showHide(modulationEnvelopeTitle, modulationEnvelope, "flex", "none");
 
 // Effects Section
-showHide(effectsTitle, effectsContent, "block");
-showHide(filtersTitle, filtersContent, "grid");
-showHide(highLowPassTitle, highLowPassContent, "flex");
-showHide(autoFilterTitle, autoFilterContent, "grid");
-showHide(delayTitle, delayContent, "flex");
+showHide(effectsTitle, effectsContent, "block", "none");
+showHide(filtersTitle, filtersContent, "grid", "none");
+showHide(highLowPassTitle, highLowPassContent, "flex", "none");
+showHide(autoFilterTitle, autoFilterContent, "grid", "none");
+showHide(delayTitle, delayContent, "flex", "none");
 showHide(feedbackDelayTitle, feedbackDelayContent);
 showHide(pingPongDelayTitle, pingPongDelayContent);
 showHide(chorusTitle, chorusContent);

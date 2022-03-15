@@ -8,13 +8,13 @@
  * section by clicking on its title.
  */
 
-export default function showHide(title, section, display) {
+export default function showHide(title, section, displayInput, displayOutput) {
   // (title, section)
   title.addEventListener("click", function () {
-    if (section.style.display === display) {
-      section.style.display = "none";
+    if (section.style.display === displayInput || section.style.display === '') {
+      section.style.display = displayOutput;
     } else {
-      section.style.display = display;
+      section.style.display = displayInput;
     }
   });
 }
