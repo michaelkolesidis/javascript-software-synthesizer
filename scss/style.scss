@@ -209,7 +209,6 @@ a:link {
   grid-template-columns: repeat(3, 1fr);
   width: 99%;
   gap: 10px;
-  // grid-auto-rows: minmax(100px, auto);
 }
 
 #displays {
@@ -217,9 +216,25 @@ a:link {
   grid-column: 1 / 4;
   grid-row: 1;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   margin-bottom: 1rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --------------------------------------------------------------------- */
+/* Oscilloscope */
+/* --------------------------------------------------------------------- */
+#oscilloscope {
+  margin-right: 4rem;
+}
+
+/* --------------------------------------------------------------------- */
+/* Spectrogram */
+/* --------------------------------------------------------------------- */
+#spectrogram {
+  margin-right: 4rem;
 }
 
 /* --------------------------------------------------------------------- */
@@ -233,6 +248,7 @@ a:link {
   color: $black;
   font-size: 0.9rem;
   line-height: 1.4rem;
+  margin-right: 4rem;
 }
 
 /* --------------------------------------------------------------------- */
@@ -271,7 +287,6 @@ a:link {
 }
 
 #type-selection {
-  
   max-width: 430px;
   margin: auto;
 }
@@ -691,4 +706,11 @@ a:link {
 
 #nav-container:focus-within #nav-content {
   transform: none;
+}
+
+@media only screen and (min-width: 1900px) {
+  #effects-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }

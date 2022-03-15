@@ -170,9 +170,23 @@ a:link {
   grid-column: 1 / 4;
   grid-row: 1;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin-bottom: 1rem; }
+  justify-content: center;
+  margin-bottom: 1rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto; }
+
+/* --------------------------------------------------------------------- */
+/* Oscilloscope */
+/* --------------------------------------------------------------------- */
+#oscilloscope {
+  margin-right: 4rem; }
+
+/* --------------------------------------------------------------------- */
+/* Spectrogram */
+/* --------------------------------------------------------------------- */
+#spectrogram {
+  margin-right: 4rem; }
 
 /* --------------------------------------------------------------------- */
 /* MIDI Display */
@@ -184,7 +198,8 @@ a:link {
   background: #f0f0f3;
   color: #333333;
   font-size: 0.9rem;
-  line-height: 1.4rem; }
+  line-height: 1.4rem;
+  margin-right: 4rem; }
 
 /* --------------------------------------------------------------------- */
 /* Synth Section */
@@ -489,3 +504,8 @@ a:link {
 
 #nav-container:focus-within #nav-content {
   transform: none; }
+
+@media only screen and (min-width: 1900px) {
+  #effects-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; } }
