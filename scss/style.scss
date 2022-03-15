@@ -271,7 +271,9 @@ a:link {
 }
 
 #type-selection {
-  width: 100%;
+  
+  max-width: 430px;
+  margin: auto;
 }
 
 #partial-count-section {
@@ -325,7 +327,7 @@ a:link {
   }
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
 }
 
 #filters-content {
@@ -335,7 +337,7 @@ a:link {
   text-align: center;
 }
 
-#high-low-pass-content{
+#high-low-pass-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -361,12 +363,10 @@ a:link {
 }
 
 #delay-content {
-  display: flex;
   justify-items: center;
   align-items: center;
   flex-direction: column;
 }
-
 
 /* --------------------------------------------------------------------- */
 /* Extra Controls (Presets, Sequencer etc.) */
@@ -416,20 +416,20 @@ a:link {
     img {
       width: 40%;
     }
-
   }
   ::placeholder {
     color: $dark-gray;
   }
 
-  ::-webkit-input-placeholder { // Chrome/Opera/Safari/Edge
+  ::-webkit-input-placeholder {
+    // Chrome/Opera/Safari/Edge
     color: $dark-gray;
   }
-  
-  ::-moz-placeholder {// Firefox 19+
+
+  ::-moz-placeholder {
+    // Firefox 19+
     color: $dark-gray;
   }
-  
 }
 
 #sequencer {

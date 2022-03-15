@@ -1032,7 +1032,7 @@ let stopButton = document.getElementById("seq-stop");
 
 // Sequencer rate (tempo)
 seqRateInput.addEventListener("change", () => {
-  if (seqRateInput.value > 2) seqRateInput.value = 2;
+  if (seqRateInput.value > 10) seqRateInput.value = 10;
   if (seqRateInput.value <= 0) seqRateInput.value = 1;
   let rate = seqRateInput.value;
 
@@ -1166,7 +1166,7 @@ showHide(filtersTitle, filtersContent, "grid", "none");
 showHide(highLowPassTitle, highLowPassContent, "flex", "none");
 showHide(autoFilterTitle, autoFilterContent, "grid", "none");
 showHide(delayTitle, delayContent, "flex", "none");
-showHide(feedbackDelayTitle, feedbackDelayContent);
+showHide(feedbackDelayTitle, feedbackDelayContent, "none", "flex");
 showHide(pingPongDelayTitle, pingPongDelayContent);
 showHide(chorusTitle, chorusContent);
 showHide(reverbTitle, reverbContent);

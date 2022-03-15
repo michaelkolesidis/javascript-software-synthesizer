@@ -215,7 +215,8 @@ a:link {
   width: 100%; }
 
 #type-selection {
-  width: 100%; }
+  max-width: 430px;
+  margin: auto; }
 
 #partial-count-section, #modulation-partial-count-section {
   display: flex;
@@ -283,7 +284,6 @@ a:link {
   grid-row: 1; }
 
 #delay-content {
-  display: flex;
   justify-items: center;
   align-items: center;
   flex-direction: column; }

@@ -61,7 +61,7 @@ export default function header(darkMode) {
       <span class="icon-bar"></span>
     </div>
   <div id="nav-content" tabindex="0">
-    <p>This is the JSS-01 menu</p>
+    <p>Welcome to the JSS-01 | JavaScript Software Synthesizer! Here you can find information about each of the components, as well as a tour of the synthesizer and a tutorial.</p>
     <ul>
       <li><a href="#0">Helpful option</a></li>
       <li><a href="#0">Enlightening option</a></li>
