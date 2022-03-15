@@ -1,6 +1,6 @@
 {
   "name": "javascript-software-synthesizer",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "The JSS-01 is a software synthesizer implementing a variety of JavaScript frameworks and libraries.",
   "main": "./scripts/main.js",
   "scripts": {
