@@ -27,7 +27,7 @@
     "sound-synthesis",
     "nexusui",
     "tonejs",
-    "knobs",
+    "web-audio",
     "sound-engineering"
   ],
   "author": "Michael Kolesidis",
