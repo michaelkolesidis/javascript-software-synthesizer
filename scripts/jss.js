@@ -208,7 +208,7 @@ const highPassFilter = new Tone.Filter(20000, "highpass").toDestination();
 const lowPassFilter = new Tone.Filter(3000, "lowpass").toDestination();
 
 let highLowPassFrequency = new Nexus.Position("#high-low-pass-frequency", {
-  size: [200, 200],
+  size: [180, 180],
   mode: "absolute", // "absolute" or "relative"
   x: 0.5, // initial x value
   minX: 0,
@@ -244,7 +244,7 @@ autoFilter.set({
 });
 
 var autoFilterToggle = new Nexus.Toggle("#auto-filter-toggle", {
-  size: [40, 20],
+  size: [36, 18],
   state: false,
 });
 autoFilterToggle.colorize("accent", YELLOW);
@@ -262,8 +262,8 @@ autoFilterToggle.on("change", function (v) {
 });
 
 // Auto Filter Depth
-let  autoFilterDepth= new Nexus.Dial("#auto-filter-depth", {
-  size: [75, 75],
+let autoFilterDepth = new Nexus.Dial("#auto-filter-depth", {
+  size: [67, 67],
   interaction: "vertical", // "radial", "vertical", or "horizontal"
   mode: "relative", // "absolute" or "relative"
   min: 0,
@@ -280,14 +280,13 @@ autoFilterDepth.on("change", function (v) {
 });
 
 // Auto Filter Depth Number
-let  autoFilterDepthNum= new Nexus.Number("#auto-filter-depth-num");
+let autoFilterDepthNum = new Nexus.Number("#auto-filter-depth-num");
 autoFilterDepthNum.link(autoFilterDepth);
 autoFilterDepthNum.colorize("accent", YELLOW);
 
-
 // Auto Filter Frequency
 let autoFilterFrequency = new Nexus.Dial("#auto-filter-frequency", {
-  size: [75, 75],
+  size: [67, 67],
   interaction: "vertical", // "radial", "vertical", or "horizontal"
   mode: "relative", // "absolute" or "relative"
   min: 0,
@@ -310,7 +309,7 @@ autoFilterFrequencyNum.colorize("accent", YELLOW);
 
 // Auto Filter Octaves
 let autoFilterOctaves = new Nexus.Dial("#auto-filter-octaves", {
-  size: [75, 75],
+  size: [67, 67],
   interaction: "vertical", // "radial", "vertical", or "horizontal"
   mode: "relative", // "absolute" or "relative"
   min: -10,
@@ -330,7 +329,6 @@ autoFilterOctaves.on("change", function (v) {
 let autoFilterOctavesNum = new Nexus.Number("#auto-filter-octaves-num");
 autoFilterOctavesNum.link(autoFilterOctaves);
 autoFilterOctavesNum.colorize("accent", YELLOW);
-
 
 // BitCrusher .connect(crusher)
 const crusher = new Tone.BitCrusher(4).toDestination(); // range:1-16, step:1
@@ -423,7 +421,7 @@ synth.connect(autoFilter);
 // ---------------------------------------------------------------------
 // Dial
 let volumeControl = new Nexus.Dial("#volume", {
-  size: [75, 75],
+  size: [67, 67],
   interaction: "vertical", // "radial", "vertical", or "horizontal"
   mode: "relative", // "absolute" or "relative"
   min: -40,
@@ -440,7 +438,9 @@ volumeControl.on("change", function (v) {
 });
 
 // Number
-let volumeNum = new Nexus.Number("#volume-num");
+let volumeNum = new Nexus.Number("#volume-num", {
+  size: [60, 30],
+});
 volumeNum.link(volumeControl);
 volumeNum.colorize("accent", CYAN);
 
@@ -452,7 +452,7 @@ volumeNum.colorize("accent", CYAN);
 
 // Dial
 let detuneControl = new Nexus.Dial("#detune", {
-  size: [75, 75],
+  size: [67, 67],
   interaction: "vertical", // "radial", "vertical", or "horizontal"
   mode: "relative", // "absolute" or "relative"
   min: -1000,
@@ -469,7 +469,9 @@ detuneControl.on("change", function (v) {
 });
 
 // Number
-let detuneNum = new Nexus.Number("#detune-num");
+let detuneNum = new Nexus.Number("#detune-num", {
+  size: [60, 30],
+});
 detuneNum.link(detuneControl);
 detuneNum.colorize("accent", CYAN);
 
@@ -480,7 +482,7 @@ detuneNum.colorize("accent", CYAN);
 // modulationIndex range: 0-300 (choice)
 
 let modulationIndexControl = new Nexus.Dial("#modulation-index", {
-  size: [75, 75],
+  size: [67, 67],
   interaction: "vertical", // "radial", "vertical", or "horizontal"
   mode: "relative", // "absolute" or "relative"
   min: 0,
@@ -498,7 +500,9 @@ modulationIndexControl.on("change", function (v) {
 });
 
 // Number;
-let modulationIndexNum = new Nexus.Number("#modulation-index-num");
+let modulationIndexNum = new Nexus.Number("#modulation-index-num", {
+  size: [60, 30],
+});
 modulationIndexNum.link(modulationIndexControl);
 modulationIndexNum.colorize("accent", CYAN);
 modulationIndexNum.colorize("fill", GRAY);
@@ -510,7 +514,7 @@ modulationIndexNum.colorize("fill", GRAY);
 // range: 0-20 (choice)
 
 let harmonicityControl = new Nexus.Dial("#harmonicity", {
-  size: [75, 75],
+  size: [67, 67],
   interaction: "vertical", // "radial", "vertical", or "horizontal"
   mode: "relative", // "absolute" or "relative"
   min: 0,
@@ -527,7 +531,9 @@ harmonicityControl.on("change", function (v) {
 });
 
 // Number
-let harmonicityNum = new Nexus.Number("#harmonicity-num");
+let harmonicityNum = new Nexus.Number("#harmonicity-num", {
+  size: [60, 30],
+});
 harmonicityNum.link(harmonicityControl);
 harmonicityNum.colorize("accent", CYAN);
 
@@ -568,7 +574,7 @@ harmonicityNum.colorize("accent", CYAN);
 // synth.options.envelope.release = 0.5;
 
 let amplitudeADSR = new Nexus.Multislider("#amplitude-adsr", {
-  size: [245, 149],
+  size: [220, 134],
   numberOfSliders: 4,
   min: 0,
   max: 1,
@@ -604,7 +610,7 @@ let decayOptions = ["linear", "exponential"];
 
 // Attack Curve
 let attackCurveSelector = new Nexus.Select("#attack-curve", {
-  size: [130, 30],
+  size: [117, 27],
   options: attackReleaseOptions,
 });
 
@@ -618,7 +624,7 @@ attackCurveSelector.on("change", function (v) {
 
 // Decay Curve
 let decayCurveSelector = new Nexus.Select("#decay-curve", {
-  size: [130, 30],
+  size: [117, 27],
   options: decayOptions,
 });
 
@@ -632,7 +638,7 @@ decayCurveSelector.on("change", function (v) {
 
 // Release Curve
 let releaseCurveSelector = new Nexus.Select("#release-curve", {
-  size: [130, 30],
+  size: [117, 27],
   options: attackReleaseOptions,
 });
 
@@ -660,7 +666,7 @@ const oscillatorTypes = [
 let oscillatorType = oscillatorTypes[0];
 
 let oscillatorTypeSelector = new Nexus.RadioButton("#oscillator-type", {
-  size: [420, 25],
+  size: [378, 22],
   numberOfButtons: 5,
   active: 0,
 });
@@ -677,7 +683,7 @@ oscillatorTypeSelector.on("change", function (v) {
 
 // partialCount
 let partialCountSelector = new Nexus.Slider("#partial-count", {
-  size: [400, 35],
+  size: [360, 31],
   mode: "relative", // "absolute" or "relative"
   min: 0,
   max: 10,
@@ -707,7 +713,7 @@ partialCountSelector.on("change", function (v) {
 
   partialsSelector.destroy();
   partialsSelector = new Nexus.Multislider("#partials-selector", {
-    size: [400, 80],
+    size: [360, 72],
     numberOfSliders: v,
     min: 0,
     max: 1,
@@ -723,7 +729,7 @@ partialCountSelector.on("change", function (v) {
 
 // partials
 let partialsSelector = new Nexus.Multislider("#partials-selector", {
-  size: [400, 80],
+  size: [360, 72],
   numberOfSliders: 0,
   min: 0,
   max: 1,
@@ -758,7 +764,7 @@ const modulationTypes = [
 let modulationType = modulationTypes[1];
 
 let modulationTypeSelector = new Nexus.RadioButton("#modulation-type", {
-  size: [400, 25],
+  size: [378, 22],
   numberOfButtons: 5,
   active: 1,
 });
@@ -777,7 +783,7 @@ modulationTypeSelector.on("change", function (v) {
 let modulationPartialCountSelector = new Nexus.Slider(
   "#modulation-partial-count",
   {
-    size: [400, 35],
+    size: [369, 31],
     mode: "relative", // "absolute" or "relative"
     min: 0,
     max: 10,
@@ -810,7 +816,7 @@ modulationPartialCountSelector.on("change", function (v) {
   modulationPartialsSelector = new Nexus.Multislider(
     "#modulation-partials-selector",
     {
-      size: [400, 80],
+      size: [360, 72],
       numberOfSliders: v,
       min: 0,
       max: 1,
@@ -829,7 +835,7 @@ modulationPartialCountSelector.on("change", function (v) {
 let modulationPartialsSelector = new Nexus.Multislider(
   "#modulation-partials-selector",
   {
-    size: [400, 80],
+    size: [360, 72],
     numberOfSliders: 0,
     min: 0,
     max: 1,
@@ -861,7 +867,7 @@ modulationPartialsSelector.on("change", function (v) {
 // releaseCurve
 
 let modulationADSR = new Nexus.Multislider("#modulation-adsr", {
-  size: [245, 149],
+  size: [220, 134],
   numberOfSliders: 4,
   min: 0,
   max: 1,
@@ -888,7 +894,7 @@ modulationADSR.on("change", function (v) {
 let modulationAttackCurveSelector = new Nexus.Select(
   "#modulation-attack-curve",
   {
-    size: [130, 30],
+    size: [117, 27],
     options: attackReleaseOptions,
   }
 );
@@ -903,7 +909,7 @@ modulationAttackCurveSelector.on("change", function (v) {
 
 // Modulation Decay Curve
 let modulationDecayCurveSelector = new Nexus.Select("#modulation-decay-curve", {
-  size: [130, 30],
+  size: [117, 27],
   options: decayOptions,
 });
 
@@ -919,7 +925,7 @@ modulationDecayCurveSelector.on("change", function (v) {
 let modulationReleaseCurveSelector = new Nexus.Select(
   "#modulation-release-curve",
   {
-    size: [130, 30],
+    size: [117, 27],
     options: attackReleaseOptions,
   }
 );
@@ -1230,9 +1236,6 @@ showHide(chebyshevTitle, chebyshevContent);
 // Presets
 // --------------------------------------------------------------------
 // Presets functionality will be implemented here
-
-
-
 
 // ---------------------------------------------------------------------
 // Menu
