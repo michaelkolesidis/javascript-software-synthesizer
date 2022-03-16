@@ -8,6 +8,15 @@ actual code. All of these are very worthwhile contributions and are more than we
 
 All contributors will be added in the designated section in the project's readme file.
 
+
+### The JSS-01 is in active development, so if you have any ideas or want to help, feel free to:
+1. Fork the Project
+2. Create your Feature Branch (git checkout -b feature/AmazingFeature)
+3. Commit your Changes (git commit -m 'Add some AmazingFeature')
+4. Push to the Branch (git push origin feature/AmazingFeature)
+5. Open a Pull Request
+
+
 Please contact us for any inquiries :)
 
 
