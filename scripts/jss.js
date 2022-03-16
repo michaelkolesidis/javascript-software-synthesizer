@@ -1233,6 +1233,10 @@ showHide(chebyshevTitle, chebyshevContent);
 
 
 
+
+// ---------------------------------------------------------------------
+// Menu
+// --------------------------------------------------------------------
 const navContent = document.getElementById("nav-content");
 
 navContent.innerHTML = `<p>Welcome to the JSS-01 | JavaScript Software Synthesizer! Here you can find helpful resources, such as information about its components, concepts and functions, as well as a tour and a tutorial.</p>
