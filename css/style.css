@@ -38,7 +38,8 @@
 
 html,
 body {
-  font-family: "Spartan", sans-serif; }
+  font-family: "Spartan", sans-serif;
+  font-size: 90%; }
 
 ::-moz-selection {
   background: #b4b4b4;
