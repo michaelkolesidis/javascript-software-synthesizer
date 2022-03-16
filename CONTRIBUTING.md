@@ -8,5 +8,8 @@ actual code. All of these are very worthwhile contributions and are more than we
 
 All contributors will be added in the designated section in the project's readme file.
 
-
 Please contact us for any inquiries :)
+
+
+[Our Contributor Covenant Code of COnduct](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/CODE_OF_CONDUCT.md)
+
