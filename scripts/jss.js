@@ -173,7 +173,7 @@ if (darkMode) {
 // Nexus.colors.light = BLACK; // dark mode
 
 let keyboard = new Nexus.Piano("#keyboard", {
-  size: [1200, 100],
+  size: [1080, 90],
   mode: "button", // 'button', 'toggle', or 'impulse'
   lowNote: 21,
   highNote: 108,
