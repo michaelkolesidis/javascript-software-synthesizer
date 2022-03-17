@@ -385,43 +385,33 @@ a:link {
 }
 
 #frequency-delay-content {
-
 }
 
 #ping-pong-delay-content {
-
 }
 
 #chorus-content {
-
 }
 
 #reverb-content {
-  
 }
 
 #tremolo-content {
-  
 }
 
 #vibrato-content {
-  
 }
 
 #distortion-content {
-  
 }
 
 #frequency-shifter-content {
-  
 }
 
 #bit-crusher-content {
-  
 }
 
 #chebyshev-content {
-  
 }
 
 /* --------------------------------------------------------------------- */
@@ -749,11 +739,60 @@ a:link {
   transform: none;
 }
 
-@media only screen and (min-width: 1900px) {
+@media only screen and (min-width: 1600px) {
   #effects-content {
     display: grid;
+    gap: 2rem;
     grid-template-columns: 1fr 1fr;
   }
 
+  #filters {
+    grid-column: 1 / 2;
+    grid-row: 1;
+  }
 
+  #delay {
+    grid-column: 2 / 3;
+    grid-row: 1;
+  }
+
+  #chorus {
+    grid-column: 1 / 2;
+    grid-row: 2;
+  }
+
+  #reverb {
+    grid-column: 2 / 3;
+    grid-row: 2;
+  }
+
+  #tremolo {
+    grid-column: 1 / 2;
+    grid-row: 3;
+  }
+
+  #vibrato {
+    grid-column: 2 / 3;
+    grid-row: 3;
+  }
+
+  #distortion {
+    grid-column: 1 / 2;
+    grid-row: 4;
+  }
+
+  #frequency-shifter {
+    grid-column: 2 / 3;
+    grid-row: 4;
+  }
+
+  #bit-crusher {
+    grid-column: 1 / 2;
+    grid-row: 5;
+  }
+
+  #chebyshev {
+    grid-column: 2 / 3;
+    grid-row: 5;
+  }
 }

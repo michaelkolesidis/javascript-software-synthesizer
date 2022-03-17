@@ -84,45 +84,51 @@
               <!--------------------------------------------------------------------->
               <!-- Filters -->
               <!--------------------------------------------------------------------->
-              <p id="filters-title" class="subtitle">Filters</p>
-              <div id="filters-content">
-                <!--------------------------------------------------------------------->
-                <!-- Low-Pass Filter -->
-                <!--------------------------------------------------------------------->
-                <div id="high-low-pass">
-                  <p id="high-low-pass-title" class="subtitle-s">High/Low Pass</p>
-                  <div id="high-low-pass-content">
-                    <p class="label">Low-Pass Cutoff </p>
-                    <div id="high-low-pass-frequency"></div>
-                    <p class="label" id="low-pass-freq-label">High-Pass Cutoff</p>
+              <div id="filters">
+                <p id="filters-title" class="subtitle">Filters</p>
+                <div id="filters-content">
+                  <!--------------------------------------------------------------------->
+                  <!-- Low-Pass Filter -->
+                  <!--------------------------------------------------------------------->
+                  <div id="high-low-pass">
+                    <p id="high-low-pass-title" class="subtitle-s">
+                      High/Low Pass
+                    </p>
+                    <div id="high-low-pass-content">
+                      <p class="label">Low-Pass Cutoff</p>
+                      <div id="high-low-pass-frequency"></div>
+                      <p class="label" id="low-pass-freq-label">
+                        High-Pass Cutoff
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <!--------------------------------------------------------------------->
-                <!-- Auto Filter -->
-                <!--------------------------------------------------------------------->
-                <div id="auto-filter">
-                  <p id="auto-filter-title" class="subtitle-s">Auto Filter</p>
-                  <div id="auto-filter-content">
-                    <div id="auto-filter-toggle"></div>
-                    <div class="component">
-                      <p class="label">Depth</p>
-                      <div id="auto-filter-depth"></div>
-                      <br />
-                      <div id="auto-filter-depth-num"></div>
-                    </div>
+                  <!--------------------------------------------------------------------->
+                  <!-- Auto Filter -->
+                  <!--------------------------------------------------------------------->
+                  <div id="auto-filter">
+                    <p id="auto-filter-title" class="subtitle-s">Auto Filter</p>
+                    <div id="auto-filter-content">
+                      <div id="auto-filter-toggle"></div>
+                      <div class="component">
+                        <p class="label">Depth</p>
+                        <div id="auto-filter-depth"></div>
+                        <br />
+                        <div id="auto-filter-depth-num"></div>
+                      </div>
 
-                    <div class="component">
-                      <p class="label">Frequency</p>
-                      <div id="auto-filter-frequency"></div>
-                      <br />
-                      <div id="auto-filter-frequency-num"></div>
-                    </div>
+                      <div class="component">
+                        <p class="label">Frequency</p>
+                        <div id="auto-filter-frequency"></div>
+                        <br />
+                        <div id="auto-filter-frequency-num"></div>
+                      </div>
 
-                    <div class="component">
-                      <p class="label">Octaves</p>
-                      <div id="auto-filter-octaves"></div>
-                      <br />
-                      <div id="auto-filter-octaves-num"></div>
+                      <div class="component">
+                        <p class="label">Octaves</p>
+                        <div id="auto-filter-octaves"></div>
+                        <br />
+                        <div id="auto-filter-octaves-num"></div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -130,95 +136,115 @@
               <!--------------------------------------------------------------------->
               <!-- Delay -->
               <!--------------------------------------------------------------------->
-              <p id="delay-title" class="subtitle">Delay</p>
-              <div id="delay-content" style="display: none;">
-                <!--------------------------------------------------------------------->
-                <!-- Feedback Delay -->
-                <!--------------------------------------------------------------------->
-                <p id="feedback-delay-title" class="subtitle-s">Feedback Delay</p>
-                <div id="feedback-delay-content">
-                  <div id="feedback-delay-toggle"></div>
-                  <div class="component">
-                    <p class="label">Delay Time</p>
-                    <div id="feedback-delay-time"></div>
-                    <br />
-                    <div id="feedback-delay-time-num"></div>
-                  </div>
+              <div id="delay">
+                <p id="delay-title" class="subtitle">Delay</p>
+                <div id="delay-content" style="display: none">
+                  <!--------------------------------------------------------------------->
+                  <!-- Feedback Delay -->
+                  <!--------------------------------------------------------------------->
+                  <p id="feedback-delay-title" class="subtitle-s">
+                    Feedback Delay
+                  </p>
+                  <div id="feedback-delay-content">
+                    <div id="feedback-delay-toggle"></div>
+                    <div class="component">
+                      <p class="label">Delay Time</p>
+                      <div id="feedback-delay-time"></div>
+                      <br />
+                      <div id="feedback-delay-time-num"></div>
+                    </div>
 
-                  <div class="component">
-                    <p class="label">Feedback</p>
-                    <div id="feedback-delay-feedback"></div>
-                    <br />
-                    <div id="feedback-delay-feedback-num"></div>
+                    <div class="component">
+                      <p class="label">Feedback</p>
+                      <div id="feedback-delay-feedback"></div>
+                      <br />
+                      <div id="feedback-delay-feedback-num"></div>
+                    </div>
                   </div>
-
-                  
-                </div>
-                <!--------------------------------------------------------------------->
-                <!-- Ping Pong Delay -->
-                <!--------------------------------------------------------------------->
-                <p id="ping-pong-delay-title" class="subtitle-s">
-                  Ping Pong Delay
-                </p>
-                <div id="ping-pong-delay-content">
-                  <div id="ping-pong-delay-toggle"></div>
+                  <!--------------------------------------------------------------------->
+                  <!-- Ping Pong Delay -->
+                  <!--------------------------------------------------------------------->
+                  <p id="ping-pong-delay-title" class="subtitle-s">
+                    Ping Pong Delay
+                  </p>
+                  <div id="ping-pong-delay-content">
+                    <div id="ping-pong-delay-toggle"></div>
+                  </div>
                 </div>
               </div>
               <!--------------------------------------------------------------------->
               <!-- Chorus -->
               <!--------------------------------------------------------------------->
-              <p id="chorus-title" class="subtitle">Chorus</p>
-              <div id="chorus-content">
-                <div id="chorus-toggle"></div>
+              <div id="chorus">
+                <p id="chorus-title" class="subtitle">Chorus</p>
+                <div id="chorus-content">
+                  <div id="chorus-toggle"></div>
+                </div>
               </div>
               <!--------------------------------------------------------------------->
               <!-- Reverb -->
               <!--------------------------------------------------------------------->
-              <p id="reverb-title" class="subtitle">Reverb</p>
-              <div id="reverb-content">
-                <div id="reverb-toggle"></div>
+              <div id="reverb">
+                <p id="reverb-title" class="subtitle">Reverb</p>
+                <div id="reverb-content">
+                  <div id="reverb-toggle"></div>
+                </div>
               </div>
               <!--------------------------------------------------------------------->
               <!-- Tremolo -->
               <!--------------------------------------------------------------------->
-              <p id="tremolo-title" class="subtitle">Tremolo</p>
-              <div id="tremolo-content">
-                <div id="tremolo-toggle"></div>
+              <div id="tremolo">
+                <p id="tremolo-title" class="subtitle">Tremolo</p>
+                <div id="tremolo-content">
+                  <div id="tremolo-toggle"></div>
+                </div>
               </div>
               <!--------------------------------------------------------------------->
               <!-- Vibrato -->
               <!--------------------------------------------------------------------->
-              <p id="vibrato-title" class="subtitle">Vibrato</p>
-              <div id="vibrato-content">
-                <div id="vibrato-toggle"></div>
+              <div id="vibrato">
+                <p id="vibrato-title" class="subtitle">Vibrato</p>
+                <div id="vibrato-content">
+                  <div id="vibrato-toggle"></div>
+                </div>
               </div>
               <!--------------------------------------------------------------------->
               <!-- Distortion -->
               <!--------------------------------------------------------------------->
-              <p id="distortion-title" class="subtitle">Distortion</p>
-              <div id="distortion-content">
-                <div id="distortion-toggle"></div>
+              <div id="distortion">
+                <p id="distortion-title" class="subtitle">Distortion</p>
+                <div id="distortion-content">
+                  <div id="distortion-toggle"></div>
+                </div>
               </div>
               <!--------------------------------------------------------------------->
               <!-- Frequency Shifter -->
               <!--------------------------------------------------------------------->
-              <p id="freq-shifter-title" class="subtitle">Frequency Shifter</p>
-              <div id="freq-shifter-content">
-                <div id="freq-shifter-toggle"></div>
+              <div id="frequency-shifter">
+                <p id="freq-shifter-title" class="subtitle">
+                  Frequency Shifter
+                </p>
+                <div id="freq-shifter-content">
+                  <div id="freq-shifter-toggle"></div>
+                </div>
               </div>
               <!--------------------------------------------------------------------->
               <!-- Bit Crusher -->
               <!--------------------------------------------------------------------->
-              <p id="bit-crusher-title" class="subtitle">Bit Crusher</p>
-              <div id="bit-crusher-content">
-                <div id="bit-crusher-toggle"></div>
+              <div id="bit-crusher">
+                <p id="bit-crusher-title" class="subtitle">Bit Crusher</p>
+                <div id="bit-crusher-content">
+                  <div id="bit-crusher-toggle"></div>
+                </div>
               </div>
               <!--------------------------------------------------------------------->
               <!-- Chebyshev -->
               <!--------------------------------------------------------------------->
-              <p id="chebyshev-title" class="subtitle">Chebyshev</p>
-              <div id="chebyshev-content">
-                <div id="chebyshev-toggle"></div>
+              <div id="chebyshev">
+                <p id="chebyshev-title" class="subtitle">Chebyshev</p>
+                <div id="chebyshev-content">
+                  <div id="chebyshev-toggle"></div>
+                </div>
               </div>
             </div>
           </div>
