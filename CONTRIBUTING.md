@@ -21,4 +21,3 @@ Please contact us for any inquiries :)
 
 
 [Our Contributor Covenant Code of Conduct](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/CODE_OF_CONDUCT.md)
-
