@@ -77,7 +77,7 @@ if (!localStorage.getItem("visited")) {
 let darkMode = false;
 
 // function toggleDark() {
-//   var element = document.body;
+//   let element = document.body;
 //   element.classList.toggle("dark-mode");
 //   header.style.color = "white";
 //   footer.style.color = "white";
@@ -296,6 +296,7 @@ highLowPassFrequency.on("change", function (v) {
 });
 
 // AutoFilter .connect(autoFilter)
+// ---------------------------------------
 const autoFilter = new Tone.AutoFilter("4n").toDestination().start();
 // autoFilter.depth.value = 1; // range:0-1
 // autoFilter.frequency.value = 10; // range:0-1000 or 2000
@@ -308,7 +309,7 @@ autoFilter.set({
   wet: 0,
 });
 
-var autoFilterToggle = new Nexus.Toggle("#auto-filter-toggle", {
+let autoFilterToggle = new Nexus.Toggle("#auto-filter-toggle", {
   size: [36, 18],
   state: false,
 });
@@ -395,12 +396,112 @@ let autoFilterOctavesNum = new Nexus.Number("#auto-filter-octaves-num");
 autoFilterOctavesNum.link(autoFilterOctaves);
 autoFilterOctavesNum.colorize("accent", YELLOW);
 
-// BitCrusher .connect(crusher)
-const crusher = new Tone.BitCrusher(4).toDestination(); // range:1-16, step:1
-crusher.bits.value;
+// FeedbackDelay .connect(feedbackDelay)
+const feedbackDelay = new Tone.FeedbackDelay("8n", 0.5).toDestination();
 
-// Chebyshev .connect(cheby)
-const cheby = new Tone.Chebyshev(50).toDestination(); // range:1-100
+feedbackDelay.set({
+  delayTime: 0.25, // range:0-1
+  feedback: 0.5,   // range:0-1
+  wet: 0
+});
+
+let feedbackDelayToggle = new Nexus.Toggle("#feedback-delay-toggle", {
+  size: [36, 18],
+  state: false,
+});
+feedbackDelayToggle.colorize("accent", YELLOW);
+
+feedbackDelayToggle.on("change", function (v) {
+  if (v) {
+    feedbackDelay.set({
+      wet: 1,
+    });
+  } else {
+    feedbackDelay.set({
+      wet: 0,
+    });
+  }
+});
+
+
+// Feedback Delay Time
+let feedbackDelayTime = new Nexus.Dial("#feedback-delay-time", {
+  size: [67, 67],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: 0,
+  max: 1,
+  step: 0,
+  value: 0.25
+});
+feedbackDelayTime.colorize("accent", YELLOW);
+
+feedbackDelayTime.on("change", function (v) {
+  feedbackDelay.set({
+    delayTime: v,
+  });
+});
+
+// Feedback Delay Time Number
+let feedbackDelayTimeNum = new Nexus.Number("#feedback-delay-time-num");
+feedbackDelayTimeNum.link(feedbackDelayTime);
+feedbackDelayTimeNum.colorize("accent", YELLOW);
+
+
+
+// PingPongDelay .connect(PingPong)
+const pingPong = new Tone.PingPongDelay("4n", 0.2).toDestination();
+
+pingPong.set({
+  delayTime: 2,   // range:0-2 (choice)
+  feedback: 0.2, // range:0-1
+  wet: 0
+});
+
+// let Toggle = new Nexus.Toggle("#-toggle", {
+//   size: [36, 18],
+//   state: false,
+// });
+// Toggle.colorize("accent", YELLOW);
+
+// Toggle.on("change", function (v) {
+//   if (v) {
+//     .set({
+//       wet: 1,
+//     });
+//   } else {
+//     .set({
+//       wet: 0,
+//     });
+//   }
+// });
+
+// Reverb .connect(reverb)
+const reverb = new Tone.Reverb(1).toDestination(); // seconds - Check implementation
+// https://tonejs.github.io/docs/14.7.77/Reverb - you have to wait until
+
+reverb.set({
+  decay: 1,  // range:0-10 (choice)
+  wet: 0
+});
+
+// let Toggle = new Nexus.Toggle("#-toggle", {
+  //   size: [36, 18],
+  //   state: false,
+  // });
+  // Toggle.colorize("accent", YELLOW);
+  
+  // Toggle.on("change", function (v) {
+  //   if (v) {
+  //     .set({
+  //       wet: 1,
+  //     });
+  //   } else {
+  //     .set({
+  //       wet: 0,
+  //     });
+  //   }
+  // });
 
 // Chorus .connect(chorus)
 const chorus = new Tone.Chorus(4, 2.5, 0.5).toDestination().start(); // frequency delayTime depth
@@ -408,18 +509,189 @@ chorus.frequency.value = 4; // range: 0-50
 chorus.delayTime = 2.5; // range:0-200
 chorus.depth = 0.5; // range: 0-1
 
-// Distortion .connect(dist)
-const dist = new Tone.Distortion(0.9).toDestination(); // range:0-1
-dist.distortion = 0.9;
+chorus.set({
+  frequency: 4,
+  delayTime: 2.5,
+  depth: 0.5,
+  wet: 0
+});
 
-// FeedbackDelay .connect(feedbackDelay)
-const feedbackDelay = new Tone.FeedbackDelay("8n", 0.5).toDestination();
-feedbackDelay.delayTime.value = 0.25; // range:0-1
-feedbackDelay.feedback.value = 0.5; // range:0-1
+// let Toggle = new Nexus.Toggle("#-toggle", {
+  //   size: [36, 18],
+  //   state: false,
+  // });
+  // Toggle.colorize("accent", YELLOW);
+  
+  // Toggle.on("change", function (v) {
+  //   if (v) {
+  //     .set({
+  //       wet: 1,
+  //     });
+  //   } else {
+  //     .set({
+  //       wet: 0,
+  //     });
+  //   }
+  // });
+
+// Tremolo .connect(tremolo)
+const tremolo = new Tone.Tremolo(9, 0.75).toDestination().start(); // frequency (rate), depth
+
+tremolo.set({
+  frequency: 9,  // range:0-100 (choice)
+  depth: 0.75,   // range:0-1
+  wet: 0
+})
+
+// let Toggle = new Nexus.Toggle("#-toggle", {
+//   size: [36, 18],
+//   state: false,
+// });
+// Toggle.colorize("accent", YELLOW);
+
+// Toggle.on("change", function (v) {
+//   if (v) {
+//     .set({
+//       wet: 1,
+//     });
+//   } else {
+//     .set({
+//       wet: 0,
+//     });
+//   }
+// });
+
+// Vibrato .connect(vibrato)
+const vibrato = new Tone.Vibrato(9, 0.9).toDestination(); // frequency, depth
+
+vibrato.set({
+  frequency: 9,  // range:0-900 (choice)
+  depth: 0.75,   // range:0-1
+  wet: 0
+})
+
+// let Toggle = new Nexus.Toggle("#-toggle", {
+//   size: [36, 18],
+//   state: false,
+// });
+// Toggle.colorize("accent", YELLOW);
+
+// Toggle.on("change", function (v) {
+//   if (v) {
+//     .set({
+//       wet: 1,
+//     });
+//   } else {
+//     .set({
+//       wet: 0,
+//     });
+//   }
+// });
+
+// Distortion .connect(dist)
+const dist = new Tone.Distortion(0.9).toDestination(); 
+
+dist.set({
+  distortion: 0.9, // range:0-1
+  wet: 0
+})
+
+// let Toggle = new Nexus.Toggle("#-toggle", {
+//   size: [36, 18],
+//   state: false,
+// });
+// Toggle.colorize("accent", YELLOW);
+
+// Toggle.on("change", function (v) {
+//   if (v) {
+//     .set({
+//       wet: 1,
+//     });
+//   } else {
+//     .set({
+//       wet: 0,
+//     });
+//   }
+// });
 
 // FrequencyShifter .connect(shift)
 const shift = new Tone.FrequencyShifter(42).toDestination(); // The incoming signal is shifted by this frequency value
-shift.frequency.value = -600; // range:-600-600
+
+shift.set({
+  frequency: -600,  // range:-600-600
+  wet: 0
+})
+
+// let Toggle = new Nexus.Toggle("#-toggle", {
+//   size: [36, 18],
+//   state: false,
+// });
+// Toggle.colorize("accent", YELLOW);
+
+// Toggle.on("change", function (v) {
+//   if (v) {
+//     .set({
+//       wet: 1,
+//     });
+//   } else {
+//     .set({
+//       wet: 0,
+//     });
+//   }
+// });
+
+// BitCrusher .connect(crusher)
+const crusher = new Tone.BitCrusher(4).toDestination(); // 
+crusher.bits.value;
+
+crusher.set({
+  bits: 4, // range:1-16, step:1
+  wet: 0
+})
+
+// let Toggle = new Nexus.Toggle("#-toggle", {
+//   size: [36, 18],
+//   state: false,
+// });
+// Toggle.colorize("accent", YELLOW);
+
+// Toggle.on("change", function (v) {
+//   if (v) {
+//     .set({
+//       wet: 1,
+//     });
+//   } else {
+//     .set({
+//       wet: 0,
+//     });
+//   }
+// });
+
+// Chebyshev .connect(cheby)
+const cheby = new Tone.Chebyshev(50).toDestination(); 
+
+cheby.set({
+  order: 50, // range:1-100
+  wet: 0
+})
+
+// let Toggle = new Nexus.Toggle("#-toggle", {
+//   size: [36, 18],
+//   state: false,
+// });
+// Toggle.colorize("accent", YELLOW);
+
+// Toggle.on("change", function (v) {
+//   if (v) {
+//     .set({
+//       wet: 1,
+//     });
+//   } else {
+//     .set({
+//       wet: 0,
+//     });
+//   }
+// });
 
 // Phaser .connect(phaser)
 const phaser = new Tone.Phaser({
@@ -428,30 +700,34 @@ const phaser = new Tone.Phaser({
   baseFrequency: 1000, // The base frequency of the filters
 }).toDestination();
 
-phaser.frequency.value; // range:0-70 (choice)
-phaser.octaves = 5; // range:0-20 (choice)
-phaser.baseFrequency = 1000; // range:0-1000 (choice)
+phaser.set({
+  frequency: 15,         // range:0-70 (choice)
+  octaves: 5,            // range:0-20 (choice)
+  baseFrequency: 1000,   // range:0-1000 (choice)
+  wet: 0
+})
 
-// PingPongDelay .connect(PingPong)
-const pingPong = new Tone.PingPongDelay("4n", 0.2).toDestination();
-pingPong.delayTime.value = 2; // range:0-2 (choice)
-pingPong.feedback.value = 0.2; // range:0-1
+// let Toggle = new Nexus.Toggle("#-toggle", {
+//   size: [36, 18],
+//   state: false,
+// });
+// Toggle.colorize("accent", YELLOW);
 
-// Reverb .connect(reverb)
-const reverb = new Tone.Reverb(1).toDestination(); // seconds - Check implementation
-// https://tonejs.github.io/docs/14.7.77/Reverb - you have to wait until
-reverb.decay = 1; // range:0-10 (choice)
+// Toggle.on("change", function (v) {
+//   if (v) {
+//     .set({
+//       wet: 1,
+//     });
+//   } else {
+//     .set({
+//       wet: 0,
+//     });
+//   }
+// });
 
-// Tremolo .connect(tremolo)
-const tremolo = new Tone.Tremolo(9, 0.75).toDestination().start(); // frequency (rate), depth
-tremolo.frequency.value = 9; // range:0-100 (choice)
-tremolo.depth.value = 0.75; // range:0-1
 
-// Vibrato .connect(vibrato)
-const vibrato = new Tone.Vibrato(9, 0.9).toDestination(); // frequency, depth
-vibrato.frequency.value = 9; // range:0-900 (choice)
-vibrato.depth.value; // range:0-1
-// vibrato.wet.value = 1
+
+
 
 // .connect(autoFilter).connect(crusher).connect(cheby).connect(chorus).connect(dist).connect(feedbackDelay).connect(shift).connect(phaser).connect(PingPong).connect(reverb).connect(tremolo).connect(vibrato)
 // .toDestination()
@@ -473,6 +749,17 @@ synth.chain(highPassFilter, lowPassFilter, Tone.Destination);
 // synth.chain(highPassFilter, Tone.Destination);
 
 synth.connect(autoFilter);
+synth.connect(feedbackDelay);
+synth.connect(pingPong);
+synth.connect(reverb);
+synth.connect(chorus);
+synth.connect(tremolo);
+synth.connect(vibrato);
+synth.connect(phaser);
+synth.connect(dist);
+synth.connect(shift);
+synth.connect(crusher);
+synth.connect(cheby);
 
 // synth.chain(highPassFilter, Tone.Destination);
 
@@ -496,7 +783,7 @@ let volumeControl = new Nexus.Dial("#volume", {
   min: -40,
   max: 40,
   step: 0,
-  value: -6,
+  value: -28,
 });
 volumeControl.colorize("accent", CYAN);
 
