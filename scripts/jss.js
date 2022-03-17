@@ -780,8 +780,8 @@ let volumeControl = new Nexus.Dial("#volume", {
   size: [67, 67],
   interaction: "vertical", // "radial", "vertical", or "horizontal"
   mode: "relative", // "absolute" or "relative"
-  min: -40,
-  max: 40,
+  min: -50,
+  max: 15,
   step: 0,
   value: -28,
 });
