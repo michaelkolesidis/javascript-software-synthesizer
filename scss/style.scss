@@ -76,8 +76,8 @@ a:link {
 /* Splash Screen */
 /* --------------------------------------------------------------------- */
 #splash-screen {
-  width: 99vw;
-  height: 99vh;
+  width: 95vw;
+  height: 95vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,16 +87,16 @@ a:link {
 
 @keyframes jssmove {
   0% {
-    transform: perspective(600px) translateZ(0px) ;
+    transform: perspective(600px) translateZ(0px);
   }
   30% {
-    transform: perspective(600px) translateZ(10px) ;
+    transform: perspective(600px) translateZ(10px);
   }
   50% {
-    transform: perspective(600px) translateZ(20px) ;
+    transform: perspective(600px) translateZ(20px);
   }
   80% {
-    transform: perspective(600px) translateZ(10px) ;
+    transform: perspective(600px) translateZ(10px);
   }
   100% {
     transform: perspective(600px) translateZ(0px);
@@ -892,7 +892,6 @@ a:link {
     grid-row: 4;
   }
 }
-
 
 @media only screen and (min-width: 1900px) {
   #effects-content {

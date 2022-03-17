@@ -65,8 +65,10 @@ if (!localStorage.getItem("visited")) {
   }, 1000);
   localStorage.setItem("visited", true);
 } else {
-  splashScreen.style.display = "none";
-  pageContainer.style.display = "block";
+  setTimeout(function () {
+    splashScreen.style.display = "none";
+    pageContainer.style.display = "block";
+  }, 500);
 }
 
 // ---------------------------------------------------------------------
