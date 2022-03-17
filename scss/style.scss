@@ -73,6 +73,41 @@ a:link {
 }
 
 /* --------------------------------------------------------------------- */
+/* Splash Screen */
+/* --------------------------------------------------------------------- */
+#splash-screen {
+  width: 99vw;
+  height: 99vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform;
+  animation: jssmove 1s linear infinite;
+}
+
+@keyframes jssmove {
+  0% {
+    transform: perspective(600px) translateZ(0px) ;
+  }
+  30% {
+    transform: perspective(600px) translateZ(10px) ;
+  }
+  50% {
+    transform: perspective(600px) translateZ(20px) ;
+  }
+  80% {
+    transform: perspective(600px) translateZ(10px) ;
+  }
+  100% {
+    transform: perspective(600px) translateZ(0px);
+  }
+}
+
+#page-container {
+  display: none;
+}
+
+/* --------------------------------------------------------------------- */
 /* Dark Mode */
 /* --------------------------------------------------------------------- */
 .dark-mode {

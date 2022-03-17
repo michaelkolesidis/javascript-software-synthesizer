@@ -50,10 +50,24 @@ const YELLOW = "rgb(254, 188, 44)";
 
 Nexus.colors.fill = GRAY; // For all NexusUI components
 
+// ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
+// Splash Screen
+// ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
+const splashScreen = document.getElementById("splash-screen");
+const pageContainer = document.getElementById("page-container");
 
-
-
-
+if (!localStorage.getItem("visited")) {
+  setTimeout(function () {
+    splashScreen.style.display = "none";
+    pageContainer.style.display = "block";
+  }, 1000);
+  localStorage.setItem("visited", true);
+} else {
+  splashScreen.style.display = "none";
+  pageContainer.style.display = "block";
+}
 
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
@@ -1314,13 +1328,13 @@ showHide(chebyshevTitle, chebyshevContent, "none");
 // ---------------------------------------------------------------------
 // Presets
 // ---------------------------------------------------------------------
-// --------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Presets functionality will be implemented here
 
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // Menu
-// --------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 const navContent = document.getElementById("nav-content");
 
@@ -1332,3 +1346,5 @@ navContent.innerHTML = `<p>Welcome to the JSS-01 | JavaScript Software Synthesiz
   <li><a href="#0">Out of jokes</a></li>
   <li><a href="#0">OK, last one I promise</a></li>
 </ul>"`;
+
+
