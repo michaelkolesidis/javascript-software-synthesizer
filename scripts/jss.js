@@ -751,17 +751,17 @@ synth.chain(highPassFilter, lowPassFilter, Tone.Destination);
 // synth.chain(highPassFilter, Tone.Destination);
 
 synth.connect(autoFilter);
-synth.connect(feedbackDelay);
-synth.connect(pingPong);
-synth.connect(reverb);
-synth.connect(chorus);
-synth.connect(tremolo);
-synth.connect(vibrato);
-synth.connect(phaser);
-synth.connect(dist);
-synth.connect(shift);
-synth.connect(crusher);
-synth.connect(cheby);
+// synth.connect(feedbackDelay);
+// synth.connect(pingPong);
+// synth.connect(reverb);
+// synth.connect(chorus);
+// synth.connect(tremolo);
+// synth.connect(vibrato);
+// synth.connect(phaser);
+// synth.connect(dist);
+// synth.connect(shift);
+// synth.connect(crusher);
+// synth.connect(cheby);
 
 // synth.chain(highPassFilter, Tone.Destination);
 
