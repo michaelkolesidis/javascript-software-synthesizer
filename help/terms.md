@@ -1,64 +1,64 @@
 * Terms List
 List of terms that will have their own entry in the help section.
 
-amplitude
-attack
-attack curve
-auto filter
-bit crusher
-carrier
-chebyshev
-chorus
-cutoff
-decay
-decay curve
-delay
-distortion
-detune
-dial
-effect
-envelope
-feedback delay
-filter
-FM synthesis
-frequency
-frequency modulation
-frequency shifter
-gain
-harmonicity
-high-pass filter
-keyboard
-knob
-LFO
-low-pass filter
-meter
-modulation
-modulation index
-modulator
-MIDI
-octaves
-oscillator
-oscilloscope
-partials
-phase
-phaser
-ping pong delay
-pulse wave
-release
-release curve
-reverb
-sawtooth wave
-sequencer
-sine wave
-sound
-sound synthesis
-spectrogram
-square wave
-sustain
-synthesizer
-tremolo
-triangle 
-vibrato
-wave
-waveform
-volume
+amplitude <br>
+attack <br>
+attack curve <br>
+auto filter <br>
+bit crusher <br> 
+carrier <br>
+chebyshev <br>
+chorus <br>
+cutoff <br>
+decay <br>
+decay curve <br>
+delay <br>
+distortion <br>
+detune <br>
+dial <br>
+effect <br>
+envelope <br>
+feedback delay <br>
+filter <br>
+FM synthesis <br>
+frequency <br>
+frequency modulation <br>
+frequency shifter <br>
+gain <br>
+harmonicity <br>
+high-pass filter <br>
+keyboard <br>
+knob <br>
+LFO <br>
+low-pass filter <br>
+meter <br>
+modulation <br>
+modulation index <br>
+modulator <br>
+MIDI <br>
+octaves <br>
+oscillator <br>
+oscilloscope <br>
+partials <br>
+phase <br>
+phaser <br>
+ping pong delay <br>
+pulse wave <br>
+release <br>
+release curve <br>
+reverb <br>
+sawtooth wave <br>
+sequencer <br>
+sine wave <br>
+sound <br>
+sound synthesis <br>
+spectrogram <br>
+square wave <br>
+sustain <br>
+synthesizer <br>
+tremolo <br>
+triangle  <br>
+vibrato <br>
+wave <br>
+waveform <br>
+volume <br>
