@@ -6,21 +6,29 @@
  */
 
 // ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Import Elements
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 import Header from "./elements/header.js";
 import Footer from "./elements/footer.js";
 import Displays from "./elements/panels/displays.js";
 
+import SynthSection from "./elements/panels/synthSection.js";
 import SynthSectionMain from "./elements/panels/synthSectionMain.js";
 import SynthSectionAmplitudeEnvelope from "./elements/panels/synthSectionAmplitudeEnvelope.js";
 import SynthSectionOscillator from "./elements/panels/synthSectionOscillator.js";
 
+import ModulationSection from "./elements/panels/modulationSection.js";
 import ModulationSectionMain from "./elements/panels/modulationSectionMain.js";
 import ModulationSectionModulationEnvelope from "./elements/panels/modulationSectionModulationEnvelope.js";
 
+import SequencerSection from "./elements/panels/sequencerSection.js";
+
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // Import Functions
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 import consoleIntro from "./functions/consoleIntro.js";
 import midiToNoteString from "./functions/midiToNoteString.js";
@@ -28,7 +36,9 @@ import keyMapper from "./functions/keyMapper.js";
 import showHide from "./functions/showHide.js";
 
 // ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Colors
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 const BLACK = "rgb(51, 51, 51)";
 const GRAY_DARK = "rgb(180, 180, 180)";
@@ -41,7 +51,9 @@ const YELLOW = "rgb(254, 188, 44)";
 Nexus.colors.fill = GRAY; // For all NexusUI components
 
 // ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Dark Mode
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 let darkMode = false;
 
@@ -68,35 +80,49 @@ let darkMode = false;
 // toggleDarkButton.addEventListener("click", toggleDark());
 
 // ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Welcome Message in Console
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 consoleIntro();
 
 // ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Index.HTML
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // import index from "./elements/index.js";
 // const body = document.body; or root div
 // root.innerHTML = index();
 
 // ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Header
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 const header = document.getElementById("header");
 header.innerHTML = Header();
 
 // ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Footer
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 const footer = document.getElementById("footer");
 footer.innerHTML = Footer();
 
 // ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Panel Sections
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // Displays
 const displays = document.getElementById("displays");
 displays.innerHTML = Displays();
+
+// Synth Section
+const synthSection = document.getElementById("synth-section");
+synthSection.innerHTML = SynthSection();
 
 // Synth Section: Main
 const synthSectionMain = document.getElementById("synth-section-main");
@@ -109,6 +135,10 @@ amplitudeEnvelopeSection.innerHTML = SynthSectionAmplitudeEnvelope();
 // Synth Section: Oscillator
 const synthSectionOscillator = document.getElementById("oscillator");
 synthSectionOscillator.innerHTML = SynthSectionOscillator();
+
+// Modulation Section
+const modulationSection = document.getElementById("modulation-section");
+modulationSection.innerHTML = ModulationSection();
 
 // Modulation Section: Main
 const modulationSectionMain = document.getElementById(
@@ -124,13 +154,21 @@ modulationSectionEnvelope.innerHTML = ModulationSectionModulationEnvelope();
 
 // Effects
 
+// Sequencer
+const sequencerSection = document.getElementById("sequencer");
+sequencerSection.innerHTML = SequencerSection();
+
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // MIDI Display
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 const midiDisplay = document.getElementById("midi-display");
 
 // ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Oscilloscope
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 let oscilloscope = new Nexus.Oscilloscope("#oscilloscope", {
   size: [300, 150],
@@ -142,7 +180,9 @@ if (darkMode) {
 }
 
 // ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Spectrogram
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 let spectrogram = new Nexus.Spectrogram("#spectrogram", {
   size: [300, 150],
@@ -154,7 +194,9 @@ if (darkMode) {
 }
 
 // ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Meter
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 let meter = new Nexus.Meter("#meter", {
   size: [45, 150],
@@ -166,7 +208,9 @@ if (darkMode) {
 }
 
 // ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Keyboard
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // Nexus.colors.accent = GRAY; // dark mode
 // Nexus.colors.dark = GRAY_DARK; // darl mode
@@ -199,7 +243,9 @@ keyboardPlaceholder.addEventListener(
 );
 
 // ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Effects
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // High-Pass Filter
 const highPassFilter = new Tone.Filter(20000, "highpass").toDestination();
@@ -392,7 +438,9 @@ vibrato.depth.value; // range:0-1
 // .toDestination()
 
 // ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Synthesizer
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 let synth = new Tone.PolySynth(Tone.FMSynth);
 
@@ -417,7 +465,9 @@ synth.connect(autoFilter);
 // const oscillator = new Tone.Oscillator().toDestination().start();
 
 // ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Volume
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // Dial
 let volumeControl = new Nexus.Dial("#volume", {
@@ -445,7 +495,9 @@ volumeNum.link(volumeControl);
 volumeNum.colorize("accent", CYAN);
 
 // ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Detune
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // In cents - 100 cents = 8hz = 1 note - if detune 100, C4 becomes C4#, if detune 200 C4 becomes D4 and so on
 // detune range : -1000-1000 (choice)
@@ -476,7 +528,9 @@ detuneNum.link(detuneControl);
 detuneNum.colorize("accent", CYAN);
 
 // ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Modulation Index
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // The modulation index is essentially the amound of modulation occuring. It is the ratio of the frequency of the modulating signal (mf) to the amplitude of the modulating signal (ma) – as in ma/mf.
 // modulationIndex range: 0-300 (choice)
@@ -508,7 +562,9 @@ modulationIndexNum.colorize("accent", CYAN);
 modulationIndexNum.colorize("fill", GRAY);
 
 // ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Harmonicity
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 //  Harmonicity is the ratio between the two voices. A harmonicity of 1 is no change. Harmonicity = 2 means a change of an octave.
 // range: 0-20 (choice)
@@ -538,7 +594,9 @@ harmonicityNum.link(harmonicityControl);
 harmonicityNum.colorize("accent", CYAN);
 
 // ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // ADSR Envelope
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // https://tonejs.github.io/docs/Envelope.html
 
@@ -651,7 +709,9 @@ releaseCurveSelector.on("change", function (v) {
 });
 
 // ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Oscillator
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // Type
 const oscillatorTypes = [
@@ -749,7 +809,9 @@ partialsSelector.on("change", function (v) {
 });
 
 // ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Modulation
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // Type
 const modulationTypes = [
@@ -856,7 +918,9 @@ modulationPartialsSelector.on("change", function (v) {
 });
 
 // ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Modulation Envelope
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // attack
 // attackCurve
@@ -939,7 +1003,9 @@ modulationReleaseCurveSelector.on("change", function (v) {
 });
 
 // ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Synthesizer On-Screen Keyboard Playbility Implementation
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 let notes = []; // For polyphonic synths
 keyboard.on("change", (note) => {
@@ -953,7 +1019,9 @@ keyboard.on("change", (note) => {
 });
 
 // ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Computer Keyboard Playbility Implementation
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 let base = 39; // Middle C / C4
 
@@ -987,11 +1055,11 @@ function octaveSwitch(e) {
     base += 12; // One octave up
   }
 }
-
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // MIDI Implementation
 // ---------------------------------------------------------------------
-
+// ---------------------------------------------------------------------
 // Enable WebMidi.js and trigger the onEnabled() function when ready.
 WebMidi.enable()
   .then(onEnabled)
@@ -1024,9 +1092,10 @@ function onEnabled() {
     synth.triggerRelease(midiToNoteString(e.data[1]));
   });
 }
-
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // Sequencer
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // Inputs and Buttons
 let seqRateInput = document.getElementById("seq-rate");
@@ -1093,7 +1162,9 @@ playButton.addEventListener("click", () => Tone.Transport.start());
 stopButton.addEventListener("click", () => Tone.Transport.stop());
 
 // ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Show/Hide Section Toggle
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 let synthSectionTitle = document.getElementById("synth-title");
 let synthSectionContent = document.getElementById("synth-section-content");
@@ -1184,7 +1255,9 @@ showHide(bitCrusherTitle, bitCrusherContent);
 showHide(chebyshevTitle, chebyshevContent);
 
 // ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Recorder
+// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // https://tonejs.github.io/docs/14.7.77/Recorder
 
@@ -1233,13 +1306,17 @@ showHide(chebyshevTitle, chebyshevContent);
 // }, 4000);
 
 // ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Presets
+// ---------------------------------------------------------------------
 // --------------------------------------------------------------------
 // Presets functionality will be implemented here
 
 // ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Menu
 // --------------------------------------------------------------------
+// ---------------------------------------------------------------------
 const navContent = document.getElementById("nav-content");
 
 navContent.innerHTML = `<p>Welcome to the JSS-01 | JavaScript Software Synthesizer! Here you can find helpful resources, such as information about its components, concepts and functions, as well as a tour and a tutorial.</p>

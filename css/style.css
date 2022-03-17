@@ -247,13 +247,13 @@ a:link {
 /* --------------------------------------------------------------------- */
 /* Modulation Section */
 /* --------------------------------------------------------------------- */
-#modulation {
+#modulation-section {
   grid-column: 2 /3;
   grid-row: 2;
   display: flex;
   flex-direction: column;
   align-items: center; }
-  #modulation .title, #modulation .subtitle, #modulation .subtitle-s {
+  #modulation-section .title, #modulation-section .subtitle, #modulation-section .subtitle-s {
     color: #03d692; }
 
 #modulation-envelope {

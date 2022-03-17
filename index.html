@@ -21,12 +21,10 @@
       tonejs, web-audio, fm-synthesis, sound-engineering"
     />
     <meta name="author" content="Michael Kolesidis" />
-
     <!--------------------------------------------------------------------->
     <!-- Title -->
     <!--------------------------------------------------------------------->
     <title>JSS-01 | JavaScript Software Synthesizer</title>
-
     <!--------------------------------------------------------------------->
     <!-- Libraries, Frameworks and Main Script -->
     <!--------------------------------------------------------------------->
@@ -45,7 +43,6 @@
       defer
     ></script>
     <script type="module" src="./scripts/jss.js" defer></script>
-
     <!--------------------------------------------------------------------->
     <!-- Icons and Styling -->
     <!--------------------------------------------------------------------->
@@ -70,52 +67,14 @@
           <!-- Displays -->
           <!--------------------------------------------------------------------->
           <div id="displays"></div>
-
           <!--------------------------------------------------------------------->
           <!-- Synth Section -->
           <!--------------------------------------------------------------------->
-          <div id="synth-section">
-            <div class="title" id="synth-title"><p>Synth</p></div>
-            <div id="synth-section-content">
-              <!--------------------------------------------------------------------->
-              <!-- Main -->
-              <!--------------------------------------------------------------------->
-              <div id="synth-section-main"></div>
-              <!--------------------------------------------------------------------->
-              <!-- Amplitude Envelope -->
-              <!--------------------------------------------------------------------->
-              <p id="adsr-envelope-title" class="subtitle">
-                Amplitude Envelope
-              </p>
-              <div id="adsr-envelope"></div>
-              <!--------------------------------------------------------------------->
-              <!-- Oscillator -->
-              <!--------------------------------------------------------------------->
-              <p id="oscillator-title" class="subtitle">Oscillator</p>
-              <div id="oscillator"></div>
-            </div>
-          </div>
-
+          <div id="synth-section"></div>
           <!--------------------------------------------------------------------->
           <!-- Modulation  Section -->
           <!--------------------------------------------------------------------->
-          <div id="modulation">
-            <div class="title" id="modulation-title"><p>Modulation</p></div>
-            <div id="modulation-content">
-              <!--------------------------------------------------------------------->
-              <!-- Modulation Main -->
-              <!--------------------------------------------------------------------->
-              <div id="modulation-section-main"></div>
-              <!--------------------------------------------------------------------->
-              <!-- MOdulation Envelope  -->
-              <!--------------------------------------------------------------------->
-              <p id="modulation-envelope-title" class="subtitle">
-                Modulation Envelope
-              </p>
-              <div id="modulation-envelope"></div>
-            </div>
-          </div>
-
+          <div id="modulation-section"></div>
           <!--------------------------------------------------------------------->
           <!-- Effects  Section -->
           <!--------------------------------------------------------------------->
@@ -269,21 +228,7 @@
         <!-- Extra Controls (Presets, Sequencer etc.) -->
         <!--------------------------------------------------------------------->
         <div id="extras">
-          <div id="sequencer">
-            <input id="seq-rate" placeholder="Rate" value="1" />
-            <input id="note-value" placeholder="Value" value="16n" />
-            <input type="text" id="seq-input" placeholder="Enter sequence" />
-            <button type="button" id="seq-set">
-              <img src="./assets/icons/add.svg" alt="" />
-            </button>
-            <button type="button" id="seq-play">
-              <img src="./assets/icons/play.svg" alt=""">
-            </button>
-            <button type="button" id="seq-stop">
-              <img src="./assets/icons/stop.svg" alt="" />
-            </button>
-          </div>
-
+          <div id="sequencer"></div>
           <!-- <div id="recorder">
             <button type="button" id="rec">●</button>
             <button type="button" id="rec-stop">■</button>
