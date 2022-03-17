@@ -68,6 +68,10 @@ a:link {
   background-repeat: no-repeat;
   color: white; }
 
+#loader {
+  background: url("../assets/logo/logo512.png");
+  background-repeat: none; }
+
 /* --------------------------------------------------------------------- */
 /* Header */
 /* --------------------------------------------------------------------- */

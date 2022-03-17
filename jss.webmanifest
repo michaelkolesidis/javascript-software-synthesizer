@@ -19,7 +19,6 @@
       "type": "image/png"
     }
   ],
-  "start_url": "https://javascript-software-synthesizer.netlify.app/",
   "display": "fullscreen",
   "theme_color": "#01004c",
   "background_color": "#ffffff"
