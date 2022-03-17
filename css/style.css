@@ -61,8 +61,8 @@ a:link {
 /* Splash Screen */
 /* --------------------------------------------------------------------- */
 #splash-screen {
-  width: 95vw;
-  height: 95vh;
+  width: 98vw;
+  height: 98vh;
   display: flex;
   align-items: center;
   justify-content: center;
