@@ -1244,15 +1244,15 @@ showHide(highLowPassTitle, highLowPassContent, "flex", "none");
 showHide(autoFilterTitle, autoFilterContent, "grid", "none");
 showHide(delayTitle, delayContent, "flex", "none");
 showHide(feedbackDelayTitle, feedbackDelayContent, "none", "flex");
-showHide(pingPongDelayTitle, pingPongDelayContent);
-showHide(chorusTitle, chorusContent);
-showHide(reverbTitle, reverbContent);
-showHide(tremoloTitle, tremoloContent);
-showHide(vibratoTitle, vibratoContent);
-showHide(distortionTitle, distortionContent);
-showHide(freqShifterTitle, freqShifterContent);
-showHide(bitCrusherTitle, bitCrusherContent);
-showHide(chebyshevTitle, chebyshevContent);
+showHide(pingPongDelayTitle, pingPongDelayContent, "none");
+showHide(chorusTitle, chorusContent, "none");
+showHide(reverbTitle, reverbContent, "none");
+showHide(tremoloTitle, tremoloContent, "none");
+showHide(vibratoTitle, vibratoContent, "none");
+showHide(distortionTitle, distortionContent, "none");
+showHide(freqShifterTitle, freqShifterContent, "none");
+showHide(bitCrusherTitle, bitCrusherContent, "none");
+showHide(chebyshevTitle, chebyshevContent, "none");
 
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
