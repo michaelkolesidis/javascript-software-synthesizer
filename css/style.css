@@ -573,115 +573,50 @@ a:link {
 /* --------------------------------------------------------------------- */
 /* Menu */
 /* --------------------------------------------------------------------- */
-@media only screen and (min-width: 1500px) {
+@media only screen and (min-width: 1350px) {
   #effects-content {
     display: grid;
     column-gap: 2rem;
-    grid-template-columns: 1fr 1fr; }
-  #filters {
-    grid-column: 1 / 2;
-    grid-row: 1; }
-  #delay {
-    grid-column: 2 / 3;
-    grid-row: 1;
-    height: fit-content; }
-  #chorus {
-    grid-column: 1 / 2;
-    grid-row: 2; }
-  #reverb {
-    grid-column: 2 / 3;
-    grid-row: 2; }
-  #tremolo {
-    grid-column: 1 / 2;
-    grid-row: 3; }
-  #vibrato {
-    grid-column: 2 / 3;
-    grid-row: 3; }
-  #distortion {
-    grid-column: 1 / 2;
-    grid-row: 4; }
-  #frequency-shifter {
-    grid-column: 2 / 3;
-    grid-row: 4; }
-  #bit-crusher {
-    grid-column: 1 / 2;
-    grid-row: 5; }
-  #chebyshev {
-    grid-column: 2 / 3;
-    grid-row: 5; } }
+    grid-template-columns: repeat(2, 1fr); } }
+
+@media only screen and (min-width: 1465px) {
+  #effects-content {
+    display: grid;
+    column-gap: 2rem;
+    grid-template-columns: repeat(3, 1fr); } }
+
+@media only screen and (min-width: 1580px) {
+  #effects-content {
+    display: grid;
+    column-gap: 2rem;
+    grid-template-columns: repeat(4, 1fr); } }
 
 @media only screen and (min-width: 1700px) {
   #effects-content {
     display: grid;
     column-gap: 2rem;
-    grid-template-columns: repeat(3, 1fr); }
-  #filters {
-    grid-column: 1 / 2;
-    grid-row: 1; }
-  #delay {
-    grid-column: 2 / 3;
-    grid-row: 1;
-    height: fit-content; }
-  #reverb {
-    grid-column: 3 / 4;
-    grid-row: 1; }
-  #chorus {
-    grid-column: 1 / 2;
-    grid-row: 2; }
-  #tremolo {
-    grid-column: 2 / 3;
-    grid-row: 2; }
-  #vibrato {
-    grid-column: 3 / 4;
-    grid-row: 2; }
-  #distortion {
-    grid-column: 1 / 2;
-    grid-row: 3; }
-  #frequency-shifter {
-    white-space: nowrap;
-    grid-column: 2 / 3;
-    grid-row: 3; }
-  #bit-crusher {
-    grid-column: 3 / 4;
-    grid-row: 3; }
-  #chebyshev {
-    grid-column: 1 / 2;
-    grid-row: 4; } }
+    grid-template-columns: repeat(5, 1fr); } }
+
+@media only screen and (min-width: 1800px) {
+  #effects-content {
+    display: grid;
+    column-gap: 2rem;
+    grid-template-columns: repeat(6, 1fr); } }
 
 @media only screen and (min-width: 1900px) {
   #effects-content {
     display: grid;
     column-gap: 2rem;
-    grid-template-columns: repeat(4, 1fr); }
-  #filters {
-    grid-column: 1 / 2;
-    grid-row: 1; }
-  #delay {
-    grid-column: 2 / 3;
-    grid-row: 1;
-    height: fit-content; }
-  #reverb {
-    grid-column: 3 / 4;
-    grid-row: 1; }
-  #chorus {
-    grid-column: 4 / 5;
-    grid-row: 1; }
-  #tremolo {
-    grid-column: 1 / 2;
-    grid-row: 2; }
-  #vibrato {
-    grid-column: 2 / 3;
-    grid-row: 2; }
-  #distortion {
-    grid-column: 3 / 4;
-    grid-row: 2; }
-  #frequency-shifter {
-    white-space: nowrap;
-    grid-column: 4 / 5;
-    grid-row: 2; }
-  #bit-crusher {
-    grid-column: 1 / 2;
-    grid-row: 3; }
-  #chebyshev {
-    grid-column: 2 / 3;
-    grid-row: 3; } }
+    grid-template-columns: repeat(6, 1fr); } }
+
+@media only screen and (min-width: 2000px) {
+  #effects-content {
+    display: grid;
+    column-gap: 2rem;
+    grid-template-columns: repeat(7, 1fr); } }
+
+@media only screen and (min-width: 2100px) {
+  #effects-content {
+    display: grid;
+    column-gap: 2rem;
+    grid-template-columns: repeat(8, 1fr); } }
