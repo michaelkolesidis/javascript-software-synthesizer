@@ -184,6 +184,10 @@ a:link {
   text-align: center;
   padding: 0.5rem; }
 
+.components {
+  display: flex;
+  flex-direction: row; }
+
 /* --------------------------------------------------------------------- */
 /* Panel */
 /* --------------------------------------------------------------------- */
@@ -314,7 +318,7 @@ a:link {
 #low-pass-freq-label {
   transform: rotate(90deg) translateX(-98px) translateY(-103px); }
 
-#auto-filter-content {
+#auto-filter-content, #feedback-delay-content, #ping-pong-delay-content, #chorus-content, #phaser-content {
   grid-column: 1 / 3;
   grid-row: 2;
   text-align: center;
@@ -322,7 +326,7 @@ a:link {
   grid-template-columns: repeat(3, 1fr);
   place-items: center; }
 
-#auto-filter-toggle {
+#auto-filter-toggle, #feedback-delay-toggle, #ping-pong-delay-toggle, #chorus-toggle, #phaser-toggle {
   grid-column: 1 / 4;
   grid-row: 1; }
 
@@ -330,6 +334,39 @@ a:link {
   justify-items: center;
   align-items: center;
   flex-direction: column; }
+
+#feedback-delay-content {
+  grid-template-columns: repeat(2, 1fr); }
+
+#ping-pong-delay-content {
+  grid-template-columns: repeat(2, 1fr); }
+
+#reverb-content, #distortion-content, #freq-shifter-content, #bit-crusher-content, #chebyshev-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+#tremolo-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+#tremolo-components {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center; }
+
+#vibrato-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+#vibrato-components {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center; }
 
 /* --------------------------------------------------------------------- */
 /* Extra Controls (Presets, Sequencer etc.) */
@@ -533,6 +570,9 @@ a:link {
 #nav-container:focus-within #nav-content {
   transform: none; }
 
+/* --------------------------------------------------------------------- */
+/* Menu */
+/* --------------------------------------------------------------------- */
 @media only screen and (min-width: 1500px) {
   #effects-content {
     display: grid;

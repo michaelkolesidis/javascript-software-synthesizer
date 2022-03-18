@@ -274,14 +274,22 @@ const highPassFilter = new Tone.Filter(20000, "highpass").toDestination();
 // Low-Pass Filter
 const lowPassFilter = new Tone.Filter(3000, "lowpass").toDestination();
 
+highPassFilter.set({
+  frequency: 20000,
+});
+
+lowPassFilter.set({
+  frequency: 0,
+});
+
 let highLowPassFrequency = new Nexus.Position("#high-low-pass-frequency", {
   size: [180, 180],
   mode: "absolute", // "absolute" or "relative"
-  x: 0.5, // initial x value
+  x: 0, // initial x value
   minX: 0,
   maxX: 20000,
   stepX: 0,
-  y: 0.5, // initial y value
+  y: 20000, // initial y value
   minY: 0,
   maxY: 20000,
   stepY: 0,
@@ -300,14 +308,11 @@ highLowPassFrequency.on("change", function (v) {
 // AutoFilter .connect(autoFilter)
 // ---------------------------------------
 const autoFilter = new Tone.AutoFilter("4n").toDestination().start();
-// autoFilter.depth.value = 1; // range:0-1
-// autoFilter.frequency.value = 10; // range:0-1000 or 2000
-// autoFilter.octaves = 2.6; // range: -10-10
 
 autoFilter.set({
-  depth: 1,
-  frequency: 10,
-  octaves: 2.6,
+  depth: 1, // range:0-1
+  frequency: 10, // range:0-1000 or 2000
+  octaves: 2.6, // range: -10-10
   wet: 0,
 });
 
@@ -403,8 +408,8 @@ const feedbackDelay = new Tone.FeedbackDelay("8n", 0.5).toDestination();
 
 feedbackDelay.set({
   delayTime: 0.25, // range:0-1
-  feedback: 0.5,   // range:0-1
-  wet: 0
+  feedback: 0.5, // range:0-1
+  wet: 0,
 });
 
 let feedbackDelayToggle = new Nexus.Toggle("#feedback-delay-toggle", {
@@ -425,7 +430,6 @@ feedbackDelayToggle.on("change", function (v) {
   }
 });
 
-
 // Feedback Delay Time
 let feedbackDelayTime = new Nexus.Dial("#feedback-delay-time", {
   size: [67, 67],
@@ -434,7 +438,7 @@ let feedbackDelayTime = new Nexus.Dial("#feedback-delay-time", {
   min: 0,
   max: 1,
   step: 0,
-  value: 0.25
+  value: 0.25,
 });
 feedbackDelayTime.colorize("accent", YELLOW);
 
@@ -449,251 +453,396 @@ let feedbackDelayTimeNum = new Nexus.Number("#feedback-delay-time-num");
 feedbackDelayTimeNum.link(feedbackDelayTime);
 feedbackDelayTimeNum.colorize("accent", YELLOW);
 
+// Feedback Delay Feedback
+let feedbackDelayFeedback = new Nexus.Dial("#feedback-delay-feedback", {
+  size: [67, 67],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: 0,
+  max: 1,
+  step: 0,
+  value: 0.5,
+});
+feedbackDelayFeedback.colorize("accent", YELLOW);
 
+feedbackDelayFeedback.on("change", function (v) {
+  feedbackDelay.set({
+    feedback: v,
+  });
+});
+
+// Feedback Delay Time Number
+let feedbackDelayFeedbackNum = new Nexus.Number("#feedback-delay-feedback-num");
+feedbackDelayFeedbackNum.link(feedbackDelayFeedback);
+feedbackDelayFeedbackNum.colorize("accent", YELLOW);
 
 // PingPongDelay .connect(PingPong)
 const pingPong = new Tone.PingPongDelay("4n", 0.2).toDestination();
 
 pingPong.set({
-  delayTime: 2,   // range:0-2 (choice)
+  delayTime: 2, // range:0-4 (choice)
   feedback: 0.2, // range:0-1
-  wet: 0
+  wet: 0,
 });
 
-// let Toggle = new Nexus.Toggle("#-toggle", {
-//   size: [36, 18],
-//   state: false,
-// });
-// Toggle.colorize("accent", YELLOW);
+let pingPongToggle = new Nexus.Toggle("#ping-pong-delay-toggle", {
+  size: [36, 18],
+  state: false,
+});
+pingPongToggle.colorize("accent", YELLOW);
 
-// Toggle.on("change", function (v) {
-//   if (v) {
-//     .set({
-//       wet: 1,
-//     });
-//   } else {
-//     .set({
-//       wet: 0,
-//     });
-//   }
-// });
+pingPongToggle.on("change", function (v) {
+  if (v) {
+    pingPong.set({
+      wet: 1,
+    });
+  } else {
+    pingPong.set({
+      wet: 0,
+    });
+  }
+});
+
+// Ping Pong Delay Time
+let pingPongDelayTime = new Nexus.Dial("#ping-pong-delay-time", {
+  size: [67, 67],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: 0,
+  max: 4,
+  step: 0,
+  value: 1,
+});
+pingPongDelayTime.colorize("accent", YELLOW);
+
+pingPongDelayTime.on("change", function (v) {
+  pingPong.set({
+    delayTime: v,
+  });
+});
+
+// Ping Pong Delay Time Number
+let pingPongDelayTimeNum = new Nexus.Number("#ping-pong-delay-time-num");
+pingPongDelayTimeNum.link(pingPongDelayTime);
+pingPongDelayTimeNum.colorize("accent", YELLOW);
+
+// Ping Pong Delay Feedback
+let pingPongDelayFeedback = new Nexus.Dial("#ping-pong-delay-feedback", {
+  size: [67, 67],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: 0,
+  max: 1,
+  step: 0,
+  value: 0.2,
+});
+pingPongDelayFeedback.colorize("accent", YELLOW);
+
+pingPongDelayFeedback.on("change", function (v) {
+  pingPong.set({
+    feedback: v,
+  });
+});
+
+// Ping Pong Delay Time Number
+let pingPongDelayFeedbackNum = new Nexus.Number(
+  "#ping-pong-delay-feedback-num"
+);
+pingPongDelayFeedbackNum.link(pingPongDelayFeedback);
+pingPongDelayFeedbackNum.colorize("accent", YELLOW);
 
 // Reverb .connect(reverb)
 const reverb = new Tone.Reverb(1).toDestination(); // seconds - Check implementation
 // https://tonejs.github.io/docs/14.7.77/Reverb - you have to wait until
 
 reverb.set({
-  decay: 1,  // range:0-10 (choice)
-  wet: 0
+  decay: 1, // range:0-10 (choice)
+  wet: 0,
 });
 
-// let Toggle = new Nexus.Toggle("#-toggle", {
-  //   size: [36, 18],
-  //   state: false,
-  // });
-  // Toggle.colorize("accent", YELLOW);
-  
-  // Toggle.on("change", function (v) {
-  //   if (v) {
-  //     .set({
-  //       wet: 1,
-  //     });
-  //   } else {
-  //     .set({
-  //       wet: 0,
-  //     });
-  //   }
-  // });
+let reverbToggle = new Nexus.Toggle("#reverb-toggle", {
+  size: [36, 18],
+  state: false,
+});
+reverbToggle.colorize("accent", YELLOW);
+
+reverbToggle.on("change", function (v) {
+  if (v) {
+    reverb.set({
+      wet: 1,
+    });
+  } else {
+    reverb.set({
+      wet: 0,
+    });
+  }
+});
+
+// Reverb Decay
+let reverbDecay = new Nexus.Dial("#reverb-decay", {
+  size: [67, 67],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: 0,
+  max: 10,
+  step: 0,
+  value: 1,
+});
+reverbDecay.colorize("accent", YELLOW);
+
+reverbDecay.on("change", function (v) {
+  reverb.set({
+    decay: v,
+  });
+});
+
+// Reverb Decay Num
+let reverbDecayNum = new Nexus.Number("#reverb-decay-num");
+reverbDecayNum.link(reverbDecay);
+reverbDecayNum.colorize("accent", YELLOW);
 
 // Chorus .connect(chorus)
-const chorus = new Tone.Chorus(4, 2.5, 0.5).toDestination().start(); // frequency delayTime depth
-chorus.frequency.value = 4; // range: 0-50
-chorus.delayTime = 2.5; // range:0-200
-chorus.depth = 0.5; // range: 0-1
+const chorus = new Tone.Chorus(4, 2.5, 0.5).toDestination().start();
 
 chorus.set({
-  frequency: 4,
-  delayTime: 2.5,
-  depth: 0.5,
-  wet: 0
+  frequency: 4, // range: 0-50
+  delayTime: 2.5, // range:0-200
+  depth: 0.5, // range: 0-1
+  wet: 0,
 });
 
-// let Toggle = new Nexus.Toggle("#-toggle", {
-  //   size: [36, 18],
-  //   state: false,
-  // });
-  // Toggle.colorize("accent", YELLOW);
-  
-  // Toggle.on("change", function (v) {
-  //   if (v) {
-  //     .set({
-  //       wet: 1,
-  //     });
-  //   } else {
-  //     .set({
-  //       wet: 0,
-  //     });
-  //   }
-  // });
+let chorusToggle = new Nexus.Toggle("#chorus-toggle", {
+  size: [36, 18],
+  state: false,
+});
+chorusToggle.colorize("accent", YELLOW);
+
+chorusToggle.on("change", function (v) {
+  if (v) {
+    chorus.set({
+      wet: 1,
+    });
+  } else {
+    chorus.set({
+      wet: 0,
+    });
+  }
+});
+
+// Chorus Frequency
+let chorusFrequency = new Nexus.Dial("#chorus-frequency", {
+  size: [67, 67],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: 0,
+  max: 50,
+  step: 0,
+  value: 4,
+});
+chorusFrequency.colorize("accent", YELLOW);
+
+chorusFrequency.on("change", function (v) {
+  chorus.set({
+    frequency: v,
+  });
+});
+
+// Chorus Frequency Number
+let chorusFrequencyNum = new Nexus.Number("#chorus-frequency-num");
+chorusFrequencyNum.link(chorusFrequency);
+chorusFrequencyNum.colorize("accent", YELLOW);
+
+// Chorus Delay Time
+let chorusDelay = new Nexus.Dial("#chorus-delay", {
+  size: [67, 67],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: 0,
+  max: 200,
+  step: 0,
+  value: 2.5,
+});
+chorusDelay.colorize("accent", YELLOW);
+
+chorusDelay.on("change", function (v) {
+  chorus.set({
+    delay: v,
+  });
+});
+
+// Chorus Delay Time Number
+let chorusDelayNum = new Nexus.Number("#chorus-delay-num");
+chorusDelayNum.link(chorusDelay);
+chorusDelayNum.colorize("accent", YELLOW);
+
+// Chorus Depth
+let chorusDepth = new Nexus.Dial("#chorus-depth", {
+  size: [67, 67],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: 0,
+  max: 1,
+  step: 0,
+  value: 0.5,
+});
+chorusDepth.colorize("accent", YELLOW);
+
+chorusDepth.on("change", function (v) {
+  chorus.set({
+    depth: v,
+  });
+});
+
+// Chorus Depth Number
+let chorusDepthNum = new Nexus.Number("#chorus-depth-num");
+chorusDepthNum.link(chorusDepth);
+chorusDepthNum.colorize("accent", YELLOW);
 
 // Tremolo .connect(tremolo)
 const tremolo = new Tone.Tremolo(9, 0.75).toDestination().start(); // frequency (rate), depth
 
 tremolo.set({
-  frequency: 9,  // range:0-100 (choice)
-  depth: 0.75,   // range:0-1
-  wet: 0
-})
+  frequency: 9, // range:0-100 (choice)
+  depth: 0.75, // range:0-1
+  wet: 0,
+});
 
-// let Toggle = new Nexus.Toggle("#-toggle", {
-//   size: [36, 18],
-//   state: false,
-// });
-// Toggle.colorize("accent", YELLOW);
+let tremoloToggle = new Nexus.Toggle("#tremolo-toggle", {
+  size: [36, 18],
+  state: false,
+});
+tremoloToggle.colorize("accent", YELLOW);
 
-// Toggle.on("change", function (v) {
-//   if (v) {
-//     .set({
-//       wet: 1,
-//     });
-//   } else {
-//     .set({
-//       wet: 0,
-//     });
-//   }
-// });
+tremoloToggle.on("change", function (v) {
+  if (v) {
+    tremolo.set({
+      wet: 1,
+    });
+  } else {
+    tremolo.set({
+      wet: 0,
+    });
+  }
+});
+
+// Tremolo Frequency
+let tremoloFrequency = new Nexus.Dial("#tremolo-frequency", {
+  size: [67, 67],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: 0,
+  max: 100,
+  step: 0,
+  value: 9,
+});
+tremoloFrequency.colorize("accent", YELLOW);
+
+tremoloFrequency.on("change", function (v) {
+  tremolo.set({
+    frequency: v,
+  });
+});
+
+// Tremolo Frequency Number
+let tremoloFrequencyNum = new Nexus.Number("#tremolo-frequency-num");
+tremoloFrequencyNum.link(tremoloFrequency);
+tremoloFrequencyNum.colorize("accent", YELLOW);
+
+// Tremolo Depth
+let tremoloDepth = new Nexus.Dial("#tremolo-depth", {
+  size: [67, 67],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: 0,
+  max: 1,
+  step: 0,
+  value: 0.75,
+});
+tremoloDepth.colorize("accent", YELLOW);
+
+tremoloDepth.on("change", function (v) {
+  tremolo.set({
+    depth: v,
+  });
+});
+
+// Tremolo Depth Number
+let tremoloDepthNum = new Nexus.Number("#tremolo-depth-num");
+tremoloDepthNum.link(tremoloDepth);
+tremoloDepthNum.colorize("accent", YELLOW);
 
 // Vibrato .connect(vibrato)
 const vibrato = new Tone.Vibrato(9, 0.9).toDestination(); // frequency, depth
 
 vibrato.set({
-  frequency: 9,  // range:0-900 (choice)
-  depth: 0.75,   // range:0-1
-  wet: 0
-})
+  frequency: 9, // range:0-900 (choice)
+  depth: 0.75, // range:0-1
+  wet: 0,
+});
 
-// let Toggle = new Nexus.Toggle("#-toggle", {
-//   size: [36, 18],
-//   state: false,
-// });
-// Toggle.colorize("accent", YELLOW);
+let vibratoToggle = new Nexus.Toggle("#vibrato-toggle", {
+  size: [36, 18],
+  state: false,
+});
+vibratoToggle.colorize("accent", YELLOW);
 
-// Toggle.on("change", function (v) {
-//   if (v) {
-//     .set({
-//       wet: 1,
-//     });
-//   } else {
-//     .set({
-//       wet: 0,
-//     });
-//   }
-// });
+vibratoToggle.on("change", function (v) {
+  if (v) {
+    vibrato.set({
+      wet: 1,
+    });
+  } else {
+    vibrato.set({
+      wet: 0,
+    });
+  }
+});
 
-// Distortion .connect(dist)
-const dist = new Tone.Distortion(0.9).toDestination(); 
+// Vibrato Frequency
+let vibratoFrequency = new Nexus.Dial("#vibrato-frequency", {
+  size: [67, 67],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: 0,
+  max: 900,
+  step: 0,
+  value: 9,
+});
+vibratoFrequency.colorize("accent", YELLOW);
 
-dist.set({
-  distortion: 0.9, // range:0-1
-  wet: 0
-})
+vibratoFrequency.on("change", function (v) {
+  vibrato.set({
+    frequency: v,
+  });
+});
 
-// let Toggle = new Nexus.Toggle("#-toggle", {
-//   size: [36, 18],
-//   state: false,
-// });
-// Toggle.colorize("accent", YELLOW);
+// Vibrato Frequency Number
+let vibratoFrequencyNum = new Nexus.Number("#vibrato-frequency-num");
+vibratoFrequencyNum.link(vibratoFrequency);
+vibratoFrequencyNum.colorize("accent", YELLOW);
 
-// Toggle.on("change", function (v) {
-//   if (v) {
-//     .set({
-//       wet: 1,
-//     });
-//   } else {
-//     .set({
-//       wet: 0,
-//     });
-//   }
-// });
+// Vibrato Depth
+let vibratoDepth = new Nexus.Dial("#vibrato-depth", {
+  size: [67, 67],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: 0,
+  max: 1,
+  step: 0,
+  value: 0.75,
+});
+vibratoDepth.colorize("accent", YELLOW);
 
-// FrequencyShifter .connect(shift)
-const shift = new Tone.FrequencyShifter(42).toDestination(); // The incoming signal is shifted by this frequency value
+vibratoDepth.on("change", function (v) {
+  vibrato.set({
+    depth: v,
+  });
+});
 
-shift.set({
-  frequency: -600,  // range:-600-600
-  wet: 0
-})
-
-// let Toggle = new Nexus.Toggle("#-toggle", {
-//   size: [36, 18],
-//   state: false,
-// });
-// Toggle.colorize("accent", YELLOW);
-
-// Toggle.on("change", function (v) {
-//   if (v) {
-//     .set({
-//       wet: 1,
-//     });
-//   } else {
-//     .set({
-//       wet: 0,
-//     });
-//   }
-// });
-
-// BitCrusher .connect(crusher)
-const crusher = new Tone.BitCrusher(4).toDestination(); // 
-crusher.bits.value;
-
-crusher.set({
-  bits: 4, // range:1-16, step:1
-  wet: 0
-})
-
-// let Toggle = new Nexus.Toggle("#-toggle", {
-//   size: [36, 18],
-//   state: false,
-// });
-// Toggle.colorize("accent", YELLOW);
-
-// Toggle.on("change", function (v) {
-//   if (v) {
-//     .set({
-//       wet: 1,
-//     });
-//   } else {
-//     .set({
-//       wet: 0,
-//     });
-//   }
-// });
-
-// Chebyshev .connect(cheby)
-const cheby = new Tone.Chebyshev(50).toDestination(); 
-
-cheby.set({
-  order: 50, // range:1-100
-  wet: 0
-})
-
-// let Toggle = new Nexus.Toggle("#-toggle", {
-//   size: [36, 18],
-//   state: false,
-// });
-// Toggle.colorize("accent", YELLOW);
-
-// Toggle.on("change", function (v) {
-//   if (v) {
-//     .set({
-//       wet: 1,
-//     });
-//   } else {
-//     .set({
-//       wet: 0,
-//     });
-//   }
-// });
+// Vibrato Depth Number
+let vibratoDepthNum = new Nexus.Number("#vibrato-depth-num");
+vibratoDepthNum.link(vibratoDepth);
+vibratoDepthNum.colorize("accent", YELLOW);
 
 // Phaser .connect(phaser)
 const phaser = new Tone.Phaser({
@@ -703,33 +852,294 @@ const phaser = new Tone.Phaser({
 }).toDestination();
 
 phaser.set({
-  frequency: 15,         // range:0-70 (choice)
-  octaves: 5,            // range:0-20 (choice)
-  baseFrequency: 1000,   // range:0-1000 (choice)
-  wet: 0
-})
+  frequency: 15, // range:0-70 (choice)
+  octaves: 5, // range:0-20 (choice)
+  baseFrequency: 1000, // range:0-1000 (choice)
+  wet: 0,
+});
 
-// let Toggle = new Nexus.Toggle("#-toggle", {
-//   size: [36, 18],
-//   state: false,
-// });
-// Toggle.colorize("accent", YELLOW);
+let phaserToggle = new Nexus.Toggle("#phaser-toggle", {
+  size: [36, 18],
+  state: false,
+});
+phaserToggle.colorize("accent", YELLOW);
 
-// Toggle.on("change", function (v) {
-//   if (v) {
-//     .set({
-//       wet: 1,
-//     });
-//   } else {
-//     .set({
-//       wet: 0,
-//     });
-//   }
-// });
+phaserToggle.on("change", function (v) {
+  if (v) {
+    phaser.set({
+      wet: 1,
+    });
+  } else {
+    phaser.set({
+      wet: 0,
+    });
+  }
+});
 
+// Phaser Frequency
+let phaserFrequency = new Nexus.Dial("#phaser-frequency", {
+  size: [67, 67],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: 0,
+  max: 70,
+  step: 0,
+  value: 15,
+});
+phaserFrequency.colorize("accent", YELLOW);
 
+phaserFrequency.on("change", function (v) {
+  phaser.set({
+    frequency: v,
+  });
+});
 
+// Phaser Frequency Num
+let phaserFrequencyNum = new Nexus.Number("#phaser-frequency-num");
+phaserFrequencyNum.link(phaserFrequency);
+phaserFrequencyNum.colorize("accent", YELLOW);
 
+// Phaser Octaves
+let phaserOctaves = new Nexus.Dial("#phaser-octaves", {
+  size: [67, 67],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: 0,
+  max: 20,
+  step: 0,
+  value: 5,
+});
+phaserOctaves.colorize("accent", YELLOW);
+
+phaserOctaves.on("change", function (v) {
+  phaser.set({
+    octaves: v,
+  });
+});
+
+// Phaser Octaves Num
+let phaserOctavesNum = new Nexus.Number("#phaser-octaves-num");
+phaserOctavesNum.link(phaserOctaves);
+phaserOctavesNum.colorize("accent", YELLOW);
+
+// Phaser Base Frequency
+let phaserBaseFrequency = new Nexus.Dial("#phaser-base-frequency", {
+  size: [67, 67],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: 0,
+  max: 2000,
+  step: 0,
+  value: 1000,
+});
+phaserBaseFrequency.colorize("accent", YELLOW);
+
+phaserBaseFrequency.on("change", function (v) {
+  phaser.set({
+    baseFrequency: v,
+  });
+});
+
+// Phaser Base Frequency Num
+let phaserBaseFrequencyNum = new Nexus.Number("#phaser-base-frequency-num");
+phaserBaseFrequencyNum.link(phaserBaseFrequency);
+phaserBaseFrequencyNum.colorize("accent", YELLOW);
+
+// Distortion .connect(dist)
+const dist = new Tone.Distortion(0.9).toDestination();
+
+dist.set({
+  distortion: 0.9, // range:0-1
+  wet: 0,
+});
+
+let distortionToggle = new Nexus.Toggle("#distortion-toggle", {
+  size: [36, 18],
+  state: false,
+});
+distortionToggle.colorize("accent", YELLOW);
+
+distortionToggle.on("change", function (v) {
+  if (v) {
+    dist.set({
+      wet: 1,
+    });
+  } else {
+    dist.set({
+      wet: 0,
+    });
+  }
+});
+
+let distortionDistortion = new Nexus.Dial("#distortion-amount", {
+  size: [67, 67],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: 0,
+  max: 1,
+  step: 0,
+  value: 0.9,
+});
+distortionDistortion.colorize("accent", YELLOW);
+
+distortionDistortion.on("change", function (v) {
+  dist.set({
+   distortion : v,
+  });
+});
+
+// Distortion Number
+let distortionDistortionNum = new Nexus.Number("#distortion-amount-num");
+distortionDistortionNum.link(distortionDistortion);
+distortionDistortionNum.colorize("accent", YELLOW);
+
+// FrequencyShifter .connect(shift)
+const shift = new Tone.FrequencyShifter(42).toDestination(); // The incoming signal is shifted by this frequency value
+
+shift.set({
+  frequency: 42, // range:-600-600
+  wet: 0,
+});
+
+let shiftToggle = new Nexus.Toggle("#freq-shifter-toggle", {
+  size: [36, 18],
+  state: false,
+});
+shiftToggle.colorize("accent", YELLOW);
+
+shiftToggle.on("change", function (v) {
+  if (v) {
+    shift.set({
+      wet: 1,
+    });
+  } else {
+    shift.set({
+      wet: 0,
+    });
+  }
+});
+
+// Frequency Shifter Frequency
+let frequencyShifterFrequency = new Nexus.Dial("#freq-shifter-frequency", {
+  size: [67, 67],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: -600,
+  max: 600,
+  step: 0,
+  value: 42,
+});
+frequencyShifterFrequency.colorize("accent", YELLOW);
+
+frequencyShifterFrequency.on("change", function (v) {
+  shift.set({
+   frequency : v,
+  });
+});
+
+// Frequency Shifter Frequency Number
+let frequencyShifterFrequencyNum = new Nexus.Number("#freq-shifter-frequency-num");
+frequencyShifterFrequencyNum.link(frequencyShifterFrequency);
+frequencyShifterFrequencyNum.colorize("accent", YELLOW);
+
+// BitCrusher .connect(crusher)
+const crusher = new Tone.BitCrusher(4).toDestination(); //
+crusher.bits.value;
+
+crusher.set({
+  bits: 4, // range:1-16, step:1
+  wet: 0,
+});
+
+let crusherToggle = new Nexus.Toggle("#bit-crusher-toggle", {
+  size: [36, 18],
+  state: false,
+});
+crusherToggle.colorize("accent", YELLOW);
+
+crusherToggle.on("change", function (v) {
+  if (v) {
+    crusher.set({
+      wet: 1,
+    });
+  } else {
+    crusher.set({
+      wet: 0,
+    });
+  }
+});
+
+// Bit Crusher Bits
+let bitCrusherBits = new Nexus.Dial("#bit-crusher-bits", {
+  size: [67, 67],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: 1,
+  max: 16,
+  step: 1,
+  value: 4,
+});
+bitCrusherBits.colorize("accent", YELLOW);
+
+bitCrusherBits.on("change", function (v) {
+  crusher.set({
+   bits : v,
+  });
+});
+
+// Bit Crusher Bits Number
+let bitCrusherBitsNum = new Nexus.Number("#bit-crusher-bits-num");
+bitCrusherBitsNum.link(bitCrusherBits);
+bitCrusherBitsNum.colorize("accent", YELLOW);
+
+// Chebyshev .connect(cheby)
+const cheby = new Tone.Chebyshev(50).toDestination();
+
+cheby.set({
+  order: 51, // range:1-100
+  wet: 0,
+});
+
+let chebyToggle = new Nexus.Toggle("#chebyshev-toggle", {
+  size: [36, 18],
+  state: false,
+});
+chebyToggle.colorize("accent", YELLOW);
+
+chebyToggle.on("change", function (v) {
+  if (v) {
+    cheby.set({
+      wet: 1,
+    });
+  } else {
+    cheby.set({
+      wet: 0,
+    });
+  }
+});
+
+// Chebyshev Order
+let chebyshevOrder = new Nexus.Dial("#chebyshev-order", {
+  size: [67, 67],
+  interaction: "vertical", // "radial", "vertical", or "horizontal"
+  mode: "relative", // "absolute" or "relative"
+  min: 1,
+  max: 100,
+  step: 0,
+  value: 51,
+});
+chebyshevOrder.colorize("accent", YELLOW);
+
+chebyshevOrder.on("change", function (v) {
+  cheby.set({
+   order : v,
+  });
+});
+
+// Chebyshev Order Number
+let chebyshevOrderNum = new Nexus.Number("#chebyshev-order-num");
+chebyshevOrderNum.link(chebyshevOrder);
+chebyshevOrderNum.colorize("accent", YELLOW);
 
 // .connect(autoFilter).connect(crusher).connect(cheby).connect(chorus).connect(dist).connect(feedbackDelay).connect(shift).connect(phaser).connect(PingPong).connect(reverb).connect(tremolo).connect(vibrato)
 // .toDestination()
@@ -745,25 +1155,66 @@ synth.set({
   maxPolyphony: 256,
 });
 
-// synth.toDestination();
-synth.chain(highPassFilter, lowPassFilter, Tone.Destination);
+synth.toDestination();
+
+// Series
+
+// synth.chain(
+//   autoFilter,
+//   crusher,
+//   cheby,
+//   feedbackDelay,
+//   pingPong,
+//   reverb,
+//   chorus,
+//   tremolo,
+//   vibrato,
+//   phaser,
+//   dist,
+//   shift,
+//   Tone.Destination
+// );
+
+// synth.chain(highPassFilter, lowPassFilter, Tone.Destination);
+
+// synth.disconnect(highPassFilter);
+// synth.disconnect(lowPassFilter);
+
+// autoFilter first of high/low pass?
+// the last ones in the chain don't work (crusher, cheby)
+
+// Parallel
 // synth.chain(lowPassFilter, Tone.Destination);
 // synth.chain(highPassFilter, Tone.Destination);
 
-synth.connect(autoFilter);
-// synth.connect(feedbackDelay);
-// synth.connect(pingPong);
-// synth.connect(reverb);
-// synth.connect(chorus);
-// synth.connect(tremolo);
-// synth.connect(vibrato);
-// synth.connect(phaser);
-// synth.connect(dist);
-// synth.connect(shift);
-// synth.connect(crusher);
-// synth.connect(cheby);
+// synth.chain(autoFilter, Tone.Destination);
+// synth.chain(feedbackDelay, Tone.Destination);
+// synth.chain(pingPong, Tone.Destination);
+// synth.chain(reverb, Tone.Destination);
+// synth.chain(chorus, Tone.Destination);
+// synth.chain(tremolo, Tone.Destination);
+// synth.chain(vibrato, Tone.Destination);
+// synth.chain(phaser, Tone.Destination);
+// synth.chain(dist, Tone.Destination);
+// synth.chain(shift, Tone.Destination);
+// synth.chain(crusher, Tone.Destination);
+// synth.chain(cheby, Tone.Destination);
 
-// synth.chain(highPassFilter, Tone.Destination);
+// synth.connect(lowPassFilter, Tone.Destination);
+// synth.connect(highPassFilter, Tone.Destination);
+
+// synth.connect(autoFilter, Tone.Destination);
+// synth.connect(feedbackDelay, Tone.Destination);
+// synth.connect(pingPong, Tone.Destination);
+// synth.connect(reverb, Tone.Destination);
+// synth.connect(chorus, Tone.Destination);
+// synth.connect(tremolo, Tone.Destination);
+// synth.connect(vibrato, Tone.Destination);
+// synth.connect(phaser, Tone.Destination);
+// synth.connect(dist, Tone.Destination);
+// synth.connect(shift, Tone.Destination);
+// synth.connect(crusher, Tone.Destination);
+// synth.connect(cheby, Tone.Destination);
 
 // const comp = new Tone.Compressor(-30, 3).toDestination();
 // synth.chain(comp, Tone.Destination);
@@ -782,10 +1233,10 @@ let volumeControl = new Nexus.Dial("#volume", {
   size: [67, 67],
   interaction: "vertical", // "radial", "vertical", or "horizontal"
   mode: "relative", // "absolute" or "relative"
-  min: -50,
-  max: 15,
+  min: -40,
+  max: 20,
   step: 0,
-  value: -28,
+  value: -6,
 });
 volumeControl.colorize("accent", CYAN);
 
@@ -1524,6 +1975,9 @@ let tremoloContent = document.getElementById("tremolo-content");
 let vibratoTitle = document.getElementById("vibrato-title");
 let vibratoContent = document.getElementById("vibrato-content");
 
+let phaserTitle = document.getElementById("phaser-title");
+let phaserContent = document.getElementById("phaser-content");
+
 let distortionTitle = document.getElementById("distortion-title");
 let distortionContent = document.getElementById("distortion-content");
 
@@ -1551,16 +2005,17 @@ showHide(filtersTitle, filtersContent, "grid", "none");
 showHide(highLowPassTitle, highLowPassContent, "flex", "none");
 showHide(autoFilterTitle, autoFilterContent, "grid", "none");
 showHide(delayTitle, delayContent, "flex", "none");
-showHide(feedbackDelayTitle, feedbackDelayContent, "none", "flex");
-showHide(pingPongDelayTitle, pingPongDelayContent, "none");
-showHide(chorusTitle, chorusContent, "none");
-showHide(reverbTitle, reverbContent, "none");
-showHide(tremoloTitle, tremoloContent, "none");
-showHide(vibratoTitle, vibratoContent, "none");
-showHide(distortionTitle, distortionContent, "none");
-showHide(freqShifterTitle, freqShifterContent, "none");
-showHide(bitCrusherTitle, bitCrusherContent, "none");
-showHide(chebyshevTitle, chebyshevContent, "none");
+showHide(feedbackDelayTitle, feedbackDelayContent, "grid", "none");
+showHide(pingPongDelayTitle, pingPongDelayContent, "grid", "none");
+showHide(reverbTitle, reverbContent, "none", "flex");
+showHide(chorusTitle, chorusContent, "none", "grid");
+showHide(tremoloTitle, tremoloContent, "none", "flex");
+showHide(vibratoTitle, vibratoContent, "none", "flex");
+showHide(phaserTitle, phaserContent, "none", "grid");
+showHide(distortionTitle, distortionContent, "none", "flex");
+showHide(freqShifterTitle, freqShifterContent, "none", "flex");
+showHide(bitCrusherTitle, bitCrusherContent, "none", "flex");
+showHide(chebyshevTitle, chebyshevContent, "none", "flex");
 
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
@@ -1635,5 +2090,3 @@ navContent.innerHTML = `<p>Welcome to the JSS-01 | JavaScript Software Synthesiz
   <li><a href="#0">Out of jokes</a></li>
   <li><a href="#0">OK, last one I promise</a></li>
 </ul>"`;
-
-
