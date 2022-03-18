@@ -1,5 +1,5 @@
 * Terms List
-List of terms that will have their own entry in the help section.
+List of terms that will have their own entry in the docs.
 
 amplitude <br>
 attack <br>

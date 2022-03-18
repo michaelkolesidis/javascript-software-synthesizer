@@ -1,1 +1,0 @@
-The help folder contains the content of the help section of the JSS-01. It comprises a glossary of terms and a tutorial.
