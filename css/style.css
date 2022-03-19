@@ -305,21 +305,6 @@ a:link {
   #effects .title, #effects .subtitle, #effects .subtitle-s {
     color: #febc2c; }
 
-#filters-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center; }
-
-#high-low-pass-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
-
-#low-pass-freq-label {
-  transform: rotate(90deg) translateX(-98px) translateY(-103px); }
-
 #auto-filter-content, #chorus-content, #phaser-content {
   grid-column: 1 / 3;
   grid-row: 2;
@@ -333,9 +318,9 @@ a:link {
   grid-row: 1; }
 
 #feedback-delay-content {
-  display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  display: none; }
 
 #feedback-delay-components {
   display: flex;
@@ -344,9 +329,9 @@ a:link {
   align-items: center; }
 
 #ping-pong-delay-content {
-  display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  display: none; }
 
 #ping-pong-delay-components {
   display: flex;
@@ -355,14 +340,17 @@ a:link {
   align-items: center; }
 
 #reverb-content, #distortion-content, #freq-shifter-content, #bit-crusher-content, #chebyshev-content {
-  display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  display: none; }
+
+#chorus-content {
+  display: none; }
 
 #tremolo-content {
-  display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  display: none; }
 
 #tremolo-components {
   display: flex;
@@ -371,15 +359,30 @@ a:link {
   align-items: center; }
 
 #vibrato-content {
-  display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  display: none; }
 
 #vibrato-components {
   display: flex;
   flex-direction: row;
   justify-items: center;
   align-items: center; }
+
+#phaser-content {
+  display: none; }
+
+#distortion-content {
+  display: none; }
+
+#freq-shifter-content {
+  display: none; }
+
+#bit-crusher-content {
+  display: none; }
+
+#chebyshev-content {
+  display: none; }
 
 /* --------------------------------------------------------------------- */
 /* Extra Controls (Presets, Sequencer etc.) */

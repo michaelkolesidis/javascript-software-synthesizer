@@ -389,23 +389,23 @@ a:link {
   align-items: center;
 }
 
-#filters-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
+// #filters-content {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   text-align: center;
+// }
 
-#high-low-pass-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+// #high-low-pass-content {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+// }
 
-#low-pass-freq-label {
-  transform: rotate(90deg) translateX(-98px) translateY(-103px);
-}
+// #low-pass-freq-label {
+//   transform: rotate(90deg) translateX(-98px) translateY(-103px);
+// }
 
 #auto-filter-content {
   grid-column: 1 / 3;
@@ -422,9 +422,10 @@ a:link {
 }
 
 #feedback-delay-content {
-  display: flex;
+  // display: flex;
   flex-direction: column;
   align-items: center;
+  display: none;
 }
 
 #feedback-delay-components {
@@ -435,9 +436,10 @@ a:link {
 }
 
 #ping-pong-delay-content {
-  display: flex;
+  // display: flex;
   flex-direction: column;
   align-items: center;
+  display: none;
 }
 
 #ping-pong-delay-components {
@@ -448,13 +450,15 @@ a:link {
 }
 
 #reverb-content {
-  display: flex;
+  // display: flex;
   flex-direction: column;
   align-items: center;
+  display: none;
 }
 
 #chorus-content {
   @extend #auto-filter-content;
+  display: none;
 }
 
 #chorus-toggle {
@@ -462,9 +466,10 @@ a:link {
 }
 
 #tremolo-content {
-  display: flex;
+  // display: flex;
   flex-direction: column;
   align-items: center;
+  display: none;
 }
 
 #tremolo-components {
@@ -475,9 +480,10 @@ a:link {
 }
 
 #vibrato-content {
-  display: flex;
+  // display: flex;
   flex-direction: column;
   align-items: center;
+  display: none;
 }
 
 #vibrato-components {
@@ -489,6 +495,7 @@ a:link {
 
 #phaser-content {
   @extend #auto-filter-content;
+  display: none;
 }
 
 #phaser-toggle {
@@ -497,18 +504,22 @@ a:link {
 
 #distortion-content {
   @extend #reverb-content;
+  display: none;
 }
 
 #freq-shifter-content {
   @extend #reverb-content;
+  display: none;
 }
 
 #bit-crusher-content {
   @extend #reverb-content;
+  display: none;
 }
 
 #chebyshev-content {
   @extend #reverb-content;
+  display: none;
 }
 
 /* --------------------------------------------------------------------- */
