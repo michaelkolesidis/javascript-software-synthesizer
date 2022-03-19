@@ -1,7 +1,7 @@
 * Terms List
 List of terms that will have their own entry in the docs.
 
-amplitude <br>
+# amplitude <br>
 attack <br>
 attack curve <br>
 auto filter <br>
