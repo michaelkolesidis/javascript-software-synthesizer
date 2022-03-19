@@ -229,6 +229,7 @@ function toggleDark() {
   midiDisplay.style.color = "white";
   midiDisplay.style.background = "rgb(100,100,100";
   Nexus.colors.fill = "rgb(100,100,100";
+  Nexus.colors.accent = "rgb(105, 21, 122)";
   darkMode = true;
   header.innerHTML = Header(darkMode);
 

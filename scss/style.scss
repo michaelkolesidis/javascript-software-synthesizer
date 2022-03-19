@@ -839,55 +839,55 @@ a:link {
 /* --------------------------------------------------------------------- */
 /* Media Queries */
 /* --------------------------------------------------------------------- */
-@media only screen and (min-width: 1350px) {
-  #effects-content {
-    display: grid;
-    column-gap: 2rem;
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+// @media only screen and (min-width: 1350px) {
+//   #effects-content {
+//     display: grid;
+//     column-gap: 2rem;
+//     grid-template-columns: repeat(2, 1fr);
+//   }
+// }
 
-@media only screen and (min-width: 1465px) {
-  #effects-content {
-    display: grid;
-    column-gap: 2rem;
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
+// @media only screen and (min-width: 1465px) {
+//   #effects-content {
+//     display: grid;
+//     column-gap: 2rem;
+//     grid-template-columns: repeat(3, 1fr);
+//   }
+// }
 
-@media only screen and (min-width: 1580px) {
-  #effects-content {
-    display: grid;
-    column-gap: 2rem;
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
+// @media only screen and (min-width: 1580px) {
+//   #effects-content {
+//     display: grid;
+//     column-gap: 2rem;
+//     grid-template-columns: repeat(4, 1fr);
+//   }
+// }
 
-@media only screen and (min-width: 1700px) {
-  #effects-content {
-    display: grid;
-    column-gap: 2rem;
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
+// @media only screen and (min-width: 1700px) {
+//   #effects-content {
+//     display: grid;
+//     column-gap: 2rem;
+//     grid-template-columns: repeat(5, 1fr);
+//   }
+// }
 
-@media only screen and (min-width: 1800px) {
-  #effects-content {
-    display: grid;
-    column-gap: 2rem;
-    grid-template-columns: repeat(6, 1fr);
-  }
-}
+// @media only screen and (min-width: 1800px) {
+//   #effects-content {
+//     display: grid;
+//     column-gap: 2rem;
+//     grid-template-columns: repeat(6, 1fr);
+//   }
+// }
 
-@media only screen and (min-width: 1900px) {
-  #effects-content {
-    display: grid;
-    column-gap: 2rem;
-    grid-template-columns: repeat(6, 1fr);
-  }
-}
+// @media only screen and (min-width: 1900px) {
+//   #effects-content {
+//     display: grid;
+//     column-gap: 2rem;
+//     grid-template-columns: repeat(6, 1fr);
+//   }
+// }
 
-@media only screen and (min-width: 2000px) {
+@media only screen and (min-width: 2155px) {
   #effects-content {
     display: grid;
     column-gap: 2rem;
