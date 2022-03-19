@@ -10,6 +10,7 @@
 // Import Elements
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
+import SplashScreen from "./elements/splashScreen.js";
 import Header from "./elements/header.js";
 import Footer from "./elements/footer.js";
 import Displays from "./elements/panels/displays.js";
@@ -56,21 +57,7 @@ let darkMode = false;
 // Splash Screen
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
-const splashScreen = document.getElementById("splash-screen");
-const pageContainer = document.getElementById("page-container");
-
-if (!localStorage.getItem("visited")) {
-  setTimeout(function () {
-    splashScreen.style.display = "none";
-    pageContainer.style.display = "block";
-  }, 1000);
-  localStorage.setItem("visited", true);
-} else {
-  setTimeout(function () {
-    splashScreen.style.display = "none";
-    pageContainer.style.display = "block";
-  }, 500);
-}
+SplashScreen();
 
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
@@ -232,7 +219,6 @@ stopButton.addEventListener("click", () => Tone.Transport.stop());
 // Dark Mode
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
-
 // let darkButton = document.getElementById("dark");
 
 function toggleDark() {
