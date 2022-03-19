@@ -49,6 +49,7 @@ const GREEN = "rgb(3, 214, 146)";
 const YELLOW = "rgb(254, 188, 44)";
 
 Nexus.colors.fill = GRAY; // For all NexusUI components
+let darkMode = false;
 
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
@@ -70,35 +71,6 @@ if (!localStorage.getItem("visited")) {
     pageContainer.style.display = "block";
   }, 500);
 }
-
-// ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
-// Dark Mode
-// ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
-let darkMode = false;
-
-// function toggleDark() {
-//   let element = document.body;
-//   element.classList.toggle("dark-mode");
-//   header.style.color = "white";
-//   footer.style.color = "white";
-//   midiDisplay.style.color = "white";
-//   midiDisplay.style.background = "rgb(100,100,100";
-//   Nexus.colors.fill = "rgb(100,100,100";
-//   darkMode = true;
-//   header.innerHTML = Header(darkMode);
-//   let toggleDarkButton = document.createElement("button"); // recreates button in dark header
-//   toggleDarkButton.innerHTML = "Dark Mode"; // recreates button in dark header
-//   document.querySelector("#header").appendChild(toggleDarkButton); // recreates button in dark header
-// }
-
-// let toggleDarkButton = document.createElement("button");
-// toggleDarkButton.innerHTML = "Dark Mode";
-// document.querySelector("#header").appendChild(toggleDarkButton);
-// // toggleDark()
-
-// toggleDarkButton.addEventListener("click", toggleDark());
 
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
@@ -188,6 +160,114 @@ const midiDisplay = document.getElementById("midi-display");
 
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
+// Sequencer
+// ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
+// Inputs and Buttons
+let seqRateInput = document.getElementById("seq-rate");
+let noteValueInput = document.getElementById("note-value");
+let seqInput = document.getElementById("seq-input");
+let setButton = document.getElementById("seq-set");
+let playButton = document.getElementById("seq-play");
+let stopButton = document.getElementById("seq-stop");
+
+// Sequencer rate (tempo)
+seqRateInput.addEventListener("change", () => {
+  if (seqRateInput.value > 10) seqRateInput.value = 10;
+  if (seqRateInput.value <= 0) seqRateInput.value = 1;
+  let rate = seqRateInput.value;
+
+  seq.set({
+    playbackRate: parseFloat(rate),
+  });
+});
+
+// Note value
+let noteValue = "16n";
+
+noteValueInput.addEventListener("change", () => {
+  if (noteValueInput.value <= 0) noteValueInput.value = "16n";
+  noteValue = noteValueInput.value;
+});
+
+// Sequence notes input
+setButton.addEventListener("click", () => {
+  let seqNotesInput;
+  if (seqInput.value === "funky town" || seqInput.value === "Funky Town") {
+    seqNotesInput = funkyTown;
+  } else if (
+    seqInput.value === "i feel love" ||
+    seqInput.value === "I Feel Love"
+  ) {
+    seqNotesInput = feelLove;
+  } else if (seqInput.value === "default") {
+    seqNotesInput = seqNotes;
+  } else {
+    seqNotesInput = JSON.parse("[" + seqInput.value + "]");
+  }
+
+  seq.set({
+    events: seqNotesInput,
+  });
+});
+
+// Sequence demos
+let seqNotes = ["C4", ["E4", "D4", "E4"], "G4", ["A4", "G4"]];
+let funkyTown = ["C4", "C4", "Bb3", "C4", "G3", "G3", "C4", "F4", "E4", "C4"];
+let feelLove = ["C2", "C3", "C2", "C3", "G1", "G2", "Bb1", "Bb2"];
+// let feelLoveAlt = ["G3", "G3", "D3", "F3"];
+
+// Sequence
+const seq = new Tone.Sequence((time, note) => {
+  synth.triggerAttackRelease(note, noteValue, time);
+  // subdivisions are given as subarrays
+}, seqNotes).start(0);
+
+// Sequence play / stop
+playButton.addEventListener("click", () => Tone.Transport.start());
+stopButton.addEventListener("click", () => Tone.Transport.stop());
+
+// ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
+// Dark Mode
+// ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
+
+// let darkButton = document.getElementById("dark");
+
+function toggleDark() {
+  let element = document.body;
+  element.classList.toggle("dark-mode");
+  header.style.color = "white";
+  footer.style.color = "white";
+  midiDisplay.style.color = "white";
+  midiDisplay.style.background = "rgb(100,100,100";
+  Nexus.colors.fill = "rgb(100,100,100";
+  darkMode = true;
+  header.innerHTML = Header(darkMode);
+
+  // let toggleDarkButton = document.createElement("button"); // recreates button in dark header
+  // toggleDarkButton.innerHTML = "Dark Mode"; // recreates button in dark header
+  // document.querySelector("#header").appendChild(toggleDarkButton); // recreates button in dark header
+}
+
+// let toggleDarkButton = document.createElement("button");
+// toggleDarkButton.innerHTML = "Dark Mode";
+// document.querySelector("#header").appendChild(toggleDarkButton);
+// ;
+
+// darkButton.addEventListener("click", function() {
+//   if (!darkMode) {
+//     darkButton.addEventListener("click", () => toggleDark());
+//   } else {
+//     darkMode = false;
+//   }
+// });
+
+// toggleDarkButton.addEventListener("click", toggleDark());
+
+// ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Oscilloscope
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
@@ -233,9 +313,11 @@ if (darkMode) {
 // Keyboard
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
-// Nexus.colors.accent = GRAY; // dark mode
-// Nexus.colors.dark = GRAY_DARK; // darl mode
-// Nexus.colors.light = BLACK; // dark mode
+if (darkMode) {
+  Nexus.colors.accent = GRAY; // dark mode
+  Nexus.colors.dark = GRAY_DARK; // darl mode
+  Nexus.colors.light = BLACK; // dark mode
+}
 
 let keyboard = new Nexus.Piano("#keyboard", {
   size: [1080, 90],
@@ -984,7 +1066,7 @@ distortionDistortion.colorize("accent", YELLOW);
 
 distortionDistortion.on("change", function (v) {
   dist.set({
-   distortion : v,
+    distortion: v,
   });
 });
 
@@ -1033,12 +1115,14 @@ frequencyShifterFrequency.colorize("accent", YELLOW);
 
 frequencyShifterFrequency.on("change", function (v) {
   shift.set({
-   frequency : v,
+    frequency: v,
   });
 });
 
 // Frequency Shifter Frequency Number
-let frequencyShifterFrequencyNum = new Nexus.Number("#freq-shifter-frequency-num");
+let frequencyShifterFrequencyNum = new Nexus.Number(
+  "#freq-shifter-frequency-num"
+);
 frequencyShifterFrequencyNum.link(frequencyShifterFrequency);
 frequencyShifterFrequencyNum.colorize("accent", YELLOW);
 
@@ -1083,7 +1167,7 @@ bitCrusherBits.colorize("accent", YELLOW);
 
 bitCrusherBits.on("change", function (v) {
   crusher.set({
-   bits : v,
+    bits: v,
   });
 });
 
@@ -1132,7 +1216,7 @@ chebyshevOrder.colorize("accent", YELLOW);
 
 chebyshevOrder.on("change", function (v) {
   cheby.set({
-   order : v,
+    order: v,
   });
 });
 
@@ -1304,7 +1388,6 @@ let modulationIndexControl = new Nexus.Dial("#modulation-index", {
   value: 10,
 });
 modulationIndexControl.colorize("accent", CYAN);
-// modulationIndexControl.colorize("fill", GRAY);
 
 modulationIndexControl.on("change", function (v) {
   synth.set({
@@ -1318,7 +1401,6 @@ let modulationIndexNum = new Nexus.Number("#modulation-index-num", {
 });
 modulationIndexNum.link(modulationIndexControl);
 modulationIndexNum.colorize("accent", CYAN);
-modulationIndexNum.colorize("fill", GRAY);
 
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
@@ -1851,74 +1933,6 @@ function onEnabled() {
     synth.triggerRelease(midiToNoteString(e.data[1]));
   });
 }
-// ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
-// Sequencer
-// ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
-// Inputs and Buttons
-let seqRateInput = document.getElementById("seq-rate");
-let noteValueInput = document.getElementById("note-value");
-let seqInput = document.getElementById("seq-input");
-let setButton = document.getElementById("seq-set");
-let playButton = document.getElementById("seq-play");
-let stopButton = document.getElementById("seq-stop");
-
-// Sequencer rate (tempo)
-seqRateInput.addEventListener("change", () => {
-  if (seqRateInput.value > 10) seqRateInput.value = 10;
-  if (seqRateInput.value <= 0) seqRateInput.value = 1;
-  let rate = seqRateInput.value;
-
-  seq.set({
-    playbackRate: parseFloat(rate),
-  });
-});
-
-// Note value
-let noteValue = "16n";
-
-noteValueInput.addEventListener("change", () => {
-  if (noteValueInput.value <= 0) noteValueInput.value = "16n";
-  noteValue = noteValueInput.value;
-});
-
-// Sequence notes input
-setButton.addEventListener("click", () => {
-  let seqNotesInput;
-  if (seqInput.value === "funky town" || seqInput.value === "Funky Town") {
-    seqNotesInput = funkyTown;
-  } else if (
-    seqInput.value === "i feel love" ||
-    seqInput.value === "I Feel Love"
-  ) {
-    seqNotesInput = feelLove;
-  } else if (seqInput.value === "default") {
-    seqNotesInput = seqNotes;
-  } else {
-    seqNotesInput = JSON.parse("[" + seqInput.value + "]");
-  }
-
-  seq.set({
-    events: seqNotesInput,
-  });
-});
-
-// Sequence demos
-let seqNotes = ["C4", ["E4", "D4", "E4"], "G4", ["A4", "G4"]];
-let funkyTown = ["C4", "C4", "Bb3", "C4", "G3", "G3", "C4", "F4", "E4", "C4"];
-let feelLove = ["C2", "C3", "C2", "C3", "G1", "G2", "Bb1", "Bb2"];
-// let feelLoveAlt = ["G3", "G3", "D3", "F3"];
-
-// Sequence
-const seq = new Tone.Sequence((time, note) => {
-  synth.triggerAttackRelease(note, noteValue, time);
-  // subdivisions are given as subarrays
-}, seqNotes).start(0);
-
-// Sequence play / stop
-playButton.addEventListener("click", () => Tone.Transport.start());
-stopButton.addEventListener("click", () => Tone.Transport.stop());
 
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
