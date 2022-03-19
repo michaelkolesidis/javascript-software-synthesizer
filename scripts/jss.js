@@ -2088,5 +2088,4 @@ showHide(chebyshevTitle, chebyshevContent, "none", "flex");
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 const navContent = document.getElementById("nav-content");
-
 navContent.innerHTML = Menu();
