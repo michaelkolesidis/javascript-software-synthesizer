@@ -26,11 +26,9 @@ frequency modulation <br>
 frequency shifter <br>
 gain <br>
 harmonicity <br>
-# high-pass filter <br>
 keyboard <br>
 knob <br>
 LFO <br>
-# low-pass filter <br>
 meter <br>
 modulation <br>
 modulation index <br>
