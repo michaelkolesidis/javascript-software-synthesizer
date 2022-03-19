@@ -1,7 +1,7 @@
 * Terms List
 List of terms that will have their own entry in the docs.
 
-# amplitude <br>
+amplitude <br>
 attack <br>
 attack curve <br>
 auto filter <br>
@@ -26,11 +26,11 @@ frequency modulation <br>
 frequency shifter <br>
 gain <br>
 harmonicity <br>
-high-pass filter <br>
+# high-pass filter <br>
 keyboard <br>
 knob <br>
 LFO <br>
-low-pass filter <br>
+# low-pass filter <br>
 meter <br>
 modulation <br>
 modulation index <br>
