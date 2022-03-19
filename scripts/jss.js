@@ -24,6 +24,8 @@ import ModulationSection from "./elements/panels/modulationSection.js";
 import ModulationSectionMain from "./elements/panels/modulationSectionMain.js";
 import ModulationSectionModulationEnvelope from "./elements/panels/modulationSectionModulationEnvelope.js";
 
+import EffectsSection from "./elements/panels/effectsSection.js";
+
 import SequencerSection from "./elements/panels/sequencerSection.js";
 
 // ---------------------------------------------------------------------
@@ -133,6 +135,8 @@ const modulationSectionEnvelope = document.getElementById(
 modulationSectionEnvelope.innerHTML = ModulationSectionModulationEnvelope();
 
 // Effects
+const effectsSection = document.getElementById("effects");
+effectsSection.innerHTML = EffectsSection();
 
 // Sequencer
 const sequencerSection = document.getElementById("sequencer");
