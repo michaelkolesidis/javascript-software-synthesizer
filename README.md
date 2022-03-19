@@ -57,6 +57,8 @@ Please refer to the project's [Changelog](https://github.com/michaelkolesidis/ja
 <br>NexusUI provides us with the UI components that are connected to the synthesizers and make parameters adjusting easy and playful.
 * [WEBMIDI.js](https://github.com/djipco/webmidi)
 <br>WEBMIDI.js makes Web MIDI API easy to implement. It allows users to connect their MIDI keyboards and play the synthesizer the way it is meant to be played. Because, who likes playing music with a [mouse](https://web.archive.org/web/20150928202135im_/https://kathytemean.files.wordpress.com/2014/11/46289.jpg?w=500&h=540)?
+* [p5.js](https://p5js.org/)
+<br>p5.js is a JavaScript library for creative coding, with a focus on making coding accessible and inclusive for artists, designers, educators, beginners, and anyone else! We use it for the background animation.
 * [Floating UI](https://github.com/floating-ui/floating-ui)
 <br>Floating UI allows us to provide help to our users, by position floating tooltips, while intelligently keeping them in view.
 * [Sass](https://github.com/sass/sass)
