@@ -2004,7 +2004,7 @@ showHide(effectsTitle, effectsContent, "block", "none");
 showHide(filtersTitle, filtersContent, "grid", "none");
 showHide(highLowPassTitle, highLowPassContent, "flex", "none");
 showHide(autoFilterTitle, autoFilterContent, "grid", "none");
-showHide(delayTitle, delayContent, "flex", "none");
+// showHide(delayTitle, delayContent, "flex", "none");
 showHide(feedbackDelayTitle, feedbackDelayContent, "grid", "none");
 showHide(pingPongDelayTitle, pingPongDelayContent, "grid", "none");
 showHide(reverbTitle, reverbContent, "none", "flex");

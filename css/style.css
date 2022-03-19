@@ -320,7 +320,7 @@ a:link {
 #low-pass-freq-label {
   transform: rotate(90deg) translateX(-98px) translateY(-103px); }
 
-#auto-filter-content, #feedback-delay-content, #ping-pong-delay-content, #chorus-content, #phaser-content {
+#auto-filter-content, #chorus-content, #phaser-content {
   grid-column: 1 / 3;
   grid-row: 2;
   text-align: center;
@@ -328,20 +328,31 @@ a:link {
   grid-template-columns: repeat(3, 1fr);
   place-items: center; }
 
-#auto-filter-toggle, #feedback-delay-toggle, #ping-pong-delay-toggle, #chorus-toggle, #phaser-toggle {
+#auto-filter-toggle, #chorus-toggle, #phaser-toggle {
   grid-column: 1 / 4;
   grid-row: 1; }
 
-#delay-content {
-  justify-items: center;
-  align-items: center;
-  flex-direction: column; }
-
 #feedback-delay-content {
-  grid-template-columns: repeat(2, 1fr); }
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+#feedback-delay-components {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center; }
 
 #ping-pong-delay-content {
-  grid-template-columns: repeat(2, 1fr); }
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+#ping-pong-delay-components {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center; }
 
 #reverb-content, #distortion-content, #freq-shifter-content, #bit-crusher-content, #chebyshev-content {
   display: flex;
