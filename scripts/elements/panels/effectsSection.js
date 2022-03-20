@@ -96,7 +96,7 @@ export default function effectsSection() {
     <!--------------------------------------------------------------------->
     <div id="phaser">
     <p id="phaser-title" class="subtitle">Phaser</p>
-    <div id="phaser-content" style="display: none">
+    <div id="phaser-content">
         <div id="phaser-toggle"></div>
 
         <div class="component">
@@ -278,7 +278,7 @@ export default function effectsSection() {
     <!--------------------------------------------------------------------->
     <div id="frequency-shifter">
     <p id="freq-shifter-title" class="subtitle">
-        Frequency Shifter
+        Freq Shifter
     </p>
     <div id="freq-shifter-content">
         <div id="freq-shifter-toggle"></div>
