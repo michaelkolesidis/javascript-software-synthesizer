@@ -72,7 +72,6 @@ You can play the JSS-01 by using the on-screen keyboard, your computer keyboard,
 #### Oscilloscope
 The <strong>Oscilloscope</strong> shows the waveform of the sound. You can click on it to pause or you can right-click on it to save the current waveform as an image.
 
-<br>
 
 #### Modulation Index
 <img width="80px" src="./screenshots/elements/mod_index.png">
