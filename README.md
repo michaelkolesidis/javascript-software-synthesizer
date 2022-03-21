@@ -191,8 +191,10 @@ You name could be here and it would be great to have you aboard!
 # Special Thanks To
 * [Mohammed Amine Grid](https://github.com/mohammed-amine-grid), for his guidance and dedication throughout this journey.
 * All the students and the tutors at the [Social Hackers Academy](https://github.com/SocialHackersAcademy), for creating a nice little community of passionate people offering their best for each other.
+
 <br>
 <br>
+
 <p align="center">
 <img width="400px" src="./assets/visual.png">
 </p>
