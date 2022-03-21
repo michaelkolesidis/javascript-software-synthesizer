@@ -13,6 +13,9 @@ export default function menu() {
 
 <br><br>
 <p>You can play the JSS-01 by using the on-screen keyboard, your computer keyboard, or a MIDI keyboard.</p>
+
+<br>
+
 <div id="image">
     <img width="300px" src="./assets/keyboard/keyboard.svg">
 </div>
