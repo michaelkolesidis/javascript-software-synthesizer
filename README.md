@@ -84,9 +84,19 @@ The first input from the left controls the rate of the sequence (speed). The sec
 <br>
 When your sequence is ready, you can add it to the sequencer using the <strong>Add button</strong>. In order to go back to the default sequence, you can simply write <strong>default</strong> in the sequence input field and then click the Add button. There are two extra sequences included, the bassline of "I Feel Love" by Donna Summer (peoduced by Giorgio Moroder), which can be accessed by writing <strong>i feel love</strong> in the sequence input field and then pressing the add button, and the riff of "Funky Town", that can be accessed by writing <strong>funky town</strong>.
 
-<br><br>
+<br>
 
 You can find some more information about the JSS-01 and sound synthesis in this short [presentation](./assets/presentation/JSS%20Presentation.pdf).
+
+<br><br>
+
+### System Requirments
+The JSS-01 | JavaScript Software Synthesizer is quite heavy, especially on the CPU. We would suggest these indicative minimum requirments:
+
+| CPU | Quad-core x86-64 (2017 or later) |
+| RAM | 8GB |
+| Display | at least 1600x900 |
+
 
 # Documentation
 Will be released with version 1.0.0. In the meantime, you can refer to the [Tone.js documentation](https://tonejs.github.io/docs/).
