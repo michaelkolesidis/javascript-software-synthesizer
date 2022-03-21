@@ -17,7 +17,7 @@ export default function menu() {
 <br>
 
 <div id="image">
-    <img width="300px" src="./assets/keyboard/keyboard.svg">
+    <img width="300px" src="./assets/keyboard/keyboard.png">
 </div>
 
 <br>
