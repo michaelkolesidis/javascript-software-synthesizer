@@ -103,12 +103,12 @@ The JSS-01 | JavaScript Software Synthesizer is quite heavy, especially on the C
 | Sound Card    | On-board, dedicated, or audio interface |
 | Speakers      | Monitor speakers or mixing headphoes    |
 
+<br>
 
 # Documentation
 Will be released with version 1.0.0. In the meantime, you can refer to the [Tone.js documentation](https://tonejs.github.io/docs/).
 
-
-
+<br>
 
 # Guides & Tutorials
 There aren't any guides and tutorials specifically for the JSS-01 yet, but there are plenty of excellent guides on the types of sound synthesis that the JSS-01 is using:
@@ -121,18 +121,18 @@ There aren't any guides and tutorials specifically for the JSS-01 yet, but there
 * [FM Synthesis Collection by Yamaha](https://www.yamahasynth.com/learn/synth-programming/fm-synthesis-collection)
 * [FM Synthesis entry in Wikipedia](https://en.wikipedia.org/wiki/Frequency_modulation_synthesis)
 
-
+<br>
 
 # Contributing
 Feel free to submit issues and pull requests. It would be great to create a community around JSS-01, to contiue its development and evolution, making it more capable and easier to use, increasing its creative and artistic potential.
 If you are interested in becoming part of out community it would be useful to have a look to our dedicated document regarding [Contributing](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/CONTRIBUTING.md), as well as, out [Code of Conduct](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/CODE_OF_CONDUCT.md). It a nutshell, we want our community to be a safe space for everyone, so that we can all have a pleasant and joyful experience!
 
-
+<br>
 
 # Changelog
 Please refer to the project's [Changelog](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/CHANGELOG.md) document.
 
-
+<br>
 
 # Technologies Used
 * [Tone.js](https://github.com/Tonejs/Tone.js/)
@@ -150,12 +150,12 @@ Please refer to the project's [Changelog](https://github.com/michaelkolesidis/ja
 * [npm](https://github.com/npm/cli)
 <br>Our beloved package manager.
 
-
+<br>
 
 # Roadmap
 Some of the ideas are full modular design, full compatibility with MIDI controllers, implementation of all Tone.js features, and in the (very) distant future even our own synth engines along with Tone.js.
 
-
+<br>
 
 # References and Inspiration
 * [Synth Secrets from Sound on Sound](https://www.soundonsound.com/series/synth-secrets-sound-sound)
@@ -167,23 +167,23 @@ Some of the ideas are full modular design, full compatibility with MIDI controll
 
 A full(-ish) list of references can be found in the [References](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/REFERENCES.md) document.
 
-
+<br>
 
 # License
 Copyright (c) 2022 Michael Kolesidis<br>
 Licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
-
+<br>
 
 # Sponsors
 None, yet! We will have to add way more features for that.
 
-
+<br>
 
 # Contributors
 You name could be here and it would be great to have you aboard!
 
-
+<br>
 
 # Special Thanks To
 * [Mohammed Amine Grid](https://github.com/mohammed-amine-grid), for his guidance and dedication throughout this journey.
