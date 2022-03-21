@@ -29,28 +29,28 @@ The JSS-01 | JavaScript Software Synthesizer uses <strong>FM Synthesis</strong> 
 
 <br>
 
-<img src="./screenshots/elements/synth.png">
+<img width="50px" src="./screenshots/elements/synth.png">
 In JSS-01, the <strong>Synth Section (cyan)</strong> of the synthesizer controls the carrier oscillator. T
 
 
 <br><br>
 
-<img src="./screenshots/elements/modulation.png">
+<img width="100px" src="./screenshots/elements/modulation.png">
 The <strong>Modulation Section</strong>  (green) controls the modulator. 
 
 <br><br>
 
-<img src="./screenshots/elements/mod_index.png">
+<img width="80px" src="./screenshots/elements/mod_index.png">
 If you turn <strong>Modulation Index</strong> to 0 (can be found at the top line of the Synth section) you get the unmodulated output of the carrier oscillator.
 
 <br><br>
 
-<img src="./screenshots/elements/oscilloscope.png">
+<img width="300px" src="./screenshots/elements/oscilloscope.png">
 The <strong>Oscilloscope</strong> shows the waveform of the sound. You can click on it to pause or you can right-click on it to save the current waveform as an image.
 
 <br><br>
 
-<img src="./screenshots/elements/effects.png">
+<img width="70px" src="./screenshots/elements/effects.png">
 The <strong>Effects Section (yellow)</strong> includes all the effects that can be applied to the sound.
 
 <br><br>
