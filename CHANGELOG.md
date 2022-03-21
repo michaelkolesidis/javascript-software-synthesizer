@@ -1,3 +1,17 @@
+# 0.5.3
+
+### Changes
+* Quick Start menu
+* Removal of p5.js animated background for better performance
+* Styling
+* Quick Start documentation
+
+### Known Issues
+* Only works on Chromium and WebKit based browsers (Chrome, Edge, Brave, Safari, Opera, GNOME Web etc.)
+* When using the on-screen and/or the computer keyboard, if playing multiple notes, the synthesizer stops playing all notes if at least one note is released
+* Partials sections don't work
+* High CPU load
+
 # 0.5
 
 ### Changes
@@ -29,6 +43,7 @@
 * Only works on Chromium and WebKit based browsers (Chrome, Edge, Brave, Safari, Opera, GNOME Web etc.)
 * When using the on-screen and/or the computer keyboard, if playing multiple notes, the synthesizer stops playing all notes if at least one note is released
 * Partials sections don't work
+* High CPU load
 
 
 # 0.2.5
