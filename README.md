@@ -21,14 +21,62 @@ The JSS-01 | JavaScript Software Synthesizer is a web app enabling you to make a
 # Introduction
 Keys, knobs, sliders and buttons to tweak your sound and generate immersive soundscapes. You can also connect your MIDI keyboard and play with it!
 
+### Quick Start
 
+The JSS-01 | JavaScript Software Synthesizer uses **FM Synthesis** (frequency modulation synthesis). In FM Synthesis there is an oscillator that produces the sound signal, the **carrier**, and an oscillator that modulates the carrier's wave frequency, the **modulator**.
+<img width="500px" src="./assets/fm.png">
+
+<div>
+  <br>
+</div>
+
+<img width="500px" src="./screenshots/elements/synth.png">
+In JSS-01, the **Synth section** (cyan) of the synthesizer controls the carrier and the **Modulation** section (green) controls the modulator. 
+
+<div>
+  <br>
+</div>
+
+<img width="500px" src="./screenshots/elements/mod_index.png">
+If you turn **Modulation Index** to 0 (can be found at the top line of the Synth section) you get the unmodulated output of the carrier oscillator.
+
+<div>
+  <br>
+</div>
+
+<img width="500px" src="./screenshots/elements/oscilloscope.png">
+The **Oscilloscope** shows the waveform of the sound. You can click on it to pause or you can right-click on it to save the current waveform as an image.
+
+<div>
+  <br>
+</div>
+
+<img width="500px" src="./screenshots/elements/effects.png">
+The **Effects section** (yellow) includes all the effects that can be applies to the sound.
+
+<div>
+  <br>
+</div>
+
+<img width="500px" src="./assets/keyboard/keyboard_bg_w.png">
+You can play the JSS-01 by using the on screen keyboard, your computer keyboard, or a MIDI keyboard.
+
+<div>
+  <br>
+</div>
+
+<img width="500px" src="./assets/keyboard/sequencer.png">
+Right above the on-screen keyboard you can find the **Sequencer**. There is an included sequence preinstalled, so you can just press the **Play button** and listen to it. The first input from the left controls the rate of the sequence (speed). The second input is the base value of the notes of the sequence (16n stands for a 16th note value, 8n for an 8th and so on). You can input your own sequences in the main input by writing the sequence of the desired notes in this form: **"C4", "F5", "D2"**. You can include parts with notes of half the base value by including them in brackets, ex. **"C4", ["F5", "D2"]**. In this examples, if the base value is 16n (16th notes), C4 will have a value of 16th, and each of the F5 and D2 will have a value of 32th (or a value of a 16th combined). Whenever your sequence is ready, you can add it to the sequencer using the **Add button**. In order to go back to the default sequence, you can simply write **default** in the sequence input field and then click the Add button. There are two extra sequences included, the bassline of "I Feel Love" by Donna Summer (peoduced by Giorgio Moroder), which can be accessed by writing **i feel love** in the sequence input field and then pressing the add button, and the riff of "Funky Town", that can be accessed by writing "funky town".
+
+<div>
+  <br>
+</div>
+
+You can find some more information about the JSS-01 and sound synthesis in this short [presentation]().
 
 # Documentation
 Will be released with version 1.0.0. In the meantime, you can refer to the [Tone.js documentation](https://tonejs.github.io/docs/).
 
-### Quick Start
-
-The JSS-01 | JavaScript Software Synthesizer uses frequency modulation synthesis (FM Synthes9s).
 
 
 
