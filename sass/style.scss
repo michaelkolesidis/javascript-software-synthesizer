@@ -823,6 +823,18 @@ a:link {
   will-change: transform;
   contain: paint;
   z-index: 2;
+  font-size: 1.1rem;
+
+  p {
+    text-align: justify;
+
+    a {
+      text-decoration: underline;
+    }
+    a:hover {
+      color: $dark-gray;
+    }
+  }
 }
 
 #nav-content ul {
@@ -850,6 +862,10 @@ a:link {
 
 #nav-container:focus-within #nav-content {
   transform: none;
+}
+
+#menu-title {
+  font-size: 3rem; 
 }
 
 /* --------------------------------------------------------------------- */

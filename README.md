@@ -30,7 +30,7 @@ The JSS-01 | JavaScript Software Synthesizer uses <strong>FM Synthesis</strong> 
 <br>
 
 <img width="50px" src="./screenshots/elements/synth.png">
-In JSS-01, the <strong>Synth Section (cyan)</strong> of the synthesizer controls the carrier oscillator. T
+In JSS-01, the <strong>Synth Section (cyan)</strong> of the synthesizer controls the carrier oscillator.
 
 
 <br><br>
