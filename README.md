@@ -24,6 +24,7 @@ Keys, knobs, sliders and buttons to tweak your sound and generate immersive soun
 ### Quick Start
 
 The JSS-01 | JavaScript Software Synthesizer uses <strong>FM Synthesis</strong> (frequency modulation synthesis). In FM Synthesis there is an oscillator that produces the sound signal, the **carrier**, and an oscillator that modulates the carrier's wave frequency, the **modulator**.
+<br>
 <img width="300px" src="./assets/fm.png">
 
 
