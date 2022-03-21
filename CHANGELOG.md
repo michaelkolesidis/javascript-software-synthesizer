@@ -9,8 +9,8 @@
 ### Known Issues
 * When using the on-screen and/or the computer keyboard, if playing multiple notes, the synthesizer stops playing all notes if at least one note is released
 * Partials sections don't work
-* High CPU load
-* Performance issues on Firefox
+* High CPU load and performance issues
+* Severe performance issues on Firefox
 
 # 0.5
 
