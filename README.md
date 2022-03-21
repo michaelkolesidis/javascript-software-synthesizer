@@ -65,7 +65,7 @@ Right above the on-screen keyboard you can find the <strong>Sequencer</strong>. 
 
 <br><br>
 
-You can find some more information about the JSS-01 and sound synthesis in this short [presentation]().
+You can find some more information about the JSS-01 and sound synthesis in this short [presentation](./assets/presentation/JSS%20Presentation.pdf).
 
 # Documentation
 Will be released with version 1.0.0. In the meantime, you can refer to the [Tone.js documentation](https://tonejs.github.io/docs/).
