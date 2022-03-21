@@ -88,7 +88,8 @@ A full(-ish) list of references can be found in the [References](https://github.
 
 
 # License
-[MIT License](https://opensource.org/licenses/MIT)
+Copyright (c) 2022 Michael Kolesidis<br>
+Licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
 
 
