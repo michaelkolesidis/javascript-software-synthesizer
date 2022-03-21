@@ -33,7 +33,7 @@ The JSS-01 | JavaScript Software Synthesizer uses <strong>FM Synthesis</strong> 
 In JSS-01, the <strong>Synth Section (cyan)</strong> of the synthesizer controls the carrier oscillator. T
 
 
-<img width="50px" src="./screenshots/elements/modulation.png">
+<img width="100px" src="./screenshots/elements/modulation.png">
 The <strong>Modulation Section</strong>  (green) controls the modulator. 
 
 <br><br>
@@ -48,7 +48,7 @@ The <strong>Oscilloscope</strong> shows the waveform of the sound. You can click
 
 <br><br>
 
-<img width="50px" src="./screenshots/elements/effects.png">
+<img width="80px" src="./screenshots/elements/effects.png">
 The <strong>Effects Section (yellow)</strong> includes all the effects that can be applied to the sound.
 
 <br><br>
