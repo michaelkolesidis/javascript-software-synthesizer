@@ -1,3 +1,9 @@
+# 0.5
+
+### Changes
+* Effects section
+    *
+
 # 0.2.5
 
 ### Changes
