@@ -29,6 +29,16 @@ The JSS-01 | JavaScript Software Synthesizer uses <strong>FM Synthesis</strong> 
 
 <br>
 
+<img width="300px" src="./assets//waveforms/sine_wave.png">
+<p>Sine wave</p>
+
+<br>
+
+<img width="300px" src="./assets//waveforms/sine_wave_mod.png">
+<p>Frequency-modulated sine wave</p>
+
+<br>
+
 <img width="50px" src="./screenshots/elements/synth.png">
 In JSS-01, the <strong>Synth Section</strong> of the synthesizer includes the controls for the <strong>Carrier</strong> oscillator.
 
