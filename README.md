@@ -29,13 +29,12 @@ The JSS-01 | JavaScript Software Synthesizer uses <strong>FM Synthesis</strong> 
 
 <br>
 
-<p>Sine wave</p>
+<p><strong>Sine wave:</strong></p>
 <img width="300px" src="./assets//waveforms/sine_wave.png">
-
 
 <br>
 
-<p>Frequency-modulated sine wave</p>
+<p><strong>Frequency-modulated sine wave:</strong></p>
 <img width="300px" src="./assets//waveforms/sine_wave_mod.png">
 
 <br>
