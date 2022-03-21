@@ -37,7 +37,7 @@ The JSS-01 | JavaScript Software Synthesizer uses <strong>FM Synthesis</strong> 
 <p><strong>Frequency-modulated sine wave:</strong></p>
 <img width="300px" src="./assets//waveforms/sine_wave_mod.png">
 
-<br>
+<br><br>
 
 <img width="50px" src="./screenshots/elements/synth.png">
 In JSS-01, the <strong>Synth Section</strong> of the synthesizer includes the controls for the <strong>Carrier</strong> oscillator.
@@ -55,6 +55,14 @@ The <strong>Effects Section</strong> includes the controls of the various effect
 
 <br><br>
 
+#### How to Play
+
+You can play the JSS-01 by using the on-screen keyboard, your computer keyboard, or a MIDI keyboard.
+
+<img width="500px" src="./assets/keyboard/keyboard_bg_w.png">
+
+
+
 <img width="300px" src="./screenshots/elements/oscilloscope.png">
 The <strong>Oscilloscope</strong> shows the waveform of the sound. You can click on it to pause or you can right-click on it to save the current waveform as an image.
 
@@ -63,10 +71,7 @@ The <strong>Oscilloscope</strong> shows the waveform of the sound. You can click
 <img width="80px" src="./screenshots/elements/mod_index.png">
 If you turn <strong>Modulation Index</strong> to 0 (can be found at the top line of the Synth section) you get the unmodulated output of the carrier oscillator.
 
-<br><br>
 
-<img width="500px" src="./assets/keyboard/keyboard_bg_w.png">
-You can play the JSS-01 by using the on-screen keyboard, your computer keyboard, or a MIDI keyboard.
 
 <br><br>
 
