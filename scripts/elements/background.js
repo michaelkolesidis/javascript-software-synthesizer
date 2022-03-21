@@ -30,8 +30,6 @@ function draw() {
   pop();
 }
 
-
-
 function Star() {
   //make main variables
   this.x = random(-width, width);
