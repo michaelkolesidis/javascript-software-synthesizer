@@ -855,230 +855,117 @@ a:link {
 /* --------------------------------------------------------------------- */
 /* Media Queries */
 /* --------------------------------------------------------------------- */
+@media only screen and (min-width: 1390px) {
+  #effects-content {
+    display: grid;
+    column-gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-// @media only screen and (min-width: 1385px) {
-//   #effects-content {
-//     display: grid;
-//     column-gap: 2rem;
-//     grid-template-columns: repeat(2, 1fr);
-//   }
+  #auto-filter {
+    grid-column: 1 / 2;
+    grid-row: 1;
+  }
 
-//   #auto-filter {
-//     grid-column: 1 / 2;
-//     grid-row: 1;
-//   }
+  #chorus {
+    grid-column: 1 / 2;
+    grid-row: 2;
+  }
 
-//   #chorus {
-//     grid-column: 1 / 2;
-//     grid-row: 2;
-//   }
+  #chorus-content {
+    display: grid;
+  }
 
-//   #chorus-content {
-//     display: grid;
-//   }
+  #phaser {
+    grid-column: 1 / 2;
+    grid-row: 3;
+  }
 
-//   #phaser {
-//     grid-column: 1 / 2;
-//     grid-row: 3;
-//   }
+  #phaser-content {
+    display: grid;
+  }
 
-//   #phaser-content {
-//     display: grid;
-//   }
+  #reverb {
+    grid-column: 1 / 2;
+    grid-row: 4;
+  }
 
-//   #reverb {
-//     grid-column: 2 / 3;
-//     grid-row: 3;
-//   }
+  #reverb-content {
+    display: none;
+  }
 
-//   #reverb-content {
-//     display: flex;
-//   }
+  #feedback-delay {
+    grid-column: 2 / 3;
+    grid-row: 1;
+  }
 
-//   #feedback-delay {
-//     grid-column: 2 / 3;
-//     grid-row: 1;
-//   }
+  #feedback-delay-content {
+    display: flex;
+  }
 
-//   #feedback-delay-content {
-//     display: flex;
-//   }
+  #ping-pong {
+    grid-column: 2 / 3;
+    grid-row: 2;
+  }
 
-//   #ping-pong {
-//     grid-column: 2 / 3;
-//     grid-row: 2;
-//   }
+  #ping-pong-delay-content {
+    display: flex;
+  }
 
-//   #ping-pong-delay-content {
-//     display: flex;
-//   }
+  #tremolo {
+    grid-column: 2 / 3;
+    grid-row: 3;
+  }
 
-//   #tremolo {
-//     grid-column: 3 / 4;
-//     grid-row: 1;
-//   }
+  #tremolo-content {
+    display: flex;
+  }
 
-//   #tremolo-content {
-//     display: flex;
-//   }
+  #vibrato {
+    grid-column: 2 / 3;
+    grid-row: 4;
+  }
 
-//   #vibrato {
-//     grid-column: 3 / 4;
-//     grid-row: 2;
-//   }
+  #vibrato-content {
+    display: none;
+  }
 
-//   #vibrato-content {
-//     display: flex;
-//   }
+  #distortion {
+    grid-column: 3 / 4;
+    grid-row: 1;
+  }
 
-//   #distortion {
-//     grid-column: 3 / 4;
-//     grid-row: 3;
-//   }
+  #distortion-content {
+    display: flex;
+  }
 
-//   #distortion-content {
-//     display: flex;
-//   }
+  #bit-crusher {
+    grid-column: 3 / 4;
+    grid-row: 2;
+  }
 
-//   #bit-crusher {
-//     grid-column: 4 / 5;
-//     grid-row: 1;
-//   }
+  #bit-crusher-content {
+    display: flex;
+  }
 
-//   #bit-crusher-content {
-//     display: flex;
-//   }
+  #frequency-shifter {
+    grid-column: 3 / 4;
+    grid-row: 3;
+  }
 
-//   #frequency-shifter {
-//     grid-column: 4 / 5;
-//     grid-row: 2;
-//   }
+  #freq-shifter-content {
+    display: flex;
+  }
 
-//   #frequency-shifter-content {
-//     display: flex;
-//   }
+  #chebyshev {
+    grid-column: 3 / 4;
+    grid-row: 4;
+  }
 
-//   #chebyshev {
-//     grid-column: 4 / 5;
-//     grid-row: 3;
-//   }
-
-//   #chebyshev-content {
-//     display: flex;
-//   }
-// }
-
-// @media only screen and (min-width: 1485px) {
-//   #effects-content {
-//     display: grid;
-//     column-gap: 2rem;
-//     grid-template-columns: repeat(3, 1fr);
-//   }
-
-//   #auto-filter {
-//     grid-column: 1 / 2;
-//     grid-row: 1;
-//   }
-
-//   #chorus {
-//     grid-column: 1 / 2;
-//     grid-row: 2;
-//   }
-
-//   #chorus-content {
-//     display: grid;
-//   }
-
-//   #phaser {
-//     grid-column: 1 / 2;
-//     grid-row: 3;
-//   }
-
-//   #phaser-content {
-//     display: grid;
-//   }
-
-//   #reverb {
-//     grid-column: 2 / 3;
-//     grid-row: 3;
-//   }
-
-//   #reverb-content {
-//     display: flex;
-//   }
-
-//   #feedback-delay {
-//     grid-column: 2 / 3;
-//     grid-row: 1;
-//   }
-
-//   #feedback-delay-content {
-//     display: flex;
-//   }
-
-//   #ping-pong {
-//     grid-column: 2 / 3;
-//     grid-row: 2;
-//   }
-
-//   #ping-pong-delay-content {
-//     display: flex;
-//   }
-
-//   #tremolo {
-//     grid-column: 3 / 4;
-//     grid-row: 1;
-//   }
-
-//   #tremolo-content {
-//     display: flex;
-//   }
-
-//   #vibrato {
-//     grid-column: 3 / 4;
-//     grid-row: 2;
-//   }
-
-//   #vibrato-content {
-//     display: flex;
-//   }
-
-//   #distortion {
-//     grid-column: 3 / 4;
-//     grid-row: 3;
-//   }
-
-//   #distortion-content {
-//     display: flex;
-//   }
-
-//   #bit-crusher {
-//     grid-column: 4 / 5;
-//     grid-row: 1;
-//   }
-
-//   #bit-crusher-content {
-//     display: flex;
-//   }
-
-//   #frequency-shifter {
-//     grid-column: 4 / 5;
-//     grid-row: 2;
-//   }
-
-//   #frequency-shifter-content {
-//     display: flex;
-//   }
-
-//   #chebyshev {
-//     grid-column: 4 / 5;
-//     grid-row: 3;
-//   }
-
-//   #chebyshev-content {
-//     display: flex;
-//   }
-// }
+  #chebyshev-content {
+    display: none;
+  }
+}
 
 @media only screen and (min-width: 1585px) {
   #effects-content {
@@ -1178,7 +1065,7 @@ a:link {
     grid-row: 2;
   }
 
-  #frequency-shifter-content {
+  #freq-shifter-content {
     display: flex;
   }
 
@@ -1290,7 +1177,7 @@ a:link {
     grid-row: 1;
   }
 
-  #frequency-shifter-content {
+  #freq-shifter-content {
     display: flex;
   }
 
