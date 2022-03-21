@@ -95,7 +95,7 @@ The JSS-01 | JavaScript Software Synthesizer is quite heavy, especially on the C
 
 <br>
 
-| Component     | Requirment |
+| Minimum Requirments |
 | ------------- | -------------------------------- |
 | CPU           | Quad-core x86-64 (2017 or later) |
 | RAM           | 8GB                              |
