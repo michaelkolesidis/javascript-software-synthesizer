@@ -15,7 +15,10 @@ The JSS-01 | JavaScript Software Synthesizer is a web app enabling you to make a
 
 <p align="center">
   <img width="900px" src="./screenshots/v.0.5-1col.png">
-  <br>
+
+</p>
+
+<p align="center">
   <img width="900px" src="./screenshots/v.0.5-3cols.png">
 </p>
 
@@ -91,7 +94,7 @@ When your sequence is ready, you can add it to the sequencer using the <strong>A
 
 You can find some more information about the JSS-01 and sound synthesis in this short [presentation](./assets/presentation/JSS%20Presentation.pdf).
 
-<br><br>
+<br>
 
 ### System Requirements
 The JSS-01 | JavaScript Software Synthesizer is quite heavy, especially on the CPU. We would suggest these indicative minimum requirements:
