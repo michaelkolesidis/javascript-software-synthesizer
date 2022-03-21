@@ -26,6 +26,10 @@ Keys, knobs, sliders and buttons to tweak your sound and generate immersive soun
 # Documentation
 Will be released with version 1.0.0. In the meantime, you can refer to the [Tone.js documentation](https://tonejs.github.io/docs/).
 
+### Quick Start
+
+The JSS-01 | JavaScript Software Synthesizer uses frequency modulation synthesis (FM Synthes9s).
+
 
 
 # Guides & Tutorials
