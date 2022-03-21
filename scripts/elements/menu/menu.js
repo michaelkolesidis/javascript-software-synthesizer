@@ -14,7 +14,7 @@ export default function menu() {
 <br><br>
 <p>You can play the JSS-01 by using the on-screen keyboard, your computer keyboard, or a MIDI keyboard.</p>
 <div id="image">
-    <img width="300px" src="./assets/keyboard/keyboard_bg_w.png">
+    <img width="300px" src="./assets/keyboard/keyboard.svg">
 </div>
 
 <p>You can find the full Quick Start Guide <a href="https://github.com/michaelkolesidis/javascript-software-synthesizer#quick-start" target="_blank">here</a>.</p>

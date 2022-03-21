@@ -23,25 +23,25 @@ Keys, knobs, sliders and buttons to tweak your sound and generate immersive soun
 
 ### Quick Start
 
-The JSS-01 | JavaScript Software Synthesizer uses <strong>FM Synthesis</strong> (frequency modulation synthesis). In FM Synthesis there is an oscillator that produces the sound signal, the <strong>carrier</strong>, and an oscillator that modulates the carrier's wave frequency, the <strong>modulator</strong>.
+The JSS-01 | JavaScript Software Synthesizer uses <strong>FM Synthesis</strong> (frequency modulation synthesis). In FM Synthesis there is an oscillator that produces the sound signal, the <strong>Carrier</strong>, and an oscillator that modulates the carrier's wave frequency, the <strong>Modulator</strong>.
 <br><br>
 <img width="300px" src="./assets/fm.png">
 
 <br>
 
 <img width="50px" src="./screenshots/elements/synth.png">
-In JSS-01, the <strong>Synth Section (cyan)</strong> of the synthesizer controls the carrier oscillator.
+In JSS-01, the <strong>Synth Section</strong> of the synthesizer includes the controls for the <strong>Carrier</strong> oscillator.
 
 
 <br><br>
 
 <img width="100px" src="./screenshots/elements/modulation.png">
-The <strong>Modulation Section</strong>  (green) controls the modulator. 
+The <strong>Modulation Section</strong> includes the controls for the <strong>Modulator</strong> oscillator. 
 
 <br><br>
 
 <img width="68px" src="./screenshots/elements/effects.png">
-The <strong>Effects Section (yellow)</strong> includes all the effects that can be applied to the sound.
+The <strong>Effects Section</strong> includes the controls of the various effects that can be applied to the sound.
 
 <br><br>
 
