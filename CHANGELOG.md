@@ -1,8 +1,35 @@
 # 0.5
 
 ### Changes
-* Effects section
-    *
+* Effects
+    * Auto filter
+    * Chorus
+    * Phaser
+    * Feedback delay
+    * Ping pong delay
+    * Tremolo
+    * Vibrato
+    * Reverb
+    * Distortion
+    * Bit crusher
+    * Frequency shifter
+    * Chebyshev waveshapping
+* Responsive effects section
+* Synthesizer engine refactoring
+* Synthesizer effects connectivity
+* Splash screen
+* Background animation
+* Dark mode / help mode buttons removal
+* 1 extra sequence example (I Feel Love)
+* Styling
+* Code cleanup
+* All elements as JavaScript modules
+
+### Known Issues
+* Only works on Chromium and WebKit based browsers (Chrome, Edge, Brave, Safari, Opera, GNOME Web etc.)
+* When using the on-screen and/or the computer keyboard, if playing multiple notes, the synthesizer stops playing all notes if at least one note is released
+* Partials sections don't work
+
 
 # 0.2.5
 

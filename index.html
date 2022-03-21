@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!--------------------------------------------------------------------->
-    <!-- Meta Tags -->
-    <!--------------------------------------------------------------------->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,13 +18,7 @@
       tonejs, web-audio, fm-synthesis, sound-engineering"
     />
     <meta name="author" content="Michael Kolesidis" />
-    <!--------------------------------------------------------------------->
-    <!-- Title -->
-    <!---------------------------------------------------------------->
     <title>JSS-01 | JavaScript Software Synthesizer</title>
-    <!--------------------------------------------------------------------->
-    <!-- Libraries, Frameworks and Main Script -->
-    <!--------------------------------------------------------------------->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.37/Tone.js"
       integrity="sha512-gK8OnTXn8cTYkHqYX+bhzjQ1rClAPuG2eMy+oRuV26mSuE0EbZeULFKdyc/YGX1Z/JsC06FXxQttdX4aahjSMQ=="
@@ -57,65 +48,12 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="./scripts/elements/background.js"></script>
-    <!--------------------------------------------------------------------->
-    <!-- Icons and Styling -->
-    <!--------------------------------------------------------------------->
     <link rel="stylesheet" href="./css/style.min.css" />
     <link rel="icon" href="./assets/logo/favicon.ico" />
     <link rel="apple-touch-icon" href="./assets/logo/logo192.png" />
     <link rel="manifest" href="/jss.webmanifest" />
   </head>
-
   <body>
-    <div id="splash-screen">
-      <img src="./assets/logo/logo192.png" alt="" />
-    </div>
-    <div id="page-container">
-      <div id="content-wrap">
-        <!--------------------------------------------------------------------->
-        <!-- Header -->
-        <!--------------------------------------------------------------------->
-        <div id="header" tabindex="0"></div>
-        <!--------------------------------------------------------------------->
-        <!-- Synthesizer Panel -->
-        <!--------------------------------------------------------------------->
-        <div id="synthesizer">
-          <!--------------------------------------------------------------------->
-          <!-- Displays -->
-          <!--------------------------------------------------------------------->
-          <div id="displays"></div>
-          <!--------------------------------------------------------------------->
-          <!-- Synth Section -->
-          <!--------------------------------------------------------------------->
-          <div id="synth-section"></div>
-          <!--------------------------------------------------------------------->
-          <!-- Modulation  Section -->
-          <!--------------------------------------------------------------------->
-          <div id="modulation-section"></div>
-          <!--------------------------------------------------------------------->
-          <!-- Effects  Section -->
-          <!--------------------------------------------------------------------->
-          <div id="effects"></div>
-        </div>
-        <!--------------------------------------------------------------------->
-        <!-- Extra Controls (Presets, Sequencer etc.) -->
-        <!--------------------------------------------------------------------->
-        <div id="extras">
-          <div id="sequencer"></div>
-          <!-- <div id="recorder">
-            <button type="button" id="rec">●</button>
-            <button type="button" id="rec-stop">■</button>
-          </div> -->
-        </div>
-        <!--------------------------------------------------------------------->
-        <!-- Keyboard -->
-        <!--------------------------------------------------------------------->
-        <div id="keyboard"></div>
-      </div>
-      <!--------------------------------------------------------------------->
-      <!-- Footer -->
-      <!--------------------------------------------------------------------->
-      <div id="footer"></div>
-    </div>
+    <div id="root"></div>
   </body>
 </html>

@@ -10,24 +10,20 @@
 // Import Elements
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
+import Index from "./elements/index.js";
 import SplashScreen from "./elements/splashScreen.js";
 import Header from "./elements/header.js";
 import Footer from "./elements/footer.js";
 import Displays from "./elements/panels/displays.js";
-
 import SynthSection from "./elements/panels/synthSection.js";
 import SynthSectionMain from "./elements/panels/synthSectionMain.js";
 import SynthSectionAmplitudeEnvelope from "./elements/panels/synthSectionAmplitudeEnvelope.js";
 import SynthSectionOscillator from "./elements/panels/synthSectionOscillator.js";
-
 import ModulationSection from "./elements/panels/modulationSection.js";
 import ModulationSectionMain from "./elements/panels/modulationSectionMain.js";
 import ModulationSectionModulationEnvelope from "./elements/panels/modulationSectionModulationEnvelope.js";
-
 import EffectsSection from "./elements/panels/effectsSection.js";
-
 import SequencerSection from "./elements/panels/sequencerSection.js";
-
 import Menu from "./elements/menu/menu.js";
 
 // ---------------------------------------------------------------------
@@ -55,6 +51,14 @@ const YELLOW = "rgb(254, 188, 44)";
 
 Nexus.colors.fill = GRAY; // For all NexusUI components
 let darkMode = false;
+
+// ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
+// Page 
+// ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
+const root = document.getElementById("root");
+root.innerHTML = Index();
 
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
