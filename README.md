@@ -93,9 +93,12 @@ You can find some more information about the JSS-01 and sound synthesis in this 
 ### System Requirments
 The JSS-01 | JavaScript Software Synthesizer is quite heavy, especially on the CPU. We would suggest these indicative minimum requirments:
 
-| CPU | Quad-core x86-64 (2017 or later) |
-| RAM | 8GB |
-| Display | at least 1600x900 |
+<br>
+
+| ------------- | -------------------------------- |
+| CPU           | Quad-core x86-64 (2017 or later) |
+| RAM           | 8GB                              |
+| Display       | at least 1600x900                |
 
 
 # Documentation
