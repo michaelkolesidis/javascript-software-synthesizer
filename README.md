@@ -30,34 +30,38 @@ The JSS-01 | JavaScript Software Synthesizer uses <strong>FM Synthesis</strong> 
 <br>
 
 <img width="50px" src="./screenshots/elements/synth.png">
-In JSS-01, the <strong>Synth Section (cyan)</strong> of the synthesizer controls the carrier and the <strong>Modulation Section</strong>  (green) controls the modulator. 
+In JSS-01, the <strong>Synth Section (cyan)</strong> of the synthesizer controls the carrier oscillator. T
 
-<br>
 
-<img width="50px" src="./screenshots/elements/mod_index.png">
+<img width="50px" src="./screenshots/elements/modulation.png">
+The <strong>Modulation Section</strong>  (green) controls the modulator. 
+
+<br><br>
+
+<img width="80px" src="./screenshots/elements/mod_index.png">
 If you turn <strong>Modulation Index</strong> to 0 (can be found at the top line of the Synth section) you get the unmodulated output of the carrier oscillator.
 
-<br>
+<br><br>
 
 <img width="300px" src="./screenshots/elements/oscilloscope.png">
 The <strong>Oscilloscope</strong> shows the waveform of the sound. You can click on it to pause or you can right-click on it to save the current waveform as an image.
 
-<br>
+<br><br>
 
 <img width="50px" src="./screenshots/elements/effects.png">
 The <strong>Effects Section (yellow)</strong> includes all the effects that can be applied to the sound.
 
-<br>
+<br><br>
 
 <img width="500px" src="./assets/keyboard/keyboard_bg_w.png">
 You can play the JSS-01 by using the on-screen keyboard, your computer keyboard, or a MIDI keyboard.
 
-<br>
+<br><br>
 
 <img width="500px" src="./assets/elements/sequencer.png">
 Right above the on-screen keyboard you can find the <strong>Sequencer</strong>. There is an included sequence preinstalled, so you can just press the <strong>Play button</strong> and listen to it. The first input from the left controls the rate of the sequence (speed). The second input is the base value of the notes of the sequence (16n stands for a 16th note value, 8n for an 8th and so on). You can input your own sequences in the main input by writing the sequence of the desired notes in this form: <strong>"C4", "F5", "D2"**</strong>. You can include parts with notes of half the base value by including them in brackets, ex. <strong>"C4", ["F5", "D2"]</strong>. In this examples, if the base value is 16n (16th notes), C4 will have a value of 16th, and each of the F5 and D2 will have a value of 32th (or a value of a 16th combined). Whenever your sequence is ready, you can add it to the sequencer using the <strong>Add button</strong>. In order to go back to the default sequence, you can simply write <strong>default</strong> in the sequence input field and then click the Add button. There are two extra sequences included, the bassline of "I Feel Love" by Donna Summer (peoduced by Giorgio Moroder), which can be accessed by writing <strong>i feel love</strong> in the sequence input field and then pressing the add button, and the riff of "Funky Town", that can be accessed by writing <strong>funky town</strong>.
 
-
+<br><br>
 
 You can find some more information about the JSS-01 and sound synthesis in this short [presentation]().
 
