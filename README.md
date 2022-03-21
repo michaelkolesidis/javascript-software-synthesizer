@@ -50,7 +50,7 @@ The <strong>Oscilloscope</strong> shows the waveform of the sound. You can click
 
 <br><br>
 
-<img width="70px" src="./screenshots/elements/effects.png">
+<img width="68px" src="./screenshots/elements/effects.png">
 The <strong>Effects Section (yellow)</strong> includes all the effects that can be applied to the sound.
 
 <br><br>
