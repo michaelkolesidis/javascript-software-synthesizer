@@ -20,8 +20,9 @@ export default function menu() {
     <img width="300px" src="./assets/keyboard/keyboard.svg">
 </div>
 
+<br>
+
 <p>You can find the full Quick Start Guide <a href="https://github.com/michaelkolesidis/javascript-software-synthesizer#quick-start" target="_blank">here</a>.</p>
 <p>You can find more information about FM synthesis <a href="https://github.com/michaelkolesidis/javascript-software-synthesizer#fm-synthesis" target="_blank">here</a>.</p>
-
 `
 }
