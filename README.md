@@ -72,15 +72,13 @@ You can play the JSS-01 by using the on-screen keyboard, your computer keyboard,
 #### Oscilloscope
 The <strong>Oscilloscope</strong> shows the waveform of the sound. You can click on it to pause or you can right-click on it to save the current waveform as an image.
 
-<br><br>
+<br>
 
 #### Modulation Index
 <img width="80px" src="./screenshots/elements/mod_index.png">
 The Modulation Index determines the amount of the modulation that will be applied to the Carrier. If you set the <strong>Modulation Index</strong> to 0 (can be found at the top line of the Synth section) you get the unmodulated output of the carrier oscillator.
 
-
-
-<br><br>
+<br>
 
 #### Sequencer
 <img width="900px" src="./screenshots/elements/sequencer.png">
