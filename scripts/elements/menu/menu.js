@@ -13,12 +13,11 @@ export default function menu() {
 
 <br><br>
 <p>You can play the JSS-01 by using the on-screen keyboard, your computer keyboard, or a MIDI keyboard.</p>
-<img width="450px" src="./assets/keyboard/keyboard_bg_w.png">
-
-<br>
+<div id="image">
+    <img width="250px" src="./assets/keyboard/keyboard_bg_w.png">
+</div>
 
 <p>You can find the full Quick Start Guide <a href="https://github.com/michaelkolesidis/javascript-software-synthesizer#quick-start" target="_blank">here</a>.</p>
-<br>
 <p>You can find more information about FM synthesis <a href="https://github.com/michaelkolesidis/javascript-software-synthesizer#fm-synthesis" target="_blank">here</a>.</p>
 
 `
