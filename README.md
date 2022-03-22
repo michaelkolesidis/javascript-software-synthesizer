@@ -9,7 +9,7 @@
 [![Version](https://img.shields.io/badge/version-0.5.4-01004c.svg)](https://shields.io/)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/93c42090-6fc9-4c3d-a462-42b535ea9d15/deploy-status)](https://app.netlify.com/sites/javascript-software-synthesizer/deploys)
 
-The JSS-01 | JavaScript Software Synthesizer is a web application enabling you to make and play music in the browser. It is a software synthesizer implementing a variety of JavaScript frameworks and libraries, such as Tone.js and NexusUI.
+The JSS-01 | JavaScript Software Synthesizer is a web application enabling you to make and play music in the browser. It is a [software synthesizer](https://en.wikipedia.org/wiki/Software_synthesizer) utilizing the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) by implementing a variety of JavaScript frameworks and libraries, such as [Tone.js](https://tonejs.github.io/) and [NexusUI](https://nexus-js.github.io/ui/).
 
 <br>
 
