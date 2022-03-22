@@ -5,5 +5,4 @@
  *
  */
 
-
 // The Floating UI implementation will go here

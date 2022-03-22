@@ -5,10 +5,10 @@
  *
  *  Provides the animated background for JSS-01.
  *  Utilizing p5.js
- * 
+ *
  */
 
-let star = [];//star array
+let star = []; //star array
 let canvas;
 
 function windowResized() {
@@ -16,15 +16,14 @@ function windowResized() {
 }
 
 function setup() {
-  canvas = createCanvas(windowWidth, windowHeight);  
-  canvas.position(0,0);
-  canvas.style('z-index', '-1');
+  canvas = createCanvas(windowWidth, windowHeight);
+  canvas.position(0, 0);
+  canvas.style("z-index", "-1");
   for (let i = 0; i < 4000; i++) {
     //make a star array, and the array is a star function.
     star[i] = new Star();
   }
 }
-
 
 function draw() {
   //background change
@@ -47,7 +46,7 @@ function Star() {
   this.z = random(width);
 
   //this funtion draw the stars and make them move
-  this.show = function() {
+  this.show = function () {
     //make the speed change with the mouseX
     this.speed = 1;
     this.z = this.z - this.speed;
@@ -66,5 +65,5 @@ function Star() {
     this.sy = map(this.y / this.z, 0, 1, 0, height);
     this.r = map(this.z, 0, width, 5, 0);
     ellipse(this.sx, this.sy, this.r, this.r);
-  }
+  };
 }

@@ -1234,13 +1234,7 @@ synth.set({
 
 synth.toDestination();
 
-// synth.connect(autoFilter);
-// synth.connect(feedbackDelay);
-
-// synth.chain(autoFilter, tremolo, reverb, feedbackDelay, pingPong, chorus, vibrato)
-
-// Series
-
+// Effects connected in series
 synth.chain(
   autoFilter,
   phaser,
@@ -1256,50 +1250,6 @@ synth.chain(
   shift,
   Tone.Destination
 );
-
-// synth.chain(highPassFilter, lowPassFilter, Tone.Destination);
-
-// synth.disconnect(highPassFilter);
-// synth.disconnect(lowPassFilter);
-
-// autoFilter first of high/low pass?
-// the last ones in the chain don't work (crusher, cheby)
-
-// Parallel
-// synth.chain(lowPassFilter, Tone.Destination);
-// synth.chain(highPassFilter, Tone.Destination);
-
-// synth.chain(autoFilter, Tone.Destination);
-// synth.chain(feedbackDelay, Tone.Destination);
-// synth.chain(pingPong, Tone.Destination);
-// synth.chain(reverb, Tone.Destination);
-// synth.chain(chorus, Tone.Destination);
-// synth.chain(tremolo, Tone.Destination);
-// synth.chain(vibrato, Tone.Destination);
-// synth.chain(phaser, Tone.Destination);
-// synth.chain(dist, Tone.Destination);
-// synth.chain(shift, Tone.Destination);
-// synth.chain(crusher, Tone.Destination);
-// synth.chain(cheby, Tone.Destination);
-
-// synth.connect(lowPassFilter, Tone.Destination);
-// synth.connect(highPassFilter, Tone.Destination);
-
-// synth.connect(autoFilter, Tone.Destination);
-// synth.connect(feedbackDelay, Tone.Destination);
-// synth.connect(pingPong, Tone.Destination);
-// synth.connect(reverb, Tone.Destination);
-// synth.connect(chorus, Tone.Destination);
-// synth.connect(tremolo, Tone.Destination);
-// synth.connect(vibrato, Tone.Destination);
-// synth.connect(phaser, Tone.Destination);
-// synth.connect(dist, Tone.Destination);
-// synth.connect(shift, Tone.Destination);
-// synth.connect(crusher, Tone.Destination);
-// synth.connect(cheby, Tone.Destination);
-
-// const comp = new Tone.Compressor(-30, 3).toDestination();
-// synth.chain(comp, Tone.Destination);
 
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
@@ -1940,7 +1890,6 @@ function onEnabled() {
       }
     });
   });
-
 }
 
 // ---------------------------------------------------------------------
@@ -2096,3 +2045,52 @@ showHide(chebyshevTitle, chebyshevContent, "none", "flex");
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // Presets functionality will be implemented here
+
+// ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
+// Effects connectivity alternatives
+// ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
+// synth.chain(highPassFilter, lowPassFilter, Tone.Destination);
+
+// synth.disconnect(highPassFilter);
+// synth.disconnect(lowPassFilter);
+
+// autoFilter first of high/low pass?
+// the last ones in the chain don't work (crusher, cheby)
+
+// Parallel
+// synth.chain(lowPassFilter, Tone.Destination);
+// synth.chain(highPassFilter, Tone.Destination);
+
+// synth.chain(autoFilter, Tone.Destination);
+// synth.chain(feedbackDelay, Tone.Destination);
+// synth.chain(pingPong, Tone.Destination);
+// synth.chain(reverb, Tone.Destination);
+// synth.chain(chorus, Tone.Destination);
+// synth.chain(tremolo, Tone.Destination);
+// synth.chain(vibrato, Tone.Destination);
+// synth.chain(phaser, Tone.Destination);
+// synth.chain(dist, Tone.Destination);
+// synth.chain(shift, Tone.Destination);
+// synth.chain(crusher, Tone.Destination);
+// synth.chain(cheby, Tone.Destination);
+
+// synth.connect(lowPassFilter, Tone.Destination);
+// synth.connect(highPassFilter, Tone.Destination);
+
+// synth.connect(autoFilter, Tone.Destination);
+// synth.connect(feedbackDelay, Tone.Destination);
+// synth.connect(pingPong, Tone.Destination);
+// synth.connect(reverb, Tone.Destination);
+// synth.connect(chorus, Tone.Destination);
+// synth.connect(tremolo, Tone.Destination);
+// synth.connect(vibrato, Tone.Destination);
+// synth.connect(phaser, Tone.Destination);
+// synth.connect(dist, Tone.Destination);
+// synth.connect(shift, Tone.Destination);
+// synth.connect(crusher, Tone.Destination);
+// synth.connect(cheby, Tone.Destination);
+
+// const comp = new Tone.Compressor(-30, 3).toDestination();
+// synth.chain(comp, Tone.Destination);

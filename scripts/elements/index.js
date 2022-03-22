@@ -6,7 +6,7 @@
  */
 
 export default function index() {
-    return /*html*/`
+  return /*html*/ `
 <div id="splash-screen">
     <img src="./assets/logo/logo192.png" alt="" />
 </div>
@@ -57,5 +57,5 @@ export default function index() {
     <!--------------------------------------------------------------------->
     <div id="footer"></div>
 </div>
-`
+`;
 }

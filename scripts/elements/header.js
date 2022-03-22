@@ -59,7 +59,6 @@ export default function header(darkMode) {
 `;
 }
 
-
 // Header with buttons
 
 // <div id="logo-name">
