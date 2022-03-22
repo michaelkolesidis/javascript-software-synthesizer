@@ -1907,14 +1907,12 @@ function onEnabled() {
   if (WebMidi.inputs.length < 1) {
     midiDisplay.innerHTML += "No device detected.";
   } else {
+    midiDisplay.innerHTML += `Select MIDI controller:`;
     WebMidi.inputs.forEach((device, index) => {
       midiDisplay.innerHTML += `<p id="${index}" class="midi-selector">${index} : ${device.name}</p>`;
     });
   }
 
-  // If none selected, it uses input 1 by default
-  // In Linux input 0 is occupied by Midi Through Port-0
-  let midiSelection = 1; 
   let midiSelected = false;
 
   document.querySelectorAll(".midi-selector").forEach((item) => {
@@ -1925,26 +1923,27 @@ function onEnabled() {
           midiDisplay.innerHTML += `<br>MIDI input selected`;
         }, 250);
 
-        midiSelection = item.id;
+        let mySynth = WebMidi.inputs[item.id];
+
+        mySynth.channels[1].addListener("noteon", (e) => {
+          synth.triggerAttack(midiToNoteString(e.data[1]));
+          // notes.push(midiToNoteString(e.data[1]));
+          midiDisplay.innerHTML = `<p style="font-size: 0.9rem; font-weight: 400;">MIDI note played: ${
+            e.data[1]
+          }<br>
+          Note name: ${midiToNoteString(e.data[1])}</p>`;
+        });
+
+        mySynth.channels[1].addListener("noteoff", (e) => {
+          synth.triggerRelease(midiToNoteString(e.data[1]));
+        });
+
         item.style.fontWeight = 500;
         midiSelected = true;
       }
     });
   });
-  const mySynth = WebMidi.inputs[midiSelection];
 
-  mySynth.channels[1].addListener("noteon", (e) => {
-    synth.triggerAttack(midiToNoteString(e.data[1]));
-    // notes.push(midiToNoteString(e.data[1]));
-    midiDisplay.innerHTML = `<p style="font-size: 0.9rem; font-weight: 400;">MIDI note played: ${
-      e.data[1]
-    }<br>
-    Note name: ${midiToNoteString(e.data[1])}</p>`;
-  });
-
-  mySynth.channels[1].addListener("noteoff", (e) => {
-    synth.triggerRelease(midiToNoteString(e.data[1]));
-  });
 }
 
 // ---------------------------------------------------------------------
