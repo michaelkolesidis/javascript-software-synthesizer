@@ -1221,9 +1221,6 @@ let chebyshevOrderNum = new Nexus.Number("#chebyshev-order-num");
 chebyshevOrderNum.link(chebyshevOrder);
 chebyshevOrderNum.colorize("accent", YELLOW);
 
-// .connect(autoFilter).connect(crusher).connect(cheby).connect(chorus).connect(dist).connect(feedbackDelay).connect(shift).connect(phaser).connect(PingPong).connect(reverb).connect(tremolo).connect(vibrato)
-// .toDestination()
-
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // Synthesizer
