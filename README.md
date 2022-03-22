@@ -98,18 +98,19 @@ The JSS-01 | JavaScript Software Synthesizer is quite heavy, especially on the C
 
 <br>
 
-| Component     | Minimum Requirement                     |
-| ------------- | --------------------------------------- |
-| CPU           | Quad-core x86-64 (2017 or later)        |
-| RAM           | 8GB                                     |
-| Display       | 1600x900                                |
-| Sound Card    | On-board, dedicated, or audio interface |
-| Speakers      | Monitor speakers or mixing headphoes    |
+| Component     | Minimum                                            | Recommended                             |
+| ------------- | -------------------------------------------------- | --------------------------------------- |
+| CPU           | Quad-core x86-64 (2017 or later)                   | Quad-core x86-64 (2020 or later) or M1  |
+| GPU           | NVIDIA or AMD graphics card with dedicated memory  | GeForce GTX 1050 Ti or equivalent       |
+| RAM           | 8GB                                                | 16GB                                    |
+| Display       | 1600x900                                           | 1920X1080                               |
+| Sound Card    | On-board, dedicated, or audio interface            | Audio interface                         |
+| Speakers      | Monitor speakers or mixing headphones              | Monitor speakers or mixing headphones   |
 
 <br>
 
 # Documentation
-Will be released with version 1.0.0. In the meantime, you can refer to the [Tone.js documentation](https://tonejs.github.io/docs/).
+Will be released with version 1.0.0. In the meantime, you can refer to the [Tone.js documentation](https://tonejs.github.io/docs/), as well as the [NexusUI documentation](https://nexus-js.github.io/ui/api/#intro).
 
 <br>
 
