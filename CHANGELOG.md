@@ -1,3 +1,16 @@
+# 0.5.4
+
+### Changes
+* MIDI input device selectable
+
+### Known Issues
+* When using the on-screen and/or the computer keyboard, if playing multiple notes, the synthesizer stops playing all notes if at least one note is released
+* Partials sections don't work
+* High CPU load and performance issues
+* Opening the Dev Tools in Chrome results to severe performance detoriation: the app becomes unresponsive and crushes
+* Severe performance issues on Firefox
+
+
 # 0.5.3
 
 ### Changes
@@ -12,6 +25,7 @@
 * High CPU load and performance issues
 * Opening the Dev Tools in Chrome results to severe performance detoriation: the app becomes unresponsive and crushes
 * Severe performance issues on Firefox
+
 
 # 0.5
 
