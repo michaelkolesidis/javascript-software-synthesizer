@@ -1909,7 +1909,7 @@ function onEnabled() {
     midiDisplay.innerHTML += "No device detected.";
   } else {
     WebMidi.inputs.forEach((device, index) => {
-      midiDisplay.innerHTML += `<p>${index}: ${device.name}<p>`;
+      midiDisplay.innerHTML += `<p>${index}: ${device.name}</p>`;
     });
   }
 
