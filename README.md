@@ -57,7 +57,7 @@ The <strong>Modulation Section</strong> includes the controls for the <strong>Mo
 <br><br>
 
 <img width="68px" src="./screenshots/elements/effects.png">
-The <strong>Effects Section</strong> includes the controls of the various effects that can be applied to the sound. The effects are connected [in series](https://macprovideo.com/article/audio-plug-in/synth-basics-parallel-and-series-filter-modes-explained) with the following connectivity: Oscillator 2 --> Oscillator 1 --> Auto Filter --> Phaser --> Crusher --> Chebyshev --> Feedback Delay --> Ping Pong Delay --> Reverb --> Chorus --> Tremolo --> Vibrato --> Distortion --> Frequency Shifter --> Output.
+The <strong>Effects Section</strong> includes the controls of the various effects that can be applied to the sound. The effects are connected in series with the following connectivity: Oscillator 2 --> Oscillator 1 --> Auto Filter --> Phaser --> Crusher --> Chebyshev --> Feedback Delay --> Ping Pong Delay --> Reverb --> Chorus --> Tremolo --> Vibrato --> Distortion --> Frequency Shifter --> Output.
 
 <br><br>
 
@@ -86,7 +86,7 @@ In order to use your [MIDI keyboard](https://en.wikipedia.org/wiki/MIDI_keyboard
 
 #### Sequencer
 <img width="900px" src="./screenshots/elements/sequencer.png">
-Right above the on-screen keyboard you can find the [Sequencer](https://en.wikipedia.org/wiki/Music_sequencer#Step_sequencers). There is an included sequence preinstalled, so you can just press the <strong>Play button</strong> and listen to it. 
+Right above the on-screen keyboard you can find the Sequencer. There is an included sequence preinstalled, so you can just press the <strong>Play button</strong> and listen to it. 
 <br>
 The first input from the left controls the rate of the sequence (speed). The second input is the base value of the notes of the sequence (16n stands for a 16th note value, 8n for an 8th and so on). You can input your own sequences in the main input by writing the sequence of the desired notes in this form: <strong>"C4", "F5", "D2"**</strong>. You can include parts with notes of half the base value by including them in brackets, ex. <strong>"C4", ["F5", "D2"]</strong>. In this examples, if the base value is 16n (16th notes), C4 will have a value of 16th, and each of the F5 and D2 will have a value of 32th (or a value of a 16th combined). 
 <br>
