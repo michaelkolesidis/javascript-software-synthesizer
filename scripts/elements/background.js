@@ -1,3 +1,13 @@
+/*
+ *  JSS-01 |JavaScript Software Synthesizer
+ *  Copyright (c) 2022 Michael Kolesidis
+ *  MIT License
+ *
+ *  Provides the animated background for JSS-01.
+ *  Utilizing p5.js
+ * 
+ */
+
 let star = [];//star array
 let canvas;
 
