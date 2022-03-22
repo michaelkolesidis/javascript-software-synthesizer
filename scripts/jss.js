@@ -1908,14 +1908,30 @@ function onEnabled() {
     midiDisplay.innerHTML += "No device detected.";
   } else {
     WebMidi.inputs.forEach((device, index) => {
-      midiDisplay.innerHTML += `<p>${index}: ${device.name}</p>`;
+      midiDisplay.innerHTML += `<p id="${index}" class="midi-selector">${index} : ${device.name}</p>`;
     });
   }
 
-  const mySynth = WebMidi.inputs[1];
-  // It uses input 1 by default - make it selectable by user
+  // If none selected, it uses input 1 by default
   // In Linux input 0 is occupied by Midi Through Port-0
-  // const mySynth = WebMidi.getInputByName("TYPE NAME HERE!")
+  let midiSelection = 1; 
+  let midiSelected = false;
+
+  document.querySelectorAll(".midi-selector").forEach((item) => {
+    item.addEventListener("click", (event) => {
+      if (!midiSelected) {
+        setTimeout(function () {
+          item.style.color = BLUE;
+          midiDisplay.innerHTML += `<br>MIDI input selected`;
+        }, 250);
+
+        midiSelection = item.id;
+        item.style.fontWeight = 500;
+        midiSelected = true;
+      }
+    });
+  });
+  const mySynth = WebMidi.inputs[midiSelection];
 
   mySynth.channels[1].addListener("noteon", (e) => {
     synth.triggerAttack(midiToNoteString(e.data[1]));
