@@ -1909,13 +1909,13 @@ function onEnabled() {
     midiDisplay.innerHTML += "No device detected.";
   } else {
     WebMidi.inputs.forEach((device, index) => {
-      midiDisplay.innerHTML += `${index}: ${device.name} <br>`;
+      midiDisplay.innerHTML += `<p>${index}: ${device.name}<p>`;
     });
   }
 
   const mySynth = WebMidi.inputs[1];
   // It uses input 1 by default - make it selectable by user
-  // In Linux input 0 is occupied bt Midi Through Port-0
+  // In Linux input 0 is occupied by Midi Through Port-0
   // const mySynth = WebMidi.getInputByName("TYPE NAME HERE!")
 
   mySynth.channels[1].addListener("noteon", (e) => {
