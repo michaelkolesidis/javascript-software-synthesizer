@@ -162,7 +162,11 @@ Please refer to the project's [Changelog](https://github.com/michaelkolesidis/ja
 <br>
 
 # Roadmap
-Some of the ideas are full modular design, full compatibility with MIDI controllers, implementation of all Tone.js features, and in the (very) distant future even our own synth engines along with Tone.js.
+Some of the features to be implemented in the future are:
+* Recorder
+* Presets
+* All parameters controllable with MIDI
+* Other types of sound synthesis to choose from (currently only FM synthesis)
 
 <br>
 
