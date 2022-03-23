@@ -214,6 +214,12 @@ You name could be here and it would be great to have you aboard!
 
 <br>
 
+# Other
+
+You can find a mirror of this repository in [Codeberg](https://codeberg.org/michaelkolesidis/javascript-software-synthesizer).
+
+<br>
+
 # Special Thanks To
 
 - [Mohammed Amine Grid](https://github.com/mohammed-amine-grid), for his guidance and dedication throughout this journey.
