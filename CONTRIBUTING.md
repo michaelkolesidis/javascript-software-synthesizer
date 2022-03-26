@@ -7,8 +7,6 @@ improve the documentation, submit issues (such as bug reports or feature request
 
 All contributors will be added in the designated section in the project's readme file.
 
-
-
 ### The JSS-01 is in active development, so if you have any ideas or want to help, feel free to:
 0. Start by creating an issue, so proposed changes can be discussed
 1. Fork the Project
@@ -17,8 +15,6 @@ All contributors will be added in the designated section in the project's readme
 4. Push to the Branch (git push origin feature/AmazingFeature)
 5. Open a Pull Request
 
-
 Please contact us for any inquiries :)
-
 
 [Our Contributor Covenant Code of Conduct](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/CODE_OF_CONDUCT.md)
