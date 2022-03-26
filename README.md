@@ -109,7 +109,7 @@ The JSS-01 | JavaScript Software Synthesizer is quite heavy, especially on the C
 
 | Component  | Minimum                                           | Recommended                            |
 | ---------- | ------------------------------------------------- | -------------------------------------- |
-| CPU        | Quad-core x86-64 (2017 or later)                  | Quad-core x86-64 (2020 or later) or M1 |
+| CPU        | Quad-core x86-64 (2015 or later)                  | Quad-core x86-64 (2020 or later) or M1 |
 | GPU        | NVIDIA or AMD graphics card with dedicated memory | GeForce GTX 1050 Ti or equivalent      |
 | RAM        | 8GB                                               | 16GB                                   |
 | Display    | 1600x900                                          | 1920X1080                              |
@@ -126,9 +126,7 @@ Will be released with version 1.0.0. In the meantime, you can refer to the [Tone
 
 # Guides & Tutorials
 
-There aren't any guides and tutorials specifically for the JSS-01 yet, but there are plenty of excellent guides on the types of sound synthesis that the JSS-01 is using:
-
-(Currently JSS-01 only has an FM mode implementing the FMSynth of Tone.js)
+The JSS-01 is using FM synthesis implementing the FMSynth of Tone.js, While there aren't any guides and tutorials specifically for the JSS-01 yet, there are plenty of excellent guides on FM synthesis:
 
 ### FM Synthesis
 
