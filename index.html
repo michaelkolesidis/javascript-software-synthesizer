@@ -1,145 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!--------------------------------------------------------------------->
-    <!-- Meta Tags -->
-    <!--------------------------------------------------------------------->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="JavaScript Software Synthesizer is a web app enabling you to make and play music in the browser. It is a software synthesizer implementing a variety of JavaScript frameworks and libraries, such as Tone.js and NexusUI."
+      content="JavaScript Software Synthesizer is a web app enabling you to make 
+      and play music in the browser. It is a software synthesizer implementing a 
+      variety of JavaScript frameworks and libraries, such as Tone.js and NexusUI."
     />
     <meta
       name="keywords"
-      content="music, midi, sound, synthesizer, sound-processing, synth, piano, synthesizers, software-synthesizer, subtractive-synthesis, midi-keyboard, fm-synthesizer, piano-keyboard, sound-synthesis, nexusui, frequency-modulation, tonejs, knobs, fm-synthesis, sound-engineering"
+      content="music, midi, sound, synthesizer, sound-processing, synth, piano, 
+      synthesizers, software-synthesizer, subtractive-synthesis, midi-keyboard, 
+      fm-synthesizer, piano-keyboard, sound-synthesis, nexusui, frequency-modulation, 
+      tonejs, web-audio, fm-synthesis, sound-engineering"
     />
     <meta name="author" content="Michael Kolesidis" />
-
-    <!--------------------------------------------------------------------->
-    <!-- Title -->
-    <!--------------------------------------------------------------------->
     <title>JSS-01 | JavaScript Software Synthesizer</title>
-
-    <!--------------------------------------------------------------------->
-    <!-- Libraries, Frameworks and Main Script -->
-    <!--------------------------------------------------------------------->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.37/Tone.js"
       integrity="sha512-gK8OnTXn8cTYkHqYX+bhzjQ1rClAPuG2eMy+oRuV26mSuE0EbZeULFKdyc/YGX1Z/JsC06FXxQttdX4aahjSMQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+      defer
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/nexusui@latest/dist/NexusUI.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/webmidi@next/dist/iife/webmidi.iife.js"></script>
-    <script type="module" src="./scripts/jss.js"></script>
-
-    <!--------------------------------------------------------------------->
-    <!-- Icons and Styling -->
-    <!--------------------------------------------------------------------->
-    <link rel="stylesheet" href="./css/style.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/nexusui@latest/dist/NexusUI.js"
+      defer
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/webmidi@next/dist/iife/webmidi.iife.js"
+      defer
+    ></script>
+    <script type="module" src="./scripts/jss.js" defer></script>
+    <!-- <script src="./scripts/elements/background.js"></script> -->
+    <link rel="stylesheet" href="./css/style.min.css" />
     <link rel="icon" href="./assets/logo/favicon.ico" />
     <link rel="apple-touch-icon" href="./assets/logo/logo192.png" />
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="manifest" href="/jss.webmanifest" />
   </head>
-
   <body>
-    <div id="page-container">
-      <div id="content-wrap">
-        <!--------------------------------------------------------------------->
-        <!-- Header -->
-        <!--------------------------------------------------------------------->
-        <div id="header" tabindex="0"></div>
-        <!--------------------------------------------------------------------->
-        <!-- Synthesizer Panel -->
-        <!--------------------------------------------------------------------->
-        <div id="synthesizer">
-          <!--------------------------------------------------------------------->
-          <!-- Displays -->
-          <!--------------------------------------------------------------------->
-          <div id="displays"></div>
-
-          <!--------------------------------------------------------------------->
-          <!-- Synth Section -->
-          <!--------------------------------------------------------------------->
-          <div id="synth-section">
-            <div class="title" id="synth-title"><p>Synth</p></div>
-            <div id="synth-section-content">
-              <!--------------------------------------------------------------------->
-              <!-- Main -->
-              <!--------------------------------------------------------------------->
-              <div id="synth-section-main"></div>
-              <!--------------------------------------------------------------------->
-              <!-- Amplitude Envelope -->
-              <!--------------------------------------------------------------------->
-              <p id="adsr-envelope-title" class="subtitle">
-                Amplitude Envelope
-              </p>
-              <div id="adsr-envelope"></div>
-              <!--------------------------------------------------------------------->
-              <!-- Oscillator -->
-              <!--------------------------------------------------------------------->
-              <p id="oscillator-title" class="subtitle">Oscillator</p>
-              <div id="oscillator"></div>
-            </div>
-          </div>
-
-          <!--------------------------------------------------------------------->
-          <!-- Modulation  Section -->
-          <!--------------------------------------------------------------------->
-          <div id="modulation">
-            <div class="title" id="modulation-title"><p>Modulation</p></div>
-            <div id="modulation-content">
-              <!--------------------------------------------------------------------->
-              <!-- Modulation Main -->
-              <!--------------------------------------------------------------------->
-              <div id="modulation-section-main"></div>
-              <!--------------------------------------------------------------------->
-              <!-- MOdulation Envelope  -->
-              <!--------------------------------------------------------------------->
-              <p id="modulation-envelope-title" class="subtitle">
-                Modulation Envelope
-              </p>
-              <div id="modulation-envelope"></div>
-            </div>
-          </div>
-
-          <!--------------------------------------------------------------------->
-          <!-- Effects  Section -->
-          <!--------------------------------------------------------------------->
-          <div id="effects">
-            <div class="title" id="effects-title"><p>Effects</p></div>
-            <div id="effects-content">
-              <p>Various effects will be availble here.</p>
-            </div>
-          </div>
-        </div>
-
-        <!--------------------------------------------------------------------->
-       <!-- Extra Controls (Presets, Sequencer etc.) -->
-        <!--------------------------------------------------------------------->
-        <div id="extras">
-          <div id="sequencer">
-            <button type="button" id="seq-play">▶</button>
-            <button type="button" id="seq-stop">■</button>
-          </div>
-          
-          <!-- <div id="recorder">
-            <button type="button" id="rec">●</button>
-            <button type="button" id="rec-stop">■</button>
-          </div> -->
-          
-        </div> 
-        <!--------------------------------------------------------------------->
-        <!-- Keyboard -->
-        <!--------------------------------------------------------------------->
-        <div id="keyboard"></div>
-      </div>
-      <!--------------------------------------------------------------------->
-      <!-- Footer -->
-      <!--------------------------------------------------------------------->
-      <div id="footer"></div>
-    </div>
+    <div id="root"></div>
   </body>
 </html>

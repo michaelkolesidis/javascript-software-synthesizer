@@ -5,7 +5,7 @@
  * MIT License
  *
  * The MIDI to Note String function takes MIDI note numbers and
- * returns the name of the note as a string. It covers the 
+ * returns the name of the note as a string. It covers the
  * entire range of an accoustic piano (88 keys). It can be
  * useful with Tone.js that needs note names in strings
  * as its input
