@@ -1,0 +1,82 @@
+[
+ {
+  "language": "JavaScript",
+  "files": 22,
+  "lines": 3442,
+  "blanks": 358,
+  "comments": 652,
+  "linesOfCode": 2432
+ },
+ {
+  "language": "Markdown",
+  "files": 13,
+  "lines": 701,
+  "blanks": 184,
+  "comments": 0,
+  "linesOfCode": 517
+ },
+ {
+  "language": "SVG",
+  "files": 9,
+  "lines": 994,
+  "blanks": 6,
+  "comments": 4,
+  "linesOfCode": 984
+ },
+ {
+  "language": "JSON",
+  "files": 2,
+  "lines": 4188,
+  "blanks": 0,
+  "comments": 0,
+  "linesOfCode": 4188
+ },
+ {
+  "language": "CSS",
+  "files": 1,
+  "lines": 1,
+  "blanks": 0,
+  "comments": 0,
+  "linesOfCode": 1
+ },
+ {
+  "language": "HTML",
+  "files": 1,
+  "lines": 47,
+  "blanks": 0,
+  "comments": 1,
+  "linesOfCode": 46
+ },
+ {
+  "language": "Plain Text",
+  "files": 1,
+  "lines": 3,
+  "blanks": 1,
+  "comments": 0,
+  "linesOfCode": 2
+ },
+ {
+  "language": "Sass",
+  "files": 1,
+  "lines": 1213,
+  "blanks": 184,
+  "comments": 166,
+  "linesOfCode": 863
+ },
+ {
+  "language": "gitignore",
+  "files": 1,
+  "lines": 26,
+  "blanks": 6,
+  "comments": 5,
+  "linesOfCode": 15
+ },
+ {
+  "language": "Total",
+  "files": 51,
+  "lines": 10615,
+  "blanks": 739,
+  "comments": 828,
+  "linesOfCode": 9048
+ }
+]
