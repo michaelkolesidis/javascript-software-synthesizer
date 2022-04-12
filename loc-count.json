@@ -25,11 +25,11 @@
  },
  {
   "language": "JSON",
-  "files": 2,
-  "lines": 4188,
+  "files": 3,
+  "lines": 4270,
   "blanks": 0,
   "comments": 0,
-  "linesOfCode": 4188
+  "linesOfCode": 4270
  },
  {
   "language": "CSS",
@@ -73,10 +73,10 @@
  },
  {
   "language": "Total",
-  "files": 51,
-  "lines": 10615,
+  "files": 52,
+  "lines": 10697,
   "blanks": 739,
   "comments": 828,
-  "linesOfCode": 9048
+  "linesOfCode": 9130
  }
 ]
