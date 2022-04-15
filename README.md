@@ -216,7 +216,8 @@ None, yet! We will have to add way more features for that.
 
 # Contributors
 
-[Chris Strawser](https://github.com/mcochris)
+[Chris Strawser](https://github.com/mcochris)<br>
+[Margarita Marmaridou](https://github.com/mamarmar)<br>
 
 
 You name could be here and it would be great to have you aboard!
