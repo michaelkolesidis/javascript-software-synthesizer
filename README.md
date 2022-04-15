@@ -216,6 +216,9 @@ None, yet! We will have to add way more features for that.
 
 # Contributors
 
+[Chris Strawser](https://github.com/mcochris)
+
+
 You name could be here and it would be great to have you aboard!
 
 <br>
