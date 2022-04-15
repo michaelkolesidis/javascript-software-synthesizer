@@ -118,6 +118,14 @@ The JSS-01 | JavaScript Software Synthesizer is quite heavy, especially on the C
 
 <br>
 
+### Browser Requirements
+
+| Browser                                                                                                                                         |
+| ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| Chromium-based, Safari, or Firefox with the <a href="https://addons.mozilla.org/en-US/firefox/addon/midi-input-provider/">MIDI Input Provider add-on</a> |
+
+<br>
+
 # Documentation
 
 Will be released with version 1.0.0. In the meantime, you can refer to the [Tone.js documentation](https://tonejs.github.io/docs/), as well as the [NexusUI documentation](https://nexus-js.github.io/ui/api/#intro).
