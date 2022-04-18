@@ -185,6 +185,8 @@ Some of the features to be implemented in the future are:
 - Presets
 - All parameters controllable with MIDI
 - Other types of sound synthesis to choose from (currently only FM synthesis)
+- Rewriting the app in TypeScript
+- Rewriting the app using React
 
 <br>
 
