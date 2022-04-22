@@ -31,9 +31,7 @@ The JSS-01 | JavaScript Software Synthesizer is a web application enabling you t
   <img width="900px" src="./screenshots/v.0.5.4-large.png">
 </p>
 
-
-
-<br>
+More screenshots can be found <a href="">here</a>.
 
 ## Introduction
 
@@ -209,6 +207,11 @@ Some of the features to be implemented in the future are:
 A full(-ish) list of references can be found in the [References](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/REFERENCES.md) document.
 
 <br>
+
+## Screenshots
+
+
+
 
 ## License
 
