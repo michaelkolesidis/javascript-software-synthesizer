@@ -9,6 +9,19 @@
 [![Version](https://img.shields.io/badge/version-0.5.4-01004c.svg)](https://shields.io/)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/93c42090-6fc9-4c3d-a462-42b535ea9d15/deploy-status)](https://app.netlify.com/sites/javascript-software-synthesizer/deploys)
 
+## Technologies Used
+<a href="https://tonejs.github.io/"><img src="https://github.com/michaelkolesidis/tech-icons/blob/main/icons/tonejs/tonejs-original.png" height="50px" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://en.wikipedia.org/wiki/JavaScript"><img src="https://github.com/michaelkolesidis/tech-icons/blob/main/icons/javascript/javascript-original.svg" height="50px" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://sass-lang.com/"><img src="https://github.com/michaelkolesidis/tech-icons/blob/main/icons/sass/sass-original.svg" height="50px" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://www.npmjs.com/"><img src="https://github.com/michaelkolesidis/tech-icons/blob/main/icons/npm/npm-original-wordmark.svg" height="50px" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/michaelkolesidis/tech-icons/blob/main/icons/html5/html5-plain.svg" height="50px" />
+
+
+## Description
 The JSS-01 | JavaScript Software Synthesizer is a web application enabling you to make and play music in the browser. It is a [software synthesizer](https://en.wikipedia.org/wiki/Software_synthesizer) utilizing the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) by implementing a variety of JavaScript frameworks and libraries, such as [Tone.js](https://tonejs.github.io/) and [NexusUI](https://nexus-js.github.io/ui/).
 
 <br>
@@ -21,7 +34,7 @@ The JSS-01 | JavaScript Software Synthesizer is a web application enabling you t
 
 <br>
 
-# Introduction
+## Introduction
 
 Keys, knobs, sliders and buttons to tweak your sound and generate immersive soundscapes. You can also connect your MIDI keyboard and play with it!
 
@@ -98,7 +111,7 @@ You can find some additional information about the JSS-01 and sound synthesis in
 
 <br>
 
-### System Requirements
+## System Requirements
 
 The JSS-01 | JavaScript Software Synthesizer is quite heavy, especially on the CPU. We would suggest these indicative minimum requirements:
 
@@ -115,7 +128,7 @@ The JSS-01 | JavaScript Software Synthesizer is quite heavy, especially on the C
 
 <br>
 
-### Browser Requirements
+#### Browser Requirements
 
 | Browser                                                                                                                                         |
 | ----------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -123,13 +136,13 @@ The JSS-01 | JavaScript Software Synthesizer is quite heavy, especially on the C
 
 <br>
 
-# Documentation
+## Documentation
 
 Will be released with version 1.0.0. In the meantime, you can refer to the [Tone.js documentation](https://tonejs.github.io/docs/), as well as the [NexusUI documentation](https://nexus-js.github.io/ui/api/#intro).
 
 <br>
 
-# Guides & Tutorials
+## Guides & Tutorials
 
 The JSS-01 is using FM synthesis implementing the FMSynth of Tone.js, While there aren't any guides and tutorials specifically for the JSS-01 yet, there are plenty of excellent guides on FM synthesis:
 
@@ -142,20 +155,20 @@ The JSS-01 is using FM synthesis implementing the FMSynth of Tone.js, While ther
 
 <br>
 
-# Contributing
+## Contributing
 
 Feel free to submit issues and pull requests. It would be great to create a community around JSS-01, to contiue its development and evolution, making it more capable and easier to use, increasing its creative and artistic potential.
 If you are interested in becoming part of out community it would be useful to have a look to our dedicated document regarding [Contributing](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/CONTRIBUTING.md), as well as, out [Code of Conduct](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/CODE_OF_CONDUCT.md). It a nutshell, we want our community to be a safe space for everyone, so that we can all have a pleasant and joyful experience!
 
 <br>
 
-# Changelog
+## Changelog
 
 Please refer to the project's [Changelog](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/CHANGELOG.md) document.
 
 <br>
 
-# Technologies Used
+## Technologies Used (Extended)
 
 - [Tone.js](https://github.com/Tonejs/Tone.js/)
   <br>One could say that Tone.js is the "soul" of our project. It provides us with the synthesizers we use to generate sounds, as well as their various properties that can be tweaked and adjusted.
@@ -163,10 +176,6 @@ Please refer to the project's [Changelog](https://github.com/michaelkolesidis/ja
   <br>NexusUI provides us with the UI components that are connected to the synthesizers and make parameters adjusting easy and playful.
 - [WEBMIDI.js](https://github.com/djipco/webmidi)
   <br>WEBMIDI.js makes Web MIDI API easy to implement. It allows users to connect their MIDI keyboards and play the synthesizer the way it is meant to be played. Because, who likes playing music with a [mouse](https://web.archive.org/web/20150928202135im_/https://kathytemean.files.wordpress.com/2014/11/46289.jpg?w=500&h=540)?
-- [p5.js](https://p5js.org/)
-  <br>p5.js is a JavaScript library for creative coding, with a focus on making coding accessible and inclusive for artists, designers, educators, beginners, and anyone else! We use it for the background animation.
-- [Floating UI](https://github.com/floating-ui/floating-ui)
-  <br>Floating UI allows us to provide help to our users, by position floating tooltips, while intelligently keeping them in view.
 - [Sass](https://github.com/sass/sass)
   <br>The SCSS (Sassy CSS) syntax is utilized for the styling of our project.
 - [npm](https://github.com/npm/cli)
@@ -174,7 +183,7 @@ Please refer to the project's [Changelog](https://github.com/michaelkolesidis/ja
 
 <br>
 
-# Roadmap
+## Roadmap
 
 Some of the features to be implemented in the future are:
 
@@ -187,7 +196,7 @@ Some of the features to be implemented in the future are:
 
 <br>
 
-# References and Inspiration
+## References and Inspiration
 
 - [Synth Secrets from Sound on Sound](https://www.soundonsound.com/series/synth-secrets-sound-sound)
 - [Learning Synths by Ableton](https://learningsynths.ableton.com/en/playground)
@@ -200,20 +209,20 @@ A full(-ish) list of references can be found in the [References](https://github.
 
 <br>
 
-# License
+## License
 
 Copyright (c) 2022 Michael Kolesidis<br>
 Licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
 <br>
 
-# Sponsors
+## Sponsors
 
 None, yet! We will have to add way more features for that.
 
 <br>
 
-# Contributors
+## Contributors
 
 [Chris Strawser](https://github.com/mcochris)<br>
 [Margarita Marmaridou](https://github.com/mamarmar)<br>
@@ -223,13 +232,13 @@ You name could be here and it would be great to have you aboard!
 
 <br>
 
-# Other
+## Other
 
 You can find a mirror of this repository in [Codeberg](https://codeberg.org/michaelkolesidis/javascript-software-synthesizer).
 
 <br>
 
-# Special Thanks To
+## Special Thanks To
 
 - [Mohammed Amine Grid](https://github.com/mohammed-amine-grid), for his guidance and dedication throughout this journey.
 - All the students and the tutors at the [Social Hackers Academy](https://github.com/SocialHackersAcademy), for creating a nice little community of passionate people offering their best for each other.
