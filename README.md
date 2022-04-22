@@ -14,13 +14,10 @@ The JSS-01 | JavaScript Software Synthesizer is a web application enabling you t
 <br>
 
 <p align="center">
-  <img width="900px" src="./screenshots/v.0.5-1col.png">
-
+  <img width="900px" src="./screenshots/v.0.5.4-large.png">
 </p>
 
-<p align="center">
-  <img width="900px" src="./screenshots/v.0.5-3cols.png">
-</p>
+
 
 <br>
 
