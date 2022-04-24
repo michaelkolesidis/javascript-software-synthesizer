@@ -9,6 +9,8 @@
 [![Version](https://img.shields.io/badge/version-0.5.4-01004c.svg)](https://shields.io/)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/93c42090-6fc9-4c3d-a462-42b535ea9d15/deploy-status)](https://app.netlify.com/sites/javascript-software-synthesizer/deploys)
 
+
+
 ## Technologies Used
 <a href="https://tonejs.github.io/"><img src="https://github.com/michaelkolesidis/tech-icons/blob/main/icons/tonejs/tonejs-original.png" height="50px" /></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -22,6 +24,8 @@
 
 More info about the technologies can be found <a href="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/README.md#technologies-used-extended">here</a>.
 
+
+
 ## Description
 The JSS-01 | JavaScript Software Synthesizer is a web application enabling you to make and play music in the browser. It is a [software synthesizer](https://en.wikipedia.org/wiki/Software_synthesizer) utilizing the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) by implementing a variety of JavaScript frameworks and libraries, such as [Tone.js](https://tonejs.github.io/) and [NexusUI](https://nexus-js.github.io/ui/).
 
@@ -30,6 +34,8 @@ The JSS-01 | JavaScript Software Synthesizer is a web application enabling you t
 <img width="900px" src="./screenshots/v.0.5.4-large.png">
 
 More screenshots can be found <a href="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/README.md#screenshots">here</a>.
+
+
 
 ## Introduction
 
@@ -108,6 +114,8 @@ You can find some additional information about the JSS-01 and sound synthesis in
 
 <br>
 
+
+
 ## System Requirements
 
 The JSS-01 | JavaScript Software Synthesizer is quite heavy, especially on the CPU. We would suggest these indicative minimum requirements:
@@ -133,11 +141,15 @@ The JSS-01 | JavaScript Software Synthesizer is quite heavy, especially on the C
 
 <br>
 
+
+
 ## Documentation
 
 Will be released with version 1.0.0. In the meantime, you can refer to the [Tone.js documentation](https://tonejs.github.io/docs/), as well as the [NexusUI documentation](https://nexus-js.github.io/ui/api/#intro).
 
 <br>
+
+
 
 ## Guides & Tutorials
 
@@ -152,6 +164,8 @@ The JSS-01 is using FM synthesis implementing the FMSynth of Tone.js, While ther
 
 <br>
 
+
+
 ## Contributing
 
 Feel free to submit issues and pull requests. It would be great to create a community around JSS-01, to contiue its development and evolution, making it more capable and easier to use, increasing its creative and artistic potential.
@@ -159,11 +173,15 @@ If you are interested in becoming part of out community it would be useful to ha
 
 <br>
 
+
+
 ## Changelog
 
 Please refer to the project's [Changelog](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/CHANGELOG.md) document.
 
 <br>
+
+
 
 ## Technologies Used (Extended)
 
@@ -180,6 +198,8 @@ Please refer to the project's [Changelog](https://github.com/michaelkolesidis/ja
 
 <br>
 
+
+
 ## Roadmap
 
 Some of the features to be implemented in the future are:
@@ -192,6 +212,8 @@ Some of the features to be implemented in the future are:
 - Rewriting the app using React
 
 <br>
+
+
 
 ## References and Inspiration
 
@@ -206,12 +228,15 @@ A full(-ish) list of references can be found in the [References](https://github.
 
 <br>
 
+
+
 ## Screenshots
 #### Medium Screens
 <img width="900px" src="./screenshots/v.0.5.4-medium.png">
 
 #### Small Screens
 <img width="900px" src="./screenshots/v.0.5.4-small.png">
+
 
 
 ## License
@@ -221,11 +246,15 @@ Licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
 <br>
 
+
+
 ## Sponsors
 
 None, yet! We will have to add way more features for that.
 
 <br>
+
+
 
 ## Contributors
 
@@ -237,11 +266,15 @@ You name could be here and it would be great to have you aboard!
 
 <br>
 
+
+
 ## Other
 
 You can find a mirror of this repository in [Codeberg](https://codeberg.org/michaelkolesidis/javascript-software-synthesizer).
 
 <br>
+
+
 
 ## Special Thanks To
 
