@@ -29,7 +29,7 @@ More info about the technologies can be found <a href="https://github.com/michae
 ## Description
 The JSS-01 | JavaScript Software Synthesizer is a web application enabling you to make and play music in the browser. It is a [software synthesizer](https://en.wikipedia.org/wiki/Software_synthesizer) utilizing the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) by implementing a variety of JavaScript frameworks and libraries, such as [Tone.js](https://tonejs.github.io/) and [NexusUI](https://nexus-js.github.io/ui/).
 
-<br>
+
 
 <img width="900px" src="./screenshots/v.0.5.4-large.png">
 
@@ -44,15 +44,11 @@ Keys, knobs, sliders and buttons to tweak your sound and generate immersive soun
 ### Quick Start
 
 The JSS-01 | JavaScript Software Synthesizer uses <strong>FM Synthesis</strong> (frequency modulation synthesis). In FM Synthesis there is an oscillator that produces the sound signal, the <strong>Carrier</strong>, and an oscillator that modulates the carrier's wave frequency, the <strong>Modulator</strong>.
-<br><br>
-<img width="300px" src="./assets/fm.png">
 
-<br>
+<img width="300px" src="./assets/fm.png">
 
 <p><strong>Sine wave:</strong></p>
 <img width="300px" src="./assets//waveforms/sine_wave.png">
-
-<br>
 
 <p><strong>Frequency-modulated sine wave:</strong></p>
 <img width="300px" src="./assets//waveforms/sine_wave_mod.png">
@@ -69,10 +65,10 @@ The <strong>Modulation Section</strong> includes the controls for the <strong>Mo
 
 <br><br>
 
-<img width="68px" src="./screenshots/elements/effects.png">
+<img width="58px" src="./screenshots/elements/effects.png">
 The <strong>Effects Section</strong> includes the controls of the various effects that can be applied to the sound. The effects are connected in series with the following connectivity: Oscillator 2 --> Oscillator 1 --> Auto Filter --> Phaser --> Crusher --> Chebyshev --> Feedback Delay --> Ping Pong Delay --> Reverb --> Chorus --> Tremolo --> Vibrato --> Distortion --> Frequency Shifter --> Output.
 
-<br><br>
+
 
 #### How to Play
 
@@ -80,7 +76,7 @@ You can play the JSS-01 by using the on-screen keyboard, your computer keyboard,
 
 <img width="500px" src="./assets/keyboard/keyboard_bg_w.png">
 
-<br><br>
+
 
 #### Oscilloscope
 
@@ -91,28 +87,25 @@ The [Oscilloscope](https://en.wikipedia.org/wiki/Oscilloscope) shows the wavefor
 <img width="80px" src="./screenshots/elements/mod_index.png">
 The Modulation Index determines the amount of the modulation that will be applied to the Carrier. If you set the <strong>Modulation Index</strong> to 0 (can be found at the top line of the Synth section) you get the unmodulated output of the carrier oscillator.
 
-<br>
 
 #### MIDI
 
 In order to use your [MIDI keyboard](https://en.wikipedia.org/wiki/MIDI_keyboard) with the JSS-01 you should connect it and turn it on, prior to accessing the web app. If you connect it while already on the JSS-01, you should refresh the page. The available MIDI devices will appear inside the MIDI display, located on top left. You can click on the MIDI device you would like to use and wait for the confirmation message. You are now ready to use your MIDI keyboard. Enjoy playing!
 
-<br>
+
 
 #### Sequencer
 
 <img width="900px" src="./screenshots/elements/sequencer.png">
-Right above the on-screen keyboard you can find the Sequencer. There is an included sequence preinstalled, so you can just press the <strong>Play button</strong> and listen to it. 
-<br>
-The first input from the left controls the rate of the sequence (speed). The second input is the base value of the notes of the sequence (16n stands for a 16th note value, 8n for an 8th and so on). You can input your own sequences in the main input by writing the sequence of the desired notes in this form: <strong>"C4", "F5", "D2"**</strong>. You can include parts with notes of half the base value by including them in brackets, ex. <strong>"C4", ["F5", "D2"]</strong>. In this examples, if the base value is 16n (16th notes), C4 will have a value of 16th, and each of the F5 and D2 will have a value of 32th (or a value of a 16th combined). 
-<br>
-When your sequence is ready, you can add it to the sequencer using the <strong>Add button</strong>. In order to go back to the default sequence, you can simply write <strong>default</strong> in the sequence input field and then click the Add button. There are two extra sequences included, the bassline of "I Feel Love" by Donna Summer (peoduced by Giorgio Moroder), which can be accessed by writing <strong>i feel love</strong> in the sequence input field and then pressing the add button, and the riff of "Funky Town", that can be accessed by writing <strong>funky town</strong>.
+Right above the on-screen keyboard you can find the Sequencer. There is an included sequence preinstalled, so you can just press the <strong>Play button</strong> and listen to it. <br><br>
 
-<br><br>
+The first input from the left controls the rate of the sequence (speed). The second input is the base value of the notes of the sequence (16n stands for a 16th note value, 8n for an 8th and so on). You can input your own sequences in the main input by writing the sequence of the desired notes in this form: <strong>"C4", "F5", "D2"**</strong>. You can include parts with notes of half the base value by including them in brackets, ex. <strong>"C4", ["F5", "D2"]</strong>. In this examples, if the base value is 16n (16th notes), C4 will have a value of 16th, and each of the F5 and D2 will have a value of 32th (or a value of a 16th combined). 
+
+When your sequence is ready, you can add it to the sequencer using the <strong>Add button</strong>. In order to go back to the default sequence, you can simply write <strong>default</strong> in the sequence input field and then click the Add button. There are two extra sequences included, the bassline of "I Feel Love" by Donna Summer (peoduced by Giorgio Moroder), which can be accessed by writing <strong>i feel love</strong> in the sequence input field and then pressing the add button, and the riff of "Funky Town", that can be accessed by writing <strong>funky town</strong>.
 
 You can find some additional information about the JSS-01 and sound synthesis in this short [presentation](./assets/presentation/JSS%20Presentation.pdf).
 
-<br>
+
 
 
 
@@ -120,7 +113,7 @@ You can find some additional information about the JSS-01 and sound synthesis in
 
 The JSS-01 | JavaScript Software Synthesizer is quite heavy, especially on the CPU. We would suggest these indicative minimum requirements:
 
-<br>
+
 
 | Component  | Minimum                                           | Recommended                                            |
 | ---------- | ------------------------------------------------- | ------------------------------------------------------ |
@@ -131,7 +124,6 @@ The JSS-01 | JavaScript Software Synthesizer is quite heavy, especially on the C
 | Sound Card | On-board, dedicated, or audio interface           | Audio interface                                        |
 | Speakers   | Monitor speakers or mixing headphones             | Monitor speakers or mixing headphones                  |
 
-<br>
 
 #### Browser Requirements
 
@@ -139,15 +131,13 @@ The JSS-01 | JavaScript Software Synthesizer is quite heavy, especially on the C
 | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | Chromium-based, Safari, or Firefox with the <a href="https://addons.mozilla.org/en-US/firefox/addon/midi-input-provider/">MIDI Input Provider add-on</a> |
 
-<br>
-
 
 
 ## Documentation
 
 Will be released with version 1.0.0. In the meantime, you can refer to the [Tone.js documentation](https://tonejs.github.io/docs/), as well as the [NexusUI documentation](https://nexus-js.github.io/ui/api/#intro).
 
-<br>
+
 
 
 
@@ -162,8 +152,6 @@ The JSS-01 is using FM synthesis implementing the FMSynth of Tone.js, While ther
 - [FM Synthesis Collection by Yamaha](https://www.yamahasynth.com/learn/synth-programming/fm-synthesis-collection)
 - [FM Synthesis entry in Wikipedia](https://en.wikipedia.org/wiki/Frequency_modulation_synthesis)
 
-<br>
-
 
 
 ## Contributing
@@ -171,15 +159,11 @@ The JSS-01 is using FM synthesis implementing the FMSynth of Tone.js, While ther
 Feel free to submit issues and pull requests. It would be great to create a community around JSS-01, to contiue its development and evolution, making it more capable and easier to use, increasing its creative and artistic potential.
 If you are interested in becoming part of out community it would be useful to have a look to our dedicated document regarding [Contributing](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/CONTRIBUTING.md), as well as, out [Code of Conduct](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/CODE_OF_CONDUCT.md). It a nutshell, we want our community to be a safe space for everyone, so that we can all have a pleasant and joyful experience!
 
-<br>
-
 
 
 ## Changelog
 
 Please refer to the project's [Changelog](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/CHANGELOG.md) document.
-
-<br>
 
 
 
@@ -196,8 +180,6 @@ Please refer to the project's [Changelog](https://github.com/michaelkolesidis/ja
 - [npm](https://github.com/npm/cli)
   <br>Our beloved package manager.
 
-<br>
-
 
 
 ## Roadmap
@@ -211,8 +193,6 @@ Some of the features to be implemented in the future are:
 - Rewriting the app in TypeScript
 - Rewriting the app using React
 
-<br>
-
 
 
 ## References and Inspiration
@@ -225,8 +205,6 @@ Some of the features to be implemented in the future are:
 - [Helm](https://tytel.org/helm/)
 
 A full(-ish) list of references can be found in the [References](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/REFERENCES.md) document.
-
-<br>
 
 
 
@@ -244,15 +222,11 @@ A full(-ish) list of references can be found in the [References](https://github.
 Copyright (c) 2022 Michael Kolesidis<br>
 Licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
-<br>
-
 
 
 ## Sponsors
 
 None, yet! We will have to add way more features for that.
-
-<br>
 
 
 
@@ -264,15 +238,11 @@ None, yet! We will have to add way more features for that.
 
 You name could be here and it would be great to have you aboard!
 
-<br>
-
 
 
 ## Other
 
 You can find a mirror of this repository in [Codeberg](https://codeberg.org/michaelkolesidis/javascript-software-synthesizer).
-
-<br>
 
 
 
@@ -281,7 +251,6 @@ You can find a mirror of this repository in [Codeberg](https://codeberg.org/mich
 - [Mohammed Amine Grid](https://github.com/mohammed-amine-grid), for his guidance and dedication throughout this journey.
 - All the students and the tutors at the [Social Hackers Academy](https://github.com/SocialHackersAcademy), for creating a nice little community of passionate people offering their best for each other.
 
-<br>
 <br>
 
 <p align="center">
