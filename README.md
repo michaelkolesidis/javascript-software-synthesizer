@@ -242,8 +242,8 @@ You name could be here and it would be great to have you aboard!
 
 ## Other
 
-You can find a mirror of this repository in [Codeberg](https://codeberg.org/michaelkolesidis/javascript-software-synthesizer).
-
+- You can find a mirror of this repository in [Codeberg](https://codeberg.org/michaelkolesidis/javascript-software-synthesizer).
+- The project has a total of 3,342 lines of code (excluding blank lines and comments).
 
 
 ## Special Thanks To
