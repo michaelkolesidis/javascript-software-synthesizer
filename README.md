@@ -186,6 +186,13 @@ Please refer to the project's [Changelog](https://github.com/michaelkolesidis/ja
 
 ## Roadmap
 
+### Currently Implemeting
+
+Dark UI as a default. The JSS-01 UI will switch to dark mode. All color choices for every element will be rethought and re-implemented. This will greatly improve readability and accessibility, as it will make both text and GUI elements easier to see, to distinguish from their surroundings, and, ultimately, to work with. Thus, we will address the most common issue we were getting as feedback from our users.  
+
+
+### Future Plans
+
 Some of the features to be implemented in the future are:
 
 - Recorder
