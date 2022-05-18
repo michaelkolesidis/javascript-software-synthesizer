@@ -52,23 +52,6 @@ body {
   font-size: 90%;
 }
 
-// canvas {
-//   // for t he p5.js background
-//   z-index: -1;
-// }
-
-::-moz-selection {
-  // sets color of element (usually text) selection
-  background: $dark-gray;
-  color: white;
-}
-
-::selection {
-  // sets color of element (usually text) selection
-  background: $dark-gray;
-  color: white;
-}
-
 a,
 a:hover,
 a:focus,
