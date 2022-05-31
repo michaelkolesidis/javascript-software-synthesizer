@@ -586,13 +586,12 @@ a:link {
   z-index: 0;
 }
 
-#keyboard svg {
-  // z-index: -1;
-}
-
-#keyboard svg:first-of-type {
-  // z-index: -2;
-}
+// #keyboard svg {
+//   z-index: -1;
+// }
+// #keyboard svg:first-of-type {
+//   z-index: -2;
+// }
 
 // For keyboard manipulation
 // #keyboard svg {
@@ -616,6 +615,7 @@ a:link {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   width: 97%;
   bottom: 0;
   height: 2rem; // Footer height
