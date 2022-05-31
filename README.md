@@ -275,7 +275,7 @@ You name could be here and it would be great to have you aboard!
   <br>
   <br>
 
-  <a href="https://github.com/michaelkolesidis/made-with-linux" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Made_with_Linux.png/240px-Made_with_Linux.png"></a>
+  <a href="https://github.com/michaelkolesidis/made-with-linux" target="_blank"><img src="[https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Made_with_Linux.png/240px-Made_with_Linux.png](https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Made_with_Linux_casper.svg/240px-Made_with_Linux_casper.svg.png)"></a>
 </div>
 <br>                                                      
 <div align="center">
