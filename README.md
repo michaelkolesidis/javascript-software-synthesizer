@@ -228,8 +228,8 @@ A full(-ish) list of references can be found in the [References](https://github.
 
 ## License
 
-Copyright (c) 2022 Michael Kolesidis<br>
-Licensed under the [MIT License](https://opensource.org/licenses/MIT).
+Copyright (c) 2021-2022 Michael Kolesidis<br>
+Licensed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.html).
 
 
 
