@@ -14,7 +14,7 @@ export default function splashScreen() {
       splashScreen.style.display = "none";
       pageContainer.style.display = "block";
     }, 1000);
-    localStorage.setItem("visited", true);
+    localStorage.setItem("visited", new Boolean(true).toString());
   } else {
     setTimeout(function () {
       splashScreen.style.display = "none";

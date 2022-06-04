@@ -3,6 +3,8 @@
   "version": "0.5.4",
   "description": "TThe JSS-01 | JavaScript Software Synthesizer is a web app enabling you to make and play music in the browser. It is a software synthesizer implementing a variety of JavaScript frameworks and libraries, such as Tone.js and NexusUI.",
   "scripts": {
+    "build": "tsc --build",
+    "clean": "tsc --build --clean",
     "sass": "sass --watch sass/style.scss:css/style.min.css --style compressed"
   },
   "repository": {
@@ -30,7 +32,7 @@
     "sound-engineering"
   ],
   "author": "Michael Kolesidis",
-  "license": "MIT",
+  "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/michaelkolesidis/javascript-software-synthesizer/issues"
   },
@@ -38,5 +40,13 @@
   "dependencies": {
     "node-sass": "^7.0.1",
     "sass": "^1.51.0"
+  },
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.3"
   }
 }
