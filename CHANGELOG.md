@@ -1,3 +1,9 @@
+# 0.7.0
+
+### Changes
+* Dark Mode (inverted colors)
+
+
 # 0.6.2
 
 ### Changes
