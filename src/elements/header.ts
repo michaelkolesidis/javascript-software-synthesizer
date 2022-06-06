@@ -47,6 +47,11 @@ export default function header(darkMode) {
 
 <div id="buttons">
 
+  <button type="button" id="dark-button">
+    <img src="./assets/icons/contrast.svg">
+  </button>
+  <button id="button-placeholder"></button>
+
   <div id="nav-container">
     <div class="bg"></div>
     <div class="button" tabindex="0">

@@ -50,6 +50,7 @@ body {
   font-family: "Spartan", sans-serif;
   // overflow: hidden; /* Hide scrollbars */
   font-size: 90%;
+  background-color: #fff;
 }
 
 a,
@@ -144,7 +145,7 @@ a:link {
     background: white;
   }
 
-  #dark {
+  #dark-button {
     font-size: 1.9rem;
     padding-top: 0.5rem;
     img {
@@ -842,6 +843,24 @@ a:link {
 
 #menu-title {
   font-size: 3rem;
+}
+
+/* --------------------------------------------------------------------- */
+/* Inverted Colors */
+/* --------------------------------------------------------------------- */
+#overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  background-color: white;
+  opacity: 0.9;
+  mix-blend-mode: difference;
+  height: 100vh;
+  pointer-events: none; // So that elements below element are clickable
+  z-index: 5;
 }
 
 /* --------------------------------------------------------------------- */

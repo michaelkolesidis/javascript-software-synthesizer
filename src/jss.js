@@ -3,7 +3,7 @@
  *  Copyright (c) 2022 Michael Kolesidis
  *  GNU General Public License v3.0
  *
- */ 
+ */
 
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
@@ -35,6 +35,7 @@ import consoleIntro from "./functions/consoleIntro.js";
 import midiToNoteString from "./functions/midiToNoteString.js";
 import keyMapper from "./functions/keyMapper.js";
 import showHide from "./functions/showHide.js";
+import invertColors from "./functions/invertColors.js";
 
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
@@ -1917,17 +1918,8 @@ let modulationEnvelope = document.getElementById("modulation-envelope");
 let effectsTitle = document.getElementById("effects-title");
 let effectsContent = document.getElementById("effects-content");
 
-let filtersTitle = document.getElementById("filters-title");
-let filtersContent = document.getElementById("filters-content");
-
-let highLowPassTitle = document.getElementById("high-low-pass-title");
-let highLowPassContent = document.getElementById("high-low-pass-content");
-
 let autoFilterTitle = document.getElementById("auto-filter-title");
 let autoFilterContent = document.getElementById("auto-filter-content");
-
-let delayTitle = document.getElementById("delay-title");
-let delayContent = document.getElementById("delay-content");
 
 let feedbackDelayTitle = document.getElementById("feedback-delay-title");
 let feedbackDelayContent = document.getElementById("feedback-delay-content");
@@ -1973,8 +1965,6 @@ showHide(modulationEnvelopeTitle, modulationEnvelope, "flex", "none");
 
 // Effects Section
 showHide(effectsTitle, effectsContent, "block", "none");
-// showHide(filtersTitle, filtersContent, "grid", "none");
-// showHide(highLowPassTitle, highLowPassContent, "flex", "none");
 showHide(autoFilterTitle, autoFilterContent, "grid", "none");
 showHide(feedbackDelayTitle, feedbackDelayContent, "none", "flex");
 showHide(pingPongDelayTitle, pingPongDelayContent, "none", "flex");
@@ -1987,6 +1977,13 @@ showHide(distortionTitle, distortionContent, "none", "flex");
 showHide(freqShifterTitle, freqShifterContent, "none", "flex");
 showHide(bitCrusherTitle, bitCrusherContent, "none", "flex");
 showHide(chebyshevTitle, chebyshevContent, "none", "flex");
+
+// ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
+// Inverted Colors Mode
+// ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
+invertColors();
 
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
