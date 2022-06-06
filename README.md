@@ -193,7 +193,7 @@ Please refer to the project's [Changelog](https://github.com/michaelkolesidis/ja
 - Dark UI. Users are able to switch JSS-01 to dark mode.  This makes the whole experience easier on the eyes and greatly improves readability and accessibility for certain users. It was one of the most common feature requests we were getting as feedback from our users.  
 
 ### Currently Implemeting
-
+- Rewriting the app in TypeScript. (Partially completed)
 
 
 
@@ -205,7 +205,6 @@ Some of the features to be implemented in the future are:
 - Presets
 - All parameters controllable with MIDI
 - Other types of sound synthesis to choose from (currently only FM synthesis)
-- Rewriting the app in TypeScript
 - Rewriting the app using React
 
 
