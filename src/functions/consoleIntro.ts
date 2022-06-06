@@ -2,7 +2,7 @@
  * Console Intro
  * Part of the JSS-01 | JavaScript Software Synthesizer project
  * Copyright (c) 2022 Michael Kolesidis
- * MIT License
+ * GNU General Public License v3.0
  *
  * The Console Intro function provides the welcome message printed
  * in the console upon the start of the app.

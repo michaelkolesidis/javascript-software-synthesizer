@@ -2,7 +2,7 @@
  * Key Mapper
  * Part of the JSS-01 | JavaScript Software Synthesizer project
  * Copyright (c) 2022 Michael Kolesidis
- * MIT License
+ * GNU General Public License v3.0
  *
  * The Key Mapper function takes computer key letters as input
  * and maps them to the on-screen keyboard keys by returning

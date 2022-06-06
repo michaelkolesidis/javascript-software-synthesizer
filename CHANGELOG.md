@@ -1,3 +1,10 @@
+# 0.6.2
+
+### Changes
+* Updated all components to the new license
+* Code cleanup
+
+
 # 0.6.1
 
 ### Changes

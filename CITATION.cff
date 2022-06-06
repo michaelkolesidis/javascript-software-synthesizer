@@ -28,6 +28,6 @@ keywords:
   - sound
   - sound processing
   - MIDI keyboard
-license: MIT
-version: 0.5.4
+license: GNU General Public License v3.0
+version: 0.6.2
 date-released: '2022-03-22'

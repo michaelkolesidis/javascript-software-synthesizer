@@ -1,5 +1,7 @@
 # Terms List
-List of terms that will have their own entry in the docs.
+
+A list of the terms that will have their own entry in the docs.
+
 
 amplitude <br>
 attack <br>

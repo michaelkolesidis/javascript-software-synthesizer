@@ -1,7 +1,7 @@
 /*
  *  JSS-01 |JavaScript Software Synthesizer
  *  Copyright (c) 2022 Michael Kolesidis
- *  MIT License
+ *  GNU General Public License v3.0
  *
  */
 
@@ -15,7 +15,7 @@ export default function footer() {
   </p>
 </div>
 <div id="version">
-  <a href="https://github.com/michaelkolesidis/javascript-software-synthesizer/releases" target="_blank">v.0.6.1
+  <a href="https://github.com/michaelkolesidis/javascript-software-synthesizer/releases" target="_blank">v.0.6.2
   </a>
 </div>
 `;
