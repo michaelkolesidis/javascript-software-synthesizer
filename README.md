@@ -130,8 +130,8 @@ The JSS-01 | JavaScript Software Synthesizer is quite heavy, especially on the C
 
 #### Browser Requirements
 
-| Browser                                                                                                                                         |
-| ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| Browser |
+| ------- |
 | Chromium-based, Safari, or Firefox with the <a href="https://addons.mozilla.org/en-US/firefox/addon/midi-input-provider/">MIDI Input Provider add-on</a> |
 
 
