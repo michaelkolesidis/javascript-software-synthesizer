@@ -119,13 +119,13 @@ The JSS-01 | JavaScript Software Synthesizer is quite heavy, especially on the C
 
 
 
-| Component  | Minimum                                           | Recommended                                            |
-| ---------- | ------------------------------------------------- | ------------------------------------------------------ |
-| CPU        | Quad-core x86-64 (2014 or later)                  | Quad-core x86-64 (2018 or later) or M1                 |
-| RAM        | 8GB                                               | 16GB                                                   |
-| Display    | 1600x900                                          | 1920X1080                                              |
-| Sound Card | On-board, dedicated, or audio interface           | Audio interface                                        |
-| Speakers   | Monitor speakers or mixing headphones             | Monitor speakers or mixing headphones                  |
+| Component  | Minimum                                  | Recommended                            |
+| ---------- | ---------------------------------------- | -------------------------------------- |
+| CPU        | Quad-core x86-64 (2014 or later)         | Quad-core x86-64 (2018 or later) or M1 |
+| RAM        | 8GB                                      | 16GB                                   |
+| Display    | 1600x900                                 | 1920X1080                              |
+| Sound Card | On-board, dedicated, or audio interface  | Audio interface                        |
+| Speakers   | Monitor speakers or mixing headphones    | Monitor speakers or mixing headphones  |
 
 
 #### Browser Requirements
