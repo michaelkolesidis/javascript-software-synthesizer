@@ -190,12 +190,10 @@ Please refer to the project's [Changelog](https://github.com/michaelkolesidis/ja
 ## Roadmap
 
 ### Completed
-- Dark UI. Users are able to switch JSS-01 to dark mode.  This makes the whole experience easier on the eyes and greatly improves readability and accessibility for certain users. It was one of the most common feature requests we were getting as feedback from our users.  
+- Dark Mode. Users are now able to switch the UI to dark mode. Dark mode makes the whole experience easier on the eyes and greatly improves readability and accessibility for certain users. It was one of the most common feature requests we were getting as feedback from our users.  
 
 ### Currently Implemeting
 - Rewriting the app in TypeScript. (Partially completed)
-
-
 
 ### Future Plans
 
