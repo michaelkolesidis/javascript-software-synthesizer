@@ -182,6 +182,8 @@ Please refer to the project's [Changelog](https://github.com/michaelkolesidis/ja
   <br>The SCSS (Sassy CSS) syntax is utilized for the styling of our project.
 - [npm](https://github.com/npm/cli)
   <br>Our beloved package manager.
+- [TypeScript](https://www.typescriptlang.org/)
+  <br>In version 0.6.1, TypeScript was first introduced in the project, with significant parts of it migrating to TypeScript for increased type safety.
 
 
 
