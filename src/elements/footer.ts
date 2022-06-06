@@ -15,7 +15,7 @@ export default function footer() {
   </p>
 </div>
 <div id="version">
-  <a href="https://github.com/michaelkolesidis/javascript-software-synthesizer/releases" target="_blank">v.0.6.2
+  <a href="https://github.com/michaelkolesidis/javascript-software-synthesizer/releases" target="_blank">v.0.7.0
   </a>
 </div>
 `;
