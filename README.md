@@ -31,7 +31,7 @@ More info about the technologies can be found <a href="https://github.com/michae
 
 
 ## Description
-The JSS-01 | JavaScript Software Synthesizer is a web application enabling you to make and play music in the browser. It is a [software synthesizer](https://en.wikipedia.org/wiki/Software_synthesizer) utilizing the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) by implementing a variety of JavaScript frameworks and libraries, such as [Tone.js](https://tonejs.github.io/) and [NexusUI](https://nexus-js.github.io/ui/). Its design is fully modular and it can easily be adapted and integrated into a wide variety of projects.
+The JSS-01 | JavaScript Software Synthesizer is a web application enabling you to make and play music in the browser. It is a [software synthesizer](https://en.wikipedia.org/wiki/Software_synthesizer) utilizing the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) by implementing a variety of JavaScript frameworks and libraries, such as [Tone.js](https://tonejs.github.io/) and [NexusUI](https://nexus-js.github.io/ui/). Its design is fully modular, thus it can easily be adapted and integrated into any kind of project.
 
 
 
@@ -122,7 +122,6 @@ The JSS-01 | JavaScript Software Synthesizer is quite heavy, especially on the C
 | Component  | Minimum                                           | Recommended                                            |
 | ---------- | ------------------------------------------------- | ------------------------------------------------------ |
 | CPU        | Quad-core x86-64 (2014 or later)                  | Quad-core x86-64 (2018 or later) or M1                 |
-| GPU        | Integrated or dedicated graphics (2014 or later)  | NVIDIA or AMD graphics card with dedicated memory      |
 | RAM        | 8GB                                               | 16GB                                                   |
 | Display    | 1600x900                                          | 1920X1080                                              |
 | Sound Card | On-board, dedicated, or audio interface           | Audio interface                                        |
@@ -183,6 +182,8 @@ Please refer to the project's [Changelog](https://github.com/michaelkolesidis/ja
   <br>The SCSS (Sassy CSS) syntax is utilized for the styling of our project.
 - [npm](https://github.com/npm/cli)
   <br>Our beloved package manager.
+- [TypeScript](https://www.typescriptlang.org/)
+  <br>In version 0.6.1, TypeScript was first introduced in the project, with significant parts of it migrating to TypeScript for increased type safety.
 
 
 
