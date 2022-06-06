@@ -8,7 +8,7 @@
 # 0.6.1
 
 ### Changes
-* Converting a significant part of the codebase to TypeScript
+* Converted a significant part of the codebase to TypeScript
 * License changed to GNU General Public License v3.0
 * Minor UI fixes 
 
