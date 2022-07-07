@@ -14,7 +14,7 @@
 ## Technologies Used
 <a href="https://tonejs.github.io/"><img src="https://github.com/michaelkolesidis/tech-icons/blob/main/icons/tonejs/tonejs-original.png" height="50px" /></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://webmidijs.org//"><img src="https://webmidijs.org/img/webmidijs-logo-light.svg" height="50px" /></a>
+<a href="https://webmidijs.org/"><img src="https://webmidijs.org/img/webmidijs-logo-light.svg" height="50px" /></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://www.typescriptlang.org/"><img src="https://github.com/michaelkolesidis/tech-icons/blob/main/icons/typescript/typescript-original.svg" height="50px" /></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -34,6 +34,7 @@ More info about the technologies can be found <a href="https://github.com/michae
 The JSS-01 | JavaScript Software Synthesizer is a web application enabling you to make and play music in the browser. It is a [software synthesizer](https://en.wikipedia.org/wiki/Software_synthesizer) utilizing the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) by implementing a variety of JavaScript frameworks and libraries, such as [Tone.js](https://tonejs.github.io/) and [NexusUI](https://nexus-js.github.io/ui/). Its design is fully modular, thus it can easily be adapted and integrated into any kind of project.
 
 
+My aim when creating the JSS-01 was to offer a powerful synthesizer that is simple, easy and, above all, fun to use! 
 
 <img width="900px" src="./screenshots/v.0.5.4-large.png">
 
@@ -189,10 +190,11 @@ Please refer to the project's [Changelog](https://github.com/michaelkolesidis/ja
 
 ## Roadmap
 
+### Completed
+- Dark Mode. Users are now able to switch the UI to dark mode. Dark mode makes the whole experience easier on the eyes and greatly improves readability and accessibility for certain users. It was one of the most common feature requests we were getting as feedback from our users.  
+
 ### Currently Implemeting
-
-Dark UI as a default. The JSS-01 UI will switch to dark mode. All color choices for every element will be rethought and re-implemented. This will greatly improve readability and accessibility, as it will make both text and GUI elements easier to see, to distinguish from their surroundings, and, ultimately, to work with. Thus, we will address the most common issue we were getting as feedback from our users.  
-
+- Rewriting the app in TypeScript. (Partially completed)
 
 ### Future Plans
 
@@ -202,7 +204,6 @@ Some of the features to be implemented in the future are:
 - Presets
 - All parameters controllable with MIDI
 - Other types of sound synthesis to choose from (currently only FM synthesis)
-- Rewriting the app in TypeScript
 - Rewriting the app using React
 
 
