@@ -39,7 +39,8 @@
   "homepage": "https://github.com/michaelkolesidis/javascript-software-synthesizer",
   "dependencies": {
     "node-sass": "^7.0.1",
-    "sass": "^1.51.0"
+    "sass": "^1.51.0",
+    "yarn": "^1.22.19"
   },
   "main": "index.js",
   "directories": {
