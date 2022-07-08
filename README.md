@@ -181,7 +181,7 @@ Please refer to the project's [Changelog](https://github.com/michaelkolesidis/ja
 - [npm](https://github.com/npm/cli)
   <br>Our beloved package manager.
 - [TypeScript](https://www.typescriptlang.org/)
-  <br>In version 0.6.1, TypeScript was first introduced in the project, with significant parts of it migrating to TypeScript for increased type safety.
+  <br>In version 0.6.1, TypeScript was first introduced in the project, with significant parts of it migrating to TypeScript for increased type safety. In version 1.0.0 migration to TypeScript was completed.
 
 
 
@@ -189,9 +189,10 @@ Please refer to the project's [Changelog](https://github.com/michaelkolesidis/ja
 
 ### Completed
 - Dark Mode. Users are now able to switch the UI to dark mode. Dark mode makes the whole experience easier on the eyes and greatly improves readability and accessibility for certain users. It was one of the most common feature requests we were getting as feedback from our users.  
+- Migration to TypeScrip
 
-### Currently Implemeting
-- Rewriting the app in TypeScript. (Partially completed)
+### Currently Working On
+- Bug fixes
 
 ### Future Plans
 
