@@ -5,7 +5,7 @@
  *
  */
 
-export default function header(darkMode) {
+export default function header(darkMode: boolean) {
   if (darkMode) {
     return /*html*/ `    
 <div id="logo-name">

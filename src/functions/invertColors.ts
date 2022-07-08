@@ -14,10 +14,10 @@ export default function invertColors() {
   const overlay = document.getElementById("overlay");
   let inverted = false;
 
-  darkButton.addEventListener("click", () => {
+  darkButton!.addEventListener("click", () => {
     inverted
-      ? (overlay.style.display = "none")
-      : (overlay.style.display = "block");
+      ? (overlay!.style.display = "none")
+      : (overlay!.style.display = "block");
     inverted = !inverted;
   });
 }

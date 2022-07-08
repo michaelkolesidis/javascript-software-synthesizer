@@ -15,7 +15,12 @@
  *
  */
 
-export default function showHide(title, section, displayInput, displayOutput) {
+export default function showHide(
+  title: HTMLElement,
+  section: HTMLElement,
+  displayInput: string,
+  displayOutput: string
+) {
   // (title, section)
   title.addEventListener("click", function () {
     if (section.style.display === displayInput || !section.style.display) {

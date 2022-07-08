@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
     "outDir": "./built",
     "allowJs": true,
     "target": "es2016"

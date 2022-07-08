@@ -13,7 +13,7 @@
  *
  */
 
-export default function keyMapper(key, base) {
+export default function keyMapper(key: string, base: number) {
   switch (key) {
     // Lowercase
     case "a":

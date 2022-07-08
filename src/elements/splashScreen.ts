@@ -11,14 +11,14 @@ export default function splashScreen() {
 
   if (!localStorage.getItem("visited")) {
     setTimeout(function () {
-      splashScreen.style.display = "none";
-      pageContainer.style.display = "block";
+      splashScreen!.style.display = "none";
+      pageContainer!.style.display = "block";
     }, 1000);
     localStorage.setItem("visited", new Boolean(true).toString());
   } else {
     setTimeout(function () {
-      splashScreen.style.display = "none";
-      pageContainer.style.display = "block";
+      splashScreen!.style.display = "none";
+      pageContainer!.style.display = "block";
     }, 500);
   }
 }
