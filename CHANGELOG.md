@@ -1,3 +1,9 @@
+# 1.0.0
+
+### Changes
+* Migration to TypeScript
+
+
 # 0.7.0
 
 ### Changes
