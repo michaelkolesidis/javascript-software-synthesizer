@@ -14,17 +14,14 @@
 ## Technologies Used
 <a href="https://tonejs.github.io/"><img src="https://github.com/michaelkolesidis/tech-icons/blob/main/icons/tonejs/tonejs-original.png" height="50px" /></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://webmidijs.org/"><img src="https://webmidijs.org/img/webmidijs-logo-light.svg" height="50px" /></a>
+<a href="https://webmidijs.org/"><img src="https://webmidijs.org/img/webmidijs-logo-dark.svg" height="50px" /></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://www.typescriptlang.org/"><img src="https://github.com/michaelkolesidis/tech-icons/blob/main/icons/typescript/typescript-original.svg" height="50px" /></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://en.wikipedia.org/wiki/JavaScript"><img src="https://github.com/michaelkolesidis/tech-icons/blob/main/icons/javascript/javascript-original.svg" height="50px" /></a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://sass-lang.com/"><img src="https://github.com/michaelkolesidis/tech-icons/blob/main/icons/sass/sass-original.svg" height="50px" /></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.npmjs.com/"><img src="https://github.com/michaelkolesidis/tech-icons/blob/main/icons/npm/npm-original-wordmark.svg" height="50px" /></a>
+<a href="https://www.yarnpkg.com/"><img src="https://github.com/michaelkolesidis/tech-icons/blob/main/icons/yarn/yarn-original.svg" height="50px" /></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://en.wikipedia.org/wiki/HTML5"><img src="https://github.com/michaelkolesidis/tech-icons/blob/main/icons/html5/html5-plain.svg" height="50px" /></a>
 
 More info about the technologies can be found <a href="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/README.md#technologies-used-extended">here</a>.
 
