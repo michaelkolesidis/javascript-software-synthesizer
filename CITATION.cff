@@ -29,6 +29,6 @@ keywords:
   - sound processing
   - MIDI keyboard
 
-license: GNU General Public License v3.0
-version: 1.0.0
+license: GNU Affero General Public License v3.0
+version: 1.0.1
 date-released: '2022-07-08'

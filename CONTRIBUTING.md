@@ -11,7 +11,7 @@ All contributors will be added in the designated section in the project's readme
 
 
 ### Semantic Commit Messages
-Starting from version 1.0.0, the project is using semantic commit messages. Please refer to the following links:
+Starting from version 1.0.1, the project is using semantic commit messages. Please refer to the following links:
 
 [Semantic Commit Messages](https://sparkbox.com/foundry/semantic_commit_messages)
 [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)

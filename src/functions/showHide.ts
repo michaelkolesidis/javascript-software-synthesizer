@@ -1,8 +1,8 @@
 /*
  * Show/Hide
  * Part of the JSS-01 | JavaScript Software Synthesizer project
- * Copyright (c) 2022 Michael Kolesidis
- * GNU General Public License v3.0
+ * Copyright (c) 2023 Michael Kolesidis
+ * GNU Affero General Public License v3.0
  *
  * The Show/Hide function allows the user to hide and show a
  * section by clicking on its title. The two arguments displayInput

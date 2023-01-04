@@ -1,7 +1,7 @@
 /*
  *  JSS-01 |JavaScript Software Synthesizer
- *  Copyright (c) 2022 Michael Kolesidis
- *  GNU General Public License v3.0
+ *  Copyright (c) 2023 Michael Kolesidis
+ *  GNU Affero General Public License v3.0
  *
  */
 
@@ -9,13 +9,13 @@ export default function footer() {
   return /*html*/ `
 <div>
   <p>
-    © 2022 | Made with ♥ by <a href="https://github.com/michaelkolesidis/javascript-software-synthesizer" target="_blank">Michael Kolesidis</a>.
+    © 2023 Made with ♥ by <a href="https://github.com/michaelkolesidis/javascript-software-synthesizer" target="_blank">Michael Kolesidis</a>.
     <br>
-    Licensed under the <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank">GNU General Public License v3.0</a>.
+    Licensed under the <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank">GNU AGPL</a>.
   </p>
 </div>
 <div id="version">
-  <a href="https://github.com/michaelkolesidis/javascript-software-synthesizer/releases" target="_blank">v.1.0.0
+  <a href="https://github.com/michaelkolesidis/javascript-software-synthesizer/releases" target="_blank">v.1.0.1
   </a>
 </div>
 `;

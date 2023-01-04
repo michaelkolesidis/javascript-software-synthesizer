@@ -6,8 +6,9 @@
 
 [![made-with-typescript](https://img.shields.io/badge/Made%20with-TypeScript-01004c.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![MIT license](https://img.shields.io/badge/License-GPLv3-01004c.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
-[![Version](https://img.shields.io/badge/version-1.0.0-01004c.svg)](https://shields.io/)
+[![Version](https://img.shields.io/badge/version-1.0.1-01004c.svg)](https://shields.io/)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/93c42090-6fc9-4c3d-a462-42b535ea9d15/deploy-status)](https://app.netlify.com/sites/javascript-software-synthesizer/deploys)
+
 
 
 
@@ -27,6 +28,7 @@ More info about the technologies can be found <a href="https://github.com/michae
 
 
 
+
 ## Description
 The JSS-01 | JavaScript Software Synthesizer is a web application enabling you to make and play music in the browser. It is a [software synthesizer](https://en.wikipedia.org/wiki/Software_synthesizer) utilizing the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) by implementing a variety of JavaScript frameworks and libraries, such as [Tone.js](https://tonejs.github.io/) and [NexusUI](https://nexus-js.github.io/ui/). Its design is fully modular, thus it can easily be adapted and integrated into any kind of project.
 
@@ -36,6 +38,7 @@ My aim when creating the JSS-01 was to offer a powerful synthesizer that is simp
 <img width="900px" src="./screenshots/v.0.5.4-large.png">
 
 More screenshots can be found <a href="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/README.md#screenshots">here</a>.
+
 
 
 
@@ -71,13 +74,11 @@ The <strong>Modulation Section</strong> includes the controls for the <strong>Mo
 The <strong>Effects Section</strong> includes the controls of the various effects that can be applied to the sound. The effects are connected in series with the following connectivity: Oscillator 2 --> Oscillator 1 --> Auto Filter --> Phaser --> Crusher --> Chebyshev --> Feedback Delay --> Ping Pong Delay --> Reverb --> Chorus --> Tremolo --> Vibrato --> Distortion --> Frequency Shifter --> Output.
 
 
-
 #### How to Play
 
 You can play the JSS-01 by using the on-screen keyboard, your computer keyboard, or a MIDI keyboard.
 
 <img width="500px" src="./assets/keyboard/keyboard_bg_w.png">
-
 
 
 #### Oscilloscope
@@ -95,7 +96,6 @@ The Modulation Index determines the amount of the modulation that will be applie
 In order to use your [MIDI keyboard](https://en.wikipedia.org/wiki/MIDI_keyboard) with the JSS-01 you should connect it and turn it on, prior to accessing the web app. If you connect it while already on the JSS-01, you should refresh the page. The available MIDI devices will appear inside the MIDI display, located on top left. You can click on the MIDI device you would like to use and wait for the confirmation message. You are now ready to use your MIDI keyboard. Enjoy playing!
 
 
-
 #### Sequencer
 
 <img width="900px" src="./screenshots/elements/sequencer.png">
@@ -110,12 +110,9 @@ You can find some additional information about the JSS-01 and sound synthesis in
 
 
 
-
 ## System Requirements
 
 The JSS-01 | JavaScript Software Synthesizer is quite heavy, especially on the CPU. We would suggest these indicative minimum requirements:
-
-
 
 | Component  | Minimum                                  | Recommended                            |
 | ---------- | ---------------------------------------- | -------------------------------------- |
@@ -134,10 +131,10 @@ The JSS-01 | JavaScript Software Synthesizer is quite heavy, especially on the C
 
 
 
+
 ## Documentation
 
-Will be released with version 1.0.0. In the meantime, you can refer to the [Tone.js documentation](https://tonejs.github.io/docs/), as well as the [NexusUI documentation](https://nexus-js.github.io/ui/api/#intro).
-
+Full documentation will be released at some point in the future. In the meantime, you can refer to the [Tone.js documentation](https://tonejs.github.io/docs/), as well as the [NexusUI documentation](https://nexus-js.github.io/ui/api/#intro).
 
 
 
@@ -155,6 +152,7 @@ The JSS-01 is using FM synthesis implementing the FMSynth of Tone.js, While ther
 
 
 
+
 ## Contributing
 
 Feel free to submit issues and pull requests. It would be great to create a community around JSS-01, to contiue its development and evolution, making it more capable and easier to use, increasing its creative and artistic potential.
@@ -162,9 +160,11 @@ If you are interested in becoming part of out community it would be useful to ha
 
 
 
+
 ## Changelog
 
 Please refer to the project's [Changelog](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/CHANGELOG.md) document.
+
 
 
 
@@ -185,13 +185,16 @@ Please refer to the project's [Changelog](https://github.com/michaelkolesidis/ja
 
 
 
+
 ## Roadmap
 
 ### Completed
+
 - Dark Mode. Users are now able to switch the UI to dark mode. Dark mode makes the whole experience easier on the eyes and greatly improves readability and accessibility for certain users. It was one of the most common feature requests we were getting as feedback from our users.  
 - Migration to TypeScrip
 
 ### Currently Working On
+
 - Bug fixes
 
 ### Future Plans
@@ -203,6 +206,7 @@ Some of the features to be implemented in the future are:
 - All parameters controllable with MIDI
 - Other types of sound synthesis to choose from (currently only FM synthesis)
 - Rewriting the app using React
+
 
 
 
@@ -219,21 +223,17 @@ A full(-ish) list of references can be found in the [References](https://github.
 
 
 
+
 ## Screenshots
+
 #### Medium Screens
+
 <img width="900px" src="./screenshots/v.0.5.4-medium.png">
 
 #### Small Screens
+
 <img width="900px" src="./screenshots/v.0.5.4-small.png">
 
-
-
-## License
-
-<a href="https://www.gnu.org/licenses/gpl-3.0.html"><img src="https://upload.wikimedia.org/wikipedia/commons/9/93/GPLv3_Logo.svg" height="100px" /></a>
-
-Copyright (c) 2022 Michael Kolesidis<br>
-Licensed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.html).
 
 
 
@@ -243,13 +243,16 @@ None, yet! We will have to add way more features for that.
 
 
 
+
 ## Contributors
 
-[Chris Strawser](https://github.com/mcochris)<br>
-[Margarita Marmaridou](https://github.com/mamarmar)<br>
+* [Michael Kolesidis](ttps://github.com/michaelkolesidis)
+* [Chris Strawser](https://github.com/mcochris)
+* [Margarita Marmaridou](https://github.com/mamarmar)
 
 
 You name could be here and it would be great to have you aboard!
+
 
 
 
@@ -259,27 +262,27 @@ You name could be here and it would be great to have you aboard!
 - The project has a total of 3,342 lines of code (excluding blank lines and comments).
 
 
+
 ## Special Thanks To
 
 - [Mohammed Amine Grid](https://github.com/mohammed-amine-grid), for his guidance and dedication throughout this journey.
 - All the students and the tutors at the [Social Hackers Academy](https://github.com/SocialHackersAcademy), for creating a nice little community of passionate people offering their best for each other.
+
+
+
+
+## License
+
+<a href="https://www.gnu.org/licenses/agpl-3.0.html"><img src="https://upload.wikimedia.org/wikipedia/commons/0/06/AGPLv3_Logo.svg" height="100px" /></a>
+
+Copyright (c) 2023 Michael Kolesidis<br>
+Licensed under the [GNU Affero General Public License v3.0](https://www.gnu.org/licenses/agpl-3.0.html).
+
+
+
 
 <br>
 
 <p align="center">
 <img width="400px" src="./assets/visual.png">
 </p>
-
-
-
-[//]: # (Free Software)
-<div align="center">
-  <br>
-  <br>
-
-  <a href="https://github.com/michaelkolesidis/made-with-linux" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Made_with_Linux_casper.svg/240px-Made_with_Linux_casper.svg.png"></a>
-</div>
-<br>                                                      
-<div align="center">
-  <a href="https://endsoftwarepatents.org/innovating-without-patents"><img style="height: 90px;" src="https://static.fsf.org/nosvn/esp/logos/innovating-without-patents.svg"></a>
-</div>

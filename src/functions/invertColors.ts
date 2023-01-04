@@ -1,8 +1,8 @@
 /*
  * Invert Colors
  * Part of the JSS-01 | JavaScript Software Synthesizer project
- * Copyright (c) 2022 Michael Kolesidis
- * GNU General Public License v3.0
+ * Copyright (c) 2023 Michael Kolesidis
+ * GNU Affero General Public License v3.0
  *
  * The Invert Colors functions inverts the colors
  * of the whole application, mimicking dark mode

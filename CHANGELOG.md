@@ -1,3 +1,9 @@
+# 1.0.1
+
+### Changes
+* Switched to GNU Affero General Public License v3.0
+
+
 # 1.0.0
 
 ### Changes
@@ -21,7 +27,7 @@
 
 ### Changes
 * Converted a significant part of the codebase to TypeScript
-* License changed to GNU General Public License v3.0
+* License changed to GNU Affero General Public License v3.0
 * Minor UI fixes 
 
 
