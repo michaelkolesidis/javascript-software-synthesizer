@@ -5,7 +5,7 @@
 <h1 align="center">JSS-01<br>JavaScript Software Synthesizer</h1>
 
 [![made-with-typescript](https://img.shields.io/badge/Made%20with-TypeScript-01004c.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![MIT license](https://img.shields.io/badge/License-GPLv3-01004c.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
+[![MIT license](https://img.shields.io/badge/License-AGPLv3-01004c.svg)](https://www.gnu.org/licenses/agpl-3.0.html)
 [![Version](https://img.shields.io/badge/version-1.0.1-01004c.svg)](https://shields.io/)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/93c42090-6fc9-4c3d-a462-42b535ea9d15/deploy-status)](https://app.netlify.com/sites/javascript-software-synthesizer/deploys)
 
