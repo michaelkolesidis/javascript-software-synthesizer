@@ -8,7 +8,7 @@
 export default function index() {
   return /*html*/ `
 <div id="splash-screen">
-    <img src="./assets/logo/logo192.png" alt="" />
+    <img src="./assets/logo/logo_192.png" alt="" />
 </div>
 <div id="page-container">
     <div id="content-wrap">

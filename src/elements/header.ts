@@ -9,7 +9,7 @@ export default function header(darkMode: boolean) {
   if (darkMode) {
     return /*html*/ `    
 <div id="logo-name">
-  <img src="./assets/logo/logo192_dark.png"/>
+  <img src="./assets/logo/logo_192_dark.png"/>
   <div>JSS-01 — JavaScript Software Synthesizer</div>
 </div>
 
@@ -41,7 +41,7 @@ export default function header(darkMode: boolean) {
   return /*html*/ `
   
 <div id="logo-name">
-  <img src="./assets/logo/logo192.png"/>
+  <img src="./assets/logo/logo_192.png"/>
   <div>JSS-01 — JavaScript Software Synthesizer</div>
 </div>
 
@@ -67,7 +67,7 @@ export default function header(darkMode: boolean) {
 // Header with buttons
 
 // <div id="logo-name">
-//   <img src="./assets/logo/logo192.png"/>
+//   <img src="./assets/logo/logo_192.png"/>
 //   <div>JSS-01 — JavaScript Software Synthesizer</div>
 // </div>
 
