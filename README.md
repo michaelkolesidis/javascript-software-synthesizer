@@ -2,8 +2,8 @@
 
 
 
-![JSS-01 Logo](./assets/logo/logo_white.svg#gh-dark-mode-only)
-![JSS-01 Logo](./assets/logo/logo.svg#gh-light-mode-only)
+![JSS-01 Logo](./assets/logo/logo_min_white.svg#gh-dark-mode-only)
+![JSS-01 Logo](./assets/logo/logo_min.svg#gh-light-mode-only)
 
 
 </p>
