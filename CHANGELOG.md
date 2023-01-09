@@ -4,7 +4,7 @@
 * Updated Tone.js to latest version
 * Updated all dependencies to their latest versions
 * Using yarn.lock in instead of package-lock
-* Added logo in SVG
+* Updated logo files
 * Changed TypeScript target language to ES2021
 * Readme rupdate and restructuring
 * Minor documentation updates
