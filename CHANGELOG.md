@@ -6,7 +6,7 @@
 * Using yarn.lock in instead of package-lock
 * Updated logo files
 * Changed TypeScript target language to ES2021
-* Readme rupdate and restructuring
+* Readme update and restructuring
 * Minor documentation updates
 * Added Security Policy
 
