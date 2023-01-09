@@ -1,14 +1,7 @@
-<p align="center">
+![JSS-01 Logo](./assets/logo/logo_256_white.png#gh-dark-mode-only)
+![JSS-01 Logo](./assets/logo/logo_256.png#gh-light-mode-only)
 
-
-
-![JSS-01 Logo](./assets/logo/logo_512_white.png#gh-dark-mode-only)
-![JSS-01 Logo](./assets/logo/logo_512.png#gh-light-mode-only)
-
-
-</p>
-
-<h1 align="center">JSS-01<br>JavaScript Software Synthesizer</h1>
+<h1>JSS-01<br>JavaScript Software Synthesizer</h1>
 
 [![made-with-typescript](https://img.shields.io/badge/Made%20with-TypeScript-01004c.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![MIT license](https://img.shields.io/badge/License-AGPLv3-01004c.svg)](https://www.gnu.org/licenses/agpl-3.0.html)
