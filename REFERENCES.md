@@ -6,11 +6,10 @@ This will be of tremendous help, both for contributors, who will be able to unde
 
 Tha main third-party source of code for the project is the documentation of the Tone.js, NexusUI and WEBMIDI.js projects, and this is where anyone wishing to implement the project's core functionality should look at first.
 
-<br>
 
 ## The References List
 
-<strong>Note</strong>: Many of the following chunks of code were heavily modified and sometimes completely changed in our implementation, merely serving as a source of inspiration. You should always refer to our project's codebase first.
+**Note**: Many of the following chunks of code were heavily modified and sometimes completely changed in our implementation, merely serving as a source of inspiration. You should always refer to our project's codebase first.
 
 - [Sliding menu](https://codepen.io/dannievinther/pen/NvZjvz?editors=1100) by [Dannie Vinther](https://github.com/dannievinther)
 - [Changing keyboard key colors](https://github.com/nexus-js/ui/issues/69) (used for dark mode) by [Ben Taylor](https://github.com/taylorbf)

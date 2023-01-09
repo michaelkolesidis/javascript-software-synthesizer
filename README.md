@@ -1,18 +1,25 @@
 <p align="center">
-<img width="400px" src="./assets/logo/logo512.png">
+
+
+
+![JSS-01 Logo](./assets/logo/logo_white.svg#gh-dark-mode-only)
+![JSS-01 Logo](./assets/logo/logo.svg#gh-light-mode-only)
+
+
 </p>
 
 <h1 align="center">JSS-01<br>JavaScript Software Synthesizer</h1>
 
 [![made-with-typescript](https://img.shields.io/badge/Made%20with-TypeScript-01004c.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![MIT license](https://img.shields.io/badge/License-AGPLv3-01004c.svg)](https://www.gnu.org/licenses/agpl-3.0.html)
-[![Version](https://img.shields.io/badge/version-1.0.1-01004c.svg)](https://shields.io/)
+[![Version](https://img.shields.io/badge/version-1.0.6-01004c.svg)](https://shields.io/)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/93c42090-6fc9-4c3d-a462-42b535ea9d15/deploy-status)](https://app.netlify.com/sites/javascript-software-synthesizer/deploys)
 
 
 
 
 ## Technologies Used
+
 <a href="https://tonejs.github.io/"><img src="https://github.com/michaelkolesidis/tech-icons/blob/main/icons/tonejs/tonejs-original.png" height="50px" /></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://webmidijs.org/"><img src="https://webmidijs.org/img/webmidijs-logo-dark.svg" height="50px" /></a>
@@ -30,6 +37,7 @@ More info about the technologies can be found <a href="https://github.com/michae
 
 
 ## Description
+
 The JSS-01 | JavaScript Software Synthesizer is a web application enabling you to make and play music in the browser. It is a [software synthesizer](https://en.wikipedia.org/wiki/Software_synthesizer) utilizing the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) by implementing a variety of JavaScript frameworks and libraries, such as [Tone.js](https://tonejs.github.io/) and [NexusUI](https://nexus-js.github.io/ui/). Its design is fully modular, thus it can easily be adapted and integrated into any kind of project.
 
 
