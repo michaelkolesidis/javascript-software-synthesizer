@@ -1,5 +1,7 @@
 {
   "name": "javascript-software-synthesizer",
+  "author": "Michael Kolesidis",
+  "license": "AGPL-3.0-or-later",
   "version": "1.0.6",
   "description": "TThe JSS-01 | JavaScript Software Synthesizer is a web app enabling you to make and play music in the browser. It is a software synthesizer implementing a variety of JavaScript frameworks and libraries, such as Tone.js and NexusUI.",
   "scripts": {
@@ -31,20 +33,18 @@
     "web-audio",
     "sound-engineering"
   ],
-  "author": "Michael Kolesidis",
-  "license": "AGPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/michaelkolesidis/javascript-software-synthesizer/issues"
   },
   "homepage": "https://github.com/michaelkolesidis/javascript-software-synthesizer",
-  "dependencies": {
-    "node-sass": "^8.0.0",
-    "sass": "^1.59.3"
-  },
   "main": "index.js",
   "directories": {
     "doc": "docs",
     "test": "test"
+  },
+  "dependencies": {
+    "node-sass": "^8.0.0",
+    "sass": "^1.59.3"
   },
   "devDependencies": {
     "typescript": "^5.0.2"

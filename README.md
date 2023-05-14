@@ -25,7 +25,7 @@ More info about the technologies can be found <a href="https://github.com/michae
 
 ## Description
 
-The JSS-01 | JavaScript Software Synthesizer is a web application enabling you to make and play music in the browser. It is a [software synthesizer](https://en.wikipedia.org/wiki/Software_synthesizer) utilizing the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) by implementing a variety of JavaScript frameworks and libraries, such as [Tone.js](https://tonejs.github.io/) and [NexusUI](https://nexus-js.github.io/ui/). Its design is fully modular, thus it can easily be adapted and integrated into any kind of project.
+The _JSS-01 | JavaScript Software Synthesizer_ is a web application enabling you to make and play music in the browser. It is a [software synthesizer](https://en.wikipedia.org/wiki/Software_synthesizer) utilizing the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) by implementing a variety of JavaScript frameworks and libraries, such as [Tone.js](https://tonejs.github.io/) and [NexusUI](https://nexus-js.github.io/ui/). Its design is fully modular, thus it can easily be adapted and integrated into any kind of project.
 
 My aim when creating the JSS-01 was to offer a powerful synthesizer that is simple, easy and, above all, fun to use!
 
@@ -33,13 +33,36 @@ My aim when creating the JSS-01 was to offer a powerful synthesizer that is simp
 
 More screenshots can be found <a href="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/README.md#screenshots">here</a>.
 
+## Build & Run
+
+First clone the project from GitHub:
+
+```
+git clone git@github.com:michaelkolesidis/javascript-software-synthesizer.git
+cd javascript-software-synthesizer
+```
+
+Install the project dependencies:
+
+```
+yarn build
+```
+
+You can now run the _JavaScript Software Synthesizer_ locally easily by using a VSCode extension like **Live Server** ([Live Server on the Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)) or Python's **http.server** module.
+
+For more information, please refer to MDN's excellent article: [MDN article](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Tools_and_setup/set_up_a_local_testing_server)
+
+### Demo
+
+There is an online demo available at [https://javascript-software-synthesizer.netlify.app/](https://javascript-software-synthesizer.netlify.app/)
+
 ## Introduction
 
 Keys, knobs, sliders and buttons to tweak your sound and generate immersive soundscapes. You can also connect your MIDI keyboard and play with it!
 
 ### Quick Start
 
-The JSS-01 | JavaScript Software Synthesizer uses <strong>FM Synthesis</strong> (frequency modulation synthesis). In FM Synthesis there is an oscillator that produces the sound signal, the <strong>Carrier</strong>, and an oscillator that modulates the carrier's wave frequency, the <strong>Modulator</strong>.
+The _JSS-01 | JavaScript Software Synthesizer_ uses <strong>FM Synthesis</strong> (frequency modulation synthesis). In FM Synthesis there is an oscillator that produces the sound signal, the <strong>Carrier</strong>, and an oscillator that modulates the carrier's wave frequency, the <strong>Modulator</strong>.
 
 <img width="300px" src="./assets/fm.png">
 
@@ -96,7 +119,7 @@ You can find some additional information about the JSS-01 and sound synthesis in
 
 ## System Requirements
 
-The JSS-01 | JavaScript Software Synthesizer is quite heavy, especially on the CPU. We would suggest these indicative minimum requirements:
+The _JSS-01 | JavaScript Software Synthesizer_ is quite heavy, especially on the CPU. We would suggest these indicative minimum requirements:
 
 | Component  | Minimum                                 | Recommended                            |
 | ---------- | --------------------------------------- | -------------------------------------- |
