@@ -225,6 +225,7 @@ None, yet! We will have to add way more features for that.
 - [Michael Kolesidis](ttps://github.com/michaelkolesidis)
 - [Chris Strawser](https://github.com/mcochris)
 - [Margarita Marmaridou](https://github.com/mamarmar)
+- [Omar Shehata](https://github.com/OmarShehata)
 
 You name could be here and it would be great to have you aboard!
 
