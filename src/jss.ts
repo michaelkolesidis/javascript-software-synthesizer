@@ -1,6 +1,6 @@
 /*
  *  JSS-01 |JavaScript Software Synthesizer
- *  Copyright (c) 2023 Michael Kolesidis
+ *  Copyright (c) 2023 Michael Kolesidis <michael.kolesidis@gmail.com>
  *  GNU Affero General Public License v3.0
  *
  */
@@ -1986,7 +1986,6 @@ showHide(chebyshevTitle, chebyshevContent, "none", "flex");
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 invertColors();
-
 
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------

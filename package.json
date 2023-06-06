@@ -43,10 +43,10 @@
     "test": "test"
   },
   "dependencies": {
-    "node-sass": "^8.0.0",
-    "sass": "^1.59.3"
+    "node-sass": "^9.0.0",
+    "sass": "^1.62.1"
   },
   "devDependencies": {
-    "typescript": "^5.0.2"
+    "typescript": "^5.1.3"
   }
 }

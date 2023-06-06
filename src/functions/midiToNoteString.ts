@@ -1,7 +1,7 @@
 /*
  * MIDI to Note String
  * Part of the JSS-01 | JavaScript Software Synthesizer project
- * Copyright (c) 2023 Michael Kolesidis
+ * Copyright (c) 2023 Michael Kolesidis <michael.kolesidis@gmail.com>
  * GNU Affero General Public License v3.0
  *
  * The MIDI to Note String function takes MIDI note numbers and

@@ -2,12 +2,11 @@
 
 A list of the terms that will have their own entry in the docs.
 
-
 amplitude <br>
 attack <br>
 attack curve <br>
 auto filter <br>
-bit crusher <br> 
+bit crusher <br>
 carrier <br>
 chebyshev <br>
 chorus <br>
@@ -57,7 +56,7 @@ square wave <br>
 sustain <br>
 synthesizer <br>
 tremolo <br>
-triangle  <br>
+triangle <br>
 vibrato <br>
 wave <br>
 waveform <br>

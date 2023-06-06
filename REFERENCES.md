@@ -6,7 +6,6 @@ This will be of tremendous help, both for contributors, who will be able to unde
 
 Tha main third-party source of code for the project is the documentation of the Tone.js, NexusUI and WEBMIDI.js projects, and this is where anyone wishing to implement the project's core functionality should look at first.
 
-
 ## The References List
 
 **Note**: Many of the following chunks of code were heavily modified and sometimes completely changed in our implementation, merely serving as a source of inspiration. You should always refer to our project's codebase first.
