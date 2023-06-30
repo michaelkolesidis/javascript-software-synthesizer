@@ -1,3 +1,11 @@
+# 2.0.0
+
+### Changes
+
+- Vite migration
+- Refactoring
+- Code cleanup
+
 # 1.2.0
 
 ### Changes

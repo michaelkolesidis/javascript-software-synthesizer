@@ -7,10 +7,14 @@
 
 // @ts-nocheck
 
-// ---------------------------------------------------------------------
+import * as Tone from "tone";
+import * as Nexus from "nexusui2";
+import { WebMidi } from "webmidi";
+import { Color } from "./utils/enums.js";
+import "./sass/style.scss";
+
 // ---------------------------------------------------------------------
 // Import Elements
-// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 import Index from "./elements/index.js";
 import SplashScreen from "./elements/splashScreen.js";
@@ -29,9 +33,7 @@ import SequencerSection from "./elements/panels/sequencerSection.js";
 import Menu from "./elements/menu/menu.js";
 
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 // Import Functions
-// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 import consoleIntro from "./functions/consoleIntro.js";
 import midiToNoteString from "./functions/midiToNoteString.js";
@@ -40,25 +42,7 @@ import showHide from "./functions/showHide.js";
 import invertColors from "./functions/invertColors.js";
 
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
-// Colors
-// ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
-const BLACK = "rgb(51, 51, 51)";
-const GRAY_DARK = "rgb(180, 180, 180)";
-const GRAY = "rgb(240,240,243)";
-const BLUE = "rgb(1, 0, 76)";
-const CYAN = "rgb(35, 178, 254)";
-const GREEN = "rgb(3, 214, 146)";
-const YELLOW = "rgb(254, 188, 44)";
-
-Nexus.colors.fill = GRAY; // For all NexusUI components
-let darkMode = false;
-
-// ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 // Page (index.html)
-// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 const root = document.getElementById("root");
 if (root) {
@@ -66,23 +50,17 @@ if (root) {
 }
 
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 // Splash Screen
-// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 SplashScreen();
 
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 // Welcome Message in Console
-// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 consoleIntro();
 
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 // Header
-// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 const header = document.getElementById("header");
 if (header) {
@@ -90,9 +68,7 @@ if (header) {
 }
 
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 // Footer
-// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 const footer = document.getElementById("footer");
 if (footer) {
@@ -100,9 +76,7 @@ if (footer) {
 }
 
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 // Menu
-// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 const navContent = document.getElementById("nav-content");
 if (navContent) {
@@ -110,9 +84,13 @@ if (navContent) {
 }
 
 // ---------------------------------------------------------------------
+// Colors
+// ---------------------------------------------------------------------
+Nexus.colors.fill = Color.gray; // For all NexusUI2 components
+let darkMode = false;
+
 // ---------------------------------------------------------------------
 // Panel Sections
-// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // Displays
 const displays = document.getElementById("displays");
@@ -179,16 +157,12 @@ if (sequencerSection) {
 }
 
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 // MIDI Display
-// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 const midiDisplay = document.getElementById("midi-display");
 
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 // Sequencer
-// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // Inputs and Buttons
 let seqRateInput = document.getElementById("seq-rate");
@@ -199,44 +173,54 @@ let playButton = document.getElementById("seq-play");
 let stopButton = document.getElementById("seq-stop");
 
 // Sequencer rate (tempo)
-seqRateInput.addEventListener("change", () => {
-  if (seqRateInput.value > 10) seqRateInput.value = 10;
-  if (seqRateInput.value <= 0) seqRateInput.value = 1;
-  let rate = seqRateInput.value;
+if (seqRateInput) {
+  seqRateInput.addEventListener("change", () => {
+    if (seqRateInput) {
+      if (seqRateInput.value > 10) seqRateInput.value = 10;
+      if (seqRateInput.value <= 0) seqRateInput.value = 1;
+      let rate = seqRateInput.value;
 
-  seq.set({
-    playbackRate: parseFloat(rate),
+      seq.set({
+        playbackRate: parseFloat(rate),
+      });
+    }
   });
-});
+}
 
 // Note value
 let noteValue = "16n";
 
-noteValueInput.addEventListener("change", () => {
-  if (noteValueInput.value <= 0) noteValueInput.value = "16n";
-  noteValue = noteValueInput.value;
-});
+if (noteValueInput) {
+  noteValueInput.addEventListener("change", () => {
+    if (noteValueInput) {
+      if (noteValueInput.value <= 0) noteValueInput.value = "16n";
+      noteValue = noteValueInput.value;
+    }
+  });
+}
 
 // Sequence notes input
-setButton.addEventListener("click", () => {
-  let seqNotesInput;
-  if (seqInput.value === "funky town" || seqInput.value === "Funky Town") {
-    seqNotesInput = funkyTown;
-  } else if (
-    seqInput.value === "i feel love" ||
-    seqInput.value === "I Feel Love"
-  ) {
-    seqNotesInput = feelLove;
-  } else if (seqInput.value === "default") {
-    seqNotesInput = seqNotes;
-  } else {
-    seqNotesInput = JSON.parse("[" + seqInput.value + "]");
-  }
+if (setButton) {
+  setButton.addEventListener("click", () => {
+    let seqNotesInput;
+    if (seqInput.value === "funky town" || seqInput.value === "Funky Town") {
+      seqNotesInput = funkyTown;
+    } else if (
+      seqInput.value === "i feel love" ||
+      seqInput.value === "I Feel Love"
+    ) {
+      seqNotesInput = feelLove;
+    } else if (seqInput.value === "default") {
+      seqNotesInput = seqNotes;
+    } else {
+      seqNotesInput = JSON.parse("[" + seqInput.value + "]");
+    }
 
-  seq.set({
-    events: seqNotesInput,
+    seq.set({
+      events: seqNotesInput,
+    });
   });
-});
+}
 
 // Sequence demos
 let seqNotes = ["C4", ["E4", "D4", "E4"], "G4", ["A4", "G4"]];
@@ -251,109 +235,56 @@ const seq = new Tone.Sequence((time, note) => {
 }, seqNotes).start(0);
 
 // Sequence play / stop
-playButton.addEventListener("click", () => Tone.Transport.start());
-stopButton.addEventListener("click", () => Tone.Transport.stop());
-
-// ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
-// Dark Mode
-// ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
-// let darkButton = document.getElementById("dark");
-
-function toggleDark() {
-  let element = document.body;
-  element.classList.toggle("dark-mode");
-  if (header) {
-    header.style.color = "white";
-  }
-  if (footer) {
-    footer.style.color = "white";
-  }
-  if (midiDisplay) {
-    midiDisplay.style.color = "white";
-  }
-  if (midiDisplay) {
-    midiDisplay.style.background = "rgb(100,100,100";
-  }
-  Nexus.colors.fill = "rgb(100,100,100";
-  Nexus.colors.accent = "rgb(105, 21, 122)";
-  darkMode = true;
-  if (header) {
-    header.innerHTML = Header(darkMode);
-  }
-
-  // let toggleDarkButton = document.createElement("button"); // recreates button in dark header
-  // toggleDarkButton.innerHTML = "Dark Mode"; // recreates button in dark header
-  // document.querySelector("#header").appendChild(toggleDarkButton); // recreates button in dark header
+if (playButton) {
+  playButton.addEventListener("click", () => Tone.Transport.start());
+}
+if (stopButton) {
+  stopButton.addEventListener("click", () => Tone.Transport.stop());
 }
 
-// let toggleDarkButton = document.createElement("button");
-// toggleDarkButton.innerHTML = "Dark Mode";
-// document.querySelector("#header").appendChild(toggleDarkButton);
-// ;
-
-// darkButton.addEventListener("click", function() {
-//   if (!darkMode) {
-//     darkButton.addEventListener("click", () => toggleDark());
-//   } else {
-//     darkMode = false;
-//   }
-// });
-
-// toggleDarkButton.addEventListener("click", toggleDark());
-
-// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // Oscilloscope
-// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 let oscilloscope = new Nexus.Oscilloscope("#oscilloscope", {
   size: [300, 150],
 });
 oscilloscope.connect(Tone.getDestination());
-oscilloscope.colorize("accent", BLUE);
+oscilloscope.colorize("accent", Color.blue);
 if (darkMode) {
-  oscilloscope.colorize("accent", GRAY);
+  oscilloscope.colorize("accent", Color.gray);
 }
 
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 // Spectrogram
-// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 let spectrogram = new Nexus.Spectrogram("#spectrogram", {
   size: [300, 150],
 });
 spectrogram.connect(Tone.getDestination());
-spectrogram.colorize("accent", BLUE);
+spectrogram.colorize("accent", Color.blue);
 if (darkMode) {
-  spectrogram.colorize("accent", GRAY);
+  spectrogram.colorize("accent", Color.gray);
 }
 
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 // Meter
-// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 let meter = new Nexus.Meter("#meter", {
   size: [45, 150],
 });
 meter.connect(Tone.getDestination());
-meter.colorize("accent", BLUE);
+meter.colorize("accent", Color.blue);
 if (darkMode) {
-  meter.colorize("accent", GRAY);
+  meter.colorize("accent", Color.gray);
 }
 
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 // Keyboard
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 if (darkMode) {
-  Nexus.colors.accent = GRAY; // dark mode
-  Nexus.colors.dark = GRAY_DARK; // darl mode
-  Nexus.colors.light = BLACK; // dark mode
+  Nexus.colors.accent = Color.gray; // dark mode
+  Nexus.colors.dark = Color.gray_dark; // darl mode
+  Nexus.colors.light = Color.black; // dark mode
 }
 
 let keyboard = new Nexus.Piano("#keyboard", {
@@ -362,30 +293,22 @@ let keyboard = new Nexus.Piano("#keyboard", {
   lowNote: 21,
   highNote: 108,
 });
-keyboard.colorize("accent", GRAY_DARK); // light mode
-
-// Keyboard resizing testing
-// let keyboardResizeButton = document.createElement("button");
-// keyboardResizeButton.innerHTML = "Resize";
-// document.querySelector("#keyboard").appendChild(keyboardResizeButton);
-// keyboardResizeButton.addEventListener("click", function() {
-//   keyboard.resize(800, 50);
-// });
+keyboard.colorize("accent", Color.gray_dark); // light mode
 
 // Makes keyboard playble both with right and left click - prevents right click context menu
 let keyboardPlaceholder = document.getElementById("keyboard");
-keyboardPlaceholder.addEventListener(
-  "contextmenu",
-  function (event) {
-    event.preventDefault();
-  },
-  false
-);
+if (keyboardPlaceholder) {
+  keyboardPlaceholder.addEventListener(
+    "contextmenu",
+    function (event) {
+      event.preventDefault();
+    },
+    false
+  );
+}
 
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 // Effects
-// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // High-Pass Filter [DEACTIVATED]
 // const highPassFilter = new Tone.Filter(20000, "highpass").toDestination();
@@ -413,7 +336,7 @@ keyboardPlaceholder.addEventListener(
 //   maxY: 20000,
 //   stepY: 0,
 // });
-// highLowPassFrequency.colorize("accent", YELLOW);
+// highLowPassFrequency.colorize("accent", Color.yellow);
 
 // highLowPassFrequency.on("change", function (v) {
 //   lowPassFilter.set({
@@ -425,7 +348,6 @@ keyboardPlaceholder.addEventListener(
 // });
 
 // AutoFilter .connect(autoFilter)
-// ---------------------------------------
 const autoFilter = new Tone.AutoFilter("4n").toDestination().start();
 
 autoFilter.set({
@@ -439,7 +361,7 @@ let autoFilterToggle = new Nexus.Toggle("#auto-filter-toggle", {
   size: [36, 18],
   state: false,
 });
-autoFilterToggle.colorize("accent", YELLOW);
+autoFilterToggle.colorize("accent", Color.yellow);
 
 autoFilterToggle.on("change", function (v) {
   if (v) {
@@ -463,7 +385,7 @@ let autoFilterDepth = new Nexus.Dial("#auto-filter-depth", {
   step: 0,
   value: 1,
 });
-autoFilterDepth.colorize("accent", YELLOW);
+autoFilterDepth.colorize("accent", Color.yellow);
 
 autoFilterDepth.on("change", function (v) {
   autoFilter.set({
@@ -474,7 +396,7 @@ autoFilterDepth.on("change", function (v) {
 // Auto Filter Depth Number
 let autoFilterDepthNum = new Nexus.Number("#auto-filter-depth-num");
 autoFilterDepthNum.link(autoFilterDepth);
-autoFilterDepthNum.colorize("accent", YELLOW);
+autoFilterDepthNum.colorize("accent", Color.yellow);
 
 // Auto Filter Frequency
 let autoFilterFrequency = new Nexus.Dial("#auto-filter-frequency", {
@@ -486,7 +408,7 @@ let autoFilterFrequency = new Nexus.Dial("#auto-filter-frequency", {
   step: 0,
   value: 10,
 });
-autoFilterFrequency.colorize("accent", YELLOW);
+autoFilterFrequency.colorize("accent", Color.yellow);
 
 autoFilterFrequency.on("change", function (v) {
   autoFilter.set({
@@ -497,7 +419,7 @@ autoFilterFrequency.on("change", function (v) {
 // Auto Filter Frequency Number
 let autoFilterFrequencyNum = new Nexus.Number("#auto-filter-frequency-num");
 autoFilterFrequencyNum.link(autoFilterFrequency);
-autoFilterFrequencyNum.colorize("accent", YELLOW);
+autoFilterFrequencyNum.colorize("accent", Color.yellow);
 
 // Auto Filter Octaves
 let autoFilterOctaves = new Nexus.Dial("#auto-filter-octaves", {
@@ -509,7 +431,7 @@ let autoFilterOctaves = new Nexus.Dial("#auto-filter-octaves", {
   step: 0,
   value: 2.6,
 });
-autoFilterOctaves.colorize("accent", YELLOW);
+autoFilterOctaves.colorize("accent", Color.yellow);
 
 autoFilterOctaves.on("change", function (v) {
   autoFilter.set({
@@ -520,7 +442,7 @@ autoFilterOctaves.on("change", function (v) {
 // Auto Filter Octaves Number
 let autoFilterOctavesNum = new Nexus.Number("#auto-filter-octaves-num");
 autoFilterOctavesNum.link(autoFilterOctaves);
-autoFilterOctavesNum.colorize("accent", YELLOW);
+autoFilterOctavesNum.colorize("accent", Color.yellow);
 
 // FeedbackDelay .connect(feedbackDelay)
 const feedbackDelay = new Tone.FeedbackDelay("8n", 0.5).toDestination();
@@ -535,7 +457,7 @@ let feedbackDelayToggle = new Nexus.Toggle("#feedback-delay-toggle", {
   size: [36, 18],
   state: false,
 });
-feedbackDelayToggle.colorize("accent", YELLOW);
+feedbackDelayToggle.colorize("accent", Color.yellow);
 
 feedbackDelayToggle.on("change", function (v) {
   if (v) {
@@ -559,7 +481,7 @@ let feedbackDelayTime = new Nexus.Dial("#feedback-delay-time", {
   step: 0,
   value: 0.25,
 });
-feedbackDelayTime.colorize("accent", YELLOW);
+feedbackDelayTime.colorize("accent", Color.yellow);
 
 feedbackDelayTime.on("change", function (v) {
   feedbackDelay.set({
@@ -570,7 +492,7 @@ feedbackDelayTime.on("change", function (v) {
 // Feedback Delay Time Number
 let feedbackDelayTimeNum = new Nexus.Number("#feedback-delay-time-num");
 feedbackDelayTimeNum.link(feedbackDelayTime);
-feedbackDelayTimeNum.colorize("accent", YELLOW);
+feedbackDelayTimeNum.colorize("accent", Color.yellow);
 
 // Feedback Delay Feedback
 let feedbackDelayFeedback = new Nexus.Dial("#feedback-delay-feedback", {
@@ -582,7 +504,7 @@ let feedbackDelayFeedback = new Nexus.Dial("#feedback-delay-feedback", {
   step: 0,
   value: 0.5,
 });
-feedbackDelayFeedback.colorize("accent", YELLOW);
+feedbackDelayFeedback.colorize("accent", Color.yellow);
 
 feedbackDelayFeedback.on("change", function (v) {
   feedbackDelay.set({
@@ -593,7 +515,7 @@ feedbackDelayFeedback.on("change", function (v) {
 // Feedback Delay Time Number
 let feedbackDelayFeedbackNum = new Nexus.Number("#feedback-delay-feedback-num");
 feedbackDelayFeedbackNum.link(feedbackDelayFeedback);
-feedbackDelayFeedbackNum.colorize("accent", YELLOW);
+feedbackDelayFeedbackNum.colorize("accent", Color.yellow);
 
 // PingPongDelay .connect(PingPong)
 const pingPong = new Tone.PingPongDelay("4n", 0.2).toDestination();
@@ -608,7 +530,7 @@ let pingPongToggle = new Nexus.Toggle("#ping-pong-delay-toggle", {
   size: [36, 18],
   state: false,
 });
-pingPongToggle.colorize("accent", YELLOW);
+pingPongToggle.colorize("accent", Color.yellow);
 
 pingPongToggle.on("change", function (v) {
   if (v) {
@@ -632,7 +554,7 @@ let pingPongDelayTime = new Nexus.Dial("#ping-pong-delay-time", {
   step: 0,
   value: 1,
 });
-pingPongDelayTime.colorize("accent", YELLOW);
+pingPongDelayTime.colorize("accent", Color.yellow);
 
 pingPongDelayTime.on("change", function (v) {
   pingPong.set({
@@ -643,7 +565,7 @@ pingPongDelayTime.on("change", function (v) {
 // Ping Pong Delay Time Number
 let pingPongDelayTimeNum = new Nexus.Number("#ping-pong-delay-time-num");
 pingPongDelayTimeNum.link(pingPongDelayTime);
-pingPongDelayTimeNum.colorize("accent", YELLOW);
+pingPongDelayTimeNum.colorize("accent", Color.yellow);
 
 // Ping Pong Delay Feedback
 let pingPongDelayFeedback = new Nexus.Dial("#ping-pong-delay-feedback", {
@@ -655,7 +577,7 @@ let pingPongDelayFeedback = new Nexus.Dial("#ping-pong-delay-feedback", {
   step: 0,
   value: 0.2,
 });
-pingPongDelayFeedback.colorize("accent", YELLOW);
+pingPongDelayFeedback.colorize("accent", Color.yellow);
 
 pingPongDelayFeedback.on("change", function (v) {
   pingPong.set({
@@ -668,7 +590,7 @@ let pingPongDelayFeedbackNum = new Nexus.Number(
   "#ping-pong-delay-feedback-num"
 );
 pingPongDelayFeedbackNum.link(pingPongDelayFeedback);
-pingPongDelayFeedbackNum.colorize("accent", YELLOW);
+pingPongDelayFeedbackNum.colorize("accent", Color.yellow);
 
 // Reverb .connect(reverb)
 const reverb = new Tone.Reverb(1).toDestination(); // seconds - Check implementation
@@ -683,7 +605,7 @@ let reverbToggle = new Nexus.Toggle("#reverb-toggle", {
   size: [36, 18],
   state: false,
 });
-reverbToggle.colorize("accent", YELLOW);
+reverbToggle.colorize("accent", Color.yellow);
 
 reverbToggle.on("change", function (v) {
   if (v) {
@@ -707,7 +629,7 @@ let reverbDecay = new Nexus.Dial("#reverb-decay", {
   step: 0,
   value: 1,
 });
-reverbDecay.colorize("accent", YELLOW);
+reverbDecay.colorize("accent", Color.yellow);
 
 reverbDecay.on("change", function (v) {
   reverb.set({
@@ -718,7 +640,7 @@ reverbDecay.on("change", function (v) {
 // Reverb Decay Num
 let reverbDecayNum = new Nexus.Number("#reverb-decay-num");
 reverbDecayNum.link(reverbDecay);
-reverbDecayNum.colorize("accent", YELLOW);
+reverbDecayNum.colorize("accent", Color.yellow);
 
 // Chorus .connect(chorus)
 const chorus = new Tone.Chorus(4, 2.5, 0.5).toDestination().start();
@@ -734,7 +656,7 @@ let chorusToggle = new Nexus.Toggle("#chorus-toggle", {
   size: [36, 18],
   state: false,
 });
-chorusToggle.colorize("accent", YELLOW);
+chorusToggle.colorize("accent", Color.yellow);
 
 chorusToggle.on("change", function (v) {
   if (v) {
@@ -758,7 +680,7 @@ let chorusFrequency = new Nexus.Dial("#chorus-frequency", {
   step: 0,
   value: 4,
 });
-chorusFrequency.colorize("accent", YELLOW);
+chorusFrequency.colorize("accent", Color.yellow);
 
 chorusFrequency.on("change", function (v) {
   chorus.set({
@@ -769,7 +691,7 @@ chorusFrequency.on("change", function (v) {
 // Chorus Frequency Number
 let chorusFrequencyNum = new Nexus.Number("#chorus-frequency-num");
 chorusFrequencyNum.link(chorusFrequency);
-chorusFrequencyNum.colorize("accent", YELLOW);
+chorusFrequencyNum.colorize("accent", Color.yellow);
 
 // Chorus Delay Time
 let chorusDelay = new Nexus.Dial("#chorus-delay", {
@@ -781,7 +703,7 @@ let chorusDelay = new Nexus.Dial("#chorus-delay", {
   step: 0,
   value: 2.5,
 });
-chorusDelay.colorize("accent", YELLOW);
+chorusDelay.colorize("accent", Color.yellow);
 
 chorusDelay.on("change", function (v) {
   chorus.set({
@@ -792,7 +714,7 @@ chorusDelay.on("change", function (v) {
 // Chorus Delay Time Number
 let chorusDelayNum = new Nexus.Number("#chorus-delay-num");
 chorusDelayNum.link(chorusDelay);
-chorusDelayNum.colorize("accent", YELLOW);
+chorusDelayNum.colorize("accent", Color.yellow);
 
 // Chorus Depth
 let chorusDepth = new Nexus.Dial("#chorus-depth", {
@@ -804,7 +726,7 @@ let chorusDepth = new Nexus.Dial("#chorus-depth", {
   step: 0,
   value: 0.5,
 });
-chorusDepth.colorize("accent", YELLOW);
+chorusDepth.colorize("accent", Color.yellow);
 
 chorusDepth.on("change", function (v) {
   chorus.set({
@@ -815,7 +737,7 @@ chorusDepth.on("change", function (v) {
 // Chorus Depth Number
 let chorusDepthNum = new Nexus.Number("#chorus-depth-num");
 chorusDepthNum.link(chorusDepth);
-chorusDepthNum.colorize("accent", YELLOW);
+chorusDepthNum.colorize("accent", Color.yellow);
 
 // Tremolo .connect(tremolo)
 const tremolo = new Tone.Tremolo(9, 0.75).toDestination().start(); // frequency (rate), depth
@@ -830,7 +752,7 @@ let tremoloToggle = new Nexus.Toggle("#tremolo-toggle", {
   size: [36, 18],
   state: false,
 });
-tremoloToggle.colorize("accent", YELLOW);
+tremoloToggle.colorize("accent", Color.yellow);
 
 tremoloToggle.on("change", function (v) {
   if (v) {
@@ -854,7 +776,7 @@ let tremoloFrequency = new Nexus.Dial("#tremolo-frequency", {
   step: 1,
   value: 9,
 });
-tremoloFrequency.colorize("accent", YELLOW);
+tremoloFrequency.colorize("accent", Color.yellow);
 
 tremoloFrequency.on("change", function (v) {
   tremolo.set({
@@ -865,7 +787,7 @@ tremoloFrequency.on("change", function (v) {
 // Tremolo Frequency Number
 let tremoloFrequencyNum = new Nexus.Number("#tremolo-frequency-num");
 tremoloFrequencyNum.link(tremoloFrequency);
-tremoloFrequencyNum.colorize("accent", YELLOW);
+tremoloFrequencyNum.colorize("accent", Color.yellow);
 
 // Tremolo Depth
 let tremoloDepth = new Nexus.Dial("#tremolo-depth", {
@@ -877,7 +799,7 @@ let tremoloDepth = new Nexus.Dial("#tremolo-depth", {
   step: 0,
   value: 0.75,
 });
-tremoloDepth.colorize("accent", YELLOW);
+tremoloDepth.colorize("accent", Color.yellow);
 
 tremoloDepth.on("change", function (v) {
   tremolo.set({
@@ -888,7 +810,7 @@ tremoloDepth.on("change", function (v) {
 // Tremolo Depth Number
 let tremoloDepthNum = new Nexus.Number("#tremolo-depth-num");
 tremoloDepthNum.link(tremoloDepth);
-tremoloDepthNum.colorize("accent", YELLOW);
+tremoloDepthNum.colorize("accent", Color.yellow);
 
 // Vibrato .connect(vibrato)
 const vibrato = new Tone.Vibrato(9, 0.9).toDestination(); // frequency, depth
@@ -903,7 +825,7 @@ let vibratoToggle = new Nexus.Toggle("#vibrato-toggle", {
   size: [36, 18],
   state: false,
 });
-vibratoToggle.colorize("accent", YELLOW);
+vibratoToggle.colorize("accent", Color.yellow);
 
 vibratoToggle.on("change", function (v) {
   if (v) {
@@ -927,7 +849,7 @@ let vibratoFrequency = new Nexus.Dial("#vibrato-frequency", {
   step: 1,
   value: 9,
 });
-vibratoFrequency.colorize("accent", YELLOW);
+vibratoFrequency.colorize("accent", Color.yellow);
 
 vibratoFrequency.on("change", function (v) {
   vibrato.set({
@@ -938,7 +860,7 @@ vibratoFrequency.on("change", function (v) {
 // Vibrato Frequency Number
 let vibratoFrequencyNum = new Nexus.Number("#vibrato-frequency-num");
 vibratoFrequencyNum.link(vibratoFrequency);
-vibratoFrequencyNum.colorize("accent", YELLOW);
+vibratoFrequencyNum.colorize("accent", Color.yellow);
 
 // Vibrato Depth
 let vibratoDepth = new Nexus.Dial("#vibrato-depth", {
@@ -950,7 +872,7 @@ let vibratoDepth = new Nexus.Dial("#vibrato-depth", {
   step: 0,
   value: 0.75,
 });
-vibratoDepth.colorize("accent", YELLOW);
+vibratoDepth.colorize("accent", Color.yellow);
 
 vibratoDepth.on("change", function (v) {
   vibrato.set({
@@ -961,7 +883,7 @@ vibratoDepth.on("change", function (v) {
 // Vibrato Depth Number
 let vibratoDepthNum = new Nexus.Number("#vibrato-depth-num");
 vibratoDepthNum.link(vibratoDepth);
-vibratoDepthNum.colorize("accent", YELLOW);
+vibratoDepthNum.colorize("accent", Color.yellow);
 
 // Phaser .connect(phaser)
 const phaser = new Tone.Phaser({
@@ -981,7 +903,7 @@ let phaserToggle = new Nexus.Toggle("#phaser-toggle", {
   size: [36, 18],
   state: false,
 });
-phaserToggle.colorize("accent", YELLOW);
+phaserToggle.colorize("accent", Color.yellow);
 
 phaserToggle.on("change", function (v) {
   if (v) {
@@ -1005,7 +927,7 @@ let phaserFrequency = new Nexus.Dial("#phaser-frequency", {
   step: 0,
   value: 15,
 });
-phaserFrequency.colorize("accent", YELLOW);
+phaserFrequency.colorize("accent", Color.yellow);
 
 phaserFrequency.on("change", function (v) {
   phaser.set({
@@ -1016,7 +938,7 @@ phaserFrequency.on("change", function (v) {
 // Phaser Frequency Num
 let phaserFrequencyNum = new Nexus.Number("#phaser-frequency-num");
 phaserFrequencyNum.link(phaserFrequency);
-phaserFrequencyNum.colorize("accent", YELLOW);
+phaserFrequencyNum.colorize("accent", Color.yellow);
 
 // Phaser Octaves
 let phaserOctaves = new Nexus.Dial("#phaser-octaves", {
@@ -1028,7 +950,7 @@ let phaserOctaves = new Nexus.Dial("#phaser-octaves", {
   step: 0,
   value: 5,
 });
-phaserOctaves.colorize("accent", YELLOW);
+phaserOctaves.colorize("accent", Color.yellow);
 
 phaserOctaves.on("change", function (v) {
   phaser.set({
@@ -1039,7 +961,7 @@ phaserOctaves.on("change", function (v) {
 // Phaser Octaves Num
 let phaserOctavesNum = new Nexus.Number("#phaser-octaves-num");
 phaserOctavesNum.link(phaserOctaves);
-phaserOctavesNum.colorize("accent", YELLOW);
+phaserOctavesNum.colorize("accent", Color.yellow);
 
 // Phaser Base Frequency
 let phaserBaseFrequency = new Nexus.Dial("#phaser-base-frequency", {
@@ -1051,7 +973,7 @@ let phaserBaseFrequency = new Nexus.Dial("#phaser-base-frequency", {
   step: 0,
   value: 1000,
 });
-phaserBaseFrequency.colorize("accent", YELLOW);
+phaserBaseFrequency.colorize("accent", Color.yellow);
 
 phaserBaseFrequency.on("change", function (v) {
   phaser.set({
@@ -1062,7 +984,7 @@ phaserBaseFrequency.on("change", function (v) {
 // Phaser Base Frequency Num
 let phaserBaseFrequencyNum = new Nexus.Number("#phaser-base-frequency-num");
 phaserBaseFrequencyNum.link(phaserBaseFrequency);
-phaserBaseFrequencyNum.colorize("accent", YELLOW);
+phaserBaseFrequencyNum.colorize("accent", Color.yellow);
 
 // Distortion .connect(dist)
 const dist = new Tone.Distortion(0.9).toDestination();
@@ -1076,7 +998,7 @@ let distortionToggle = new Nexus.Toggle("#distortion-toggle", {
   size: [36, 18],
   state: false,
 });
-distortionToggle.colorize("accent", YELLOW);
+distortionToggle.colorize("accent", Color.yellow);
 
 distortionToggle.on("change", function (v) {
   if (v) {
@@ -1099,7 +1021,7 @@ let distortionDistortion = new Nexus.Dial("#distortion-amount", {
   step: 0,
   value: 0.9,
 });
-distortionDistortion.colorize("accent", YELLOW);
+distortionDistortion.colorize("accent", Color.yellow);
 
 distortionDistortion.on("change", function (v) {
   dist.set({
@@ -1110,7 +1032,7 @@ distortionDistortion.on("change", function (v) {
 // Distortion Number
 let distortionDistortionNum = new Nexus.Number("#distortion-amount-num");
 distortionDistortionNum.link(distortionDistortion);
-distortionDistortionNum.colorize("accent", YELLOW);
+distortionDistortionNum.colorize("accent", Color.yellow);
 
 // FrequencyShifter .connect(shift)
 const shift = new Tone.FrequencyShifter(42).toDestination(); // The incoming signal is shifted by this frequency value
@@ -1124,7 +1046,7 @@ let shiftToggle = new Nexus.Toggle("#freq-shifter-toggle", {
   size: [36, 18],
   state: false,
 });
-shiftToggle.colorize("accent", YELLOW);
+shiftToggle.colorize("accent", Color.yellow);
 
 shiftToggle.on("change", function (v) {
   if (v) {
@@ -1148,7 +1070,7 @@ let frequencyShifterFrequency = new Nexus.Dial("#freq-shifter-frequency", {
   step: 0,
   value: 42,
 });
-frequencyShifterFrequency.colorize("accent", YELLOW);
+frequencyShifterFrequency.colorize("accent", Color.yellow);
 
 frequencyShifterFrequency.on("change", function (v) {
   shift.set({
@@ -1161,7 +1083,7 @@ let frequencyShifterFrequencyNum = new Nexus.Number(
   "#freq-shifter-frequency-num"
 );
 frequencyShifterFrequencyNum.link(frequencyShifterFrequency);
-frequencyShifterFrequencyNum.colorize("accent", YELLOW);
+frequencyShifterFrequencyNum.colorize("accent", Color.yellow);
 
 // BitCrusher .connect(crusher)
 const crusher = new Tone.BitCrusher(7).toDestination(); //
@@ -1176,7 +1098,7 @@ let crusherToggle = new Nexus.Toggle("#bit-crusher-toggle", {
   size: [36, 18],
   state: false,
 });
-crusherToggle.colorize("accent", YELLOW);
+crusherToggle.colorize("accent", Color.yellow);
 
 crusherToggle.on("change", function (v) {
   if (v) {
@@ -1200,7 +1122,7 @@ let bitCrusherBits = new Nexus.Dial("#bit-crusher-bits", {
   step: 0.01,
   value: 7,
 });
-bitCrusherBits.colorize("accent", YELLOW);
+bitCrusherBits.colorize("accent", Color.yellow);
 
 bitCrusherBits.on("change", function (v) {
   crusher.set({
@@ -1211,7 +1133,7 @@ bitCrusherBits.on("change", function (v) {
 // Bit Crusher Bits Number
 let bitCrusherBitsNum = new Nexus.Number("#bit-crusher-bits-num");
 bitCrusherBitsNum.link(bitCrusherBits);
-bitCrusherBitsNum.colorize("accent", YELLOW);
+bitCrusherBitsNum.colorize("accent", Color.yellow);
 
 // Chebyshev .connect(cheby)
 const cheby = new Tone.Chebyshev(50).toDestination();
@@ -1225,7 +1147,7 @@ let chebyToggle = new Nexus.Toggle("#chebyshev-toggle", {
   size: [36, 18],
   state: false,
 });
-chebyToggle.colorize("accent", YELLOW);
+chebyToggle.colorize("accent", Color.yellow);
 
 chebyToggle.on("change", function (v) {
   if (v) {
@@ -1249,7 +1171,7 @@ let chebyshevOrder = new Nexus.Dial("#chebyshev-order", {
   step: 1,
   value: 51,
 });
-chebyshevOrder.colorize("accent", YELLOW);
+chebyshevOrder.colorize("accent", Color.yellow);
 
 chebyshevOrder.on("change", function (v) {
   cheby.set({
@@ -1260,12 +1182,10 @@ chebyshevOrder.on("change", function (v) {
 // Chebyshev Order Number
 let chebyshevOrderNum = new Nexus.Number("#chebyshev-order-num");
 chebyshevOrderNum.link(chebyshevOrder);
-chebyshevOrderNum.colorize("accent", YELLOW);
+chebyshevOrderNum.colorize("accent", Color.yellow);
 
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 // Synthesizer
-// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 let synth = new Tone.PolySynth(Tone.FMSynth);
 
@@ -1293,9 +1213,7 @@ synth.chain(
 );
 
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 // Volume
-// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // Dial
 let volumeControl = new Nexus.Dial("#volume", {
@@ -1307,7 +1225,7 @@ let volumeControl = new Nexus.Dial("#volume", {
   step: 0,
   value: -28,
 });
-volumeControl.colorize("accent", CYAN);
+volumeControl.colorize("accent", Color.cyan);
 
 volumeControl.on("change", function (v) {
   synth.set({
@@ -1320,12 +1238,10 @@ let volumeNum = new Nexus.Number("#volume-num", {
   size: [60, 30],
 });
 volumeNum.link(volumeControl);
-volumeNum.colorize("accent", CYAN);
+volumeNum.colorize("accent", Color.cyan);
 
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 // Detune
-// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // In cents - 100 cents = 8hz = 1 note - if detune 100, C4 becomes C4#, if detune 200 C4 becomes D4 and so on
 // detune range : -1000-1000 (choice)
@@ -1340,7 +1256,7 @@ let detuneControl = new Nexus.Dial("#detune", {
   step: 1,
   value: 0,
 });
-detuneControl.colorize("accent", CYAN);
+detuneControl.colorize("accent", Color.cyan);
 
 detuneControl.on("change", function (v) {
   synth.set({
@@ -1353,12 +1269,10 @@ let detuneNum = new Nexus.Number("#detune-num", {
   size: [60, 30],
 });
 detuneNum.link(detuneControl);
-detuneNum.colorize("accent", CYAN);
+detuneNum.colorize("accent", Color.cyan);
 
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 // Modulation Index
-// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // The modulation index is essentially the amound of modulation occuring. It is the ratio of the frequency of the modulating signal (mf) to the amplitude of the modulating signal (ma) – as in ma/mf.
 // modulationIndex range: 0-300 (choice)
@@ -1372,7 +1286,7 @@ let modulationIndexControl = new Nexus.Dial("#modulation-index", {
   step: 1,
   value: 10,
 });
-modulationIndexControl.colorize("accent", CYAN);
+modulationIndexControl.colorize("accent", Color.cyan);
 
 modulationIndexControl.on("change", function (v) {
   synth.set({
@@ -1385,12 +1299,10 @@ let modulationIndexNum = new Nexus.Number("#modulation-index-num", {
   size: [60, 30],
 });
 modulationIndexNum.link(modulationIndexControl);
-modulationIndexNum.colorize("accent", CYAN);
+modulationIndexNum.colorize("accent", Color.cyan);
 
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 // Harmonicity
-// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 //  Harmonicity is the ratio between the two voices. A harmonicity of 1 is no change. Harmonicity = 2 means a change of an octave.
 // range: 0-20 (choice)
@@ -1404,7 +1316,7 @@ let harmonicityControl = new Nexus.Dial("#harmonicity", {
   step: 0,
   value: 3,
 });
-harmonicityControl.colorize("accent", CYAN);
+harmonicityControl.colorize("accent", Color.cyan);
 
 harmonicityControl.on("change", function (v) {
   synth.set({
@@ -1417,12 +1329,10 @@ let harmonicityNum = new Nexus.Number("#harmonicity-num", {
   size: [60, 30],
 });
 harmonicityNum.link(harmonicityControl);
-harmonicityNum.colorize("accent", CYAN);
+harmonicityNum.colorize("accent", Color.cyan);
 
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 // ADSR Envelope
-// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // https://tonejs.github.io/docs/Envelope.html
 
@@ -1468,7 +1378,7 @@ let amplitudeADSR = new Nexus.Multislider("#amplitude-adsr", {
   smoothing: 0,
   mode: "bar",
 });
-amplitudeADSR.colorize("accent", CYAN);
+amplitudeADSR.colorize("accent", Color.cyan);
 
 amplitudeADSR.on("change", function (v) {
   synth.set({
@@ -1535,9 +1445,7 @@ releaseCurveSelector.on("change", function (v) {
 });
 
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 // Oscillator
-// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // Type
 const oscillatorTypes = [
@@ -1556,7 +1464,7 @@ let oscillatorTypeSelector = new Nexus.RadioButton("#oscillator-type", {
   numberOfButtons: 5,
   active: 0,
 });
-oscillatorTypeSelector.colorize("accent", CYAN);
+oscillatorTypeSelector.colorize("accent", Color.cyan);
 
 oscillatorTypeSelector.on("change", function (v) {
   synth.set({
@@ -1576,7 +1484,7 @@ let partialCountSelector = new Nexus.Slider("#partial-count", {
   step: 1,
   value: 0,
 });
-partialCountSelector.colorize("accent", CYAN);
+partialCountSelector.colorize("accent", Color.cyan);
 
 partialCountSelector.on("change", function (v) {
   if (oscillatorType !== "pulse") {
@@ -1609,7 +1517,7 @@ partialCountSelector.on("change", function (v) {
     smoothing: 0,
     mode: "bar", // 'bar' or 'line'
   });
-  partialsSelector.colorize("accent", CYAN);
+  partialsSelector.colorize("accent", Color.cyan);
   partialsSelector.on("change", function (v) {});
 });
 
@@ -1635,9 +1543,7 @@ partialsSelector.on("change", function (v) {
 });
 
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 // Modulation
-// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // Type
 const modulationTypes = [
@@ -1656,7 +1562,7 @@ let modulationTypeSelector = new Nexus.RadioButton("#modulation-type", {
   numberOfButtons: 5,
   active: 1,
 });
-modulationTypeSelector.colorize("accent", GREEN);
+modulationTypeSelector.colorize("accent", Color.green);
 
 modulationTypeSelector.on("change", function (v) {
   synth.set({
@@ -1679,7 +1585,7 @@ let modulationPartialCountSelector = new Nexus.Slider(
     value: 0,
   }
 );
-modulationPartialCountSelector.colorize("accent", GREEN);
+modulationPartialCountSelector.colorize("accent", Color.green);
 
 modulationPartialCountSelector.on("change", function (v) {
   if (modulationType !== "pulse") {
@@ -1715,7 +1621,7 @@ modulationPartialCountSelector.on("change", function (v) {
       mode: "bar", // 'bar' or 'line'
     }
   );
-  modulationPartialsSelector.colorize("accent", GREEN);
+  modulationPartialsSelector.colorize("accent", Color.green);
   modulationPartialsSelector.on("change", function (v) {});
 });
 
@@ -1744,9 +1650,7 @@ modulationPartialsSelector.on("change", function (v) {
 });
 
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 // Modulation Envelope
-// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // attack
 // attackCurve
@@ -1767,7 +1671,7 @@ let modulationADSR = new Nexus.Multislider("#modulation-adsr", {
   smoothing: 0,
   mode: "bar",
 });
-modulationADSR.colorize("accent", GREEN);
+modulationADSR.colorize("accent", Color.green);
 
 modulationADSR.on("change", function (v) {
   synth.set({
@@ -1829,9 +1733,7 @@ modulationReleaseCurveSelector.on("change", function (v) {
 });
 
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 // Synthesizer On-Screen Keyboard Playbility Implementation
-// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 let notes = []; // For polyphonic synths
 keyboard.on("change", (note) => {
@@ -1845,9 +1747,7 @@ keyboard.on("change", (note) => {
 });
 
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 // Computer Keyboard Playbility Implementation
-// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 let base = 39; // Middle C / C4
 
@@ -1857,6 +1757,7 @@ document.addEventListener("keydown", (event) => {
   }
   const keyIndex = keyMapper(event.code, base);
   if (
+    keyIndex &&
     keyIndex >= 0 &&
     keyIndex <= 87 &&
     !keyboard.keys[keyIndex]._state.state
@@ -1867,7 +1768,12 @@ document.addEventListener("keydown", (event) => {
 
 document.addEventListener("keyup", (event) => {
   const keyIndex = keyMapper(event.code, base);
-  if (keyIndex >= 0 && keyIndex <= 87 && keyboard.keys[keyIndex]._state.state) {
+  if (
+    keyIndex &&
+    keyIndex >= 0 &&
+    keyIndex <= 87 &&
+    keyboard.keys[keyIndex]._state.state
+  ) {
     keyboard.toggleIndex(keyIndex, false);
   }
 });
@@ -1882,9 +1788,7 @@ function octaveSwitch(e) {
   }
 }
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 // MIDI Implementation
-// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // Enable WebMidi.js and trigger the onEnabled() function when ready.
 WebMidi.enable()
@@ -1892,12 +1796,16 @@ WebMidi.enable()
   .catch((err) => console.log(err));
 
 function onEnabled() {
-  if (WebMidi.inputs.length < 1) {
+  if (midiDisplay && WebMidi.inputs.length < 1) {
     midiDisplay.innerHTML += "No device detected.";
   } else {
-    midiDisplay.innerHTML += `Select MIDI controller:`;
+    if (midiDisplay) {
+      midiDisplay.innerHTML += `Select MIDI controller:`;
+    }
     WebMidi.inputs.forEach((device, index) => {
-      midiDisplay.innerHTML += `<p id="${index}" class="midi-selector">${index} : ${device.name}</p>`;
+      if (midiDisplay) {
+        midiDisplay.innerHTML += `<p id="${index}" class="midi-selector">${index} : ${device.name}</p>`;
+      }
     });
   }
 
@@ -1907,7 +1815,7 @@ function onEnabled() {
     item.addEventListener("click", (event) => {
       if (!midiSelected) {
         setTimeout(function () {
-          item.style.color = BLUE;
+          item.style.color = Color.blue;
           midiDisplay.innerHTML += `<br>MIDI input selected`;
         }, 250);
 
@@ -1934,9 +1842,7 @@ function onEnabled() {
 }
 
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 // Show/Hide Section Toggle
-// ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 let synthSectionTitle = document.getElementById("synth-title");
 let synthSectionContent = document.getElementById("synth-section-content");
@@ -2004,7 +1910,7 @@ showHide(modulationTitle, modulationContent, "block", "none");
 showHide(modulationEnvelopeTitle, modulationEnvelope, "flex", "none");
 
 // Effects Section
-showHide(effectsTitle, effectsContent, "block", "none");
+showHide(effectsTitle, effectsContent, "grid", "none");
 showHide(autoFilterTitle, autoFilterContent, "grid", "none");
 showHide(feedbackDelayTitle, feedbackDelayContent, "none", "flex");
 showHide(pingPongDelayTitle, pingPongDelayContent, "none", "flex");
@@ -2019,115 +1925,6 @@ showHide(bitCrusherTitle, bitCrusherContent, "none", "flex");
 showHide(chebyshevTitle, chebyshevContent, "none", "flex");
 
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 // Inverted Colors Mode
 // ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
 invertColors();
-
-// ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
-// Recorder
-// ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
-// https://tonejs.github.io/docs/14.7.77/Recorder
-
-// let recButton = document.getElementById("rec");
-// let stopRecButton = document.getElementById("rec-stop");
-
-// const recorder = new Tone.Recorder();
-
-// recButton.addEventListener("click", function () {
-//   // start recording
-//   recorder.start();
-//   setTimeout(async () => {
-//     // the recorded audio is returned as a blob
-//     const recording = await recorder.stop();
-//     // download the recording by creating an anchor element and blob url
-//     const url = URL.createObjectURL(recording);
-//     const anchor = document.createElement("a");
-//     anchor.download = "recording.webm";
-//     anchor.href = url;
-//     anchor.click();
-//   }, 4000);
-// });
-
-// stopRecButton.addEventListener("click", function () {
-//   const recording = recorder.stop();
-//   // download the recording by creating an anchor element and blob url
-//   const url = URL.createObjectURL(recording);
-//   const anchor = document.createElement("a");
-//   anchor.download = "recording.webm";
-//   anchor.href = url;
-//   anchor.click();
-// });
-
-// wait for the notes to end and stop the recording
-
-// wait for the notes to end and stop the recording
-// setTimeout(async () => {
-//   // the recorded audio is returned as a blob
-//   const recording = await recorder.stop();
-//   // download the recording by creating an anchor element and blob url
-//   const url = URL.createObjectURL(recording);
-//   const anchor = document.createElement("a");
-//   anchor.download = "recording.webm";
-//   anchor.href = url;
-//   anchor.click();
-// }, 4000);
-
-// ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
-// Presets
-// ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
-// Presets functionality will be implemented here
-
-// ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
-// Effects connectivity alternatives
-// ---------------------------------------------------------------------
-// ---------------------------------------------------------------------
-// synth.chain(highPassFilter, lowPassFilter, Tone.Destination);
-
-// synth.disconnect(highPassFilter);
-// synth.disconnect(lowPassFilter);
-
-// autoFilter first of high/low pass?
-// the last ones in the chain don't work (crusher, cheby)
-
-// Parallel
-// synth.chain(lowPassFilter, Tone.Destination);
-// synth.chain(highPassFilter, Tone.Destination);
-
-// synth.chain(autoFilter, Tone.Destination);
-// synth.chain(feedbackDelay, Tone.Destination);
-// synth.chain(pingPong, Tone.Destination);
-// synth.chain(reverb, Tone.Destination);
-// synth.chain(chorus, Tone.Destination);
-// synth.chain(tremolo, Tone.Destination);
-// synth.chain(vibrato, Tone.Destination);
-// synth.chain(phaser, Tone.Destination);
-// synth.chain(dist, Tone.Destination);
-// synth.chain(shift, Tone.Destination);
-// synth.chain(crusher, Tone.Destination);
-// synth.chain(cheby, Tone.Destination);
-
-// synth.connect(lowPassFilter, Tone.Destination);
-// synth.connect(highPassFilter, Tone.Destination);
-
-// synth.connect(autoFilter, Tone.Destination);
-// synth.connect(feedbackDelay, Tone.Destination);
-// synth.connect(pingPong, Tone.Destination);
-// synth.connect(reverb, Tone.Destination);
-// synth.connect(chorus, Tone.Destination);
-// synth.connect(tremolo, Tone.Destination);
-// synth.connect(vibrato, Tone.Destination);
-// synth.connect(phaser, Tone.Destination);
-// synth.connect(dist, Tone.Destination);
-// synth.connect(shift, Tone.Destination);
-// synth.connect(crusher, Tone.Destination);
-// synth.connect(cheby, Tone.Destination);
-
-// const comp = new Tone.Compressor(-30, 3).toDestination();
-// synth.chain(comp, Tone.Destination);

@@ -1,7 +1,7 @@
 {
   "name": "JSS-01 | JavaScript Software Synthesizer",
   "short_name": "JSS-01",
-  "description": "The JSS-01 | JavaScript Software Synthesizer is a web app enabling you to make and play music in the browser. It is a software synthesizer implementing a variety of JavaScript frameworks and libraries, such as Tone.js and NexusUI.",
+  "description": "The JSS-01 | JavaScript Software Synthesizer is a web app enabling you to make and play music in the browser. It is a software synthesizer implementing a variety of JavaScript frameworks and libraries, such as Tone.js and NexusUI2.",
   "icons": [
     {
       "src": "/assets/logo/favicon.ico",

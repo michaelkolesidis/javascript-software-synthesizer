@@ -2,13 +2,10 @@
   "name": "javascript-software-synthesizer",
   "author": "Michael Kolesidis",
   "license": "AGPL-3.0-or-later",
-  "version": "1.2.0",
-  "description": "TThe JSS-01 | JavaScript Software Synthesizer is a web app enabling you to make and play music in the browser. It is a software synthesizer implementing a variety of JavaScript frameworks and libraries, such as Tone.js and NexusUI.",
-  "scripts": {
-    "build": "tsc --build",
-    "clean": "tsc --build --clean",
-    "sass": "sass --watch sass/style.scss:css/style.min.css --style compressed"
-  },
+  "version": "2.0.0",
+  "description": "TThe JSS-01 | JavaScript Software Synthesizer is a web app enabling you to make and play music in the browser. It is a software synthesizer implementing a variety of JavaScript frameworks and libraries, such as Tone.js and NexusUI2.",
+  "private": false,
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/michaelkolesidis/javascript-software-synthesizer.git"
@@ -37,16 +34,25 @@
     "url": "https://github.com/michaelkolesidis/javascript-software-synthesizer/issues"
   },
   "homepage": "https://github.com/michaelkolesidis/javascript-software-synthesizer",
-  "main": "index.js",
+  "scripts": {
+    "dev": "vite --host",
+    "start": "vite --host",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
   "directories": {
     "doc": "docs",
     "test": "test"
   },
-  "dependencies": {
-    "node-sass": "^9.0.0",
-    "sass": "^1.63.6"
-  },
   "devDependencies": {
-    "typescript": "^5.1.6"
+    "eslint": "^8.43.0",
+    "sass": "^1.63.6",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.9"
+  },
+  "dependencies": {
+    "nexusui2": "^1.0.1",
+    "tone": "^14.7.77",
+    "webmidi": "^3.1.6"
   }
 }

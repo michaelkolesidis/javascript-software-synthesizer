@@ -5,7 +5,7 @@
 
 [![made-with-typescript](https://img.shields.io/badge/Made%20with-TypeScript-01004c.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![MIT license](https://img.shields.io/badge/License-AGPLv3-01004c.svg)](https://www.gnu.org/licenses/agpl-3.0.html)
-[![Version](https://img.shields.io/badge/version-1.2.0-01004c.svg)](https://shields.io/)
+[![Version](https://img.shields.io/badge/version-2.0.0-01004c.svg)](https://shields.io/)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/93c42090-6fc9-4c3d-a462-42b535ea9d15/deploy-status)](https://app.netlify.com/sites/javascript-software-synthesizer/deploys)
 
 ## Technologies Used
@@ -20,12 +20,14 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://www.yarnpkg.com/"><img src="https://github.com/michaelkolesidis/tech-icons/blob/main/icons/yarn/yarn-original.svg" height="50px" /></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://vitejs.dev/"><img src="https://vitejs.dev/logo.svg" height="50px" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 More info about the technologies can be found <a href="https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/README.md#technologies-used-extended">here</a>.
 
 ## Description
 
-The _JSS-01 | JavaScript Software Synthesizer_ is a web application enabling you to make and play music in the browser. It is a [software synthesizer](https://en.wikipedia.org/wiki/Software_synthesizer) utilizing the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) by implementing a variety of JavaScript frameworks and libraries, such as [Tone.js](https://tonejs.github.io/) and [NexusUI](https://nexus-js.github.io/ui/). Its design is fully modular, thus it can easily be adapted and integrated into any kind of project.
+The _JSS-01 | JavaScript Software Synthesizer_ is a web application enabling you to make and play music in the browser. It is a [software synthesizer](https://en.wikipedia.org/wiki/Software_synthesizer) utilizing the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) by implementing a variety of JavaScript frameworks and libraries, such as [Tone.js](https://tonejs.github.io/) and [NexusUI2](https://github.com/michaelkolesidis/nexusui2). Its design is fully modular, thus it can easily be adapted and integrated into any kind of project.
 
 My aim when creating the JSS-01 was to offer a powerful synthesizer that is simple, easy and, above all, fun to use!
 
@@ -139,7 +141,7 @@ The _JSS-01 | JavaScript Software Synthesizer_ is quite heavy, especially on the
 
 ## Documentation
 
-Full documentation will be released at some point in the future. In the meantime, you can refer to the [Tone.js documentation](https://tonejs.github.io/docs/), as well as the [NexusUI documentation](https://nexus-js.github.io/ui/api/#intro).
+Full documentation will be released at some point in the future. In the meantime, you can refer to the [Tone.js documentation](https://tonejs.github.io/docs/), as well as the [NexusUI2 documentation](https://nexus-js.github.io/ui/api/#intro).
 
 ## Guides & Tutorials
 
@@ -163,16 +165,18 @@ Please refer to the project's [Changelog](https://github.com/michaelkolesidis/ja
 
 ## Technologies Used (Extended)
 
-- [Tone.js](https://github.com/Tonejs/Tone.js/)
-  <br>One could say that Tone.js is the "soul" of our project. It provides us with the synthesizers we use to generate sounds, as well as their various properties that can be tweaked and adjusted.
-- [NexusUI](https://github.com/nexus-js/ui)
-  <br>NexusUI provides us with the UI components that are connected to the synthesizers and make parameters adjusting easy and playful.
-- [WEBMIDI.js](https://github.com/djipco/webmidi)
-  <br>WEBMIDI.js makes Web MIDI API easy to implement. It allows users to connect their MIDI keyboards and play the synthesizer the way it is meant to be played. Because, who likes playing music with a [mouse](https://web.archive.org/web/20150928202135im_/https://kathytemean.files.wordpress.com/2014/11/46289.jpg?w=500&h=540)?
-- [Sass](https://github.com/sass/sass)
-  <br>The SCSS (Sassy CSS) syntax is utilized for the styling of our project.
-- [TypeScript](https://www.typescriptlang.org/)
-  <br>In version 0.6.1, TypeScript was first introduced in the project, with significant parts of it migrating to TypeScript for increased type safety. In version 1.0.0 migration to TypeScript was completed.
+- [Tone.js](https://github.com/Tonejs/Tone.js/)  
+  One could say that Tone.js is the "soul" of our project. It provides us with the synthesizers we use to generate sounds, as well as their various properties that can be tweaked and adjusted.
+- [NexusUI2](https://github.com/michaelkolesidis/nexusui2)  
+  NexusUI2 provides us with the UI components that are connected to the synthesizers and make parameters adjusting easy and playful.
+- [WEBMIDI.js](https://github.com/djipco/webmidi)  
+  WEBMIDI.js makes Web MIDI API easy to implement. It allows users to connect their MIDI keyboards and play the synthesizer the way it is meant to be played. Because, who likes playing music with a [mouse](https://web.archive.org/web/20150928202135im_/https://kathytemean.files.wordpress.com/2014/11/46289.jpg?w=500&h=540)?
+- [Sass](https://github.com/sass/sass)  
+  The SCSS (Sassy CSS) syntax is utilized for the styling of our project.
+- [TypeScript](https://www.typescriptlang.org/)  
+  In version 0.6.1, TypeScript was first introduced in the project, with significant parts of it migrating to TypeScript for increased type safety. In version 1.0.0 migration to TypeScript was completed.
+- [Vite](https://vitejs.dev/)  
+  Vite provides the frontend tooling, a local server and packaging
 
 ## Roadmap
 
