@@ -1,3 +1,9 @@
+# 2.0.2
+
+### Changes
+
+- Migration to Vercel
+
 # 2.0.1
 
 ### Changes

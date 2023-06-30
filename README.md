@@ -5,8 +5,7 @@
 
 [![made-with-typescript](https://img.shields.io/badge/Made%20with-TypeScript-01004c.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![MIT license](https://img.shields.io/badge/License-AGPLv3-01004c.svg)](https://www.gnu.org/licenses/agpl-3.0.html)
-[![Version](https://img.shields.io/badge/version-2.0.1-01004c.svg)](https://shields.io/)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/93c42090-6fc9-4c3d-a462-42b535ea9d15/deploy-status)](https://app.netlify.com/sites/javascript-software-synthesizer/deploys)
+[![Version](https://img.shields.io/badge/version-2.0.2-01004c.svg)](https://shields.io/)
 
 ## Technologies Used
 
@@ -56,7 +55,7 @@ For more information, please refer to MDN's excellent article: [MDN article](htt
 
 ### Demo
 
-There is an online demo available at [https://javascript-software-synthesizer.netlify.app/](https://javascript-software-synthesizer.netlify.app/)
+There is an online demo available at [https://javascript-software-synthesizer.vercel.app/](https://javascript-software-synthesizer.vercel.app/)
 
 ## Introduction
 
