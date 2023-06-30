@@ -1817,7 +1817,7 @@ document.addEventListener("keydown", (event) => {
   if (event.target === seqInput) {
     return;
   }
-  const keyIndex = keyMapper(event.key, base);
+  const keyIndex = keyMapper(event.code, base);
   if (
     keyIndex >= 0 &&
     keyIndex <= 87 &&
@@ -1828,7 +1828,7 @@ document.addEventListener("keydown", (event) => {
 });
 
 document.addEventListener("keyup", (event) => {
-  const keyIndex = keyMapper(event.key, base);
+  const keyIndex = keyMapper(event.code, base);
   if (keyIndex >= 0 && keyIndex <= 87 && keyboard.keys[keyIndex]._state.state) {
     keyboard.toggleIndex(keyIndex, false);
   }
