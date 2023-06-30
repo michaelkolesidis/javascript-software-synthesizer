@@ -6,7 +6,7 @@
  */
 
 export default function effectsSection() {
-    return /*html*/ `
+  return /*html*/ `
 <div class="title" id="effects-title"><p>Effects</p></div>
 <div id="effects-content">
     <!--------------------------------------------------------------------->
@@ -309,5 +309,5 @@ export default function effectsSection() {
     </div>
     </div>
 </div>
-`
+`;
 }

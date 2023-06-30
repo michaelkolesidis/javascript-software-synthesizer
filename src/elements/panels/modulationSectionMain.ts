@@ -6,7 +6,7 @@
  */
 
 export default function modulationSectionMain() {
-    return /*html*/ `
+  return /*html*/ `
 <!--------------------------------------------------------------------->
 <!-- Modulation Type -->
 <!--------------------------------------------------------------------->
@@ -36,5 +36,5 @@ export default function modulationSectionMain() {
 <p class="label">Partials</p>
 <div id="modulation-partials-selector"></div>
 </div>
-`
+`;
 }

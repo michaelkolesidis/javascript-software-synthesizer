@@ -6,7 +6,7 @@
  */
 
 export default function modulationSectionMain() {
-    return /*html*/ `
+  return /*html*/ `
 <div class="title" id="modulation-title"><p>Modulation</p></div>
 <div id="modulation-content">
     <!--------------------------------------------------------------------->
@@ -21,5 +21,5 @@ export default function modulationSectionMain() {
     </p>
     <div id="modulation-envelope"></div>
 </div>
-`
+`;
 }

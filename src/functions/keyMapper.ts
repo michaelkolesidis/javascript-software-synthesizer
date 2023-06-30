@@ -14,38 +14,26 @@
  */
 
 export default function keyMapper(key: string, base: number) {
-  switch (key) {
-    case "KeyA":
-      return base;
-    case "KeyW":
-      return base + 1;
-    case "KeyS":
-      return base + 2;
-    case "KeyE":
-      return base + 3;
-    case "KeyD":
-      return base + 4;
-    case "KeyF":
-      return base + 5;
-    case "KeyT":
-      return base + 6;
-    case "KeyG":
-      return base + 7;
-    case "KeyY":
-      return base + 8;
-    case "KeyH":
-      return base + 9;
-    case "KeyU":
-      return base + 10;
-    case "KeyJ":
-      return base + 11;
-    case "KeyK":
-      return base + 12;
-    case "KeyO":
-      return base + 13;
-    case "KeyL":
-      return base + 14;
-    case "KeyP":
-      return base + 15;
+  const keyMap: { [key: string]: number } = {
+    KeyA: 0,
+    KeyW: 1,
+    KeyS: 2,
+    KeyE: 3,
+    KeyD: 4,
+    KeyF: 5,
+    KeyT: 6,
+    KeyG: 7,
+    KeyY: 8,
+    KeyH: 9,
+    KeyU: 10,
+    KeyJ: 11,
+    KeyK: 12,
+    KeyO: 13,
+    KeyL: 14,
+    KeyP: 15,
+  };
+
+  if (key in keyMap) {
+    return base + keyMap[key];
   }
 }

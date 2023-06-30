@@ -6,7 +6,7 @@
  */
 
 export default function synthSectionAmplitudeEnvelope() {
-    return /*html*/ `
+  return /*html*/ `
 <div class="component">
   <p class="label">Attack &nbsp;&nbsp; Decay &nbsp;&nbsp; Sustain &nbsp;&nbsp; Release</p>
   <div id="amplitude-adsr"></div>
@@ -19,5 +19,5 @@ export default function synthSectionAmplitudeEnvelope() {
   <p class="label list">Release Curve</p>
   <div id="release-curve"></div>
 </div>
-`
+`;
 }

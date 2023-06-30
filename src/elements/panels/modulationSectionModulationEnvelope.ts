@@ -6,7 +6,7 @@
  */
 
 export default function modulationSectionModulationEnvelope() {
-    return /*html*/ `
+  return /*html*/ `
 <div class="component">
     <p class="label">
     Attack &nbsp;&nbsp; Decay &nbsp;&nbsp; Sustain &nbsp;&nbsp;
@@ -22,5 +22,5 @@ export default function modulationSectionModulationEnvelope() {
     <p class="label list">Release Curve</p>
     <div id="modulation-release-curve"></div>
 </div>
-`
+`;
 }

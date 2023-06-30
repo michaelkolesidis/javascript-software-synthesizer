@@ -61,7 +61,9 @@ let darkMode = false;
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 const root = document.getElementById("root");
-root.innerHTML = Index();
+if (root) {
+  root.innerHTML = Index();
+}
 
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
@@ -83,7 +85,9 @@ consoleIntro();
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 const header = document.getElementById("header");
-header.innerHTML = Header();
+if (header) {
+  header.innerHTML = Header(false);
+}
 
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
@@ -91,7 +95,9 @@ header.innerHTML = Header();
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 const footer = document.getElementById("footer");
-footer.innerHTML = Footer();
+if (footer) {
+  footer.innerHTML = Footer();
+}
 
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
@@ -99,7 +105,9 @@ footer.innerHTML = Footer();
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 const navContent = document.getElementById("nav-content");
-navContent.innerHTML = Menu();
+if (navContent) {
+  navContent.innerHTML = Menu();
+}
 
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
@@ -108,47 +116,67 @@ navContent.innerHTML = Menu();
 // ---------------------------------------------------------------------
 // Displays
 const displays = document.getElementById("displays");
-displays.innerHTML = Displays();
+if (displays) {
+  displays.innerHTML = Displays();
+}
 
 // Synth Section
 const synthSection = document.getElementById("synth-section");
-synthSection.innerHTML = SynthSection();
+if (synthSection) {
+  synthSection.innerHTML = SynthSection();
+}
 
 // Synth Section: Main
 const synthSectionMain = document.getElementById("synth-section-main");
-synthSectionMain.innerHTML = SynthSectionMain();
+if (synthSectionMain) {
+  synthSectionMain.innerHTML = SynthSectionMain();
+}
 
 // Synth Section: Amplitude Envelope
 const amplitudeEnvelopeSection = document.getElementById("adsr-envelope");
-amplitudeEnvelopeSection.innerHTML = SynthSectionAmplitudeEnvelope();
+if (amplitudeEnvelopeSection) {
+  amplitudeEnvelopeSection.innerHTML = SynthSectionAmplitudeEnvelope();
+}
 
 // Synth Section: Oscillator
 const synthSectionOscillator = document.getElementById("oscillator");
-synthSectionOscillator.innerHTML = SynthSectionOscillator();
+if (synthSectionOscillator) {
+  synthSectionOscillator.innerHTML = SynthSectionOscillator();
+}
 
 // Modulation Section
 const modulationSection = document.getElementById("modulation-section");
-modulationSection.innerHTML = ModulationSection();
+if (modulationSection) {
+  modulationSection.innerHTML = ModulationSection();
+}
 
 // Modulation Section: Main
 const modulationSectionMain = document.getElementById(
   "modulation-section-main"
 );
-modulationSectionMain.innerHTML = ModulationSectionMain();
+if (modulationSectionMain) {
+  modulationSectionMain.innerHTML = ModulationSectionMain();
+}
 
 // Modulation Section: Modulation Envelope
 const modulationSectionEnvelope = document.getElementById(
   "modulation-envelope"
 );
-modulationSectionEnvelope.innerHTML = ModulationSectionModulationEnvelope();
+if (modulationSectionEnvelope) {
+  modulationSectionEnvelope.innerHTML = ModulationSectionModulationEnvelope();
+}
 
 // Effects
 const effectsSection = document.getElementById("effects");
-effectsSection.innerHTML = EffectsSection();
+if (effectsSection) {
+  effectsSection.innerHTML = EffectsSection();
+}
 
 // Sequencer
 const sequencerSection = document.getElementById("sequencer");
-sequencerSection.innerHTML = SequencerSection();
+if (sequencerSection) {
+  sequencerSection.innerHTML = SequencerSection();
+}
 
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
@@ -236,14 +264,24 @@ stopButton.addEventListener("click", () => Tone.Transport.stop());
 function toggleDark() {
   let element = document.body;
   element.classList.toggle("dark-mode");
-  header.style.color = "white";
-  footer.style.color = "white";
-  midiDisplay.style.color = "white";
-  midiDisplay.style.background = "rgb(100,100,100";
+  if (header) {
+    header.style.color = "white";
+  }
+  if (footer) {
+    footer.style.color = "white";
+  }
+  if (midiDisplay) {
+    midiDisplay.style.color = "white";
+  }
+  if (midiDisplay) {
+    midiDisplay.style.background = "rgb(100,100,100";
+  }
   Nexus.colors.fill = "rgb(100,100,100";
   Nexus.colors.accent = "rgb(105, 21, 122)";
   darkMode = true;
-  header.innerHTML = Header(darkMode);
+  if (header) {
+    header.innerHTML = Header(darkMode);
+  }
 
   // let toggleDarkButton = document.createElement("button"); // recreates button in dark header
   // toggleDarkButton.innerHTML = "Dark Mode"; // recreates button in dark header

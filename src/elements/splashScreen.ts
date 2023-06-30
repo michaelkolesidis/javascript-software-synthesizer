@@ -13,12 +13,12 @@ export default function splashScreen() {
     setTimeout(function () {
       splashScreen!.style.display = "none";
       pageContainer!.style.display = "block";
-    }, 1000);
+    }, 2000);
     localStorage.setItem("visited", new Boolean(true).toString());
   } else {
     setTimeout(function () {
       splashScreen!.style.display = "none";
       pageContainer!.style.display = "block";
-    }, 500);
+    }, 1000);
   }
 }

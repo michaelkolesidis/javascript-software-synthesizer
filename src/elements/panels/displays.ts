@@ -6,7 +6,7 @@
  */
 
 export default function displays() {
-    return /*html*/ `
+  return /*html*/ `
 <div>
   <p class="label">MIDI</p>
   <div id="midi-display"></div>
@@ -23,5 +23,5 @@ export default function displays() {
   <p class="label">Meter</p>
   <div id="meter"></div>
 </div>
-`
+`;
 }

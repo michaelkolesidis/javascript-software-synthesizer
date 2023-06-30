@@ -5,4 +5,8 @@
  *
  */
 
-// The Floating UI implementation will go here
+// The Floating UI implementation
+
+// Each element will have an informative
+// tooltip visiblw on hover, when help
+// mode is on.

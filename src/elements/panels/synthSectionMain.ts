@@ -46,5 +46,5 @@ export default function synthSectionMain() {
   <br />
   <div id="harmonicity-num"></div>
 </div>
-`
+`;
 }

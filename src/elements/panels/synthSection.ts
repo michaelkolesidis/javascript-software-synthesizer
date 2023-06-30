@@ -6,7 +6,7 @@
  */
 
 export default function synthSectionMain() {
-    return /*html*/ `
+  return /*html*/ `
 <div class="title" id="synth-title"><p>Synth</p></div>
 <div id="synth-section-content">
     <!--------------------------------------------------------------------->
@@ -26,5 +26,5 @@ export default function synthSectionMain() {
     <p id="oscillator-title" class="subtitle">Oscillator</p>
     <div id="oscillator"></div>
 </div>
-`
+`;
 }

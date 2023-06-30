@@ -6,7 +6,7 @@
  */
 
 export default function sequencerSection() {
-    return /*html*/ `
+  return /*html*/ `
 <input id="seq-rate" placeholder="Rate" value="1" />
 <input id="note-value" placeholder="Value" value="16n" />
 <input type="text" id="seq-input" placeholder="Enter sequence" />
@@ -19,5 +19,5 @@ export default function sequencerSection() {
 <button type="button" id="seq-stop">
     <img src="./assets/icons/stop.svg" alt="" />
 </button>
-`
+`;
 }

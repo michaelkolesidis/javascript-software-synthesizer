@@ -1,3 +1,17 @@
+# 1.2.0
+
+### Changes
+
+- Fixed computer keyboard playability (language-independent)
+- Rewritten keyMapper and midiToNoteString in a concise and optimal way
+- Added checks for TypeScript
+- Optimized the size of all PNG and SVG images
+- Code cleanup
+- Updated all dependencies to their latest versions
+- Fixed typos in all readme files
+- Minor documentation updates
+- Minor updates and corrections
+
 # 1.0.6
 
 ### Changes
@@ -55,7 +69,7 @@
 - When using the on-screen and/or the computer keyboard, if playing multiple notes, the synthesizer stops playing all notes if at least one note is released
 - Partials sections don't work
 - High CPU load and performance issues
-- Opening the Dev Tools in Chrome results to severe performance detoriation: the app becomes unresponsive and crushes
+- Opening the Dev Tools in Chrome results to severe performance deterioration: the app becomes unresponsive and crushes
 - Severe performance issues on Firefox
 
 # 0.5.3
@@ -72,7 +86,7 @@
 - When using the on-screen and/or the computer keyboard, if playing multiple notes, the synthesizer stops playing all notes if at least one note is released
 - Partials sections don't work
 - High CPU load and performance issues
-- Opening the Dev Tools in Chrome results to severe performance detoriation: the app becomes unresponsive and crushes
+- Opening the Dev Tools in Chrome results to severe performance deterioration: the app becomes unresponsive and crushes
 - Severe performance issues on Firefox
 
 # 0.5
@@ -91,7 +105,7 @@
   - Distortion
   - Bit crusher
   - Frequency shifter
-  - Chebyshev waveshapping
+  - Chebyshev waveshaping
 - Responsive effects section
 - Synthesizer engine refactoring
 - Synthesizer effects connectivity
@@ -135,8 +149,8 @@
 
 ### Changes
 
-- Computer keyboard playbility
-  - 16 notes playble (one octave + 4 notes) using keys (A-L and W-P)
+- Computer keyboard playability
+  - 16 notes playable (one octave + 4 notes) using keys (A-L and W-P)
   - Octave up/down (using Z,X keys)
 - Amplitude envelope section
   - Attack, decay, sustain, release bars

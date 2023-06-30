@@ -6,7 +6,7 @@
  */
 
 export default function synthSectionOscillator() {
-    return /*html*/ `
+  return /*html*/ `
 <!--------------------------------------------------------------------->
 <!-- Oscillator Type -->
 <!--------------------------------------------------------------------->
@@ -36,5 +36,5 @@ export default function synthSectionOscillator() {
     <p class="label">Partials</p>
     <div id="partials-selector"></div>
 </div>
-`
+`;
 }
