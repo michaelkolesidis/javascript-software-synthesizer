@@ -1,7 +1,7 @@
 # This CITATION.cff file was generated with cffinit.
 # Visit https://bit.ly/cffinit to generate yours today!
 
-cff-version: 2.0.0
+cff-version: 1.2.0
 title: JSS-01 | JavaScript Software Synthesizer
 message: "If you use this software, please cite it as below."
 type: software
@@ -30,5 +30,5 @@ keywords:
   - MIDI keyboard
 
 license: GNU Affero General Public License v3.0
-version: 2.0.0
+version: 2.0.1
 date-released: "2022-07-08"

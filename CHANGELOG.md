@@ -1,3 +1,9 @@
+# 2.0.1
+
+### Changes
+
+- Fixed readme images path
+
 # 2.0.0
 
 ### Changes
