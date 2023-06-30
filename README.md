@@ -1,5 +1,5 @@
-![JSS-01 Logo](./assets/logo/logo_256_white.png#gh-dark-mode-only)
-![JSS-01 Logo](./assets/logo/logo_256.png#gh-light-mode-only)
+![JSS-01 Logo](./public/assets/logo/logo_256_white.png#gh-dark-mode-only)
+![JSS-01 Logo](./public/assets/logo/logo_256.png#gh-light-mode-only)
 
 <h1>JSS-01<br>JavaScript Software Synthesizer</h1>
 
@@ -66,13 +66,13 @@ Keys, knobs, sliders and buttons to tweak your sound and generate immersive soun
 
 The _JSS-01 | JavaScript Software Synthesizer_ uses <strong>FM Synthesis</strong> (frequency modulation synthesis). In FM Synthesis there is an oscillator that produces the sound signal, the <strong>Carrier</strong>, and an oscillator that modulates the carrier's wave frequency, the <strong>Modulator</strong>.
 
-<img width="300px" src="./assets/fm.png">
+<img width="300px" src="./public/assets/fm.png">
 
 <p><strong>Sine wave:</strong></p>
-<img width="300px" src="./assets//waveforms/sine_wave.png">
+<img width="300px" src="./public/assets//waveforms/sine_wave.png">
 
 <p><strong>Frequency-modulated sine wave:</strong></p>
-<img width="300px" src="./assets//waveforms/sine_wave_mod.png">
+<img width="300px" src="./public/assets//waveforms/sine_wave_mod.png">
 
 <br><br>
 
@@ -93,7 +93,7 @@ The <strong>Effects Section</strong> includes the controls of the various effect
 
 You can play the JSS-01 by using the on-screen keyboard, your computer keyboard, or a MIDI keyboard.
 
-<img width="500px" src="./assets/keyboard/keyboard_bg_w.png">
+<img width="500px" src="./public/assets/keyboard/keyboard_bg_w.png">
 
 #### Oscilloscope
 
@@ -117,7 +117,7 @@ The first input from the left controls the rate of the sequence (speed). The sec
 
 When your sequence is ready, you can add it to the sequencer using the <strong>Add button</strong>. In order to go back to the default sequence, you can simply write <strong>default</strong> in the sequence input field and then click the Add button. There are two extra sequences included, the bassline of "I Feel Love" by Donna Summer (produced by Giorgio Moroder), which can be accessed by writing <strong>i feel love</strong> in the sequence input field and then pressing the add button, and the riff of "Funky Town", that can be accessed by writing <strong>funky town</strong>.
 
-You can find some additional information about the JSS-01 and sound synthesis in this short [presentation](./assets/presentation/JSS%20Presentation.pdf).
+You can find some additional information about the JSS-01 and sound synthesis in this short [presentation](./public/assets/presentation/JSS%20Presentation.pdf).
 
 ## System Requirements
 
@@ -253,5 +253,5 @@ Licensed under the [GNU Affero General Public License v3.0](https://www.gnu.org/
 <br>
 
 <p align="center">
-<img width="400px" src="./assets/visual.png">
+<img width="400px" src="./public/assets/visual.png">
 </p>
