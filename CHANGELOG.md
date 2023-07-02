@@ -1,3 +1,9 @@
+# 2.0.3
+
+### Changes
+
+- Updated instructions for building and running locally
+
 # 2.0.2
 
 ### Changes

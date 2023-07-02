@@ -5,7 +5,7 @@
 
 [![made-with-typescript](https://img.shields.io/badge/Made%20with-TypeScript-01004c.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![MIT license](https://img.shields.io/badge/License-AGPLv3-01004c.svg)](https://www.gnu.org/licenses/agpl-3.0.html)
-[![Version](https://img.shields.io/badge/version-2.0.2-01004c.svg)](https://shields.io/)
+[![Version](https://img.shields.io/badge/version-2.0.3-01004c.svg)](https://shields.io/)
 
 ## Technologies Used
 
@@ -46,10 +46,18 @@ cd javascript-software-synthesizer
 Install the project dependencies:
 
 ```
-yarn build
+yarn
 ```
 
-You can now run the _JavaScript Software Synthesizer_ locally easily by using a VSCode extension like **Live Server** ([Live Server on the Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)) or Python's **http.server** module.
+Start the Vite development server:
+
+```
+yarn dev
+```
+
+### For versions 1.x.x
+
+Before the introduction of Vite in version 2.0.0, after installing the dependencies, users could run _JavaScript Software Synthesizer_ locally by using a VSCode extension like **Live Server** ([Live Server on the Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)) or Python's **http.server** module.
 
 For more information, please refer to MDN's excellent article: [MDN article](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Tools_and_setup/set_up_a_local_testing_server)
 
