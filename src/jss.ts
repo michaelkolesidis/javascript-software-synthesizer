@@ -1741,7 +1741,7 @@ keyboard.on("change", (note) => {
     synth.triggerAttack(midiToNoteString(note.note));
     notes.push(midiToNoteString(note.note));
   } else {
-    synth.triggerRelease(note.note); // Polymphinic synths need a note or an array of notes
+    synth.triggerRelease(note.note); // Polymphonic synths need a note or an array of notes
     notes = notes.filter((e) => e !== midiToNoteString(note.note));
   }
 });
