@@ -1,0 +1,25 @@
+/* https://keithjgrant.com/posts/2023/04/transitioning-to-height-auto/ */
+
+.collapsible-wrapper {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 300ms ease-in-out;
+}
+
+.collapsible-input {
+  display: none;
+}
+
+.collapsible-input:checked + .collapsible-wrapper {
+  grid-template-rows: 0fr;
+}
+
+.collapsible-content {
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.collapsible-input:checked + .collapsible-wrapper .collapsible-content {
+  opacity: 0.625;
+}
