@@ -9,7 +9,7 @@
  * toggle functionality.
  */
 
-import { assertInstanceOf } from './dom.js';
+import { assertInstanceOf } from './utils.js';
 
 import { ids } from '../elements/base/header/header.js';
 

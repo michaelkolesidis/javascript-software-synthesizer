@@ -1,12 +1,12 @@
 import { DialOptions } from 'nexusui2/dist/types/interfaces/dial';
 import { NumberOptions } from 'nexusui2/dist/types/interfaces/number';
 import { BaseInterfaceOptions } from 'nexusui2/dist/types/core/interface';
-
 import Nexus from 'nexusui2';
-import { assertInstanceOf } from '../utils/dom';
+
+import { assertInstanceOf } from '../utils/utils.js';
 
 // @todo differentiate layout and audio context options
-const defaultDialOptions = {
+const defaultDialOptions = <CreateDialOptions>{
 	size: [64, 64],
 	interaction: 'vertical',
 	mode: 'relative',
@@ -14,43 +14,75 @@ const defaultDialOptions = {
 	max: 1,
 	step: 0.1,
 	value: 0,
-} as DialOptions & BaseInterfaceOptions;
 
-const defaultNumOptions = {
-	size: [60, 30],
-} as NumberOptions & BaseInterfaceOptions;
-
-const selectors = {
-	dial: 'nexus-dial',
-	num: 'nexus-num',
 };
 
-export default function NumberDialComponent(id: string, label: string) {
-	return `
-<div id="${id}" class="component number-dial-component">
-	<div class="number-dial">
-		<p>${label}</p>
-		<div class="${selectors.dial}"></div>
-		<div class="${selectors.num}"></div>
-	</div>
+const defaultNumOptions = <CreateNumOptions>{
+	size: [60, 30],
+};
+
+export type CreateDialOptions = Partial<DialOptions & BaseInterfaceOptions>
+export type CreateNumOptions = Partial<NumberOptions & BaseInterfaceOptions>;
+
+const template = document.createElement('template');
+template.innerHTML = `
+<div class="number-dial">
+	<p></p>
+	<div class="nexus-dial"></div>
+	<div class="nexus-num"></div>
 </div>`;
-}
 
-export const hydrateNumberDialComponent = (
-	element: HTMLElement,
-	options: Partial<DialOptions & BaseInterfaceOptions>
-) => {
-	const [dialElement, numElement] = Object.values(selectors).map((s) => element.getElementsByClassName(s)[0]);
+const setLabel = (component: HTMLElement, text: string) => {
+	// get HTMLParagraphElement
+	component.children[0].children[0].textContent = text;
+};
 
-	assertInstanceOf(dialElement, HTMLDivElement);
-	assertInstanceOf(numElement, HTMLDivElement);
+const createDial = (component: HTMLElement, options = defaultDialOptions) => {
+	// get first HTMLDivElement
+	const element = component.children[0].children[1];
+	assertInstanceOf(element, HTMLElement);
+	return new Nexus.Dial(element, options);
+};
 
-	options = Object.assign(defaultDialOptions, options);
+const createNumber = (component: HTMLElement, options = defaultNumOptions) => {
+	// get second HTMLDivElement
+	const element = component.children[0].children[2];
+	assertInstanceOf(element, HTMLElement);
+	return new Nexus.Number(element, options);
+};
 
-	const dial = new Nexus.Dial(dialElement, options);
-	const num = new Nexus.Number(numElement, defaultNumOptions);
+export default function NumberDialComponent(
+	parent: HTMLElement,
+	id: string,
+	label: string,
+	dialOptions?: CreateDialOptions,
+	numOptions?: CreateNumOptions
+) {
+	const component = document.createElement('div');
+	component.id = id;
+	component.classList.add('component', 'number-dial-component');
+	component.append(template.content.cloneNode(true));
+
+	setLabel(component, label);
+
+	dialOptions = Object.assign(defaultDialOptions, dialOptions);
+	numOptions = Object.assign(defaultNumOptions, numOptions);
+
+	const dial = createDial(component, dialOptions);
+	const num = createNumber(component, numOptions);
 
 	num.link(dial);
 
+	parent.append(component);
+
 	return dial;
-};
+
+	//	return `
+	//	<div id="${id}" class="component number-dial-component">
+	//		<div class="number-dial">
+	// 			<p>${label}</p>
+	// 			<div class="${selectors.dial}"></div>
+	// 			<div class="${selectors.num}"></div>
+	// 		</div>
+	//	</div>`;
+}

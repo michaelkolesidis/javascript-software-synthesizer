@@ -21,10 +21,10 @@
 	margin: 0 0 0.75rem;
 }
 
-.section-title h3 {
+.panel-subtitle h3 {
 	@include title;
 	font-size: 1.5rem;
-	margin: 1.5rem 0 0.5rem;
+	margin: 1rem 0 0.5rem;
 }
 
 #synthesizer {
@@ -45,6 +45,10 @@
 	h2,
 	h3 {
 		color: $yellow;
+	}
+
+	h3 {
+		margin: 0.5rem 0 0;
 	}
 }
 
@@ -256,7 +260,7 @@ footer {
 		width: 3rem;
 	}
 
-	#note-value {
+	#seq-subdivision {
 		width: 3rem;
 	}
 

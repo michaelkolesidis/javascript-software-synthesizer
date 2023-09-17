@@ -26,6 +26,12 @@ root
 
 */
 
+header {
+	display: flex;
+	justify-content: space-between;
+	margin: 1rem;
+}
+
 main {
 	min-height: calc(100vh - 2rem - 6rem);
 	padding: 0 0 6rem;
@@ -42,7 +48,6 @@ footer {
 	justify-content: space-between;
 	align-items: center;
 }
-
 
 #displays {
 	margin: 0 auto 1rem;
@@ -74,6 +79,29 @@ footer {
 			max-width: 100%;
 		}
 
+		#effects > .collapsible-wrapper .collapsible-content {
+			// display: flex;
+			// flex-wrap: wrap;
+			// gap: 0.5rem;
+			// justify-content: center;
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+
+			.effect-wrapper .collapsible-content {
+				display: block;
+
+				.effect-toggle {
+					margin: 0 auto;
+				}
+				.effect-content {
+					display: flex;
+					justify-content: center;
+					padding: 0.5rem;
+					gap: 1rem;
+				}
+			}
+		}
+
 		#synthesizer-settings {
 			display: grid;
 			grid-template-columns: repeat(4, 25%);
@@ -84,6 +112,11 @@ footer {
 @media only screen and (min-width: 720px) {
 	#panels .panel-wrapper:last-of-type {
 		flex: 3 0 360px;
+
+		.collapsible-wrapper,
+		.collapsible-content {
+			width: 100%;
+		}
 	}
 }
 

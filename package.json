@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/michaelkolesidis/javascript-software-synthesizer",
   "scripts": {
-    "dev": "vite --host",
+    "dev": "vite",
     "start": "vite --host",
     "build": "tsc && vite build",
     "preview": "vite preview"

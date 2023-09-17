@@ -6,11 +6,11 @@
   transition: grid-template-rows 300ms ease-in-out;
 }
 
-.collapsible-input {
+.collapsible-toggle {
   display: none;
 }
 
-.collapsible-input:checked + .collapsible-wrapper {
+.collapsible-toggle:checked + .collapsible-wrapper {
   grid-template-rows: 0fr;
 }
 
@@ -20,6 +20,6 @@
   transition: opacity 300ms;
 }
 
-.collapsible-input:checked + .collapsible-wrapper .collapsible-content {
+.collapsible-toggle:checked + .collapsible-wrapper .collapsible-content {
   opacity: 0.625;
 }

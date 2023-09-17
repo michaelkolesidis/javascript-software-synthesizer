@@ -4,10 +4,6 @@ $header-size: 4rem;
 $header-font: calc($header-size / 3);
 
 header {
-	display: flex;
-	justify-content: space-between;
-	margin: 1rem;
-
 	#title-bar {
 		display: flex;
 

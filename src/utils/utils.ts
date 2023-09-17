@@ -1,3 +1,14 @@
+export function assertNotNull(value: unknown): asserts value is NonNullable<typeof value> {
+	if (value === null) throw new Error('Nope');
+}
+
+export function assertInstanceOf<T>(element: unknown, expected: new () => T): asserts element is T {
+	if (!element || !(element instanceof expected)) {
+		const received = !element ? 'null' : element.constructor.name;
+		throw new Error(`Expected element to be a ${expected.name}, but was ${received}`);
+	}
+}
+
 export const scale = (inNum: number, inMin: number, inMax: number, outMin: number, outMax: number) => {
 	if (inMin === inMax) {
 		return outMin;
@@ -13,3 +24,16 @@ export const capitalizeSlug = (str: string): string =>
 		.split('-')
 		.map((word) => capitalizeString(word))
 		.join(' ');
+
+export const throttle = (func: (...args: any[]) => unknown, ms: number) => {
+	let throttled: boolean;
+	return function wait(this: any, ...args: any[]) {
+		if (!throttled) {
+			func.apply(this, args);
+			throttled = true;
+			setTimeout(() => {
+				throttled = false;
+			}, ms);
+		}
+	};
+};

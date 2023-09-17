@@ -5,27 +5,24 @@
  *
  */
 
-// immediately import only a minimum of styles to prevent flashing of content
-import './style.scss';
+// @todo
+// => tsconfig.json paths & vite.config.ts import alias paths
 
 // @todo
 // import { WebMidi } from 'webmidi';
 
-// @todo => tsconfig.json paths & vite.config.ts import alias paths
+// immediately import only a minimum of styles to prevent flashing of content
+import './style.scss';
+
+// used in welcome message
+import { homepage } from '../package.json';
+
 import { getElementById } from './utils/dom.js';
 import { hideSplashScreen, showSplashScreen } from './elements/splash/splashScreen.js';
 
-// @todo => overlay.ts
+// @todo => overlay.ts ??
 import invertColors from './utils/invertColors.js';
-
-// @todo => config.ts ??
-import Nexus from 'nexusui2';
-import { Color } from './utils/enums.js';
-
-Nexus.colors.fill = Color.gray; // For all NexusUI2 components
-
-// @todo => pass as prop to render
-// let darkMode = false;
+import { collapseAllEffectsOnResize } from './elements/panels/effects/effects.utils.js';
 
 // ---------------------------------------------------------------------
 // Main iife
@@ -36,39 +33,59 @@ showSplashScreen(root);
 
 (async () => {
 	// dynamically/lazy import main contents
-	await import( './elements/style.main.scss');
+	// render.js also imports main styles
 	const render = await import('./elements/render.js').then((module) => module.default);
-	const hydrate = await import('./elements/hydrate.js').then((module) => module.default);
+	const audio = await import('./audio/audio.js').then((module) => module.default);
 
 	// create html
+	// @todo => pass 'darkMode' as prop to render
 	const fragment = render();
 
-	// create nexus components
-	// @todo ?? pass AudioContext as argument
-	hydrate(fragment);
+	// await user interaction
+	// to prevent warnings in console
+	// and fulfil autoplay policies
+	// https://developer.chrome.com/blog/autoplay/
+
+	// @todo clicking Nexus interfaces doesn't invoke mousedown event (!!!)
+	// maybe bind `onUserInteraction` to every interface element (???)
+	const onUserInteraction = () => {
+		// connect rendered nexus interface events with synth node
+		// calling audio.create() in the outer scope results in a lot of warnings in the console
+		audio.create();
+
+		// document.removeEventListener('mousedown', onUserInteraction);
+		document.removeEventListener('keydown', onUserInteraction);
+		document.removeEventListener('click', onUserInteraction);
+	};
+
+	// document.addEventListener('mousedown', onUserInteraction);
+	document.addEventListener('keydown', onUserInteraction);
+	document.addEventListener('click', onUserInteraction);
 
 	await hideSplashScreen();
 
 	root.append(fragment);
 
 	invertColors();
+	collapseAllEffectsOnResize();
 })();
-
 
 // ---------------------------------------------------------------------
 // Welcome Message in Console
 // ---------------------------------------------------------------------
 const consoleStyles = [
-  "background: rgb(1, 0, 76)",
-  "color: rgb(230, 230, 230)",
-  "font-weight: 600; font-size: 13px",
-].join(";");
+	'background: rgb(1, 0, 76)',
+	'color: rgb(230, 230, 230)',
+	'font-weight: 600; font-size: 13px',
+].join(';');
 
-console.log("%c * JSS-01 | JavaScript Software Synthesizer *", consoleStyles);
+console.log('%c * JSS-01 | JavaScript Software Synthesizer *', consoleStyles);
 console.log(
-	"Since you are here you might want to check our project at GitHub, have a look at the source code, find bugs, submit issues, create pull requests and become part of our community!\nhttps://github.com/michaelkolesidis/javascript-software-synthesizer"
+	`Since you are here you might want to check our project at GitHub, have a look at the source code, find bugs, submit issues, create pull requests and become part of our community!
+	${homepage}`
 );
 
+// @todo
 // ---------------------------------------------------------------------
 // MIDI Display
 // ---------------------------------------------------------------------

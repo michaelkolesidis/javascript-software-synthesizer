@@ -1,35 +1,26 @@
-import { keysToIdsDict } from '../../utils/dom.js';
+import createSequencer from './sequencer/sequencer';
 
-import Sequencer, {id as sequencerId} from './sequencer/render.sequencer.js';
+type ExtrasIds = {
+	sequencer: string;
+};
 
-const keys = [sequencerId] as const;
+const ids = <ExtrasIds>{
+	sequencer: 'sequencer',
+};
 
-const id = 'extras';
+export default function createExtras(section: HTMLElement) {
+	const wrappers = Object.values(ids).reduce(
+		(all, id) => {
+			const wrapper = document.createElement('div');
+			wrapper.id = id;
 
-export const ids = keysToIdsDict<ExtraIds>(keys);
-export type ExtraIds = (typeof keys)[number];
+			return Object.assign(all, { [id]: wrapper });
+		},
+		{} as {
+			[K in keyof ExtrasIds]: HTMLElement;
+		}
+	);
 
-export default function Extras() {
-	return /* html */ `
-<section id="${id}">
-	<!--------------------------------------------------------------------->
-	<!-- @todo Presets -->
-	<!--------------------------------------------------------------------->
-	<!--
-	<div id="presets"></div>
-	-->
-	<!--------------------------------------------------------------------->
-	<!-- Sequencer -->
-	<!--------------------------------------------------------------------->
-	${Sequencer()}
-	<!--------------------------------------------------------------------->
-	<!-- @todo Recorder -->
-	<!--------------------------------------------------------------------->
-	<!--
-	<div id="recorder">
-		<button type="button" id="rec">●</button>
-		<button type="button" id="rec-stop">■</button>
-	</div>
-	-->
-</section>`;
+	wrappers.sequencer.append(createSequencer());
+	section.append(wrappers.sequencer);
 }
