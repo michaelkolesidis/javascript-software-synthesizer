@@ -31,23 +31,25 @@ const createWrapper = (text: string, element: HTMLElement) => {
 };
 
 export default function createDisplays(section: HTMLElement) {
-	const elements = [ids.oscilloscope, ids.spectrogram, ids.meter].reduce(
+	// element which is used/transformed by nexusUI
+	const elements = Object.keys(ids).reduce(
 		(all, id) => Object.assign(all, { [id]: document.createElement('div') }),
 		{} as {
 			readonly [K in DisplaysUIKeys]: HTMLElement;
 		}
 	);
 
-	// @todo midiDisplay
 	displaysUI.set('oscilloscope', new Nexus.Oscilloscope(elements.oscilloscope, options.oscilloscope));
 	displaysUI.set('spectrogram', new Nexus.Spectrogram(elements.spectrogram, options.oscilloscope));
 	displaysUI.set('meter', new Nexus.Meter(elements.meter, options.meter));
 
+	// wrapper element which contains the heading and the nexus element
 	for (const [id, element] of Object.entries(elements)) {
-		const label = capitalizeString(id);
-		const wrapper = createWrapper(label, element);
+		const text = capitalizeString(id);
+		const wrapper = createWrapper(text, element);
 		section.append(wrapper);
 	}
 
+	// @todo necessary ??
 	return section;
 }

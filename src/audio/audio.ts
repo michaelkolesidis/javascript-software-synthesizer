@@ -25,7 +25,6 @@ async function createContext() {
 
 	destination = getDestination();
 
-	// @todo midiDisplay
 	assertNotNull(displaysUI.oscilloscope);
 	assertNotNull(displaysUI.spectrogram);
 	assertNotNull(displaysUI.meter);

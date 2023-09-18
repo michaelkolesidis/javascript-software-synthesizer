@@ -2,7 +2,6 @@ import { NexusMeter, NexusOscilloscope, NexusSpectrogram } from 'nexusui2';
 import { BaseInterfaceOptions } from 'nexusui2/dist/types/core/interface.js';
 
 export const ids = {
-	midiDisplay: 'midi-display',
 	oscilloscope: 'oscilloscope',
 	spectrogram: 'spectrogram',
 	meter: 'meter',
@@ -13,9 +12,6 @@ export const ids = {
 export type DisplaysIds = typeof ids;
 
 export default <const>{
-	midiDisplay: {
-		// @todo
-	},
 	oscilloscope: {
 		size: [300, 150],
 	},
@@ -30,7 +26,6 @@ export default <const>{
 };
 
 export type DisplaysUI = {
-	midiDisplay: null
 	oscilloscope: NexusOscilloscope
 	spectrogram: NexusSpectrogram
 	meter: NexusMeter

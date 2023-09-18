@@ -10,12 +10,13 @@ import Header from './base/header/header.js';
 import Footer from './base/footer/footer.js';
 import Overlay from './base/overlay/overlay.js';
 
+import createMidiDisplay from './midi/midi.js';
 import createDisplays from './displays/displays.js';
 import createPanels from './panels/panels.js';
 import createKeyboard from './keyboard/keyboard.js';
 import createExtras from './extras/extras.js';
 
-const ids = {
+const sectionIds = {
 	displays: 'displays',
 	panels: 'panels',
 	extras: 'extras',
@@ -29,10 +30,10 @@ ${Header(false)}
 
 <!-- Main Content -->
 <main>
-	<section id="${ids.displays}"></section>
-	<section id="${ids.panels}"></section>
-	<section id="${ids.extras}"></section>
-	<section id="${ids.keyboard}"></section>
+	<section id="${sectionIds.displays}"></section>
+	<section id="${sectionIds.panels}"></section>
+	<section id="${sectionIds.extras}"></section>
+	<section id="${sectionIds.keyboard}"></section>
 </main>
 
 <!-- Footer -->
@@ -47,10 +48,10 @@ export default function render() {
 	fragment.append(template.content.cloneNode(true));
 
 	// rendered elements are required to create Nexus interfaces
-	const sections = Object.values(ids).reduce(
+	const sections = Object.values(sectionIds).reduce(
 		(all, id) => Object.assign(all, { [id]: getElementById(id, HTMLElement, fragment) }),
 		{} as {
-			[K in keyof typeof ids]: HTMLElement;
+			[K in keyof typeof sectionIds]: HTMLElement;
 		}
 	);
 
@@ -59,6 +60,7 @@ export default function render() {
 	Nexus.colors.fill = Color.gray;
 
 	Nexus.colors.accent = Color.blue;
+	createMidiDisplay(sections.displays);
 	createDisplays(sections.displays);
 
 	// Nexus Color is set in each panel
