@@ -1,8 +1,16 @@
+/*
+ *  JSS-01 |JavaScript Software Synthesizer
+ *  Copyright (c) 2023 Michael Kolesidis <michael.kolesidis@gmail.com>
+ *  GNU Affero General Public License v3.0
+ *
+ */
+
 import { type Destination } from 'tone/build/esm/core/context/Destination.js';
 import { type PolySynth, type FMSynth } from 'tone';
 
 import { assertNotNull } from '../utils/utils.js';
 
+// Nexus Interfaces
 import displaysUI from '../elements/displays/displays.ui.js';
 
 // @todo
@@ -21,7 +29,7 @@ async function createContext() {
 	const { start, getDestination, Midi } = await import('./tone.js');
 
 	await start();
-	console.log('started tone context');
+	// console.log('started tone context');
 
 	destination = getDestination();
 
@@ -65,6 +73,8 @@ async function createContext() {
 		}
 	});
 
+	// keydown and keyup event
+	// => alternate octave / change keyboard interface state
 	for (const [event, handler] of Object.entries(keyboardHandlers)) {
 		document.addEventListener(event, handler);
 	}

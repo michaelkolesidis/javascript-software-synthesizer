@@ -1,3 +1,10 @@
+/*
+ *  JSS-01 |JavaScript Software Synthesizer
+ *  Copyright (c) 2023 Michael Kolesidis <michael.kolesidis@gmail.com>
+ *  GNU Affero General Public License v3.0
+ *
+ */
+
 export function assertNotNull(value: unknown): asserts value is NonNullable<typeof value> {
 	if (value === null) throw new Error('Nope');
 }
@@ -7,6 +14,15 @@ export function assertInstanceOf<T>(element: unknown, expected: new () => T): as
 		const received = !element ? 'null' : element.constructor.name;
 		throw new Error(`Expected element to be a ${expected.name}, but was ${received}`);
 	}
+}
+
+export function getElementById(id: string, instance = HTMLElement, fragment?: DocumentFragment) {
+	const node = fragment || document;
+	const element = node.getElementById(id);
+
+	assertInstanceOf(element, instance);
+
+	return element;
 }
 
 export const scale = (inNum: number, inMin: number, inMax: number, outMin: number, outMax: number) => {

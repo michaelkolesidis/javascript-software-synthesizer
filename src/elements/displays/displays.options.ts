@@ -1,3 +1,10 @@
+/*
+ *  JSS-01 |JavaScript Software Synthesizer
+ *  Copyright (c) 2023 Michael Kolesidis <michael.kolesidis@gmail.com>
+ *  GNU Affero General Public License v3.0
+ *
+ */
+
 import { NexusMeter, NexusOscilloscope, NexusSpectrogram } from 'nexusui2';
 import { BaseInterfaceOptions } from 'nexusui2/dist/types/core/interface.js';
 
@@ -11,7 +18,7 @@ export const ids = {
 
 export type DisplaysIds = typeof ids;
 
-export default <const>{
+export default (<const>{
 	oscilloscope: {
 		size: [300, 150],
 	},
@@ -21,16 +28,14 @@ export default <const>{
 	meter: {
 		size: [45, 150],
 	},
-} as {
+}) as {
 	readonly [K in DisplaysUIKeys]: Partial<BaseInterfaceOptions>;
 };
 
 export type DisplaysUI = {
-	oscilloscope: NexusOscilloscope
-	spectrogram: NexusSpectrogram
-	meter: NexusMeter
-}
+	oscilloscope: NexusOscilloscope;
+	spectrogram: NexusSpectrogram;
+	meter: NexusMeter;
+};
 
-export type DisplaysUIKeys = keyof DisplaysUI
-
-
+export type DisplaysUIKeys = keyof DisplaysUI;

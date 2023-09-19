@@ -1,3 +1,10 @@
+/*
+ *  JSS-01 |JavaScript Software Synthesizer
+ *  Copyright (c) 2023 Michael Kolesidis <michael.kolesidis@gmail.com>
+ *  GNU Affero General Public License v3.0
+ *
+ */
+
 import autoFilter from '../elements/panels/effects/elements/autoFilter.js';
 import bitCrusher from '../elements/panels/effects/elements/bitCrusher.js';
 import chebyshev from '../elements/panels/effects/elements/chebyshev.js';

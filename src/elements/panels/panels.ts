@@ -1,3 +1,10 @@
+/*
+ *  JSS-01 |JavaScript Software Synthesizer
+ *  Copyright (c) 2023 Michael Kolesidis <michael.kolesidis@gmail.com>
+ *  GNU Affero General Public License v3.0
+ *
+ */
+
 import Nexus from 'nexusui2';
 
 import CollapsibleComponent, { type TCollapsibleComponent } from '../../components/collapsibleComponent.js';
@@ -8,9 +15,6 @@ import { Color } from '../../utils/enums.js';
 import createSynthesizer from './synthesizer/synthesizer.js';
 import createModulator from './modulation/modulation.js';
 import createEffects from './effects/effects.js';
-// import synthesizer from './synthesizer/synthesizer.js';
-// import Modulation from './modulation/render.modulation.js';
-// import Effects from './effects/render.effects.js';
 
 const ids = {
 	synthesizer: 'synthesizer',
@@ -51,6 +55,7 @@ export const createPanelSubtitle = (text: string) => {
 };
 
 export default function createPanels(section: HTMLElement) {
+	// create and append surrounding div elements
 	const panels = Object.values(ids).reduce(
 		(all, id) => {
 			const panel = document.createElement('div');
@@ -75,6 +80,7 @@ export default function createPanels(section: HTMLElement) {
 		}
 	);
 
+	// create title elements
 	const titles = Object.values(ids).reduce(
 		(all, id) => Object.assign(all, { [id]: createPanelTitle(capitalizeString(id)) }),
 		{} as {
@@ -82,6 +88,7 @@ export default function createPanels(section: HTMLElement) {
 		}
 	);
 
+	// create collapsible components
 	const components = Object.values(ids).reduce(
 		(all, id) => {
 			const component = CollapsibleComponent(id);
@@ -92,6 +99,7 @@ export default function createPanels(section: HTMLElement) {
 		}
 	);
 
+	// append dom elements
 	// @todo darkMode
 	Nexus.colors.accent = Color.cyan;
 	components.synthesizer.appendtToTitle(titles.synthesizer);

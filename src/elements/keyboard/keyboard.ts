@@ -1,8 +1,16 @@
-import { PianoOptions } from 'nexusui2/dist/types/interfaces/piano';
+/*
+ *  JSS-01 |JavaScript Software Synthesizer
+ *  Copyright (c) 2023 Michael Kolesidis <michael.kolesidis@gmail.com>
+ *  GNU Affero General Public License v3.0
+ *
+ */
+
+import { type PianoOptions } from 'nexusui2/dist/types/interfaces/piano';
 import Nexus, { NexusPiano } from 'nexusui2';
 
 import { constants, keyMapper } from './keyboard.utils.js';
 
+// @todo make keyboard responsive
 const options = {
 	size: [1080, 90],
 	mode: 'button',
@@ -89,7 +97,7 @@ export const handlers = <KeyboardHandlers>{
 	},
 };
 
-export type KeyboardHandlerKeys = Pick<DocumentEventMap, 'keydown' | 'keyup'> & string
+export type KeyboardHandlerKeys = Pick<DocumentEventMap, 'keydown' | 'keyup'> & string;
 
 type KeyboardHandlers = {
 	[K in KeyboardHandlerKeys]: EventListener;

@@ -1,7 +1,3 @@
-// import * as Tone from 'tone';
-
-// export default Tone;
-
 // tree shake and export required classes
 // they are dynamically imported after user interaction
 // to prevent warnings in console
@@ -24,5 +20,5 @@ export {
 	PingPongDelay,
 	Reverb,
 	Tremolo,
-	Vibrato
+	Vibrato,
 } from 'tone';

@@ -1,3 +1,10 @@
+/*
+ *  JSS-01 |JavaScript Software Synthesizer
+ *  Copyright (c) 2023 Michael Kolesidis <michael.kolesidis@gmail.com>
+ *  GNU Affero General Public License v3.0
+ *
+ */
+
 import { type BaseInterfaceOptions } from 'nexusui2/dist/types/core/interface';
 import { type ToggleOptions } from 'nexusui2/dist/types/interfaces/toggle';
 import { type NexusDial, type NexusToggle } from 'nexusui2';

@@ -5,8 +5,6 @@
  *
  */
 
-
-
 import autoFilter from './elements/autoFilter.js';
 import bitCrusher from './elements/bitCrusher.js';
 import chebyshev from './elements/chebyshev.js';
@@ -37,7 +35,7 @@ export default function createEffects() {
 		phaser.render(),
 		reverb.render(),
 		distortion.render(),
-		chebyshev.render(),
+		chebyshev.render()
 	);
 
 	return fragment;

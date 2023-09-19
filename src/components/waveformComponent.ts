@@ -1,7 +1,14 @@
-import { BaseInterfaceOptions } from 'nexusui2/dist/types/core/interface';
-import { RadioButtonOptions } from 'nexusui2/dist/types/interfaces/radiobutton';
-import { MultiSliderOptions } from 'nexusui2/dist/types/interfaces/multislider';
-import { SliderOptions } from 'nexusui2/dist/types/interfaces/slider';
+/*
+ *  JSS-01 |JavaScript Software Synthesizer
+ *  Copyright (c) 2023 Michael Kolesidis <michael.kolesidis@gmail.com>
+ *  GNU Affero General Public License v3.0
+ *
+ */
+
+import { type BaseInterfaceOptions } from 'nexusui2/dist/types/core/interface';
+import { type RadioButtonOptions } from 'nexusui2/dist/types/interfaces/radiobutton';
+import { type MultiSliderOptions } from 'nexusui2/dist/types/interfaces/multislider';
+import { type SliderOptions } from 'nexusui2/dist/types/interfaces/slider';
 import Nexus from 'nexusui2';
 
 import { assertInstanceOf, capitalizeSlug, capitalizeString } from '../utils/utils.js';
@@ -102,6 +109,7 @@ export default function WaveformComponent(
 
 	parent.append(component);
 
+	// nexus interfaces
 	return {
 		radios,
 		slider,
@@ -136,7 +144,7 @@ export function handleWaveformSlider(component: HTMLElement, value: number) {
 		numberOfSliders: value,
 	});
 
-	// check element ??
+	// @todo check element ??
 	// multislider.destroy();
 
 	return createMultislider(component, options);

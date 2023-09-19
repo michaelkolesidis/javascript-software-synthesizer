@@ -1,3 +1,10 @@
+/*
+ *  JSS-01 |JavaScript Software Synthesizer
+ *  Copyright (c) 2023 Michael Kolesidis <michael.kolesidis@gmail.com>
+ *  GNU Affero General Public License v3.0
+ *
+ */
+
 import audio from './audio';
 
 import { interfaces } from '../elements/extras/sequencer/sequencer.js';
@@ -90,10 +97,12 @@ export default async function createSequencerHandlers() {
 	interfaces.play.addEventListener('click', async () => {
 		await start();
 		Transport.start();
-		console.log('started');
+		// console.log('started');
 	});
 
 	interfaces.stop.addEventListener('click', () => {
 		Transport.stop();
+		// @todo necessary?
+		// Transport.position = 0;
 	});
 }

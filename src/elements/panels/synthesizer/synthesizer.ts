@@ -18,9 +18,11 @@ import synthesizerUI from './synthesizer.ui.js';
 export default function createSynthesizer() {
 	const fragment = new DocumentFragment();
 
+	// create dials wrapper (volume, detune, etc.)
 	const settings = document.createElement('div');
 	settings.id = 'synthesizer-settings';
 
+	// create collapsible sections wrapper
 	const sections = {
 		envelope: CollapsibleComponent(ids.envelope),
 		oscillator: CollapsibleComponent(ids.oscillator),
@@ -28,9 +30,11 @@ export default function createSynthesizer() {
 		readonly [K in keyof Pick<SynthesizerIds, 'envelope' | 'oscillator'>]: TCollapsibleComponent;
 	};
 
+	// set titles
 	sections.envelope.appendtToTitle(createPanelSubtitle('Amplitude Envelope'));
 	sections.oscillator.appendtToTitle(createPanelSubtitle('Oscillator'));
 
+	// create dials / nexus interfaces
 	const dials = {
 		volume: NumberDialComponent(settings, ids.volume, 'Volume', options.volume),
 		detune: NumberDialComponent(settings, ids.detune, 'Detune', options.detune),
@@ -38,9 +42,12 @@ export default function createSynthesizer() {
 		harmonicity: NumberDialComponent(settings, ids.harmonicity, 'Harmonicity', options.harmonicity),
 	};
 
+	// create components / interfaces
 	const envelope = EnvelopeComponent(sections.envelope.body, ids.envelope, options.envelope);
 	const oscillator = WaveformComponent(sections.oscillator.body, ids.oscillator, options.oscillator);
 
+	// store interfaces in a class
+	// to make them accessible to the audio nodes
 	synthesizerUI.set('volume', dials.volume);
 	synthesizerUI.set('detune', dials.detune);
 	synthesizerUI.set('modulationIndex', dials.modulationIndex);

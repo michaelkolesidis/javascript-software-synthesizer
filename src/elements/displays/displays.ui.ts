@@ -1,3 +1,10 @@
+/*
+ *  JSS-01 |JavaScript Software Synthesizer
+ *  Copyright (c) 2023 Michael Kolesidis <michael.kolesidis@gmail.com>
+ *  GNU Affero General Public License v3.0
+ *
+ */
+
 import { NexusMeter, NexusOscilloscope, NexusSpectrogram } from 'nexusui2';
 
 import { type DisplaysUIKeys, type DisplaysUI } from './displays.options';

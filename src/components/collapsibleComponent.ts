@@ -1,3 +1,10 @@
+/*
+ *  JSS-01 |JavaScript Software Synthesizer
+ *  Copyright (c) 2023 Michael Kolesidis <michael.kolesidis@gmail.com>
+ *  GNU Affero General Public License v3.0
+ *
+ */
+
 import { assertInstanceOf } from '../utils/utils.js';
 
 const selectors = {
@@ -83,4 +90,4 @@ export default function CollapsibleComponent(id: string, title?: HTMLElement, ..
 	//		</div>`;
 }
 
-export type TCollapsibleComponent = Component
+export type TCollapsibleComponent = Component;

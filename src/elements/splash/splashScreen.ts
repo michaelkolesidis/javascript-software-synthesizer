@@ -5,10 +5,11 @@
  *
  */
 
-
 const id = 'splash-screen';
 
 const visited = localStorage.getItem('visited');
+
+// the minimum duration to display the splash screen
 const minDeltaMs = visited ? 1000 : 2000;
 
 let timestamp: number;
@@ -51,17 +52,3 @@ export async function hideSplashScreen(): Promise<void> {
 		return;
 	});
 }
-
-// export function splashScreen(splashScreen: HTMLElement, pageContainer: HTMLElement) {
-// 	if (!localStorage.getItem('visited')) {
-// 		setTimeout(function () {
-// 			splashScreen!.style.display = 'none';
-// 			pageContainer!.style.display = 'block';
-// 		}, 2000);
-// 	} else {
-// 		setTimeout(function () {
-// 			splashScreen!.style.display = 'none';
-// 			pageContainer!.style.display = 'block';
-// 		}, 1000);
-// 	}
-// }

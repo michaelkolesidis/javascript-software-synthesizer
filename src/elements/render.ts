@@ -1,9 +1,16 @@
+/*
+ *  JSS-01 |JavaScript Software Synthesizer
+ *  Copyright (c) 2023 Michael Kolesidis <michael.kolesidis@gmail.com>
+ *  GNU Affero General Public License v3.0
+ *
+ */
+
 import './style.main.scss';
 
 // @todo import nexus dynamically in render() to minimize chunk size
 import Nexus from 'nexusui2';
 
-import { getElementById } from '../utils/dom.js';
+import { getElementById } from '../utils/utils.js';
 import { Color } from '../utils/enums.js';
 
 import Header from './base/header/header.js';

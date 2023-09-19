@@ -1,3 +1,10 @@
+/*
+ *  JSS-01 |JavaScript Software Synthesizer
+ *  Copyright (c) 2023 Michael Kolesidis <michael.kolesidis@gmail.com>
+ *  GNU Affero General Public License v3.0
+ *
+ */
+
 import { type FMSynth, type PolySynthOptions, type OmniOscillatorOptions, type EnvelopeOptions } from 'tone';
 import { type OmniOscillatorSynthOptions } from 'tone/build/esm/source/oscillator/OscillatorInterface.js';
 import { type RecursivePartial } from 'tone/build/esm/core/util/Interface.js';

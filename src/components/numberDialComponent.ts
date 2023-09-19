@@ -1,6 +1,13 @@
-import { DialOptions } from 'nexusui2/dist/types/interfaces/dial';
-import { NumberOptions } from 'nexusui2/dist/types/interfaces/number';
-import { BaseInterfaceOptions } from 'nexusui2/dist/types/core/interface';
+/*
+ *  JSS-01 |JavaScript Software Synthesizer
+ *  Copyright (c) 2023 Michael Kolesidis <michael.kolesidis@gmail.com>
+ *  GNU Affero General Public License v3.0
+ *
+ */
+
+import { type DialOptions } from 'nexusui2/dist/types/interfaces/dial';
+import { type NumberOptions } from 'nexusui2/dist/types/interfaces/number';
+import { type BaseInterfaceOptions } from 'nexusui2/dist/types/core/interface';
 import Nexus from 'nexusui2';
 
 import { assertInstanceOf } from '../utils/utils.js';
@@ -14,23 +21,14 @@ const defaultDialOptions = <CreateDialOptions>{
 	max: 1,
 	step: 0.1,
 	value: 0,
-
 };
 
 const defaultNumOptions = <CreateNumOptions>{
 	size: [60, 30],
 };
 
-export type CreateDialOptions = Partial<DialOptions & BaseInterfaceOptions>
+export type CreateDialOptions = Partial<DialOptions & BaseInterfaceOptions>;
 export type CreateNumOptions = Partial<NumberOptions & BaseInterfaceOptions>;
-
-const template = document.createElement('template');
-template.innerHTML = `
-<div class="number-dial">
-	<p></p>
-	<div class="nexus-dial"></div>
-	<div class="nexus-num"></div>
-</div>`;
 
 const setLabel = (component: HTMLElement, text: string) => {
 	// get HTMLParagraphElement
@@ -61,7 +59,12 @@ export default function NumberDialComponent(
 	const component = document.createElement('div');
 	component.id = id;
 	component.classList.add('component', 'number-dial-component');
-	component.append(template.content.cloneNode(true));
+	component.innerHTML = `
+	<div class="number-dial">
+		<p></p>
+		<div class="nexus-dial"></div>
+		<div class="nexus-num"></div>
+	</div>`;
 
 	setLabel(component, label);
 
@@ -75,6 +78,7 @@ export default function NumberDialComponent(
 
 	parent.append(component);
 
+	// nexus interfaces
 	return dial;
 
 	//	return `

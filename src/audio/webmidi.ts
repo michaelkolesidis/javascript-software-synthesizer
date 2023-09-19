@@ -7,8 +7,7 @@
 
 import { WebMidi, Input } from 'webmidi';
 
-import { assertInstanceOf } from '../utils/utils.js';
-import { getElementById } from '../utils/dom.js';
+import { assertInstanceOf, getElementById } from '../utils/utils.js';
 import { Color } from '../utils/enums.js';
 
 import { midiDisplayId } from '../elements/midi/midi.js';

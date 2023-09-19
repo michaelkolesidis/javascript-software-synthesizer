@@ -14,7 +14,7 @@ import './style.scss';
 // used in welcome message
 import { homepage } from '../package.json';
 
-import { getElementById } from './utils/dom.js';
+import { getElementById } from './utils/utils.js';
 import { hideSplashScreen, showSplashScreen } from './elements/splash/splashScreen.js';
 
 // @todo import dynamically ??

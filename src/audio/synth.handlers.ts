@@ -1,11 +1,17 @@
+/*
+ *  JSS-01 |JavaScript Software Synthesizer
+ *  Copyright (c) 2023 Michael Kolesidis <michael.kolesidis@gmail.com>
+ *  GNU Affero General Public License v3.0
+ *
+ */
+
 import Nexus from 'nexusui2';
 
 import { type OmniOscillatorSynthOptions } from 'tone/build/esm/source/oscillator/OscillatorInterface.js';
 import { type RecursivePartial } from 'tone/build/esm/core/util/Interface.js';
 import { type EnvelopeCurve } from 'tone';
 
-import { assertNotNull } from '../utils/utils.js';
-import { getElementById } from '../utils/dom.js';
+import { assertNotNull, getElementById } from '../utils/utils.js';
 import { Color } from '../utils/enums.js';
 
 import { handleWaveformSlider } from '../components/waveformComponent.js';

@@ -1,4 +1,11 @@
-import { NexusMultislider, NexusRadioButton, NexusSelect, NexusSlider } from 'nexusui2';
+/*
+ *  JSS-01 |JavaScript Software Synthesizer
+ *  Copyright (c) 2023 Michael Kolesidis <michael.kolesidis@gmail.com>
+ *  GNU Affero General Public License v3.0
+ *
+ */
+
+import { type NexusMultislider, type NexusRadioButton, type NexusSelect, type NexusSlider } from 'nexusui2';
 import { assertNotNull } from '../../../utils/utils';
 import modulationOptions from './modulation.options';
 
@@ -42,7 +49,7 @@ class Interfaces {
 		this[key] = nexusInterface as T extends ModulationUI ? T : never;
 	}
 
-getType() {
+	getType() {
 		assertNotNull(this.type);
 		assertNotNull(this.partialCount);
 
