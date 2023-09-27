@@ -7,7 +7,8 @@
 
 export enum Color {
   black = "rgb(51, 51, 51)",
-  gray_dark = "rgb(180, 180, 180)",
+  dark_gray = "rgb(180, 180, 180)",
+  light_gray = "rgb(224, 224, 224)",
   gray = "rgb(240,240,243)",
   blue = "rgb(1, 0, 76)",
   cyan = "rgb(35, 178, 254)",

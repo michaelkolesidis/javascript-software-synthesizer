@@ -1,0 +1,33 @@
+// @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;600&display=swap');
+
+#splash-screen {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	img {
+		transition: transform;
+		animation: jssmove 1s linear infinite;
+	}
+}
+
+@keyframes jssmove {
+	0% {
+		transform: perspective(600px) translateZ(0px);
+	}
+	30% {
+		transform: perspective(600px) translateZ(10px);
+	}
+	50% {
+		transform: perspective(600px) translateZ(20px);
+	}
+	80% {
+		transform: perspective(600px) translateZ(10px);
+	}
+	100% {
+		transform: perspective(600px) translateZ(0px);
+	}
+}

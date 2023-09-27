@@ -1,0 +1,20 @@
+.envelope-component {
+	display: flex;
+	justify-content: space-evenly;
+	gap: 1rem;
+
+	.envelope-slider-wrapper {
+		p {
+			text-align: center;
+		}
+	}
+	.envelope-curves-wrapper {
+		// display: flex;
+		// flex-direction: column;
+		// justify-content: space-between;
+
+		div + p {
+			padding-top: 0.75rem;
+		}
+	}
+}

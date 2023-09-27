@@ -1,0 +1,26 @@
+.waveform-component {
+	text-align: center;
+
+	.type {
+		margin: 0.25rem auto 0;
+	}
+
+	.labels {
+		// @todo
+		width: 380px;
+
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		margin: 0 auto 1rem;
+
+		font-weight: 500;
+	}
+
+	.partial-count {
+		margin: 0 auto 1rem;
+	}
+
+	.partials {
+		margin: 0 auto;
+	}
+}
