@@ -87,13 +87,13 @@ async function create() {
 	assertNotNull(interfaces.frequency);
 	assertNotNull(interfaces.octaves);
 
-	const effect = new EffectController(
-		new AutoFilter({
-			depth: interfaces.depth.value,
-			frequency: interfaces.frequency.value,
-			octaves: interfaces.octaves.value,
-		})
-	);
+	const node = new AutoFilter({
+		depth: interfaces.depth.value,
+		frequency: interfaces.frequency.value,
+		octaves: interfaces.octaves.value,
+	}).start();
+
+	const effect = new EffectController(node);
 
 	// @todo
 	// console.log(effect.node.name, effect.node.get());
