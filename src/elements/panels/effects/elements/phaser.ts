@@ -96,7 +96,7 @@ async function create() {
 		new Phaser({
 			baseFrequency: interfaces.baseFrequency.value,
 			frequency: interfaces.frequency.value,
-			octaves: interfaces.frequency.value,
+			octaves: interfaces.octaves.value,
 		})
 	);
 
