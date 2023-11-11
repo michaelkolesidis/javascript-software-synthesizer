@@ -7,9 +7,13 @@
 
 import { StereoFeedbackEffect } from 'tone/build/esm/effect/StereoFeedbackEffect';
 import { type FeedbackEffectOptions } from 'tone/build/esm/effect/FeedbackEffect';
-import { StereoEffect, type StereoEffectOptions } from 'tone/build/esm/effect/StereoEffect';
+import {
+	StereoEffect,
+	type StereoEffectOptions,
+} from 'tone/build/esm/effect/StereoEffect';
 import { Effect, type EffectOptions } from 'tone/build/esm/effect/Effect';
 
+import { AutoFilter, Chorus, Tremolo } from './tone.js';
 import audio from './audio.js';
 
 type EffectNode =
@@ -23,7 +27,9 @@ export class EffectController {
 	private static _activeKeys: string[] = [];
 
 	private static get _activeNodes() {
-		return this._effects.filter((effect) => effect.active).map((effect) => effect.node);
+		return this._effects
+			.filter((effect) => effect.active)
+			.map((effect) => effect.node);
 	}
 
 	private static _disconnectActive() {
@@ -31,6 +37,15 @@ export class EffectController {
 		synth.disconnect();
 
 		for (const node of this._activeNodes) {
+			// some effects require to call stop()
+			if (
+				node instanceof AutoFilter ||
+				node instanceof Chorus ||
+				node instanceof Tremolo
+			) {
+				node.stop();
+			}
+
 			node.disconnect();
 		}
 	}
@@ -40,8 +55,18 @@ export class EffectController {
 		const nodes = [];
 
 		for (const name of this._activeKeys) {
+			// name of node was added by instance on update
 			const node = this._activeNodes.find((node) => node.name === name);
 			if (node) nodes.push(node);
+
+			// some effects require to call start()
+			if (
+				node instanceof AutoFilter ||
+				node instanceof Chorus ||
+				node instanceof Tremolo
+			) {
+				node.start();
+			}
 		}
 
 		// chain active effects and return
