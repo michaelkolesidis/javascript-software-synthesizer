@@ -13,7 +13,7 @@ import distortion from './elements/distortion.js';
 import feedbackDelay from './elements/feedbackDelay.js';
 import frequencyShifter from './elements/frequencyShifter.js';
 import phaser from './elements/phaser.js';
-import pingPongDelay from './elements/pingPongDelay.js';
+// import pingPongDelay from './elements/pingPongDelay.js';
 import reverb from './elements/reverb.js';
 import tremolo from './elements/tremolo.js';
 import vibrato from './elements/vibrato.js';
@@ -28,7 +28,7 @@ export default function createEffects() {
 		bitCrusher.render(),
 
 		chorus.render(),
-		pingPongDelay.render(),
+		// pingPongDelay.render(),
 		vibrato.render(),
 		frequencyShifter.render(),
 
