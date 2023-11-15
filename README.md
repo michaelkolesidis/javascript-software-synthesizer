@@ -1,3 +1,5 @@
+**Note: The JavaScript Software Synthesizer is in active devleopment and its currently being refactored/redesigned, thus some of the features might not work as intended. For the latest stable version please visit [this repository](https://github.com/michaelkolesidis/javascript-software-synthesizer-classic).**
+
 ![JSS-01 Logo](./public/assets/logo/logo_256_white.png#gh-dark-mode-only)
 ![JSS-01 Logo](./public/assets/logo/logo_256.png#gh-light-mode-only)
 
