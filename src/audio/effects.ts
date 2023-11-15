@@ -13,7 +13,7 @@ import distortion from '../elements/panels/effects/elements/distortion.js';
 import feedbackDelay from '../elements/panels/effects/elements/feedbackDelay.js';
 import frequencyShifter from '../elements/panels/effects/elements/frequencyShifter.js';
 import phaser from '../elements/panels/effects/elements/phaser.js';
-import pingPongDelay from '../elements/panels/effects/elements/pingPongDelay.js';
+// import pingPongDelay from '../elements/panels/effects/elements/pingPongDelay.js';
 import reverb from '../elements/panels/effects/elements/reverb.js';
 import tremolo from '../elements/panels/effects/elements/tremolo.js';
 import vibrato from '../elements/panels/effects/elements/vibrato.js';
@@ -27,7 +27,7 @@ export default async function createEffects() {
 	feedbackDelay.create();
 	frequencyShifter.create();
 	phaser.create();
-	pingPongDelay.create();
+	// pingPongDelay.create();
 	reverb.create();
 	tremolo.create();
 	vibrato.create();
