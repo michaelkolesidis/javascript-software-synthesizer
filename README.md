@@ -9,6 +9,8 @@
 [![MIT license](https://img.shields.io/badge/License-AGPLv3-01004c.svg)](https://www.gnu.org/licenses/agpl-3.0.html)
 [![Version](https://img.shields.io/badge/version-2.0.3-01004c.svg)](https://shields.io/)
 
+<a href='https://ko-fi.com/michaelkolesidis' target='_blank'><img src='https://cdn.ko-fi.com/cdn/kofi6.png' style='border:0px;height:45px;' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
 ## Technologies Used
 
 <a href="https://tonejs.github.io/"><img src="https://github.com/michaelkolesidis/tech-icons/blob/main/icons/tonejs/tonejs-original.png" height="50px" /></a>
@@ -228,10 +230,6 @@ A full(-ish) list of references can be found in the [References](https://github.
 #### Small Screens
 
 <img width="900px" src="./screenshots/v.0.5.4-small.png">
-
-## Sponsors
-
-None, yet! We will have to add way more features for that.
 
 ## Contributors
 
