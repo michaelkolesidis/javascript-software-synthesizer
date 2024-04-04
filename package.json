@@ -45,15 +45,15 @@
     "test": "test"
   },
   "devDependencies": {
-    "eslint": "^8.55.0",
-    "sass": "^1.69.5",
-    "typescript": "^5.3.3",
-    "vite": "^5.0.7"
+    "eslint": "^8.57.0",
+    "sass": "^1.74.1",
+    "typescript": "^5.4.3",
+    "vite": "^5.2.8"
   },
   "dependencies": {
     "nexusui2": "^1.0.1",
     "tone": "^14.7.77",
-    "webmidi": "^3.1.7"
+    "webmidi": "^3.1.8"
   },
   "volta": {
     "node": "18.18.2"
