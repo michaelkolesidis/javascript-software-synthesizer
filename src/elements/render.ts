@@ -1,6 +1,6 @@
 /*
  *  JSS-01 |JavaScript Software Synthesizer
- *  Copyright (c) 2023 Michael Kolesidis <michael.kolesidis@gmail.com>
+ *  Copyright (c) Michael Kolesidis <michael.kolesidis@gmail.com>
  *  GNU Affero General Public License v3.0
  *
  */
@@ -24,10 +24,10 @@ import createKeyboard from './keyboard/keyboard.js';
 import createExtras from './extras/extras.js';
 
 const sectionIds = {
-	displays: 'displays',
-	panels: 'panels',
-	extras: 'extras',
-	keyboard: 'keyboard',
+  displays: 'displays',
+  panels: 'panels',
+  extras: 'extras',
+  keyboard: 'keyboard',
 } as const;
 
 const template = document.createElement('template');
@@ -50,39 +50,40 @@ ${Footer()}
 ${Overlay()}`;
 
 export default function render() {
-	// use DocumentFragment to improve performance
-	const fragment = new DocumentFragment();
-	fragment.append(template.content.cloneNode(true));
+  // use DocumentFragment to improve performance
+  const fragment = new DocumentFragment();
+  fragment.append(template.content.cloneNode(true));
 
-	// rendered elements are required to create Nexus interfaces
-	const sections = Object.values(sectionIds).reduce(
-		(all, id) => Object.assign(all, { [id]: getElementById(id, HTMLElement, fragment) }),
-		{} as {
-			[K in keyof typeof sectionIds]: HTMLElement;
-		}
-	);
+  // rendered elements are required to create Nexus interfaces
+  const sections = Object.values(sectionIds).reduce(
+    (all, id) =>
+      Object.assign(all, { [id]: getElementById(id, HTMLElement, fragment) }),
+    {} as {
+      [K in keyof typeof sectionIds]: HTMLElement;
+    }
+  );
 
-	// @todo darkMode
-	// set style for all NexusUI2 components
-	Nexus.colors.fill = Color.gray;
+  // @todo darkMode
+  // set style for all NexusUI2 components
+  Nexus.colors.fill = Color.gray;
 
-	Nexus.colors.accent = Color.blue;
-	createMidiDisplay(sections.displays);
-	createDisplays(sections.displays);
+  Nexus.colors.accent = Color.blue;
+  createMidiDisplay(sections.displays);
+  createDisplays(sections.displays);
 
-	// Nexus Color is set in each panel
-	createPanels(sections.panels);
+  // Nexus Color is set in each panel
+  createPanels(sections.panels);
 
-	createExtras(sections.extras);
+  createExtras(sections.extras);
 
-	// if (darkMode) {
-	// 	Nexus.colors.accent = Color.gray;
-	// 	Nexus.colors.dark = Color.gray_dark;
-	// 	Nexus.colors.light = Color.black;
-	// }
+  // if (darkMode) {
+  // 	Nexus.colors.accent = Color.gray;
+  // 	Nexus.colors.dark = Color.gray_dark;
+  // 	Nexus.colors.light = Color.black;
+  // }
 
-	Nexus.colors.accent = Color.gray;
-	createKeyboard(sections.keyboard);
+  Nexus.colors.accent = Color.gray;
+  createKeyboard(sections.keyboard);
 
-	return fragment;
+  return fragment;
 }

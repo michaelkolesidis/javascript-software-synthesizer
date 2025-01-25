@@ -1,6 +1,6 @@
 /*
  *  JSS-01 |JavaScript Software Synthesizer
- *  Copyright (c) 2023 Michael Kolesidis <michael.kolesidis@gmail.com>
+ *  Copyright (c) Michael Kolesidis <michael.kolesidis@gmail.com>
  *  GNU Affero General Public License v3.0
  *
  */
@@ -15,23 +15,34 @@ import modulationUI from './modulation.ui.js';
 import options, { ids } from './modulation.options.js';
 
 export default function createModulator() {
-	const fragment = new DocumentFragment();
+  const fragment = new DocumentFragment();
 
-	const modulator = WaveformComponent(fragment, ids.modulator, options.modulator);
+  const modulator = WaveformComponent(
+    fragment,
+    ids.modulator,
+    options.modulator
+  );
 
-	const envelopeSection = CollapsibleComponent(ids.modulationEnvelope, createPanelSubtitle('Modulation Envelope'));
-	fragment.append(envelopeSection.fragment);
+  const envelopeSection = CollapsibleComponent(
+    ids.modulationEnvelope,
+    createPanelSubtitle('Modulation Envelope')
+  );
+  fragment.append(envelopeSection.fragment);
 
-	const envelope = EnvelopeComponent(envelopeSection.body, ids.modulationEnvelope, options.modulationEnvelope);
+  const envelope = EnvelopeComponent(
+    envelopeSection.body,
+    ids.modulationEnvelope,
+    options.modulationEnvelope
+  );
 
-	modulationUI.set('type', modulator.radios);
-	modulationUI.set('partialCount', modulator.slider);
-	modulationUI.set('partials', modulator.multislider);
+  modulationUI.set('type', modulator.radios);
+  modulationUI.set('partialCount', modulator.slider);
+  modulationUI.set('partials', modulator.multislider);
 
-	modulationUI.set('modulationEnvelope', envelope.multislider);
-	modulationUI.set('attackCurve', envelope.selectAttack);
-	modulationUI.set('decayCurve', envelope.selectDecay);
-	modulationUI.set('releaseCurve', envelope.selectRelease);
+  modulationUI.set('modulationEnvelope', envelope.multislider);
+  modulationUI.set('attackCurve', envelope.selectAttack);
+  modulationUI.set('decayCurve', envelope.selectDecay);
+  modulationUI.set('releaseCurve', envelope.selectRelease);
 
-	return fragment;
+  return fragment;
 }

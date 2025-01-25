@@ -1,16 +1,16 @@
 .number-dial-component {
-	.number-dial {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+  .number-dial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-		p {
-			white-space: nowrap;
-			margin: 0 0 0.125rem;
-		}
+    p {
+      white-space: nowrap;
+      margin: 0 0 0.125rem;
+    }
 
-		.nexus-dial {
-			margin-bottom: 0.5rem;
-		}
-	}
+    .nexus-dial {
+      margin-bottom: 0.5rem;
+    }
+  }
 }

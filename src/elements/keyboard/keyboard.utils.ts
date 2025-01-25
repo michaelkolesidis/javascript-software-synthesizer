@@ -1,7 +1,7 @@
 /*
  * Key Mapper
  * Part of the JSS-01 | JavaScript Software Synthesizer project
- * Copyright (c) 2023 Michael Kolesidis <michael.kolesidis@gmail.com>
+ * Copyright (c) Michael Kolesidis <michael.kolesidis@gmail.com>
  * GNU Affero General Public License v3.0
  *
  * The Key Mapper function takes computer key letters as input
@@ -20,38 +20,38 @@ const maxValue = 84;
 const octave = 12;
 
 export const constants = {
-	octave,
-	minBase: minValue + octave,
-	maxBase: maxValue - octave,
+  octave,
+  minBase: minValue + octave,
+  maxBase: maxValue - octave,
 };
 
 export function keyMapper(key: string, base: number) {
-	const keyMap: { [key: string]: number } = {
-		KeyA: 0,
-		KeyW: 1,
-		KeyS: 2,
-		KeyE: 3,
-		KeyD: 4,
-		KeyF: 5,
-		KeyT: 6,
-		KeyG: 7,
-		KeyY: 8,
-		KeyH: 9,
-		KeyU: 10,
-		KeyJ: 11,
-		KeyK: 12,
-		KeyO: 13,
-		KeyL: 14,
-		KeyP: 15,
-		Semicolon: 16,
-		Quote: 17,
-	};
+  const keyMap: { [key: string]: number } = {
+    KeyA: 0,
+    KeyW: 1,
+    KeyS: 2,
+    KeyE: 3,
+    KeyD: 4,
+    KeyF: 5,
+    KeyT: 6,
+    KeyG: 7,
+    KeyY: 8,
+    KeyH: 9,
+    KeyU: 10,
+    KeyJ: 11,
+    KeyK: 12,
+    KeyO: 13,
+    KeyL: 14,
+    KeyP: 15,
+    Semicolon: 16,
+    Quote: 17,
+  };
 
-	if (!(key in keyMap)) return null;
+  if (!(key in keyMap)) return null;
 
-	const value = base + keyMap[key];
+  const value = base + keyMap[key];
 
-	if (value < minValue || value > maxValue) return null;
+  if (value < minValue || value > maxValue) return null;
 
-	return value;
+  return value;
 }

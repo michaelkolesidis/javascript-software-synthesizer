@@ -1,6 +1,6 @@
 /*
  *  JSS-01 |JavaScript Software Synthesizer
- *  Copyright (c) 2023 Michael Kolesidis <michael.kolesidis@gmail.com>
+ *  Copyright (c) Michael Kolesidis <michael.kolesidis@gmail.com>
  *  GNU Affero General Public License v3.0
  *
  */
@@ -19,16 +19,16 @@ import tremolo from '../elements/panels/effects/elements/tremolo.js';
 import vibrato from '../elements/panels/effects/elements/vibrato.js';
 
 export default async function createEffects() {
-	autoFilter.create();
-	bitCrusher.create();
-	chebyshev.create();
-	chorus.create();
-	distortion.create();
-	feedbackDelay.create();
-	frequencyShifter.create();
-	phaser.create();
-	// pingPongDelay.create();
-	reverb.create();
-	tremolo.create();
-	vibrato.create();
+  autoFilter.create();
+  bitCrusher.create();
+  chebyshev.create();
+  chorus.create();
+  distortion.create();
+  feedbackDelay.create();
+  frequencyShifter.create();
+  phaser.create();
+  // pingPongDelay.create();
+  reverb.create();
+  tremolo.create();
+  vibrato.create();
 }

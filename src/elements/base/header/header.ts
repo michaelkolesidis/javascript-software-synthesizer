@@ -1,6 +1,6 @@
 /*
  *  JSS-01 |JavaScript Software Synthesizer
- *  Copyright (c) 2023 Michael Kolesidis <michael.kolesidis@gmail.com>
+ *  Copyright (c) Michael Kolesidis <michael.kolesidis@gmail.com>
  *  GNU Affero General Public License v3.0
  *
  */
@@ -8,21 +8,21 @@
 // @todo use css selectors in #menu-content
 
 export const ids = {
-	titleBar: 'title-bar',
-	buttonsBar: 'buttons-bar',
-	toggleTheme: 'toggle-theme',
-	toggleMenuPlaceholder: 'toggle-menu-placeholder',
-	toggleMenu: 'toggle-menu',
-	menuWrapper: 'menu-wrapper',
-	menuContent: 'menu-content',
-	menuBackdrop: 'menu-backdrop',
-	menuTitle: 'menu-title',
+  titleBar: 'title-bar',
+  buttonsBar: 'buttons-bar',
+  toggleTheme: 'toggle-theme',
+  toggleMenuPlaceholder: 'toggle-menu-placeholder',
+  toggleMenu: 'toggle-menu',
+  menuWrapper: 'menu-wrapper',
+  menuContent: 'menu-content',
+  menuBackdrop: 'menu-backdrop',
+  menuTitle: 'menu-title',
 };
 
 export default function Header(darkMode: boolean) {
-	const img = darkMode ? 'logo_192_dark.png' : 'logo_192.png';
+  const img = darkMode ? 'logo_192_dark.png' : 'logo_192.png';
 
-	return /*html*/ `
+  return /*html*/ `
 <header tabindex="0">
   <div id="${ids.titleBar}">
     <img src="./assets/logo/${img}"/>

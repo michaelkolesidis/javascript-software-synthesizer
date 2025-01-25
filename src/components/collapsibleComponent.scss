@@ -1,25 +1,25 @@
 /* https://keithjgrant.com/posts/2023/04/transitioning-to-height-auto/ */
 
 .collapsible-wrapper {
-	display: grid;
-	grid-template-rows: 1fr;
-	transition: grid-template-rows 300ms ease-in-out;
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 300ms ease-in-out;
 }
 
 .collapsible-toggle {
-	display: none;
+  display: none;
 }
 
 .collapsible-toggle:checked + .collapsible-wrapper {
-	grid-template-rows: 0fr;
+  grid-template-rows: 0fr;
 }
 
 .collapsible-content {
-	overflow: hidden;
-	opacity: 1;
-	transition: opacity 300ms;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 300ms;
 }
 
 .collapsible-toggle:checked + .collapsible-wrapper .collapsible-content {
-	opacity: 0.625;
+  opacity: 0.625;
 }

@@ -8,7 +8,7 @@ All of these are very worthwhile contributions and are more than welcome!
 
 All contributors will be added in the designated section in the project's readme file.
 
-### Semantic Commit Messages
+## Semantic Commit Messages
 
 Starting from version 1.0.6, the project is using semantic commit messages. Please refer to the following links:
 
@@ -16,7 +16,7 @@ Starting from version 1.0.6, the project is using semantic commit messages. Plea
 [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 [Git Commit Msg](http://karma-runner.github.io/1.0/dev/git-commit-msg.html)
 
-### The JSS-01 is in active development, so if you have any ideas or want to help, feel free to:
+## The JSS-01 is in active development, so if you have any ideas or want to help, feel free to
 
 0. Start by creating an issue, so proposed changes can be discussed
 1. Fork the Project

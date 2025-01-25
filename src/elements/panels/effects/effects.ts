@@ -1,6 +1,6 @@
 /*
  *  JSS-01 |JavaScript Software Synthesizer
- *  Copyright (c) 2023 Michael Kolesidis <michael.kolesidis@gmail.com>
+ *  Copyright (c) Michael Kolesidis <michael.kolesidis@gmail.com>
  *  GNU Affero General Public License v3.0
  *
  */
@@ -19,24 +19,24 @@ import tremolo from './elements/tremolo.js';
 import vibrato from './elements/vibrato.js';
 
 export default function createEffects() {
-	const fragment = new DocumentFragment();
+  const fragment = new DocumentFragment();
 
-	fragment.append(
-		autoFilter.render(),
-		feedbackDelay.render(),
-		tremolo.render(),
-		bitCrusher.render(),
+  fragment.append(
+    autoFilter.render(),
+    feedbackDelay.render(),
+    tremolo.render(),
+    bitCrusher.render(),
 
-		chorus.render(),
-		// pingPongDelay.render(),
-		vibrato.render(),
-		frequencyShifter.render(),
+    chorus.render(),
+    // pingPongDelay.render(),
+    vibrato.render(),
+    frequencyShifter.render(),
 
-		phaser.render(),
-		reverb.render(),
-		distortion.render(),
-		chebyshev.render()
-	);
+    phaser.render(),
+    reverb.render(),
+    distortion.render(),
+    chebyshev.render()
+  );
 
-	return fragment;
+  return fragment;
 }

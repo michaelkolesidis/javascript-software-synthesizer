@@ -1,4 +1,3 @@
-
 // High-Pass Filter [DEACTIVATED]
 // const highPassFilter = new Tone.Filter(20000, "highpass").toDestination();
 

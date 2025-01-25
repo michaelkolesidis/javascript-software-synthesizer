@@ -1,6 +1,6 @@
 /*
  *  JSS-01 |JavaScript Software Synthesizer
- *  Copyright (c) 2023 Michael Kolesidis <michael.kolesidis@gmail.com>
+ *  Copyright (c) Michael Kolesidis <michael.kolesidis@gmail.com>
  *  GNU Affero General Public License v3.0
  *
  */
@@ -13,23 +13,33 @@ import Nexus from 'nexusui2';
 
 import { EffectController } from '../../../../audio/effect.controller.js';
 
-import NumberDialComponent, { type CreateDialOptions } from '../../../../components/numberDialComponent.js';
+import NumberDialComponent, {
+  type CreateDialOptions,
+} from '../../../../components/numberDialComponent.js';
 
 import { assertNotNull } from '../../../../utils/utils.js';
-import { createEffectElements, defaultToggleOptions, type BaseEffectUI, type EffectUI } from '../effects.utils.js';
+import {
+  createEffectElements,
+  defaultToggleOptions,
+  type BaseEffectUI,
+  type EffectUI,
+} from '../effects.utils.js';
 
 // @todo
 type FeedbackDelayOptions = {
-	delayTime: number;
-	feedback: number;
+  delayTime: number;
+  feedback: number;
 };
 
 type FeedbackDelayUIOptions = {
-	[K in keyof Pick<FeedbackDelayOptions, 'delayTime' | 'feedback'>]: CreateDialOptions;
+  [K in keyof Pick<
+    FeedbackDelayOptions,
+    'delayTime' | 'feedback'
+  >]: CreateDialOptions;
 };
 
 type FeedbackDelayUIKeys = {
-	[K in keyof FeedbackDelayUIOptions]: string;
+  [K in keyof FeedbackDelayUIOptions]: string;
 };
 
 type FeedbackDelayUI = EffectUI<FeedbackDelayUIOptions>;
@@ -37,92 +47,105 @@ type FeedbackDelayUI = EffectUI<FeedbackDelayUIOptions>;
 const id = 'feedback-delay';
 
 const ids = <FeedbackDelayUIKeys>{
-	delayTime: `${id}-time`,
-	feedback: `${id}-feedback`,
+  delayTime: `${id}-time`,
+  feedback: `${id}-feedback`,
 };
 
 const labels = <FeedbackDelayUIKeys>{
-	delayTime: 'Delay Time',
-	feedback: 'Feedback',
+  delayTime: 'Delay Time',
+  feedback: 'Feedback',
 };
 
 const options = <FeedbackDelayUIOptions>{
-	delayTime: {
-		min: 0,
-		max: 1,
-		step: 0.01,
-		value: 0.25,
-	},
-	feedback: {
-		min: 0,
-		max: 1,
-		step: 0.01,
-		value: 0.5,
-	},
+  delayTime: {
+    min: 0,
+    max: 1,
+    step: 0.01,
+    value: 0.25,
+  },
+  feedback: {
+    min: 0,
+    max: 1,
+    step: 0.01,
+    value: 0.5,
+  },
 };
 
 const interfaces = <BaseEffectUI<FeedbackDelayUI>>{
-	toggle: null,
-	delayTime: null,
-	feedback: null,
+  toggle: null,
+  delayTime: null,
+  feedback: null,
 };
 
 function render() {
-	const [wrapper, toggleWrapper, contentWrapper] = createEffectElements(id, 'Feedback Delay');
+  const [wrapper, toggleWrapper, contentWrapper] = createEffectElements(
+    id,
+    'Feedback Delay'
+  );
 
-	interfaces.toggle = new Nexus.Toggle(toggleWrapper, defaultToggleOptions);
+  interfaces.toggle = new Nexus.Toggle(toggleWrapper, defaultToggleOptions);
 
-	interfaces.delayTime = NumberDialComponent(contentWrapper, ids.delayTime, labels.delayTime, options.delayTime);
-	interfaces.feedback = NumberDialComponent(contentWrapper, ids.feedback, labels.feedback, options.feedback);
+  interfaces.delayTime = NumberDialComponent(
+    contentWrapper,
+    ids.delayTime,
+    labels.delayTime,
+    options.delayTime
+  );
+  interfaces.feedback = NumberDialComponent(
+    contentWrapper,
+    ids.feedback,
+    labels.feedback,
+    options.feedback
+  );
 
-	return wrapper;
+  return wrapper;
 }
 
 async function create() {
-	const { FeedbackDelay } = await import('../../../../audio/tone.js');
+  const { FeedbackDelay } = await import('../../../../audio/tone.js');
 
-	assertNotNull(interfaces.toggle);
-	assertNotNull(interfaces.delayTime);
-	assertNotNull(interfaces.feedback);
+  assertNotNull(interfaces.toggle);
+  assertNotNull(interfaces.delayTime);
+  assertNotNull(interfaces.feedback);
 
-	const effect = new EffectController(
-		new FeedbackDelay({
-			delayTime: interfaces.delayTime.value,
-			feedback: interfaces.feedback.value,
-		})
-	);
+  const effect = new EffectController(
+    new FeedbackDelay({
+      delayTime: interfaces.delayTime.value,
+      feedback: interfaces.feedback.value,
+    })
+  );
 
-	// @todo
-	// console.log(effect.node.name, effect.node.get());
-	// name === 'FeedbackDelay'
-	// get() === Object {
-	// 	wet: 1,
-	// 	feedback: 0.5,
-	// 	delayTime: 0.25,
-	// 	maxDelay: 1,
-	// };
+  // @todo
+  // console.log(effect.node.name, effect.node.get());
+  // name === 'FeedbackDelay'
+  // get() === Object {
+  // 	wet: 1,
+  // 	feedback: 0.5,
+  // 	delayTime: 0.25,
+  // 	maxDelay: 1,
+  // };
 
-	interfaces.toggle.on('change', (state) => {
-		effect.active = state;
-		effect.update();
-	});
+  interfaces.toggle.on('change', (state) => {
+    effect.active = state;
+    effect.update();
+  });
 
-	interfaces.delayTime.on('change', (value) => {
-		// @todo
-		effect.node.set(<RecursivePartial<EffectOptions>>{
-			delayTime: value,
-		});
-	});
+  interfaces.delayTime.on('change', (value) => {
+    // @todo
+    effect.node.set(<RecursivePartial<EffectOptions>>{
+      delayTime: value,
+    });
+  });
 
-	interfaces.feedback.on('change', (value) => {
-		// @todo
-		effect.node.set(<RecursivePartial<EffectOptions>>{
-			feedback: value,
-		});
-	});
+  interfaces.feedback.on('change', (value) => {
+    // @todo
+    effect.node.set(<RecursivePartial<EffectOptions>>{
+      feedback: value,
+    });
+  });
 }
 
 export default {
-	render,
-	create,
+  render,
+  create,
 };

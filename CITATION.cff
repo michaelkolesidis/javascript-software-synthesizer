@@ -3,13 +3,13 @@
 
 cff-version: 1.2.0
 title: JSS-01 | JavaScript Software Synthesizer
-message: "If you use this software, please cite it as below."
+message: 'If you use this software, please cite it as below.'
 type: software
 authors:
   - given-names: Michael
     family-names: Kolesidis
     email: michael.kolesidis@gmail.com
-    orcid: "https://orcid.org/0000-0002-2662-4677"
+    orcid: 'https://orcid.org/0000-0002-2662-4677'
 repository: >-
   https://github.com/michaelkolesidis/javascript-software-synthesizer
 abstract: >-
@@ -31,4 +31,4 @@ keywords:
 
 license: GNU Affero General Public License v3.0
 version: 2.0.3
-date-released: "2022-07-08"
+date-released: '2022-07-08'

@@ -1,6 +1,6 @@
 /*
  *  JSS-01 |JavaScript Software Synthesizer
- *  Copyright (c) 2023 Michael Kolesidis <michael.kolesidis@gmail.com>
+ *  Copyright (c) Michael Kolesidis <michael.kolesidis@gmail.com>
  *  GNU Affero General Public License v3.0
  *
  */
@@ -12,10 +12,10 @@ import { constants, keyMapper } from './keyboard.utils.js';
 
 // @todo make keyboard responsive
 const options = {
-	size: [1080, 90],
-	mode: 'button',
-	lowNote: 24,
-	highNote: 108,
+  size: [1080, 90],
+  mode: 'button',
+  lowNote: 24,
+  highNote: 108,
 } as PianoOptions;
 
 let keyboard: NexusPiano;
@@ -23,16 +23,16 @@ let keyboard: NexusPiano;
 export const getInterface = () => keyboard;
 
 export default function createKeyboard(section: HTMLElement) {
-	keyboard = new Nexus.Piano(section, options);
+  keyboard = new Nexus.Piano(section, options);
 
-	// Makes keyboard playble both with right and left click - prevents right click context menu
-	section.addEventListener(
-		'contextmenu',
-		(event) => {
-			event.preventDefault();
-		},
-		false
-	);
+  // Makes keyboard playble both with right and left click - prevents right click context menu
+  section.addEventListener(
+    'contextmenu',
+    (event) => {
+      event.preventDefault();
+    },
+    false
+  );
 }
 
 // @todo
@@ -54,51 +54,52 @@ let base = 24;
 // console.log(Midi(base + options.lowNote).toNote());
 
 export const handlers = <KeyboardHandlers>{
-	keydown: (event: KeyboardEvent) => {
-		// @todo
-		// if (event.target === seqInput) {
-		// 	return;
-		// }
+  keydown: (event: KeyboardEvent) => {
+    // @todo
+    // if (event.target === seqInput) {
+    // 	return;
+    // }
 
-		// press key
-		const keyIndex = keyMapper(event.code, base);
+    // press key
+    const keyIndex = keyMapper(event.code, base);
 
-		if (keyIndex === null) return;
+    if (keyIndex === null) return;
 
-		const isPressed = keyboard.keys[keyIndex]._state.state;
+    const isPressed = keyboard.keys[keyIndex]._state.state;
 
-		if (!isPressed) {
-			keyboard.toggleIndex(keyIndex, true);
-		}
-	},
-	keyup: (event: KeyboardEvent) => {
-		// one octave down
-		if (event.code === 'KeyZ' && base >= constants.minBase) {
-			base -= constants.octave;
-			return;
-		}
+    if (!isPressed) {
+      keyboard.toggleIndex(keyIndex, true);
+    }
+  },
+  keyup: (event: KeyboardEvent) => {
+    // one octave down
+    if (event.code === 'KeyZ' && base >= constants.minBase) {
+      base -= constants.octave;
+      return;
+    }
 
-		// one octave up
-		if (event.code === 'KeyX' && base < constants.maxBase) {
-			base += constants.octave;
-			return;
-		}
+    // one octave up
+    if (event.code === 'KeyX' && base < constants.maxBase) {
+      base += constants.octave;
+      return;
+    }
 
-		// release key
-		const keyIndex = keyMapper(event.code, base);
+    // release key
+    const keyIndex = keyMapper(event.code, base);
 
-		if (keyIndex === null) return;
+    if (keyIndex === null) return;
 
-		const isPressed = keyboard.keys[keyIndex]._state.state;
+    const isPressed = keyboard.keys[keyIndex]._state.state;
 
-		if (isPressed) {
-			keyboard.toggleIndex(keyIndex, false);
-		}
-	},
+    if (isPressed) {
+      keyboard.toggleIndex(keyIndex, false);
+    }
+  },
 };
 
-export type KeyboardHandlerKeys = Pick<DocumentEventMap, 'keydown' | 'keyup'> & string;
+export type KeyboardHandlerKeys = Pick<DocumentEventMap, 'keydown' | 'keyup'> &
+  string;
 
 type KeyboardHandlers = {
-	[K in KeyboardHandlerKeys]: EventListener;
+  [K in KeyboardHandlerKeys]: EventListener;
 };

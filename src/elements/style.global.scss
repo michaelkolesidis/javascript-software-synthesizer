@@ -1,6 +1,6 @@
 /*
  *  JSS-01 |JavaScript Software Synthesizer
- *  Copyright (c) 2023 Michael Kolesidis <michael.kolesidis@gmail.com>
+ *  Copyright (c) Michael Kolesidis <michael.kolesidis@gmail.com>
  *  GNU Affero General Public License v3.0
  *
  */
@@ -21,33 +21,33 @@ $yellow: rgb(254, 188, 44);
 /* General Rules */
 /* --------------------------------------------------------------------- */
 * {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-	outline: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
 
-	letter-spacing: -0.03em;
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+  letter-spacing: -0.03em;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 html,
 body {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 
-	font-family: 'Spartan', sans-serif;
-	font-size: 12px; // rem reference: 1rem === 12px
-	font-weight: 600;
-	line-height: 1.5;
+  font-family: 'Spartan', sans-serif;
+  font-size: 12px; // rem reference: 1rem === 12px
+  font-weight: 600;
+  line-height: 1.5;
 
-	// @todo dark mode
-	// prefers color scheme
-	background-color: #fff;
+  // @todo dark mode
+  // prefers color scheme
+  background-color: #fff;
 }
 
 a,
@@ -55,20 +55,19 @@ a:hover,
 a:focus,
 a:active,
 a:link {
-	text-decoration: none;
-	color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
-
 [nexus-ui] {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 
-	select {
-		padding: 0 0.5rem;
-	}
+  select {
+    padding: 0 0.5rem;
+  }
 
-	input {
-		text-align: center;
-	}
+  input {
+    text-align: center;
+  }
 }

@@ -4,205 +4,205 @@ $header-size: 4rem;
 $header-font: calc($header-size / 3);
 
 header {
-	#title-bar {
-		display: flex;
+  #title-bar {
+    display: flex;
 
-		img {
-			max-height: $header-size;
-			pointer-events: none;
-			// margin-right: 0.8rem;
-		}
+    img {
+      max-height: $header-size;
+      pointer-events: none;
+      // margin-right: 0.8rem;
+    }
 
-		h1 {
-			color: $blue;
-			font-weight: 600;
-			font-size: $header-font;
-			margin: calc($header-size / 2.75) 0 0 0.8rem;
-			// margin-top: 1.23rem;
-		}
-	}
+    h1 {
+      color: $blue;
+      font-weight: 600;
+      font-size: $header-font;
+      margin: calc($header-size / 2.75) 0 0 0.8rem;
+      // margin-top: 1.23rem;
+    }
+  }
 
-	#buttons-bar {
-		display: flex;
+  #buttons-bar {
+    display: flex;
 
-		button {
-			width: $header-size;
-			height: $header-size;
+    button {
+      width: $header-size;
+      height: $header-size;
 
-			margin: 0 0 0 1rem;
-			padding: 0;
+      margin: 0 0 0 1rem;
+      padding: 0;
 
-			border: 0;
-			background: $gray;
-			color: $blue;
+      border: 0;
+      background: $gray;
+      color: $blue;
 
-			cursor: pointer;
-		}
+      cursor: pointer;
+    }
 
-		#toggle-theme {
-			display: inline-flex;
-			justify-content: center;
-			align-items: center;
+    #toggle-theme {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
 
-			img {
-				height: 2.5rem;
-				pointer-events: none;
-			}
-		}
+      img {
+        height: 2.5rem;
+        pointer-events: none;
+      }
+    }
 
-		#toggle-menu-placeholder {
-			// used for the menu button
-			visibility: hidden;
-		}
-	}
+    #toggle-menu-placeholder {
+      // used for the menu button
+      visibility: hidden;
+    }
+  }
 }
 
 /* --------------------------------------------------------------------- */
 /* Menu */
 /* --------------------------------------------------------------------- */
 #menu-wrapper {
-	position: fixed;
-	height: 100vh;
-	width: 100%;
-	pointer-events: none;
-	inset: 0;
-	z-index: 1;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  pointer-events: none;
+  inset: 0;
+  z-index: 1;
 
-	* {
-		visibility: visible;
-	}
+  * {
+    visibility: visible;
+  }
 }
 
 /* --------------------------------------------------------------------- */
 /* Backdrop */
 /* --------------------------------------------------------------------- */
 #menu-backdrop {
-	position: relative;
-	inset: 0;
-	width: 100%;
-	height: 100vh;
+  position: relative;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
 
-	background-color: rgba(0, 0, 0, 0);
-	backdrop-filter: blur(0);
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0);
 
-	transition: background-color 0.3s, backdrop-filter 0.3s;
+  transition: background-color 0.3s, backdrop-filter 0.3s;
 }
 
 #menu-wrapper:focus-within #menu-backdrop {
-	backdrop-filter: blur(2px);
-	background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 /* --------------------------------------------------------------------- */
 /* Content */
 /* --------------------------------------------------------------------- */
 #menu-content {
-	position: absolute;
-	z-index: 2;
-	top: 0;
-	right: 0;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
 
-	width: 90%;
-	max-width: 600px;
-	height: calc(100% - 70px);
+  width: 90%;
+  max-width: 600px;
+  height: calc(100% - 70px);
 
-	margin-top: 81px;
-	// margin-bottom: 300px;
-	padding: 40px;
+  margin-top: 81px;
+  // margin-bottom: 300px;
+  padding: 40px;
 
-	pointer-events: auto;
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  pointer-events: auto;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
-	transform: translateX(100%);
-	transition: transform 0.3s;
-	will-change: transform;
-	contain: paint;
+  transform: translateX(100%);
+  transition: transform 0.3s;
+  will-change: transform;
+  contain: paint;
 
-	background: $white;
-	color: $blue;
-	font-weight: 600;
-	font-size: 1rem;
+  background: $white;
+  color: $blue;
+  font-weight: 600;
+  font-size: 1rem;
 
-	h2 {
-		margin: 0;
-		padding: 0 0 1rem;
-		font-size: 3rem;
-		text-align: left;
-	}
+  h2 {
+    margin: 0;
+    padding: 0 0 1rem;
+    font-size: 3rem;
+    text-align: left;
+  }
 
-	p {
-		text-align: justify;
-		line-height: 1.5rem;
+  p {
+    text-align: justify;
+    line-height: 1.5rem;
 
-		a {
-			text-decoration: underline;
-		}
-		a:hover {
-			color: $dark-gray;
-		}
-	}
+    a {
+      text-decoration: underline;
+    }
+    a:hover {
+      color: $dark-gray;
+    }
+  }
 }
 
 #menu-wrapper:focus-within #menu-content {
-	transform: none;
+  transform: none;
 }
 
 /* --------------------------------------------------------------------- */
 /* toggle menu Button */
 /* --------------------------------------------------------------------- */
 #toggle-menu {
-	position: absolute;
-	top: 1rem;
-	right: 1rem;
-	width: $header-size;
-	height: $header-size;
-	margin: 0;
-	padding: 0 1rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: $header-size;
+  height: $header-size;
+  margin: 0;
+  padding: 0 1rem;
 
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-	// reset appearance
-	appearance: none;
-	-webkit-appearance: none;
-	border: 0;
-	background: $gray;
+  // reset appearance
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  background: $gray;
 
-	cursor: pointer;
+  cursor: pointer;
 
-	pointer-events: auto;
-	touch-action: manipulation;
-	-webkit-tap-highlight-color: $black;
+  pointer-events: auto;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: $black;
 
-	.icon-bar {
-		display: block;
-		width: 100%;
-		height: 3px;
-		background: $blue;
-		transition: 0.3s;
-	}
+  .icon-bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: $blue;
+    transition: 0.3s;
+  }
 
-	.icon-bar + .icon-bar {
-		margin-top: 5px;
-	}
+  .icon-bar + .icon-bar {
+    margin-top: 5px;
+  }
 }
 
 #menu-wrapper:focus-within {
-	// Menu button effect
-	#toggle-menu {
-		pointer-events: none;
+  // Menu button effect
+  #toggle-menu {
+    pointer-events: none;
 
-		.icon-bar:nth-of-type(1) {
-			transform: translate3d(0, 8px, 0) rotate(45deg);
-		}
+    .icon-bar:nth-of-type(1) {
+      transform: translate3d(0, 8px, 0) rotate(45deg);
+    }
 
-		.icon-bar:nth-of-type(2) {
-			opacity: 0;
-		}
+    .icon-bar:nth-of-type(2) {
+      opacity: 0;
+    }
 
-		.icon-bar:nth-of-type(3) {
-			transform: translate3d(0, -8px, 0) rotate(-45deg);
-		}
-	}
+    .icon-bar:nth-of-type(3) {
+      transform: translate3d(0, -8px, 0) rotate(-45deg);
+    }
+  }
 }
