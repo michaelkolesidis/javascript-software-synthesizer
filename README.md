@@ -1,4 +1,4 @@
-**Note: The JavaScript Software Synthesizer is in active devleopment and its currently being refactored/redesigned, thus some of the features might not work as intended. For the latest stable version please visit [this repository](https://github.com/michaelkolesidis/javascript-software-synthesizer-classic).**
+**Note: The JavaScript Software Synthesizer is in active development and it's currently being refactored/redesigned, thus some of the features might not work as intended. For the latest stable version please visit [this repository](https://github.com/michaelkolesidis/javascript-software-synthesizer-classic).**
 
 ![JSS-01 Logo](./public/assets/logo/logo_256_white.png#gh-dark-mode-only)
 ![JSS-01 Logo](./public/assets/logo/logo_256.png#gh-light-mode-only)
@@ -6,7 +6,7 @@
 <h1>JSS-01<br>JavaScript Software Synthesizer</h1>
 
 [![made-with-typescript](https://img.shields.io/badge/Made%20with-TypeScript-01004c.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![MIT license](https://img.shields.io/badge/License-AGPLv3-01004c.svg)](https://www.gnu.org/licenses/agpl-3.0.html)
+[![AGPL license](https://img.shields.io/badge/License-AGPLv3-01004c.svg)](https://www.gnu.org/licenses/agpl-3.0.html)
 [![Version](https://img.shields.io/badge/version-3.0.0-01004c.svg)](https://shields.io/)
 
 <a href='https://ko-fi.com/michaelkolesidis' target='_blank'><img src='https://cdn.ko-fi.com/cdn/kofi1.png' style='border:0px;height:45px;' alt='Buy Me a Coffee at ko-fi.com' /></a>  
@@ -36,7 +36,7 @@ More info about the technologies can be found <a href="https://github.com/michae
 
 ## Description
 
-The _JSS-01 | JavaScript Software Synthesizer_ is a web application enabling you to make and play music in the browser. It is a [software synthesizer](https://en.wikipedia.org/wiki/Software_synthesizer) utilizing the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) by implementing a variety of JavaScript frameworks and libraries, such as [Tone.js](https://tonejs.github.io/) and [NexusUI2](https://github.com/michaelkolesidis/nexusui2). Its design is fully modular, thus it can easily be adapted and integrated into any kind of project.
+The _JSS-01 | JavaScript Software Synthesizer_ is a web application enabling you to make and play music in the browser. It is a [software synthesizer](https://en.wikipedia.org/wiki/Software_synthesizer) utilizing the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) through a combination of JavaScript frameworks and libraries, such as [Tone.js](https://tonejs.github.io/) and [NexusUI2](https://github.com/michaelkolesidis/nexusui2). Its design is fully modular, thus it can easily be adapted and integrated into any kind of project.
 
 My aim when creating the JSS-01 was to offer a powerful synthesizer that is simple, easy and, above all, fun to use!
 
@@ -119,7 +119,7 @@ The [Oscilloscope](https://en.wikipedia.org/wiki/Oscilloscope) shows the wavefor
 #### Modulation Index
 
 <img width="80px" src="./screenshots/elements/mod_index.png">
-The Modulation Index determines the amount of the modulation that will be applied to the Carrier. If you set the <strong>Modulation Index</strong> to 0 (can be found at the top line of the Synth section) you get the unmodulated output of the carrier oscillator.
+The Modulation Index determines the amount of the modulation that will be applied to the Carrier. If you set the <strong>Modulation Index</strong> to 0 (can be found in the top row of the Synth section) you get the unmodulated output of the carrier oscillator.
 
 #### MIDI
 
@@ -130,7 +130,7 @@ In order to use your [MIDI keyboard](https://en.wikipedia.org/wiki/MIDI_keyboard
 <img width="900px" src="./screenshots/elements/sequencer.png">
 Right above the on-screen keyboard you can find the Sequencer. There is an included sequence preinstalled, so you can just press the <strong>Play button</strong> and listen to it. <br><br>
 
-The first input from the left controls the rate of the sequence (speed). The second input is the base value of the notes of the sequence (16n stands for a 16th note value, 8n for an 8th and so on). You can input your own sequences in the main input by writing the sequence of the desired notes in this form: <strong>"C4", "F5", "D2"\*\*</strong>. You can include parts with notes of half the base value by including them in brackets, ex. <strong>"C4", ["F5", "D2"]</strong>. In these examples, if the base value is 16n (16th notes), C4 will have a value of 16th, and each of the F5 and D2 will have a value of 32th (or a value of a 16th combined).
+The first input from the left controls the rate of the sequence (speed). The second input is the base value of the notes of the sequence (16n stands for a 16th note value, 8n for an 8th note, and so on). You can input your own sequences in the main input by writing the sequence of the desired notes in this form: <strong>"C4", "F5", "D2"\*\*</strong>. You can include parts with notes of half the base value by including them in brackets, ex. <strong>"C4", ["F5", "D2"]</strong>. In these examples, if the base value is 16n (16th notes), C4 will have a value of 16th, and each of the F5 and D2 will have a value of 32th (or a value of a 16th combined).
 
 When your sequence is ready, you can add it to the sequencer using the <strong>Add button</strong>. In order to go back to the default sequence, you can simply write <strong>default</strong> in the sequence input field and then click the Add button. There are two extra sequences included, the bassline of "I Feel Love" by Donna Summer (produced by Giorgio Moroder), which can be accessed by writing <strong>i feel love</strong> in the sequence input field and then pressing the add button, and the riff of "Funky Town", that can be accessed by writing <strong>funky town</strong>.
 
@@ -158,7 +158,7 @@ The _JSS-01 | JavaScript Software Synthesizer_ is quite heavy, especially on the
 
 ## Documentation
 
-Full documentation will be released at some point in the future. In the meantime, you can refer to the [Tone.js documentation](https://tonejs.github.io/docs/), as well as the [NexusUI2 documentation](https://nexus-js.github.io/ui/api/#intro).
+Full documentation is planned for future release. In the meantime, you can refer to the [Tone.js documentation](https://tonejs.github.io/docs/), as well as the [NexusUI2 documentation](https://nexus-js.github.io/ui/api/#intro).
 
 ## Guides & Tutorials
 
@@ -174,7 +174,7 @@ The JSS-01 is using FM synthesis implementing the FMSynth of Tone.js, While ther
 ## Contributing
 
 Feel free to submit issues and pull requests. It would be great to create a community around JSS-01, to continue its development and evolution, making it more capable and easier to use, increasing its creative and artistic potential.
-If you are interested in becoming part of out community it would be useful to have a look to our dedicated document regarding [Contributing](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/CONTRIBUTING.md), as well as, out [Code of Conduct](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/CODE_OF_CONDUCT.md). In a nutshell, we want our community to be a safe space for everyone, so that we can all have a pleasant and joyful experience!
+If you are interested in becoming part of our community please have a look at our dedicated [contribution guide](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/CONTRIBUTING.md), as well as, out [Code of Conduct](https://github.com/michaelkolesidis/javascript-software-synthesizer/blob/main/CODE_OF_CONDUCT.md). In a nutshell, we want our community to be a safe space for everyone, so that we can all have a pleasant and joyful experience!
 
 ## Changelog
 
@@ -267,7 +267,7 @@ Thank you so much for your interest in my project! If you want to go a step furt
 
 <a href="https://www.gnu.org/licenses/agpl-3.0.html"><img src="https://upload.wikimedia.org/wikipedia/commons/0/06/AGPLv3_Logo.svg" height="100px" /></a>
 
-Copyright (c) 2023 Michael Kolesidis  
+Copyright (c) Michael Kolesidis  
 Licensed under the [GNU Affero General Public License v3.0](https://www.gnu.org/licenses/agpl-3.0.html).
 
 <br>

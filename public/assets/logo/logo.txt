@@ -1,4 +1,4 @@
-Copyright (c) 2023 Michael Kolesidis
+Copyright (c) Michael Kolesidis
 
 The logo of the JJS-01 | JavaScript Software Synthesizer
 project was designed by Michael Kolesidis.
