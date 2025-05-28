@@ -18,7 +18,7 @@
 import { author, license, version } from '../../../../package.json';
 
 const urls = {
-  portfolio: 'https:/michaelkolesidis.com',
+  portfolio: 'https://michaelkolesidis.com',
   license: 'https://www.gnu.org/licenses/agpl-3.0.html',
   releases:
     'https://github.com/michaelkolesidis/javascript-software-synthesizer/releases',
