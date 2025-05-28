@@ -19,6 +19,7 @@ import { author, license, version } from '../../../../package.json';
 
 const urls = {
   portfolio: 'https://michaelkolesidis.com',
+  repo: 'https://github.com/michaelkolesidis/javascript-software-synthesizer',
   license: 'https://www.gnu.org/licenses/agpl-3.0.html',
   releases:
     'https://github.com/michaelkolesidis/javascript-software-synthesizer/releases',
@@ -29,7 +30,7 @@ export default function Footer() {
 <footer>
   <div>
     <p>
-      © <a href="${urls.portfolio}" target="_blank">${author}</a>. Licensed under the <a href="${urls.license}" target="_blank">${license}</a>.
+      © <a href="${urls.portfolio}" target="_blank">${author}</a> • <a href="${urls.repo}" target="_blank">GitHub</a> • Licensed under the <a href="${urls.license}" target="_blank">${license}</a> 
     </p>
   </div>
   <div id="version">
